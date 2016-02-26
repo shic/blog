@@ -24,4 +24,5 @@ categories: Jekyll Basic
 	{% endif %}
 
 5 Add disqus.html in post template: 
+
 	{% include disqus.html disqus_identifier=page.disqus_identifier %}
