@@ -21,7 +21,7 @@ defaults:
   -
     scope:
       path: "" # an empty string here means all files in the project
-      type: "posts"
+      type: "post"
     values:
       layout: "post"
       author: Shi
@@ -31,7 +31,7 @@ defaults:
   -
     scope:
       path: "" # an empty string here means all files in the project
-      type: "pages"
+      type: "page"
     values:
       layout: "page"
       author: Shi
