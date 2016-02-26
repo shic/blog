@@ -17,6 +17,7 @@ exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 # default settings
 defaults:
+  # default for post
   -
     scope:
       path: "" # an empty string here means all files in the project
@@ -24,4 +25,12 @@ defaults:
     values:
       layout: "post"
       author: Shi
-      
+
+  # default for pages
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "pages"
+    values:
+      layout: "page"
+      author: Shi
