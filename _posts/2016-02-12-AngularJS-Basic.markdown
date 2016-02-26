@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      "Blog try2"
-subtitle:   "because they lacked opposable thumbs and the brainpower to build a space program."
+title:      "AngularJS Basic"
+subtitle:   "AngularJS study path"
 date:       2015-10-10 12:00:00
-author:     "Start Bootstrap"
+author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
