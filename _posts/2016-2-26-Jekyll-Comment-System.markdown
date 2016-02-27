@@ -9,6 +9,7 @@ categories: Jekyll Basic
 ---
 
 #Integration step by step
+
 1 Generate code form https://disqus.com
 
 2 Paste the code in _includes/disqus.html 
