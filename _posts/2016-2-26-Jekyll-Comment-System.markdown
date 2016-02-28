@@ -14,7 +14,7 @@ categories: Jekyll Basic
 
 2 Paste the code in _includes/disqus.html 
 
-3 Set default comments value to "true" using "
+3 Set default comments value to "true" using :
 
 	comments: true
 
@@ -29,6 +29,6 @@ categories: Jekyll Basic
 
 5 Add disqus.html in post template: 
 
-	Note: Replace includde to include
-	{% includde disqus.html disqus_identifier=page.disqus_identifier %}
+	\{\% include disqus.html disqus_identifier=page.disqus_identifier \%\}
+	Note: remove \
 
