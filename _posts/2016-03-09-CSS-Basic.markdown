@@ -1,0 +1,149 @@
+---
+layout:     post
+title:      "CSS Basic"
+subtitle:   "AngularJS study path"
+date:       2016-03-09 12:00:00
+author:     "Shi"
+header-img: "img/post-bg-01.jpg"
+---
+#Normalize.css
+
+[http://nicolasgallagher.com/](http://nicolasgallagher.com/) 
+[https://github.com/necolas/normalize.css](https://github.com/necolas/normalize.css) 
+The browser has default style "User Agent Stylesheet"
+
+#Tag
+
+	<span>
+
+#Property
+center the text in the parent
+
+	text-align: center 
+
+inner border
+
+	box-sizing: border-box;
+
+One rule for all 
+
+	* {
+	   box-sizing: border-box;
+	}
+
+Very useful properties for Image
+
+Make the image responsive
+
+	max-width: 100%
+
+background 
+
+	background-image: url(‘../img/mountains.jpg’)
+
+Default background is repeat
+
+	background-repeat: repeat-x;
+	background-repeat: repeat-y;
+
+	background-position: center top;
+	background-position: 20% 50%;
+
+Display image at a scale size
+
+	background-size: cover;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##Best practice:
+
+	img{
+	  max-width: 100%;
+	  margin-bottom:20px;
+
+	}
+
+	.container{
+	  
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  background-size: cover;
+	}
+
+
+# Footer
+
+Always show footer:
+
+Wrap the header and content with .wrap
+
+Footer height is 60 px
+
+    <div class="page-wrap">
+      
+      Content!
+          
+    </div>
+
+    <footer class="site-footer">
+      I'm the Sticky Footer.
+    </footer>
+
+
+	.page-wrap{
+	  min-height: calc(100vh - 60px);
+	}  
+	  
+    .site-footer, .page-wrap:after {
+      height: 142px; 
+    }
+    .site-footer {
+      background: orange;
+    }
+	  
+>vh means "Viewport relative unit". it stands for Viewport Height.
+
+
+
+
+#Responsive Layout
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
