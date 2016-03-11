@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "CSS Basic"
+title:      "WordPress Basic"
 subtitle:   "WordPress Basic"
 date:       2016-03-10 12:00:00
 author:     "Shi"
