@@ -20,6 +20,7 @@ The browser has default style "User Agent Stylesheet"
 	<span>
 
 # Property
+
 center the text in the parent
 
 	text-align: center 
@@ -40,7 +41,26 @@ Make the image responsive
 
 	max-width: 100%
 
-background 
+Display horizontal
+
+	display: inline
+
+goto the next line as a block, trate elements as block ( Often used )
+
+	display: inline-block
+
+
+	display: table
+	display: table-cell
+
+	vertical-align: middle;
+
+	boarder-radius: 5px;
+	float:left;
+
+
+
+### background 
 
 	background-image: url(‘../img/mountains.jpg’)
 
@@ -94,6 +114,7 @@ Display image at a scale size
 	}
 
 
+
 # Footer
 
 Always show footer:
@@ -129,7 +150,59 @@ Footer height is 60 px
 
 # Responsive Layout
 
- 
+
+## Media Queries
+
+    /* ================================= 
+      Media Queries
+    ==================================== */
+
+    @media (min-width: 768px) {
+
+        .wrap {
+            min-height: calc(100vh - 89px);
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+    }
+
+
+
+     @media only screen and (min-width: 768px),
+	            only screen and (min-with: 700px) and (orientation: landscape) {
+
+      .wrapper {
+        width: 1026px;
+        margin: 0 auto;
+      }
+
+      .title {
+        font-size: 2em;
+      }
+
+      nav a {
+        padding: 25px 1%;
+      }
+      
+    }
+
+
+Flex
+
+[https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) 
+
+[http://caniuse.com/#search=flexbox](http://caniuse.com/#search=flexbox) 
+
+	display: flex; /* or inline-flex */
+  	flex-direction: row | row-reverse | column | column-reverse;
+
+
+
 
 
 
