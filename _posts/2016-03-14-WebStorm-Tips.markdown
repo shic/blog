@@ -9,28 +9,17 @@ header-img: "img/post-bg-01.jpg"
 
 # Auto complete
 
-Instead of write     
-	
+Instead of write
+
 	<md-content></md-content>
-, try to insert
-	
-	md-content 
- 
-then press TAB, you will see by magic 
 
-    <md-content></md-content>
+ try	`md-content` then press TAB, you will get by magic the same completed tag.
 
-Advanced usage is 
-	
-	md-content#content
+Advanced usage is `md-content#content`, Then TAB, you will get
 
-Then TAB, you will get 
+	<md-content id="content"></md-content>
 
-    <md-content id="content"></md-content>
-
-And with "." you can get 
-
-	md-content.content
+And with `md-content.content` you can get 
 
     <md-content class="content"></md-content>
 
