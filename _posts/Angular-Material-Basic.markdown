@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "AngularJS Basic"
-subtitle:   "AngularJS study path"
+title:      "Angular Material Basic"
+subtitle:   "Angular Material path"
 date:       2015-10-10 12:00:00
 author:     "Shi"
 header-img: "img/post-bg-01.jpg"

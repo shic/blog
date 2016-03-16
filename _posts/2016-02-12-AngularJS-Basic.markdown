@@ -47,3 +47,12 @@ Usage
 	<button ngbk-focus ng-click="clickFocused()">
                         I'm very focuse
 	</button>
+
+
+## Pipe
+
+	<md-list-item ng-repeat="user in vm.users | filter:vm.searchText | orderBy: 'name'">
+
+
+
+
