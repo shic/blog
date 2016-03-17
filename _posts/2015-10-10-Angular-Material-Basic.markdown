@@ -92,5 +92,23 @@ displays: $13
 Usage
 
 	<button ngbk-focus ng-click="clickFocused()">
-                        I'm very focuse
+		I'm very focuse
 	</button>
+
+
+
+### Disable a button in a form
+
+```
+<form name="noteForm">
+	<md-button ng-disabled="noteForm.$invalid">
+</form>
+```
+
+
+###　Reset 
+
+	$setUntouched()
+	$setPristine()
+
+
