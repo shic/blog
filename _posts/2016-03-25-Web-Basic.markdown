@@ -1,0 +1,13 @@
+---
+layout:     post
+title:      "Web Basic"
+subtitle:   "Web Basic"
+date:       2016-03-25 12:00:00
+author:     "Shi"
+header-img: "img/post-bg-01.jpg"
+---
+
+<h2 class="section-heading">Services</h2>
+
+DOM: document object model
+

@@ -53,6 +53,14 @@ Usage
 
 	<md-list-item ng-repeat="user in vm.users | filter:vm.searchText | orderBy: 'name'">
 
+## Useful functions
+
+### To upper case
+
+	$scope.formattedName= $filter('uppercase')($scope.name);
+
+
+
 
 
 
