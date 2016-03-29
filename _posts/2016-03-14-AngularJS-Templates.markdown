@@ -1,11 +1,11 @@
 ---
 layout:     post
-title:      "WebStorm tips"
-subtitle:   "WebStorm tips"
+title:      "AngularJS Templates"
 date:       2016-03-11 12:00:00
 author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
+# AngularJS Templates
 
 ## Calendar JS
 
