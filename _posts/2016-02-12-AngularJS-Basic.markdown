@@ -7,7 +7,12 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
-<h2 class="section-heading">Services</h2>
+
+#　Service
+
+Service and Factory basically do the same thing
+
+
 
 **$location , for interacting with the browser’s location, **
 
@@ -31,22 +36,65 @@ header-img: "img/post-bg-01.jpg"
 	{{12.9 | currency | number:0 }}
 displays: $13
 
-<h2>  Directive </h2>
+# Directive
 
-	var appModule = angular.module('app', []);
-	appModule.directive('ngbkFocus', function() {
-	return {
-	link: function(scope, element, attrs, controller) {
-	element[0].focus();
+## Sample directive
+
+In javascript:
+
+```javascript
+myApp.directive("searchResult", function (){
+	return{
+		template:'<div></div>'
+		templateUrl:'path/search-result.html'
+		replace: 'true'
+		// Isolate the scope, local scope binding
+		scope:{
+			personName:"@" // @ for text, one way binding 
+			personObject:"=" // = for object,  two way binding 
+		}
+		
+		link:
+		 		
+		restrict: 'AEC',//(A stand for Attribute; E for Element; C for Class; M for Commant), restrict this element to be used only when I use this in an element or attribute PS: default value is AE
+
 	}
-	};
-	});
+});
 
-Usage
+
+```
+### template search-result.html
+
+```
+	<div> {{personName}}</div>
+	<div> {{personObject.name}}</div>
+
+```
+
+### Use template in main html:
+
+Element 
+```
+	//Pass a string
+	<search-result person-name="{{ person.name}}"> </search-result>
+	//Pass person.name from parent to variable persionName (Note : normalize of person-name)
+		
+	//Pass an object
+	<search-result person-object="person"> </search-result>
+	
+
+```
+or Attribute
+
+```
+	<div search-result> </div>
 
 	<button ngbk-focus ng-click="clickFocused()">
                         I'm very focuse
 	</button>
+```
+
+Usage
 
 
 ## Pipe
@@ -58,6 +106,63 @@ Usage
 ### To upper case
 
 	$scope.formattedName= $filter('uppercase')($scope.name);
+
+
+# Controller
+
+## Routing template 
+
+``` 
+$routeProvider.when('/some-route/:num', {
+	templateUrl: 'some-url.html',
+	controller: 'someCtrl'
+})
+
+myApp.controller('someCtrl', ['$scope', '$routeParams',
+function($scope, $routeParams){
+	$scope.num = $routeParams.num;
+}])
+```
+
+
+
+
+
+
+
+
+
+# Component
+
+Costome directive
+
+```
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

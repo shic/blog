@@ -9,6 +9,7 @@ header-img: "img/post-bg-01.jpg"
 
 # Array
 
+
 ```javascript
 
 var things = [
