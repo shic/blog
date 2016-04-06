@@ -24,6 +24,15 @@ myApp.directive("searchResult", function (){
             personName:"@" // @ for text, one way binding 
             personObject:"=" // = for object,  two way binding
             formattedAddressFunction:"&" // & for function 
+        },
+        transclude:true,
+        //Link is a useful short version of compile-post 
+        link: function(scope, elements, attrs){
+            //Aready generated html; Do some modification here 
+            if(scope.personObject.name == "Jane Doe"){
+                elements.removeAttr('class');
+            }
+
         }
         
         compile: function(elem,attrs){
@@ -35,17 +44,17 @@ myApp.directive("searchResult", function (){
                     //Avoid to use pre link! The date is 
                 }
 
-                post:function(elem,attrs){
+                post:function(scope, elements, attrs){
                     //Aready generated html; Do some modification here 
-                    if(scope){
-
+                    if(scope.personObject.name == "Jane Doe"){
+                        elements.removeAttr('class');
                     }
 
                 }
 
             }
         }
-        link:
+
                 
         restrict: 'AEC',//(A stand for Attribute; E for Element; C for Class; M for Commant), restrict this element to be used only when I use this in an element or attribute PS: default value is AE
 
@@ -60,6 +69,8 @@ myApp.directive("searchResult", function (){
     <div> {{ personName }}</div>
     <div> {{ personObject.name }}</div>
     <div> {{ formattedAddressFunction({ aperson: personObject }) }}</div>
+    <div> <ng-transclude></ng-transclude></div> //replace the transclude contenent here
+    <small ng-transclude></small>
    
 
 ```
@@ -69,8 +80,9 @@ myApp.directive("searchResult", function (){
 Use as Element 
 ```
     //Pass a string
-    <search-result person-name="{{ person.name}}"> </search-result>
-    //Pass person.name from parent to variable persionName (Note : normalize of person-name)
+    <search-result person-name="{{ person.name}}"> 
+        Search results may not be valid.
+    </search-result>    //Pass person.name from parent to variable personName (Note : normalize of person-name)
         
     //Pass an object
     <search-result person-object="person"> </search-result>
