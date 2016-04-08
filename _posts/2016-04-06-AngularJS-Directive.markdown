@@ -67,11 +67,6 @@ myApp.directive("searchResult", function (){
 #### template search-result.html
 
 ```
-    <div> {{ personName }}</div>
-    <div> {{ personObject.name }}</div>
-    <div> {{ formattedAddressFunction({ aperson: personObject }) }} </div>
-    <div> <ng-transclude></ng-transclude></div> //replace the transclude contenent here
-    <small ng-transclude></small>
-   
+<div> {{ personName }}</div>
 
 ```
