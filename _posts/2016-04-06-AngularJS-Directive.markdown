@@ -106,7 +106,7 @@ or as Attribute
 
 #### The main controller could be 
 
-```
+```javascript
 
 myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
     
