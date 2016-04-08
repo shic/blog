@@ -71,3 +71,4 @@ myApp.directive("searchResult", function (){
 <div> {{ personName }}</div>
 
 ```
+	<div> {{ personName }}</div>
