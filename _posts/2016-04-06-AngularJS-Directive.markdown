@@ -129,3 +129,49 @@ myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
 ``` 
 
 {% endraw %}
+
+```
+
+myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
+    
+    $scope.person = {
+        name: 'John Doe',
+        address: '555 Main St.',
+        city: 'New York',
+        state: 'NY',
+        zip: '11111'
+    }
+    
+    $scope.formattedAddress = function(person) {
+      
+        return person.address + ', ' + person.city + ', ' + person.state + ' ' + person.zip;
+        
+    };
+    
+}]);
+
+``` 
+
+```javascript
+
+myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
+    
+    $scope.person = {
+        name: 'John Doe',
+        address: '555 Main St.',
+        city: 'New York',
+        state: 'NY',
+        zip: '11111'
+    }
+    
+    $scope.formattedAddress = function(person) {
+      
+        return person.address + ', ' + person.city + ', ' + person.state + ' ' + person.zip;
+        
+    };
+    
+}]);
+
+``` 
+
+
