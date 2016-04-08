@@ -67,7 +67,7 @@ myApp.directive("searchResult", function (){
 #### template search-result.html
 
 ```html
-<div> { { personName } }</div>
+<div> "{{" personName } }</div>
 <div> {{ personName }}</div>
 
 ```
