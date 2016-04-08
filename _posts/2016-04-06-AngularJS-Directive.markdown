@@ -79,6 +79,7 @@ myApp.directive("searchResult", function (){
 #### Use template in main html:
 
 Use as Element 
+
 ```html
     //Pass a string
     <search-result person-name="{{ person.name}}"> 
