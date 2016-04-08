@@ -13,6 +13,8 @@ header-img: "img/post-bg-01.jpg"
 
 #### Directive:
 
+
+
 ```
 myApp.directive("searchResult", function (){
     return{
@@ -61,8 +63,11 @@ myApp.directive("searchResult", function (){
         restrict: 'AEC',//(A stand for Attribute; E for Element; C for Class; M for Commant), restrict this element to be used only when I use this in an element or attribute PS: default value is AE
 
     }
+});
+
 
 ```
+
 #### template search-result.html
 
 ```
