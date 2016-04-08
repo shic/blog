@@ -14,7 +14,7 @@ header-img: "img/post-bg-01.jpg"
 #### Directive:
 
 
-```
+```javascript
 myApp.directive("searchResult", function (){
     return{
         template:'<div></div>',
@@ -66,7 +66,7 @@ myApp.directive("searchResult", function (){
 
 #### template search-result.html
 
-```
+```html
     <div> {{ personName }}</div>
     <div> {{ personObject.name }}</div>
     <div> {{ formattedAddressFunction({ aperson: personObject }) }} </div>
@@ -79,7 +79,7 @@ myApp.directive("searchResult", function (){
 #### Use template in main html:
 
 Use as Element 
-```
+```html
     //Pass a string
     <search-result person-name="{{ person.name}}"> 
         Search results may not be valid.
@@ -96,7 +96,7 @@ Use as Element
 ```
 or as Attribute
 
-```
+```html
     <div search-result> </div>
 
     <button ngbk-focus ng-click="clickFocused()">
@@ -130,48 +130,5 @@ myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
 
 {% endraw %}
 
-```
-
-myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
-    
-    $scope.person = {
-        name: 'John Doe',
-        address: '555 Main St.',
-        city: 'New York',
-        state: 'NY',
-        zip: '11111'
-    }
-    
-    $scope.formattedAddress = function(person) {
-      
-        return person.address + ', ' + person.city + ', ' + person.state + ' ' + person.zip;
-        
-    };
-    
-}]);
-
-``` 
-
-```javascript
-
-myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
-    
-    $scope.person = {
-        name: 'John Doe',
-        address: '555 Main St.',
-        city: 'New York',
-        state: 'NY',
-        zip: '11111'
-    }
-    
-    $scope.formattedAddress = function(person) {
-      
-        return person.address + ', ' + person.city + ', ' + person.state + ' ' + person.zip;
-        
-    };
-    
-}]);
-
-``` 
 
 
