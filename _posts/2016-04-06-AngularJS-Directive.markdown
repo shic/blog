@@ -67,8 +67,10 @@ myApp.directive("searchResult", function (){
 #### template search-result.html
 
 ```html
-<div> "{{" personName } }</div>
+{% raw %}
+<div> {{ personName } }</div>
 <div> {{ personName }}</div>
+{% endraw %}
 
 ```
 	<div> {{ personName }}</div>
