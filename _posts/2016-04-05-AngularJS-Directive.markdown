@@ -13,7 +13,7 @@ header-img: "img/post-bg-01.jpg"
 
 #### Directive:
 
-```javascript
+```
 myApp.directive("searchResult", function (){
     return{
         template:'<div></div>',
@@ -62,8 +62,6 @@ myApp.directive("searchResult", function (){
 
     }
 });
-
-
 ```
 #### template search-result.html
 
