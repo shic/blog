@@ -16,9 +16,11 @@ header-img: "img/post-bg-01.jpg"
 ```javascript
 myApp.directive("searchResult", function (){
     return{
-        template:'<div></div>'
-        templateUrl:'path/search-result.html'
-        replace: 'true'
+        template:'<div></div>',
+        templateUrl:'path/search-result.html',
+        controller: 'SearchCtrl',
+        controllerAs: 'vm',
+        replace: 'true',
         // Isolate the scope, local scope binding
         scope:{
             personName:"@" // @ for text, one way binding 
