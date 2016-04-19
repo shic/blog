@@ -9,7 +9,7 @@ categories: Jekyll Basic
 ---
 
 
-Post header properties:
+##Post header properties:
 
 layout:     post
 title:      "Jekyll Basic"
