@@ -1,0 +1,65 @@
+---
+layout:     post
+title:      "Docker"
+date:       2016-05-14 12:00:00
+author:     "Shi"
+header-img: "img/post-bg-01.jpg"
+---
+
+
+
+## Enter docker container
+
+> docker exec -it 4acaacf968b0 bash
+
+
+###Exit
+> Ctrl + P + Q
+
+## Copy files From/To image
+> docker cp /root/wordpress/enfold/ wordpress_wordpress_1:/var/www/html/wp-content/themes
+
+ docker cp /root/wordpress/sitepress-multilingual-cms/ wordpress_wordpress_1:/var/www/html/wp-content/plugins
+
+## Remove docker images 
+
+>docker rm
+
+## To view stopped and running containers
+
+>docker ps -a
+
+# Docker Compose 
+
+
+>docker-compose ps
+
+
+##Top process running on the container
+
+>docker top 4acaacf968b0
+
+Limite Container Resorse Usage 
+> docker run --cup-shares=256
+>docker run memory=1g
+
+# Export Docker
+
+Image location
+/var/lib/docker/aufs/layers
+
+Create a copy called "fridge"
+
+>docker commit 4acaacf968b0 fridge
+
+Command used to create this image
+
+>docker history fridge
+
+>docker save -o /root/temp/fridge.tar fridge
+
+
+>docker load -i /root/temp/fridge.tar
+
+
+
