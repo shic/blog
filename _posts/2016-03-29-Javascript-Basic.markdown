@@ -9,9 +9,7 @@ header-img: "img/post-bg-01.jpg"
 
 # Array
 
-
 ```javascript
-
 var things = [
 	1,
 	'2',
@@ -22,7 +20,6 @@ var things = [
 
 //Call function in array
 things[2]();
-
 ```
 
 ## Bracket notation
@@ -103,9 +100,32 @@ JSON.stringify(cat)
 
 ```
 
-## Prototypes
+## Prototype
 Use to inherit from or extend functionality in other objects.
 
+Every function has a prototype
+    var myFunc = function(){}
+    display(myFunc.prototype) // Output: {}
+    
+Object does not hava a prototype but has proto
+
+	var cat = {name: 'Carlo'}
+	display(cat.__proto__) // Output: Object {}
+	
+
+```javascript
+Object.defineProperty(Array.prototype, 'lastElement', 
+  {
+    get: function() {
+      return this[this.length - 1]
+    }
+  })
+
+//Call lastElement method 
+var arr = ['red','blue','green'] // Same as: var arr = new Array('red','blue','green')
+var last = arr.lastElement
+
+```
 
 
 # ES6
