@@ -106,14 +106,14 @@ Use to inherit from or extend functionality in other objects.
 Every function has a prototype
 
 ```javascript
-    var myFunc = function(){}
-    display(myFunc.prototype) // Output: {}
+var myFunc = function(){}
+display(myFunc.prototype) // Output: {}
 ```    
 Object does not hava a prototype but has proto
 
 ```javascript
-	var cat = {name: 'Carlo'}
-	display(cat.__proto__) // Output: Object {}
+var cat = {name: 'Carlo'}
+display(cat.__proto__) // Output: Object {}
 	
 ```
 
@@ -130,8 +130,81 @@ var arr = ['red','blue','green'] // Same as: var arr = new Array('red','blue','g
 var last = arr.lastElement
 
 ```
+### Usage
+```javascript
+function Cat(name, color) {
+    this.name = name
+    this.color = color
+}
+var carlo = new Cat('Carlo','white')
+
+Cat.prototype === carlo.__proto___//Return true. They are pointing to the exact same instance of an object
+
+Cat.prototype.age = 3
+
+display(Cat.prototype) //Output: Cat{ age:3 }
+display(carlo.__proto___) //Output: Cat{ age:3 }
+
+display(carlo.hasOwnProperty('age')) // Output: false
+
+carlo.age = 5 
+display(carlo.hasOwnProperty('age')) // Output: true. carlo now has his own property
+
+```
+### Prototype chains
+#### Create prototype chains without using class sintex
+
+```javascript
+function Animal(voice){
+    this.voice = voice || 'grunt'
+}
+Animal.prototype.speak = funciton(){
+    display(this.voice)
+}
+
+function Cat(name){
+    Animal.call(this, 'Meow') // Step 1 (to create a prototype chain)
+    this.name = name
+}
+
+Cat.prototype = Object.create(Animal.prototype) //Step 2
+Cat.prototype.constructor = Cat //Step 3
+
+var carlo = new Cat('Carlo')
+carlo.speak()
+```
+
+#### Create prototype chains using class
+
+```javascript
+class Animal {
+  constructor(voice) {
+    this.voice = voice || 'grunt'
+  }
+  
+  speak() {
+    display(this.voice)
+  }
+}
+
+class Cat extends Animal {
+  constructor(name, color) {
+    super('Meow')
+    this.name = name
+    this.color = color
+  }
+}
+
+var fluffy = new Cat('Fluffy', 'White')
+fluffy.speak()
+
+display(fluffy) //Output: {voice:Meow name:Fluffy color:White}
+
+display(Object.keys(fluffy.__proto__.__proto__)) //Using class sintex, Members of classed are not enumerable. So this speak function is not an enumrable property of the animal class
+display(fluffy.__proto__.__proto__.hasOwnProperty('speak')) // Output: true
 
 
+```
 # ES6
 
 ## ES6 class example
