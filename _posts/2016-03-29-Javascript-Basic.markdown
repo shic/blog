@@ -25,7 +25,7 @@ things[2]();
 
 ```
 
-##Bracket notation
+## Bracket notation
 
 ```javascript
 var cat = {
@@ -40,7 +40,7 @@ cat['eye'] = 'Green'
 display(cat['eye']) //Print: Green
 ```
 
-##Property  description
+## Property  description
 
 ```javascript
 var cat = {
@@ -103,14 +103,14 @@ JSON.stringify(cat)
 
 ```
 
-##Prototypes
+## Prototypes
 Use to inherit from or extend functionality in other objects.
 
 
 
-#ES6
+# ES6
 
-##ES6 class example
+## ES6 class example
 ```javascript
 class Cat {
   constructor(name, color) {
