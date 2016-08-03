@@ -104,14 +104,16 @@ JSON.stringify(cat)
 Use to inherit from or extend functionality in other objects.
 
 Every function has a prototype
+```javascript
     var myFunc = function(){}
     display(myFunc.prototype) // Output: {}
-    
+```    
 Object does not hava a prototype but has proto
-
+```javascript
 	var cat = {name: 'Carlo'}
 	display(cat.__proto__) // Output: Object {}
 	
+```
 
 ```javascript
 Object.defineProperty(Array.prototype, 'lastElement', 
