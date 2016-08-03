@@ -152,7 +152,7 @@ display(carlo.hasOwnProperty('age')) // Output: true. carlo now has his own prop
 
 ```
 ### Prototype chains
-#### Create prototype chains without using class sintex
+#### Create prototype chains without using class syntex
 
 ```javascript
 function Animal(voice){
@@ -174,7 +174,7 @@ var carlo = new Cat('Carlo')
 carlo.speak()
 ```
 
-#### Create prototype chains using class
+#### Create prototype chains using class syntex
 
 ```javascript
 class Animal {
@@ -200,7 +200,7 @@ fluffy.speak()
 
 display(fluffy) //Output: {voice:Meow name:Fluffy color:White}
 
-display(Object.keys(fluffy.__proto__.__proto__)) //Using class sintex, Members of classed are not enumerable. So this speak function is not an enumrable property of the animal class
+display(Object.keys(fluffy.__proto__.__proto__)) //Using class syntex, Members of classed are not enumerable. So this speak function is not an enumrable property of the animal class
 display(fluffy.__proto__.__proto__.hasOwnProperty('speak')) // Output: true
 
 
