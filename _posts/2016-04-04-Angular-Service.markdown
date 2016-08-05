@@ -6,7 +6,14 @@ author:     "Shi"
 ---
 
 
-#　Service
+# Service
+
+## Responsbilities
+
+1. Handle non-view logic
+2. Commuincate with the server
+3. Hold data & state
+
 
 Service and Factory basically do the same thing
 
