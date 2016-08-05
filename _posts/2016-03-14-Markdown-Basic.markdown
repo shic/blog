@@ -16,6 +16,10 @@ Specify text size
        ### H3
        #### H4
 
+Italic 	> * *
+Bold >	** **
+Strikethrough >	~~ ~~
+Quoting text > >
 
 ## Code
 
@@ -23,17 +27,15 @@ Specify text size
 
 1.With TAB or Four Space
 
-2.With Backtick (On English keyboard, the key on the left of key 1) `  `` `
+2.With Backtick (On English keyboard, the key on the left of key 1) 
+>` int a =1 `
 
-3.With three back-ticks to specify the programming language
+3.With three back-ticks to specify the programming language >```
 
 
 >```javascript
-
 >var s = "JavaScript syntax highlighting";
-
 >alert(s);
-
 > ```
 
 
