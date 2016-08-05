@@ -32,7 +32,7 @@ Strikethrough
 
 Quoting text 
 
-> >
+`>`
 
 ## Code
 
