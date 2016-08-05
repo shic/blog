@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "AngularJS Directive"
+title:      "Angular Directive"
 date:       2016-04-06 12:00:00
 author:     "Shi"
 header-img: "img/post-bg-01.jpg"
@@ -12,7 +12,6 @@ header-img: "img/post-bg-01.jpg"
 ## Sample directive
 
 #### Directive:
-
 
 ```javascript
 myApp.directive("searchResult", function (){
@@ -98,17 +97,15 @@ Use as Element
 or as Attribute
 
 ```html
-    <div search-result> </div>
-
-    <button ngbk-focus ng-click="clickFocused()">
-                        I'm very focuse
-    </button>
+<div search-result> </div>
+<button ngbk-focus ng-click="clickFocused()">
+    I'm very focuse
+</button>
 ```
 
 #### The main controller could be 
 
 ```javascript
-
 myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
     
     $scope.person = {
