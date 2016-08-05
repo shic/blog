@@ -11,15 +11,28 @@ header-img: "img/post-bg-01.jpg"
 
 Specify text size
 
-       # H1
-       ## H2
-       ### H3
-       #### H4
+```
+# H1
+## H2
+### H3
+#### H4
+```
 
-Italic 	> * *
-Bold >	** **
-Strikethrough >	~~ ~~
-Quoting text > >
+Italic
+
+> * *
+
+Bold 
+
+>	** **
+
+Strikethrough 
+
+>	~~ ~~
+
+Quoting text 
+
+> >
 
 ## Code
 
