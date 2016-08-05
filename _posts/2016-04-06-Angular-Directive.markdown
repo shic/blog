@@ -9,6 +9,11 @@ header-img: "img/post-bg-01.jpg"
 
 # Directive
 
+## Responsbilities
+
+1. Manipulate DOM
+2. Receive view events: translating view events into calls on the scope
+
 ## Sample directive
 
 #### Directive:
