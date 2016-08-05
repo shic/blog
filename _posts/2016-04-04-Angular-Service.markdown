@@ -13,7 +13,7 @@ author:     "Shi"
 1. Handle non-view logic
 2. Commuincate with the server
 3. Hold data & state
-
+4. Handle business logic
 
 Service and Factory basically do the same thing
 
