@@ -19,6 +19,46 @@ Service is a singlonton, once you create it, you can not change it
 
 
 ## Ways to create a service
+
+- Value
+
+1. Hold current state, any controller that want to access the state can include this service and show the same data
+
+```javascript
+app.value('schedule', {
+  classes: [],
+  addClass: function(newClass) {
+    for(var i=0; i < this.classes.length; i++) {
+      if(this.classes[i] === newClass) {
+        return;
+      }
+    }
+    this.classes.push(newClass);
+  },
+  dropClass: function(classToDrop) {
+    for(var i=0; i < this.classes.length; i++) {
+      if(this.classes[i] === classToDrop) {
+        this.classes.splice(i, 1);
+      }
+    }
+  }
+})
+
+app.controller('registrationCtrl',function($scope, schedule) {
+  $scope.availableClasses = [{name:"Chemistry"},{name:"Physics"},{name:"History"},{name:"Biology"},]
+  $scope.schedule = schedule;
+});
+```
+
+2. Use as utils
+
+```javascript
+app.value('calculateGPA', function(title, credits, department, instructors) {
+	//Do some calculation
+    return '4.0';
+})
+```
+
 - By service function (Bad way)
 
 ```javascript
@@ -40,7 +80,9 @@ app.service('classRegistration',function($http, policies) {
 });
 ```
 
-- Service and Factory basically do the same thing 
+- Factory
+
+Service and Factory basically do the same thing 
 
 Has a receive function as the second parameter, it execute that function and caches the result, then return it
 
@@ -57,6 +99,15 @@ Course.prototype.displayName = function() {
 }
 // other class methods
 
+app.factory('courseFactory', { function(title, credits, department, instructors) {
+    var instructorIds = [];
+    for(var i=0; i < instructors.length; i++) {
+      instructorIds.push(instructors[i].id);
+    }
+    return new Course(title, credits, department, instructorIds, -1);
+  }
+})
+//OR
 app.value('courseFactory', {
   createCourse: function(title, credits, department, instructors) {
     var instructorIds = [];
@@ -77,20 +128,18 @@ app.controller('newCourseCtrl',function($scope, catalog, courseFactory) {
 
 - Provider
 
-Vantage to use provider is you can configuar it. 
+Vantage to use provider is you can configuar it. (You can config your app once only)
 
 Provider can create a service from a lower level
 
-
 ```javascript
 var app = angular.module('app', []);
-
 
 angular.module('app').controller('scheduleCtrl',function($scope, registration) {
 
   $scope.title = registration.title;
 });
-
+//Create config func which receive $provide parameter and call $get function
 app.config(function($provide) {
   $provide.provider('registration', function() {
     var type;
@@ -112,6 +161,8 @@ app.config(function(registrationProvider) {
 })
 
 ```
+
+# Angular default services
 
 **$location , for interacting with the browser’s location, **
 
