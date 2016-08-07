@@ -14,7 +14,22 @@ header-img: "img/post-bg-01.jpg"
 1. Manipulate DOM
 2. Receive view events: translating view events into calls on the scope
 
-## Sample directive
+## Naming
+
+Prefix your directive like "up"(upSearchResult) to avoid name collision
+
+## Purpose
+
+- Widget
+
+
+- DOM Events
+ng-click
+
+- Functionality
+ng-show
+
+## Sample directive 1
 
 #### Directive:
 
@@ -33,15 +48,17 @@ myApp.directive("searchResult", function (){
             formattedAddressFunction:"&" // & for function 
         },
         transclude:true,
-        //Link is a useful short version of compile-post 
-        link: function(scope, elements, attrs){
-            //Aready generated html; Do some modification here 
-            if(scope.personObject.name == "Jane Doe"){
-                elements.removeAttr('class');
-            }
-
-        }
         
+        //Include the parent directive
+        require:'^nameOfParentDirective'
+                
+        //Link is a useful short version of compile-post (Put some function here for the directive to use)
+        link: function(scope, elements, attrs, ctrl){//add controller of the parent directive as the last parameter
+            scope.viewClassDetail = function(classToView){
+                //do something
+            }
+        }
+
         compile: function(elem,attrs){
             console.log('Compiling...');
             //Edit html created
@@ -130,6 +147,67 @@ myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
 }]);
 
 ``` 
+
+## Sample directive 2 (Real case usage)
+
+```javascript
+var app = angular.module('app', []);
+
+app.value('scFollowedInstructors', []);
+
+app.controller('scInstructorsCtrl', function($scope, scFollowedInstructors) {
+  $scope.followedInstCount = scFollowedInstructors.length;
+
+  this.followInstructor = function(instructor) {
+    scFollowedInstructors.push(instructor);
+    $scope.followedInstCount = scFollowedInstructors.length;
+  }
+});
+
+app.directive('scInstructors', function() {
+  return {
+    restrict: 'E',
+    replace: true,
+    template: '<div class="well sidebar-nav">' +
+        '<h3>Instructors ({{followedInstCount}} followed)</h3>' +
+        '<div class="row" ng-repeat="instructor in instructorList">' +
+        '<div class="col-md-6">{{instructor.name}}</div>' +
+        '<div class="col-md-6"><sc-follow-instructor instructor-to-follow="instructor" /></div>' + //Pass "instructor-to-follow" to the scope here
+        '</div>' +
+        '</div>',
+    controller: 'scInstructorsCtrl'
+  }
+});
+
+app.directive('scFollowInstructor', function(/*scFollowedInstructors*/) {
+  return {
+    restrict: 'E',
+    replace: true,
+    template: '<div class="instructor-follow-button"><button ng-click="followInstructor()" class="btn btn-info btn-xs">Follow</button></div>',
+    scope: {
+      instructorToFollow: '='
+    },
+    require: '^scInstructors',
+    link: function(scope, element, attrs, ctrl) { // Added the last param "ctrl" because we include the parent directive with "require: '^scInstructors'"
+      scope.followInstructor = function() {
+        ctrl.followInstructor(scope.instructorToFollow); 
+        //the function "followInstructor" is in "scInstructorsCtrl"; 
+        //the param "scope.instructor" is defined in " instructor: '=' "
+        element.css('display', 'none');
+      }
+    }
+  }
+});
+
+angular.module('app').controller('scheduleCtrl',function($scope) {
+  $scope.instructorList = [
+    {id: 1, name: 'Professor Snape'},
+    {id: 2, name: 'Provessor McGonagall'},
+    {id: 3, name: 'Professor Dumbledore'}
+  ]
+});
+```
+
 
 {% endraw %}
 
