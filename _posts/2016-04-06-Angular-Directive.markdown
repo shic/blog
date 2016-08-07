@@ -149,7 +149,7 @@ myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
 ``` 
 
 ## Sample directive 2 (Real case usage)
-
+### JS
 ```javascript
 var app = angular.module('app', []);
 
@@ -208,6 +208,75 @@ angular.module('app').controller('scheduleCtrl',function($scope) {
 });
 ```
 
+## Sample directive 3 (Real case usage)
+```javascript
+var app = angular.module('app', []);
+
+app.value('scFollowedInstructors', []);
+
+
+app.controller('scInstructorsCtrl', function($scope, scFollowedInstructors) {
+  $scope.scFollowedInstructors = scFollowedInstructors;
+});
+
+app.directive('scInstructors', function() {
+  return {
+    restrict: 'E',
+    replace: true,
+    templateUrl: 'scInstructors.html',
+    controller: 'scInstructorsCtrl'
+  }
+});
+
+app.directive('scFollowInstructor', function(scFollowedInstructors) {
+  return {
+    restrict: 'E',
+    replace: true,
+    templateUrl: 'scFollowInstructor.html',
+    scope: {
+      instructorToFollow: '='
+    },
+    link: function(scope, element, attrs, ctrl) {
+      scope.followed = function() {
+        return scFollowedInstructors.indexOf(scope.instructorToFollow) > -1;
+      }
+      scope.followInstructor = function() {
+        scFollowedInstructors.push(scope.instructorToFollow);
+      }
+      scope.unFollowInstructor = function() {
+        scFollowedInstructors.splice(scFollowedInstructors.indexOf(scope.instructorToFollow), 1);
+      }
+    }
+  }
+});
+
+angular.module('app').controller('scheduleCtrl',function($scope) {
+  $scope.instructorList = [
+    {id: 1, name: 'Professor Snape'},
+    {id: 2, name: 'Provessor McGonagall'},
+    {id: 3, name: 'Professor Dumbledore'}
+  ]
+});
+```
+### instructors
+```html
+<div class="well sidebar-nav">
+  <h3>Instructors ({{scFollowedInstructors.length}} followed)</h3>
+  <div class="row" ng-repeat="instructor in instructorList">
+    <div class="col-md-6">{{instructor.name}}</div>
+    <div class="col-md-6"><sc-follow-instructor instructor-to-follow="instructor" /></div>
+  </div>
+</div>
+```
+scFollowInstructor.html
+
+```html
+<div class="instructor-follow-button">
+  <button ng-show="followed()" ng-click="unFollowInstructor()" class="btn btn-info btn-xs">Unfollow</button>
+  <button ng-hide="followed()" ng-click="followInstructor()" class="btn btn-info btn-xs">Follow</button>
+</div>
+
+```
 
 {% endraw %}
 
