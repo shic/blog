@@ -40,8 +40,9 @@ myApp.directive("searchResult", function (){
         templateUrl:'path/search-result.html',
         controller: 'SearchCtrl',
         controllerAs: 'vm',
-        replace: 'true',
+        replace: 'true', // Replace all the properties in this tag (default is false) e.g. http://plnkr.co/edit/uQGHI1?p=preview 
         // Isolate the scope, local scope binding
+        // If you delete this, this directive will share the parent's scope
         scope:{
             personName:"@" // @ for text, one way binding 
             personObject:"=" // = for object,  two way binding
