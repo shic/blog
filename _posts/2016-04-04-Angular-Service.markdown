@@ -183,5 +183,86 @@ app.config(function(registrationProvider) {
 
 <h2>  Formatting with Filters</h2>
 
-	{{12.9 | currency | number:0 }}
-displays: $13
+	{{12.9 | currency | number:0 }} //Output: $13
+
+
+## Commminicating between Component
+
+### Communicating with Events
+
+```javascript
+var app = angular.module('app', []);
+
+app.controller('scCatalogCtrl', function($scope, catalog, $rootScope) {
+  $scope.catalog = catalog;
+
+  $scope.registerCourse = function(course) {
+    $rootScope.$broadcast("course:registered", course); // $broadcast: Raise the event and send it downward to all child scope, so "scCatalogCtrl" can not raise event for "scScheduleCtrl", so we should bring in a dependency "$rootScope", then call "$broadcast"
+    //$emit raises the event and send it up the scope chain
+    course.registered = true;
+  }
+
+});
+
+app.controller('scScheduleCtrl', function($scope, schedule) {
+  $scope.schedule = schedule;
+
+  $scope.$on('course:registered', function(event, course) { //Listen to the event with $on, the first param should be "event", add other params after 
+    schedule.push({id: course.id, name: course.name, credits: course.credits});
+  })
+});
+
+app.controller('scRegistrationCtrl',function($scope, toastr) {
+
+  $scope.notify = function(msg) {
+    toastr.success(msg);
+    console.log(msg);
+  }
+
+  $scope.$on('course:registered', function(event, course) {
+    $scope.notify('You have registered for ' + course.name);
+  })
+
+});
+```
+### Communicating with Service
+
+```javascript
+var app = angular.module('app', []);
+
+app.factory('notifier', function(toastr) {
+  return {
+    notify: function(msg) {
+      toastr.success(msg);
+      console.log(msg);
+    }
+  }
+});
+
+app.factory('registration', function(schedule) {
+  return {
+    registerCourse: function(course) {
+      schedule.push({id: course.id, name: course.name, credits: course.credits});
+      course.registered = true;
+    }
+  }
+})
+
+app.controller('scCatalogCtrl', function($scope, catalog, registration, notifier) {
+  $scope.catalog = catalog;
+
+  $scope.registerCourse = function(course) {
+    registration.registerCourse(course);
+    notifier.notify('You have registered for ' + course.name);
+  }
+
+});
+
+app.controller('scScheduleCtrl', function($scope, schedule) {
+  $scope.schedule = schedule;
+});
+
+app.controller('scRegistrationCtrl',function($scope) {
+
+});
+```
