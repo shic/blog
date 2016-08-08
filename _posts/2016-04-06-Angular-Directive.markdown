@@ -151,6 +151,7 @@ myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
 
 ## Sample directive 2 (Real case usage)
 ### JS
+
 ```javascript
 var app = angular.module('app', []);
 
