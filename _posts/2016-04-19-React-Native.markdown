@@ -77,3 +77,7 @@ export default {
 
 pluralsight-redux-starter: https://github.com/coryhouse/pluralsight-redux-starter
 react-slingshot: https://github.com/coryhouse/react-slingshot
+
+## Tutorial
+
+React-Native学习指南 https://github.com/reactnativecn/react-native-guide
