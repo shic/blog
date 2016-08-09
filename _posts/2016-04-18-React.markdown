@@ -8,7 +8,7 @@ header-img: "img/post-bg-01.jpg"
 
 # Tools
 
-## Set indent to 2 space
+## Webstorm Set indent to 2 space
 File name: .editorconfig
 
 ```javascript
@@ -73,7 +73,7 @@ export default {
 
 # Note
 
-## React Native Skeleton
+## React Skeleton
 
 pluralsight-redux-starter: https://github.com/coryhouse/pluralsight-redux-starter
 react-slingshot: https://github.com/coryhouse/react-slingshot
