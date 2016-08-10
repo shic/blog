@@ -70,6 +70,9 @@ export default {
   }
 };
 ```
+# Debug
+
+redux logger https://github.com/evgenyrodionov/redux-logger#usage
 
 # Note
 
