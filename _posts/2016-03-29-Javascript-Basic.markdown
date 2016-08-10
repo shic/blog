@@ -207,6 +207,23 @@ display(fluffy.__proto__.__proto__.hasOwnProperty('speak')) // Output: true
 ```
 # ES6
 
+## Arrow functions
+
+```javascript
+(param1, param2, …, paramN) => { statements }
+(param1, param2, …, paramN) => expression // equivalent to:  => { return expression; }
+
+// Parentheses are optional when there's only one parameter:
+(singleParam) => { statements }
+singleParam => { statements }
+
+// A function with no parameters requires parentheses:
+() => { statements }
+
+function(s){ return s.length } 
+s => s.length
+```
+
 ## ES6 class example
 ```javascript
 class Cat {
@@ -225,3 +242,4 @@ var cat = new Cat('Fluffy', 'White')
 display(cat)
 cat.speak()
 ```
+
