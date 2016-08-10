@@ -6,6 +6,13 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
+# Setup
+
+react-native init AwesomeProject
+cd AwesomeProject
+react-native run-ios
+react-native start
+
 # Tools
 
 ## Set indent to 2 space
@@ -72,7 +79,16 @@ export default {
 ```
 # Debug
 
-redux logger https://github.com/evgenyrodionov/redux-logger#usage
+## bug 1
+
+watchman watch-del-all
+npm start -- --reset-cache
+
+Select "Debug JS Remotely" from the Developer Menu
+ 
+Redux logger: https://github.com/evgenyrodionov/redux-logger#usage
+
+Url: http://localhost:8081/debugger-ui
 
 # Note
 
