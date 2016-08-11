@@ -82,6 +82,9 @@ export default {
 ## bug 1
 
 watchman watch-del-all
+
+rm -fr node_modules && npm i
+
 npm start -- --reset-cache
 
 Select "Debug JS Remotely" from the Developer Menu
