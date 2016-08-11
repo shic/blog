@@ -227,8 +227,26 @@ console.log(o.a); // 25
 			
 # ES6
 
-## Arrow functions
+## for loop
+```javascript
+let productId = 42;
+for (let productId = 0; productId < 10; productId++)
+{
 
+}
+```
+
+## For ... of loop
+```javascript
+
+var categories = ['hardware', 'software', 'vaporware'];
+
+for (var item of categories) {
+
+}
+```
+
+## Arrow functions
 ```javascript
 (param1, param2, …, paramN) => { statements }
 (param1, param2, …, paramN) => expression // equivalent to:  => { return expression; }
