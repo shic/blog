@@ -203,7 +203,6 @@ display(fluffy) //Output: {voice:Meow name:Fluffy color:White}
 display(Object.keys(fluffy.__proto__.__proto__)) //Using class syntex, Members of classed are not enumerable. So this speak function is not an enumrable property of the animal class
 display(fluffy.__proto__.__proto__.hasOwnProperty('speak')) // Output: true
 
-
 ```
 
 ## Defining getters and setters
