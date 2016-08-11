@@ -300,6 +300,29 @@ showCategories(123, 'search', 'advertising');
 
 ## Module
 
+traceur-compiler https://github.com/google/traceur-compiler
+
+```javascript
+File base.js:
+import { projectId as id, projectName } from 'module1.js';
+console.log(`${projectName} has id: ${id}`);
+
+File module1.js:
+export let projectId = 99;
+export let projectName ='BuildIt';
+
+
+File base.js:
+import someValue from 'module1.js';
+console.log(someValue);
+
+File module1.js:
+let projectName ='BuildIt';
+export let projectId = 99;
+export default projectName;
+
+
+```
 
 ## ES6 class 
 ```javascript
