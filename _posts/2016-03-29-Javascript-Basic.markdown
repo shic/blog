@@ -227,7 +227,7 @@ console.log(o.a); // 25
 			
 # ES6
 
-## for loop
+## For loop
 ```javascript
 let productId = 42;
 for (let productId = 0; productId < 10; productId++)
@@ -246,6 +246,34 @@ for (var item of categories) {
 }
 ```
 
+## Template Literals
+```javascript
+let invoiceNum = '1350';
+console.log(`Invoice Number: ${invoiceNum}`);
+```
+
+## Destructuring
+```javascript
+let salary = ['32000', '50000'];
+let low, average, high;
+[ low, average, high = '88000' ] = salary;
+console.log(average); //Output: 50000
+
+let salary = ['32000', '50000', '75000'];
+let [ low, ...remaining ] = salary;
+console.log(remaining); //Output: ["50000", "75000"]
+
+let salary = {
+	low: '32000'
+	average: '50000'
+	high: '75000'
+};
+let { low, average, high} = salary;
+console.log(high); //Output: 75000
+
+```
+
+
 ## Arrow functions
 ```javascript
 (param1, param2, …, paramN) => { statements }
@@ -262,7 +290,18 @@ function(s){ return s.length }
 s => s.length
 ```
 
-## ES6 class example
+## Rest and Spread Operators
+```javascript
+var showCategories = function (productId, ...categories) {
+	console.log(categories); //Output: ['search', 'advertising']
+};
+showCategories(123, 'search', 'advertising');
+```
+
+## Module
+
+
+## ES6 class 
 ```javascript
 class Cat {
   constructor(name, color) {
