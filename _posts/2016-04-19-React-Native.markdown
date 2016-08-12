@@ -93,7 +93,28 @@ Redux logger: https://github.com/evgenyrodionov/redux-logger#usage
 
 Url: http://localhost:8081/debugger-ui
 
+## Pause on caught Exception
+
+In chrome developer tool, sources-right most trangle button- active pause button
+
+## Inspect
+- Nuclide: cmd-shift-p -> inspector show 
+- Emulator: Show inspector
+
+
+## 数据流的处理
+### Baobab 
+
+github https://github.com/Yomguithereal/baobab
+
+http://www.christianalfoni.com/articles/2015_02_06_Plant-a-Baobab-tree-in-your-flux-application
+
+http://www.christianalfoni.com/articles/2015_04_26_Handling-complex-state-with-Baobab
+
 # Note
+
+## Gitbook
+https://unbug.gitbooks.io/react-native-training/content/
 
 ## React Native Skeleton
 
@@ -101,6 +122,7 @@ pluralsight-redux-starter: https://github.com/coryhouse/pluralsight-redux-starte
 react-slingshot: https://github.com/coryhouse/react-slingshot
 
 ## Tutorial
+Baobab 
 
 React-Native学习指南 https://github.com/reactnativecn/react-native-guide
 
