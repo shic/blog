@@ -341,4 +341,119 @@ var cat = new Cat('Fluffy', 'White')
 display(cat)
 cat.speak()
 ```
+### Constructor
+```javascript
+class Project {
+	constructor() {
+		console.log('constructing Project');
+	}
+}
 
+class SoftwareProject extends Project {
+	constructor() {
+		super();
+		console.log('constructing SoftwareProject');
+	}
+}
+
+let p = new SoftwareProject(); //Output: constructing Project /  constructing SoftwareProject
+```
+### Static members
+```javascript
+class Project {
+	static getDefaultId() {
+		return 99;
+	}
+}
+console.log(Project.getDefaultId());//Output: 99
+```
+### new.target
+#### Point to the original function that called
+```javascript
+class Project {
+	constructor() {
+		console.log(new.target.getDefaultId());
+	}
+}
+class SoftwareProject extends Project {
+	static getDefaultId() { return 99; }
+}
+var p = new SoftwareProject();//Output: 99
+```
+
+## Symbol
+```javascript
+const CALCULATE_EVENT_SYMBOL = Symbol('calculate event');
+console.log(CALCULATE_EVENT_SYMBOL.toString()); // Output: Symbol(calculate event)
+```
+
+```javascript
+let s = Symbol('event');
+let s2 = Symbol('event');
+console.log(s === s2);// Output: false
+```
+
+```javascript
+let s = Symbol.for('event');
+let s2 = Symbol.for('event');
+console.log(s === s2);// Output: true
+```
+
+```javascript
+let article = {
+	title: 'Whiteface Mountain',
+	[Symbol.for('article')]: 'My Article'
+};
+let value = article[Symbol.for('article')];
+console.log(value);// Output: My Article
+```
+
+```javascript
+//Object Extensions
+let a = { a: 1 }, b = { a: 5, b: 2 };
+let target = {};
+Object.assign(target, a, b);
+console.log(target);// Output: {a: 5, b: 2}
+```
+
+```javascript
+// Object.is() replace ===
+let amount = NaN;
+console.log(Object.is(amount, amount));// Output: true
+console.log(amount === amount);// Output: false
+```
+#### String
+```javascript
+let title = 'Santa Barbara Surf Riders';
+console.log(title.startsWith('Santa'));// Output: true
+console.log(title.endsWith('Rider'));// Output: false
+console.log(title.includes('ba'));// Output: true
+
+let wave = '\u{1f30a}';
+console.log(wave.repeat(10)); //Output: 🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊
+```
+#### Number
+```javascript
+let sum = 408.2;
+console.log(Number.isInteger(sum));// Output: false
+
+let a = Math.pow(2, 53) - 1;
+console.log(Number.isSafeInteger(a));//true
+a = Math.pow(2, 53);
+console.log(Number.isSafeInteger(a));//false
+
+//trunc() the integer part of a number
+console.log(Math.trunc(27.1)); //27
+```
+
+```javascript
+// Output: 
+```
+
+```javascript
+// Output: 
+```
+
+```javascript
+// Output: 
+```
