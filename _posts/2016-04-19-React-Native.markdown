@@ -6,78 +6,62 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
+# Lifecyle
+
+## MOUNT
+- getDefaultProps
+- getInitialState
+- componentWillMount
+  - Register listener
+  - 
+- render
+
+## MOUNTED
+- componentDidMount
+
+## RECEIVING PROPS
+- componentWillReceiveProps
+  - update data here
+- componentWillMount
+- componentWillUnmount
+  - Unregister listener
+
+## UPDATED
+- componentDidUpdate
+- 
+
+## State 
+The state belongs to the component
+
+
+
+
 # Setup
 
-react-native init AwesomeProject
-cd AwesomeProject
-react-native run-ios
-react-native start
+1. react-native init AwesomeProject // Suggest: use upper case for the project name 
+2. cd AwesomeProject
+3. react-native run-ios
+4. react-native start
+5. npm i
+
+## babel
+1. Add dependency In package.json
+
+```javascript
+    "babel-eslint": "4.1.6",
+    "eslint": "1.10.3",
+    "eslint-config-airbnb": "2.1.1",
+    "eslint-plugin-react": "3.12.0",
+    "react-native-swipeout": "2.0.12",
+    "redux": "^3.3.1"
+```
+2. Add .eslintrc
 
 # Tools
 
-## Set indent to 2 space
-File name: .editorconfig
-
-```javascript
-# editorconfig.org
-root = true
-
-[*]
-indent_style = space
-indent_size = 2
-end_of_line = lf
-charset = utf-8
-trim_trailing_whitespace = true
-insert_final_newline = true
-
-[*.md]
-trim_trailing_whitespace = false
-```
-
-## Webpack
-### webpack is a module bundler. This means webpack takes modules with dependencies and emits static assets representing those modules.
-
-Configuration file is: webpack.config.dev.js
-
-```javascript
-import webpack from 'webpack';
-import path from 'path';
-
-export default {
-  debug: true,
-  devtool: 'cheap-module-eval-source-map',
-  noInfo: false, //Prod: set to true
-  entry: [
-    'eventsource-polyfill', // necessary for hot reloading with IE
-    'webpack-hot-middleware/client?reload=true', //For hot reload. Note that it reloads the page if hot module reloading fails.
-    './src/index'
-  ],
-  target: 'web',
-  output: { //Webpack do not generate any code, but we should put it here
-    path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
-  devServer: {
-    contentBase: './src'
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(), //Hot replace module 
-    new webpack.NoErrorsPlugin()
-  ],
-  module: { // Tell webpack the type of files we handle
-    loaders: [
-      {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
-      {test: /(\.css)$/, loaders: ['style', 'css']},
-      {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
-      {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
-      {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
-      {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
-    ]
-  }
-};
-```
 # Debug
+## Simulator system log (when app crash)
+Cmd+/
 
 ## bug 1
 
@@ -114,7 +98,8 @@ http://www.christianalfoni.com/articles/2015_04_26_Handling-complex-state-with-B
 # Note
 
 ## Gitbook
-https://unbug.gitbooks.io/react-native-training/content/
+E-book https://unbug.gitbooks.io/react-native-training/content/
+Video http://bbs.reactnative.cn/topic/759/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99react-native%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B-%E6%9B%B4%E6%96%B0%E5%88%B050%E9%9B%86%E5%95%A6/124
 
 ## React Native Skeleton
 
