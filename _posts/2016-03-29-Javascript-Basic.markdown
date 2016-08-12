@@ -407,9 +407,9 @@ let article = {
 let value = article[Symbol.for('article')];
 console.log(value);// Output: My Article
 ```
+#### Object Extensions
 
 ```javascript
-//Object Extensions
 let a = { a: 1 }, b = { a: 5, b: 2 };
 let target = {};
 Object.assign(target, a, b);
@@ -442,18 +442,131 @@ console.log(Number.isSafeInteger(a));//true
 a = Math.pow(2, 53);
 console.log(Number.isSafeInteger(a));//false
 
+console.log(Math.sign(-20));// -1
+console.log(Math.sign(20));// 1
+
 //trunc() the integer part of a number
 console.log(Math.trunc(27.1)); //27
 ```
-
+## Iterator
 ```javascript
-// Output: 
+let ids = [9000, 9001, 9002];
+let iter = ids[Symbol.iterator]();
+iter.next();
+iter.next();
+console.log(iter.next());// Output: {done: false, value: 9002}
+
+//Example 2
+let idMaker = {
+	[Symbol.iterator]() {
+		let nextId = 8000;
+		return {
+			next() {
+				let value = nextId>8002?undefined:nextId++;
+				let done = !value;
+				return { value, done };
+}};}};
+for (let v of idMaker)
+console.log(v);// 8000 8001 8002
+```
+## Generators
+### similar to iterator
+```javascript
+function *process() {
+	yield 8000;
+	yield 8001;
+}
+let it = process();
+console.log(it.next());// Output: {done: false, value: 8000}
+
+//Example 2
+function *process() {
+	let nextId = 7000;
+		while(true)
+			yield(nextId++);
+}
+
+//This is a generator
+for (let id of process()) {
+if (id > 7002) break;
+console.log(id);
+}
+
+```
+## Yielding in Generators
+```javascript
+function *process() {
+	yield 42;
+	yield* [1,2,3];
+}
+
+let it = process();
+console.log(it.next().value);//42
+console.log(it.next().value);//1
+console.log(it.next().value);//2
+console.log(it.next().value);//3
+console.log(it.next().value);//undefined 
+```
+## throw and return
+```javascript
+function *process() {
+	try {
+		yield 9000;
+		yield 9001;
+		yield 9002;
+	}
+	catch(e) {
+	}
+}
+let it = process();
+console.log(it.next().value);//9000
+console.log(it.throw('foo'));//{done:true, value:undefined}
+console.log(it.next());//{done:true, value:undefined}
+```
+## Promise 
+### For async request
+```javascript
+function doAsync() {
+	let p = new Promise(function (resolve, reject) {
+		console.log('in promise code');
+		setTimeout(function () {
+			console.log('resolving...');
+			resolve('someData');
+			// or reject('database error!');
+		}, 2000);
+	});
+	return p;
+}
+let promise = doAsync();// Output: in promise code (2 second delay) resolving...
+
+//function then take two params: success function and reject function
+doAsync().then(function (value) {
+	console.log('Fulfilled!'+ value);
+},
+function () {
+	console.log('Rejected!');
+})
+//you can chain another function by
+.then(function(value) {
+	console.log('Really! ' + value);
+});
+//when the error occurs, you can call catch
+.catch(function (reason) {
+	console.log('Error: ' + reason);
+});
+
+
 ```
 
 ```javascript
-// Output: 
-```
+let p1 = new Promise(...);
+let p2 = new Promise(...);
+Promise.all([p1, p2]).then(
+function (value) { console.log('Ok') },
+function (reason) { console.log('Nope') }
+);
+// assume p1 resolves after 3 seconds,
+// assume p2 resolves after 5 seconds
 
-```javascript
 // Output: 
 ```
