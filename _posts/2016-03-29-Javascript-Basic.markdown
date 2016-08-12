@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 
 ```javascript
 var things = [
-	1,
+    1,
 	'2',
 	function(){
 		alert('Hello');
