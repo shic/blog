@@ -321,7 +321,6 @@ let projectName ='BuildIt';
 export let projectId = 99;
 export default projectName;
 
-
 ```
 
 ## ES6 class 
