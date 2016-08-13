@@ -548,6 +548,7 @@ console.log(it.next());//{done:true, value:undefined}
 ```
 
 ## Promise 
+
 ### For async request
 
 ```javascript
@@ -613,6 +614,7 @@ Promise.race([p1, p2]).then(
 ```
 
 ## Array
+
 ### Array Extension
 
 ```javascript
@@ -682,7 +684,9 @@ console.log(...ids.values());//A B C
 ```
 
 ### ArrayBuffer and Typed Arrays
+
 #### ArrayBuffer is array of 8 bytes , is useful to hold binaray data like image and video 
+
 #### Typed Arrays, access data in the array buffer
 
 ```javascript
@@ -792,4 +796,53 @@ console.log(r instanceof Restaurant);//true
 ### 
 
 ```javascript
+
+```
+
+### 
+
+```javascript
+
+```
+
+### 
+
+```javascript
+
+```
+
+### 
+
+```javascript
+
+```
+
+### 
+
+```javascript
+
+```
+
+### 
+
+```javascript
+
+```
+
+### 
+
+```javascript
+
+```
+
+### 
+
+```javascript
+
+```
+
+### 
+
+```javascript
+
 ```
