@@ -347,6 +347,7 @@ cat.speak()
 ```
 
 ### Constructor
+
 ```javascript
 class Project {
 	constructor() {
