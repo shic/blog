@@ -130,6 +130,7 @@ var arr = ['red','blue','green'] // Same as: var arr = new Array('red','blue','g
 var last = arr.lastElement
 
 ```
+
 ### Usage
 
 ```javascript
