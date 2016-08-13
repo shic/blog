@@ -131,6 +131,7 @@ var last = arr.lastElement
 
 ```
 ### Usage
+
 ```javascript
 function Cat(name, color) {
     this.name = name
@@ -342,6 +343,7 @@ display(cat)
 cat.speak()
 ```
 ### Constructor
+
 ```javascript
 class Project {
 	constructor() {
