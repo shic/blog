@@ -364,6 +364,7 @@ class SoftwareProject extends Project {
 
 let p = new SoftwareProject(); //Output: constructing Project /  constructing SoftwareProject
 ```
+
 ### Static members
 ```javascript
 class Project {
@@ -373,6 +374,7 @@ class Project {
 }
 console.log(Project.getDefaultId());//Output: 99
 ```
+
 ### new.target
 #### Point to the original function that called
 ```javascript
@@ -388,6 +390,7 @@ var p = new SoftwareProject();//Output: 99
 ```
 
 ## Symbol
+
 ```javascript
 const CALCULATE_EVENT_SYMBOL = Symbol('calculate event');
 console.log(CALCULATE_EVENT_SYMBOL.toString()); // Output: Symbol(calculate event)
@@ -413,6 +416,7 @@ let article = {
 let value = article[Symbol.for('article')];
 console.log(value);// Output: My Article
 ```
+
 #### Object Extensions
 
 ```javascript
@@ -428,7 +432,9 @@ let amount = NaN;
 console.log(Object.is(amount, amount));// Output: true
 console.log(amount === amount);// Output: false
 ```
+
 #### String
+
 ```javascript
 let title = 'Santa Barbara Surf Riders';
 console.log(title.startsWith('Santa'));// Output: true
@@ -438,7 +444,9 @@ console.log(title.includes('ba'));// Output: true
 let wave = '\u{1f30a}';
 console.log(wave.repeat(10)); //Output: 🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊
 ```
+
 #### Number
+
 ```javascript
 let sum = 408.2;
 console.log(Number.isInteger(sum));// Output: false
@@ -454,7 +462,9 @@ console.log(Math.sign(20));// 1
 //trunc() the integer part of a number
 console.log(Math.trunc(27.1)); //27
 ```
+
 ## Iterator
+
 ```javascript
 let ids = [9000, 9001, 9002];
 let iter = ids[Symbol.iterator]();
@@ -475,8 +485,11 @@ let idMaker = {
 for (let v of idMaker)
 console.log(v);// 8000 8001 8002
 ```
+
 ## Generators
+
 ### similar to iterator
+
 ```javascript
 function *process() {
 	yield 8000;
@@ -499,7 +512,9 @@ console.log(id);
 }
 
 ```
+
 ## Yielding in Generators
+
 ```javascript
 function *process() {
 	yield 42;
@@ -513,7 +528,9 @@ console.log(it.next().value);//2
 console.log(it.next().value);//3
 console.log(it.next().value);//undefined 
 ```
+
 ## throw and return
+
 ```javascript
 function *process() {
 	try {
@@ -529,8 +546,10 @@ console.log(it.next().value);//9000
 console.log(it.throw('foo'));//{done:true, value:undefined}
 console.log(it.next());//{done:true, value:undefined}
 ```
+
 ## Promise 
 ### For async request
+
 ```javascript
 function doAsync() {
 	let p = new Promise(function (resolve, reject) {
@@ -563,7 +582,9 @@ function () {
 
 
 ```
+
 ### Multiple promises
+
 ```javascript
 let p1 = new Promise(...);
 let p2 = new Promise(...);
@@ -593,6 +614,7 @@ Promise.race([p1, p2]).then(
 
 ## Array
 ### Array Extension
+
 ```javascript
 let salaries = Array.of(90000);
 
@@ -658,15 +680,18 @@ console.log(...ids.keys());//0 1 2
 let ids = ['A', 'B', 'C'];
 console.log(...ids.values());//A B C
 ```
+
 ### ArrayBuffer and Typed Arrays
 #### ArrayBuffer is array of 8 bytes , is useful to hold binaray data like image and video 
 #### Typed Arrays, access data in the array buffer
+
 ```javascript
 let buffer = new ArrayBuffer(1024); //1024 is the length of new byte array
 console.log(buffer.byteLength); //1024
 ```
 
 ### Map
+
 ```javascript
 let employee1={ name: 'Jake' };
 let employee2 ={ name: 'Janet' };
@@ -699,7 +724,9 @@ let list= [...employees.entries()];
 console.log(list[0][1]); //ABC
 
 ```
+
 ### Set
+
 ```javascript
 let perks = new Set();
 perks.add('Car');
@@ -729,7 +756,9 @@ let perks = new Set([
 
 console.log(perks.size);//2
 ```
+
 ### Subclassing
+
 ```javascript
 class Perks extends Array{
 	sum(){
@@ -746,6 +775,7 @@ console.log(a.sum());//30
 ## The Reflect API
 
 ### Reflect.construct(target, argumentsList[, newTarget])
+
 ```javascript
 class Restaurant {
 	constructor(name, city) {
@@ -760,5 +790,6 @@ console.log(r instanceof Restaurant);//true
 ```
 
 ### 
+
 ```javascript
 ```
