@@ -112,3 +112,6 @@ Baobab
 React-Native学习指南 https://github.com/reactnativecn/react-native-guide
 
 构建 F8 2016 App: http://f8-app.liaohuqiu.net/tutorials/building-the-f8-app/data/
+
+## E-books
+https://github.com/apoterenko/javascript-ebooks
