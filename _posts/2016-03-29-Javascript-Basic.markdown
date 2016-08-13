@@ -155,6 +155,7 @@ display(carlo.hasOwnProperty('age')) // Output: true. carlo now has his own prop
 ```
 
 ### Prototype chains
+
 #### Create prototype chains without using class syntex
 
 ```javascript
