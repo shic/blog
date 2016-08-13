@@ -557,16 +557,202 @@ function () {
 
 
 ```
-
+### Multiple promises
 ```javascript
 let p1 = new Promise(...);
 let p2 = new Promise(...);
 Promise.all([p1, p2]).then(
-function (value) { console.log('Ok') },
-function (reason) { console.log('Nope') }
+	function (value) { console.log('Ok') },
+	function (reason) { console.log('Nope') }
 );
-// assume p1 resolves after 3 seconds,
-// assume p2 resolves after 5 seconds
+// assume p1 resolves after 1 second,
+// assume p2 is rejected after 2 seconds
 
-// Output: 
+// Output: (2 second delay) Nope
+```
+
+```javascript
+//Race returns when one task finishes
+Promise.race([p1, p2]).then(
+	function (value) { console.log('Ok') },
+	function (reason) { console.log('Nope') }
+);
+
+// assume p1 is rejected after 3 second,
+
+// assume p2 resolves after 5 seconds
+// Output: (3 second delay) Nope
+
+```
+
+## Array
+### Array Extension
+```javascript
+let salaries = Array.of(90000);
+
+let amounts = [800, 810, 820];
+let salaries = Array.from(amounts, v => v+100 );
+console.log(salaries); //[900,910,920]
+
+//Third param is an object which is visiable in 'this'
+let amounts = [800, 810, 820];
+let salaries = Array.from(amounts, function (v) {
+	return v + this.adjustment;
+}, { adjustment: 50 });
+
+console.log(salaries);//[850,860,870]
+
+// -> function do not let you change 'this', this will be always the context you setted when it appares, so you can not change it.
+let amounts = [800, 810, 820];
+let salaries = Array.from(amounts, v => v + this.adjustment,{ adjustment: 50 });
+console.log(salaries);//[NaN, NaN, NaN]
+
+let salaries = [600, 700, 800];
+salaries.fill(900);
+console.log(salaries);//[900, 900, 900]
+
+let salaries = [600, 700, 800];
+salaries.fill(900, 1);//Start to fill arrary from index 1
+console.log(salaries); //[600, 900, 900]
+
+let salaries = [600, 700, 800];
+salaries.fill(900, 1, 2); //Start to fill arrary from index 1, stop at index 2 (not inclusive)
+console.log(salaries);//[600, 900, 800]
+
+let salaries = [600, 700, 800];
+salaries.fill(900, -1);//Start counting from the end of array
+console.log(salaries);//[600, 700, 900]
+
+let salaries = [600, 700, 800];
+let result = salaries.find(value => value >= 750);//Scan array, and for each element will call the function
+console.log(result);//800
+
+let salaries = [600, 700, 800];
+let result = salaries.find(value => value >= 650); //As soon as find the element, it will stop the scan and return it
+console.log(result);//700
+
+let salaries = [600, 700, 800];
+salaries.copyWithin(2, 0);// 2 refer to the destination index, 0 is the source index (start reading from)
+console.log(salaries);//[600, 700, 600]
+
+let ids = [1, 2, 3, 4, 5];
+ids.copyWithin(0, 1);//Start reading from position 1, so read  2, 3, 4, 5, then place it from position 0, got [2, 3, 4, 5, 5] which the last position is not touched
+console.log(ids);//[2, 3, 4, 5, 5]
+
+let ids = [1, 2, 3, 4, 5];
+ids.copyWithin(3, 0, 2);//only want to copy two values
+console.log(ids//[1, 2, 3, 1, 2]
+
+let ids = ['A', 'B', 'C'];
+console.log(...ids.entries());//[0,"A"], [1,"B"], [2,"C"]  entries create an array for each element [index, value]
+
+let ids = ['A', 'B', 'C'];
+console.log(...ids.keys());//0 1 2
+
+let ids = ['A', 'B', 'C'];
+console.log(...ids.values());//A B C
+```
+### ArrayBuffer and Typed Arrays
+#### ArrayBuffer is array of 8 bytes , is useful to hold binaray data like image and video 
+#### Typed Arrays, access data in the array buffer
+```javascript
+let buffer = new ArrayBuffer(1024); //1024 is the length of new byte array
+console.log(buffer.byteLength); //1024
+```
+
+### Map
+```javascript
+let employee1={ name: 'Jake' };
+let employee2 ={ name: 'Janet' };
+
+let employees= new Map();
+employees.set(employee1, 'ABC');
+employees.set(employee2, '123');
+
+console.log(employees.get(employee1)); //ABC
+
+employees.delete(employee2);
+console.log(employees.size);//1
+
+employees.clear();
+console.log(employees.size);//0
+
+let arr = [
+	[employee1, 'ABC'],
+	[employee2, '123']
+
+];
+let employees = new Map(arr);
+console.log(employees.size);//2
+console.log(employees.has(employee2));//true
+
+let list = [...employees.values()];
+console.log(list);//['ABC', '123']
+
+let list= [...employees.entries()];
+console.log(list[0][1]); //ABC
+
+```
+### Set
+```javascript
+let perks = new Set();
+perks.add('Car');
+perks.add('Super Long Vacation');
+perks.add('Car');
+
+console.log(perks.size);//2
+
+let perks= new Set([
+	'Car',
+	'Jet'
+]);
+console.log(perks.size);//2
+
+let newPerks= new Set(perks); //newPerks is a copy of perks
+console.log(newPerks.size);//2
+console.log(perks.has('Jet'));//true
+console.log(...perks.keys());//Car Jet
+console.log(...perks.values());//Car Jet
+console.log(...perks.entries());//Car,Car Jet,Jet
+
+//Do not put object in set, they are considered as two different obj
+let perks = new Set([
+	{ id: 800 },
+	{ id: 800 }
+]);
+
+console.log(perks.size);//2
+```
+### Subclassing
+```javascript
+class Perks extends Array{
+	sum(){
+		let total =0;
+		this.map(v => total += v);
+		return total;
+	}
+let a = Perks.from([5, 10, 15]);
+
+console.log(a.sum());//30
+
+```
+
+## The Reflect API
+
+### Reflect.construct(target, argumentsList[, newTarget])
+```javascript
+class Restaurant {
+	constructor(name, city) {
+		console.log(`${name} in ${city}`);
+	}
+}
+
+let r = Reflect.construct(Restaurant, ["Zoey's", "Goleta"]);//similar to let r= new Restaurant("Zoey's", "Goleta");
+console.log(r instanceof Restaurant);//true
+
+
+```
+
+### 
+```javascript
 ```
