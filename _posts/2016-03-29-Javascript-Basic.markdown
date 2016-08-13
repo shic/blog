@@ -345,8 +345,8 @@ var cat = new Cat('Fluffy', 'White')
 display(cat)
 cat.speak()
 ```
-### Constructor
 
+### Constructor
 ```javascript
 class Project {
 	constructor() {
