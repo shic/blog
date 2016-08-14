@@ -22,6 +22,9 @@ var things = [
 things[2]();
 ```
 
+## Array shift() Method
+Remove the first item of an array
+
 ## Bracket notation
 
 ```javascript
