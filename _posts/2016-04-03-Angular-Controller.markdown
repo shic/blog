@@ -20,6 +20,12 @@ angular.module('app').controller('scheduleCtrl',function($scope, schedule) {
     $scope.schedule.register(newClass);
   }
 });
+
+//dependency declaration using inline annotations so that DI does not break after minification:
+angular.module('7minWorkout').controller('WorkoutController',['$scope', function($scope) {
+
+}]);
+
 ```
 
 ```javascript
