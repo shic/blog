@@ -300,3 +300,43 @@ app.controller('scRegistrationCtrl',function($scope) {
 
 });
 ```
+
+## Promise
+
+With a promise library, callbacks can be converted into:
+
+```javascript
+   Q.fcall(promisedStep1)
+   .then(promisedStep2)
+   .then(promisedStep3)
+   .then(promisedStep4)
+   .then(function (value4) {
+       // Do something with value4
+   })
+   .catch(function (error) {
+       // Handle any error from all above steps
+}) .done();
+```
+
+Instead of using $watch service, sometimes it's better to use promise
+
+```javascript
+var startExercise = function (exercisePlan) {
+        $scope.currentExercise = exercisePlan;
+        $scope.currentExerciseDuration = 0;
+        $interval(function () {
+		++$scope.currentExerciseDuration;
+	}, 1000, $scope.currentExercise.duration)
+	//Use then when interval returns a promise
+	.then(function () {
+	            var next = getNextExercise(exercisePlan);
+	            if (next) {
+	                startExercise(next);
+	            } else {
+	                console.log("Workout complete!")
+	            }
+	});
+};
+
+```
+
