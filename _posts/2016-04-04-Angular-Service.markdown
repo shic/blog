@@ -166,6 +166,15 @@ app.config(function(registrationProvider) {
 
 ## $interval
 
+### Usage
+
+#### $interval(fn, delay, [count], [invokeApply], [Pass]);
+
+- fn	function()	A function that should be called repeatedly.
+- delay	number	Number of milliseconds between each function call.
+- count	number	Number of times to repeat. If not set, or 0, will repeat indefinitely. (default: 0)
+
+Ref: https://docs.angularjs.org/api/ng/service/$interval
 
 ## $location
 for interacting with the browser’s location
