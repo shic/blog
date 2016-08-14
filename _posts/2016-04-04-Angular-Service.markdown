@@ -166,15 +166,34 @@ app.config(function(registrationProvider) {
 
 ## $interval
 
-### Usage
-
-#### $interval(fn, delay, [count], [invokeApply], [Pass]);
+### $interval(fn, delay, [count], [invokeApply], [Pass]);
 
 - fn	function()	A function that should be called repeatedly.
 - delay	number	Number of milliseconds between each function call.
 - count	number	Number of times to repeat. If not set, or 0, will repeat indefinitely. (default: 0)
 
 Ref: https://docs.angularjs.org/api/ng/service/$interval
+
+## $watch
+
+### $scope.$watch(watchExpression, [listener], [objectEquality]); 
+- watchExpression, can be either a string expression or afunction. If the watchExpression value changes, the listener is invoked.
+- listener takes a function which is invoked with three parameters namely newValue, oldValue, and the current scope. This is where we write logic to respond to the changes.
+
+```javascript
+function(n,o){console.log('Data changed!');
+
+//Or
+function (nVal) {
+    if (nVal == $scope.currentExercise.duration) {
+        var next = getNextExercise($scope.currentExercise);
+	}
+}
+```
+
+- objectEquality (default is set to false): 
+	-false: the framework is not tracking internal object changes
+
 
 ## $location
 for interacting with the browser’s location
