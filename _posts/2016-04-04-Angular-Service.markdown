@@ -164,9 +164,15 @@ app.config(function(registrationProvider) {
 
 # Angular default services
 
-**$location , for interacting with the browser’s location, **
+## $interval
 
-**$route , for switching views based on location (URL) changes**
+
+## $location
+for interacting with the browser’s location
+
+## $route
+
+for switching views based on location (URL) changes
 
 	var someModule = angular.module('someModule', [...module dependencies...])
 	someModule.config(function($routeProvider) {
