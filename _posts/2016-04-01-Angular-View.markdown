@@ -4,6 +4,14 @@ title:      "Angular View"
 date:       2016-04-01 12:00:00
 author:     "Shi"
 ---
+
+# Style
+
+## Style in ng-style
+
+	ng-style="{'width' :(currentExerciseDuration/currentExercise.duration) * 100 + '%'}"
+
+
 # Avoid FOUC in views
 
 Contents before view rendered
