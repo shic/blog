@@ -12,10 +12,10 @@ header-img: "img/post-bg-01.jpg"
 ```javascript
 var things = [
     1,
-	'2',
-	function(){
-		alert('Hello');
-	}
+    '2',
+    function(){
+        alert('Hello');
+    }
 ]
 
 //Call function in array
@@ -243,6 +243,8 @@ Always use let instead of var.
 ```javascript
 const PI = 3.1415;
 PI = 3; // TypeError: Assignment to constant variable.
+
+const foo = Object.freeze({}); //Const for an object
 ```
 
 ## For loop
@@ -454,6 +456,12 @@ let title = 'Santa Barbara Surf Riders';
 console.log(title.startsWith('Santa'));// Output: true
 console.log(title.endsWith('Rider'));// Output: false
 console.log(title.includes('ba'));// Output: true
+
+var s = 'Hello world!';
+//second param is the init point
+s.startsWith('world', 6) // true
+s.endsWith('Hello', 5) // true
+s.includes('Hello', 6) // false
 
 let wave = '\u{1f30a}';
 console.log(wave.repeat(10)); //Output: 🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊
@@ -740,6 +748,17 @@ console.log(list);//['ABC', '123']
 
 let list= [...employees.entries()];
 console.log(list[0][1]); //ABC
+
+//iterate map
+var map = new Map();
+map.set('first', 'hello');
+map.set('second', 'world');
+
+for (let [key, value] of map) {
+  console.log(key + " is " + value);
+}
+// first is hello
+// second is world
 
 ```
 
