@@ -234,6 +234,17 @@ console.log(o.a); // 25
 			
 # ES6
 
+ES6 compatibility table: http://kangax.github.io/compat-table/es6/
+
+## let, var, const
+
+Always use let instead of var.
+
+```javascript
+const PI = 3.1415;
+PI = 3; // TypeError: Assignment to constant variable.
+```
+
 ## For loop
 ```javascript
 let productId = 42;
@@ -849,3 +860,8 @@ console.log(r instanceof Restaurant);//true
 ```javascript
 
 ```
+# Note
+
+## Books
+
+ECMAScript 6 入门: http://es6.ruanyifeng.com/#docs/intro
