@@ -122,7 +122,7 @@ React-Native学习指南 https://github.com/reactnativecn/react-native-guide
 
 React Native 高质量学习资料汇总 http://www.jianshu.com/p/454f2e6f28e9
 
-
+掘金list http://gold.xitu.io/tag/React%20Native
 
 构建 F8 2016 App: http://f8-app.liaohuqiu.net/tutorials/building-the-f8-app/data/
 
