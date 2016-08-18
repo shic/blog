@@ -95,6 +95,10 @@ http://www.christianalfoni.com/articles/2015_02_06_Plant-a-Baobab-tree-in-your-f
 
 http://www.christianalfoni.com/articles/2015_04_26_Handling-complex-state-with-Baobab
 
+## Comment
+
+  {/*Comment*/}
+
 # Note
 
 ## Gitbook
