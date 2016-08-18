@@ -95,6 +95,8 @@ http://www.christianalfoni.com/articles/2015_02_06_Plant-a-Baobab-tree-in-your-f
 
 http://www.christianalfoni.com/articles/2015_04_26_Handling-complex-state-with-Baobab
 
+http://www.jianshu.com/p/6d4cce9d914f 
+
 ## Comment
 
   {/*Comment*/}
