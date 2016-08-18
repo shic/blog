@@ -111,11 +111,25 @@ pluralsight-redux-starter: https://github.com/coryhouse/pluralsight-redux-starte
 react-slingshot: https://github.com/coryhouse/react-slingshot
 
 ## Tutorial
-Baobab 
+
+Studying blog http://www.lcode.org/
+
+Baobab http://www.jianshu.com/p/6d4cce9d914f 
 
 React-Native学习指南 https://github.com/reactnativecn/react-native-guide
+
+React Native 高质量学习资料汇总 http://www.jianshu.com/p/454f2e6f28e9
+
+
 
 构建 F8 2016 App: http://f8-app.liaohuqiu.net/tutorials/building-the-f8-app/data/
 
 ## E-books
 https://github.com/apoterenko/javascript-ebooks
+
+## Projects
+
+Project list http://www.lcode.org/category/react-native-zong/react-native-source-code/
+
+嘎嘎商城客户端 http://www.lcode.org/react-native-source-gagamall/
+
