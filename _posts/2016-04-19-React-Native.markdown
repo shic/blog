@@ -63,13 +63,13 @@ The state belongs to the component
 ## Simulator system log (when app crash)
 Cmd+/
 
-## bug 1
+## bug 
 
-watchman watch-del-all
+### [NPM modules get required from /Users/node_modules/ instead of the project directory](https://github.com/facebook/react-native/issues/4968)
 
-rm -fr node_modules && npm i
-
-npm start -- --reset-cache
+1. rm -fr node_modules && npm i
+2. node_modules/react-native/packager/packager.sh --reset-cache
+3. watchman watch-del-all
 
 Select "Debug JS Remotely" from the Developer Menu
  
