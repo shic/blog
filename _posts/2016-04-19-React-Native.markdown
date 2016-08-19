@@ -87,6 +87,7 @@ In chrome developer tool, sources-right most trangle button- active pause button
 
 
 ## 数据流的处理
+
 ### Baobab 
 
 github https://github.com/Yomguithereal/baobab
@@ -99,7 +100,9 @@ http://www.jianshu.com/p/6d4cce9d914f
 
 ## Comment
 
-  {/*Comment*/}
+```javascript
+{/*Comment*/}
+```
 
 # Note
 
