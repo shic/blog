@@ -88,6 +88,10 @@ In chrome developer tool, sources-right most trangle button- active pause button
 
 ## 数据流的处理
 
+### MobX
+
+https://github.com/mobxjs/mobx
+
 ### Baobab 
 
 github https://github.com/Yomguithereal/baobab
@@ -100,11 +104,13 @@ http://www.jianshu.com/p/6d4cce9d914f
 
 ## Comment
 
-```javascript
-{/*Comment*/}
-```
+  {/*Comment*/}
 
 # Note
+
+## Online build service
+
+bitrise https://www.bitrise.io/
 
 ## Gitbook
 E-book https://unbug.gitbooks.io/react-native-training/content/
@@ -122,6 +128,9 @@ Studying blog http://www.lcode.org/
 Baobab http://www.jianshu.com/p/6d4cce9d914f 
 
 React-Native学习指南 https://github.com/reactnativecn/react-native-guide
+
+React Native之React速学教程(上)  https://github.com/crazycodeboy/RNStudyNotes/blob/master/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B%20(%E4%B8%8A).md
+
 
 React Native 高质量学习资料汇总 http://www.jianshu.com/p/454f2e6f28e9
 
