@@ -125,13 +125,12 @@ react-slingshot: https://github.com/coryhouse/react-slingshot
 
 ## Tutorial
 
-Studying blog http://www.lcode.org/
-
-Baobab http://www.jianshu.com/p/6d4cce9d914f 
+[Snowflake code comments](http://bartonhammond.github.io/snowflake/containers/Main.js.html)
+[Lcode blog](http://www.lcode.org/)
 
 React-Native学习指南 https://github.com/reactnativecn/react-native-guide
  
-[React Native之React速学教程(上) ](https://github.com/crazycodeboy/RNStudyNotes/blob/master/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B%20(%E4%B8%8A).md)
+[React Native之React速学教程(上)](https://github.com/crazycodeboy/RNStudyNotes/blob/master/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B%20(%E4%B8%8A).md)
 
 React Native 高质量学习资料汇总 http://www.jianshu.com/p/454f2e6f28e9
 
