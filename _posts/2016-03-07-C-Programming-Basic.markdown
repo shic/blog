@@ -1,28 +1,26 @@
 ---
 layout:     post
 title:      "C Programming Basic"
-subtitle:   "AngularJS study path"
 date:       2016-03-07 12:00:00
 author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
-Compile
-Always compile with -Wall -Wextra and perhaps even with -Werror -pedantic-errors 
+# Compile
+Always compile with
 
-gcc -Wall -Wextra -O2 Bootstrap.c lista.c -o boot
-Eclipse 
+    -Wall -Wextra and perhaps even with -Werror -pedantic-errors 
+
+    gcc -Wall -Wextra -O2 Bootstrap.c lista.c -o boot
+    
+## Eclipse 
 How to use math.h in Eclipse with gcc
-#1 you should add the -lm option to GCC C Linker, NOT TO GCC C Compiler. To 
-do that, you should go to:
+ you should add the -lm option to GCC C Linker, NOT TO GCC C Compiler. To do that, you should go to:Project -> Properties -> C/C++ Build -> Settings -> Tool Settings (tab) -> GCC C Linker and in the "Command" text field type: "gcc -lm" (by default there is only "gcc").
+Add it to the linker options, Libraries-> add it in as a new library "m", > this will automatically add on the -l to the option.
 
-Project -> Properties -> C/C++ Build -> Settings -> Tool Settings (tab) -> 
-GCC C Linker
-and in the "Command" text field type: "gcc -lm" (by default there is only 
-"gcc").
 
-#2 Add it to the linker options, Libraries-> add it in as a new library "m", 
-> this will automatically add on the -l to the option.
+
+
 Debug 
 gcc -g try.c -o try
 
@@ -161,8 +159,10 @@ Read only the specific things：
 	
 	
 	
-	Using barriers in pthreads
-	
+## Using barriers in pthreads
+
+```javascript
+
 	#include <stdio.h> 
 	#include <pthread.h> 
 	#include <stdlib.h>
@@ -227,18 +227,18 @@ Read only the specific things：
 		if (ret != 0) {
 			printf("Unable to create thread1");
 		}
+		
 		ret = pthread_create(&thread_id_2, NULL, &thread2, NULL);
-	
 		if (ret != 0) {
 			printf("Unable to create thread2");
 		}
+		
 		ret = pthread_create(&thread_id_3, NULL, &thread3, NULL);
-	
 		if (ret != 0) {
 			printf("Unable to create thread3");
 		}
+		
 		ret = pthread_create(&thread_id_4, NULL, &thread4, NULL);
-	
 		if (ret != 0) {
 			printf("Unable to create thread4");
 		}
@@ -248,15 +248,15 @@ Read only the specific things：
 		pthread_join(thread_id_3, NULL);
 		pthread_join(thread_id_4, NULL);
 		pthread_barrier_destroy(&our_barrier);
-	return EXIT_SUCCESS;
+		return EXIT_SUCCESS;
 	
+```
 Pthread
-   	int pthread_join(pthread_t thread, void **retval);
+   	int pthread_join ( pthread_t thread, void **retval);
 The pthread_join() function waits for the thread specified by thread to terminate.
 
-MUTEX
-int pthread_mutex_init(pthread_mutex_t *restrict mutex,
-         const pthread_mutexattr_t *restrict attr);
+### MUTEX
+    int pthread_mutex_init(pthread_mutex_t *restrict mutex,const pthread_mutexattr_t *restrict attr);
 DESCRIPTION
      The pthread_mutex_init() function creates a new mutex, with attributes
      specified with attr.  If attr is NULL, the default attributes are used.
@@ -265,8 +265,7 @@ RETURN VALUES
      If successful, pthread_mutex_init() will return zero and put the new
      mutex id into mutex.
 
-int pthread_cond_init(pthread_cond_t *restrict cond,
-         const pthread_condattr_t *restrict attr);
+int pthread_cond_init(pthread_cond_t *restrict cond, const pthread_condattr_t *restrict attr);
 
 DESCRIPTION
      The pthread_cond_init() function creates a new condition variable, with
@@ -278,9 +277,7 @@ RETURN VALUES
      the new condition variable id into cond.  Otherwise, an error number will
      be returned to indicate the error.
 
-int
-     pthread_cond_wait(pthread_cond_t *restrict cond,
-         pthread_mutex_t *restrict mutex);
+int pthread_cond_wait(pthread_cond_t *restrict cond,pthread_mutex_t *restrict mutex);
 
 DESCRIPTION
      The pthread_cond_wait() function atomically unlocks the mutex and blocks
