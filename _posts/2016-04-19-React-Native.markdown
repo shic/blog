@@ -125,7 +125,10 @@ react-slingshot: https://github.com/coryhouse/react-slingshot
 
 ## Tutorial
 
+[React Native Tips](https://github.com/JackPu/react-native-tips)
+
 [Snowflake code comments](http://bartonhammond.github.io/snowflake/containers/Main.js.html)
+
 [Lcode blog](http://www.lcode.org/)
 
 React-Native学习指南 https://github.com/reactnativecn/react-native-guide
