@@ -92,6 +92,8 @@ In chrome developer tool, sources-right most trangle button- active pause button
 
 https://github.com/mobxjs/mobx
 
+[Medium blog](https://medium.com/@dabit3/react-native-with-mobx-getting-started-ba7e18d8ff44#.elp9693qk)
+
 ### Baobab 
 
 github https://github.com/Yomguithereal/baobab
