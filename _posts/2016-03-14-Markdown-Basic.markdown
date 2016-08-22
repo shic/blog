@@ -19,8 +19,7 @@ Specify text size
 ```
 
 Italic
-
-> * *
+`* *`
 
 Bold 
 
