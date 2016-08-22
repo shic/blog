@@ -107,8 +107,13 @@ http://www.jianshu.com/p/6d4cce9d914f
 ## Comment
 
   {/*Comment*/}
-
+  
+  
 # Note
+
+## Webstorm env setup
+1. install ESLint:  `npm install -g eslint`
+2. 
 
 ## Online build service
 
