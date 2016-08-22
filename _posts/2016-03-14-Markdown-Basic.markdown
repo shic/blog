@@ -18,20 +18,13 @@ Specify text size
 #### H4
 ```
 
-Italic
-`* *`
+Italic `* *`
 
-Bold 
+Bold `** **`
 
->	** **
+Strikethrough `~~ ~~`
 
-Strikethrough 
-
->	~~ ~~
-
-Quoting text 
-
-`>`
+Quoting text  `>`
 
 ## Code
 
@@ -40,15 +33,15 @@ Quoting text
 1.With TAB or Four Space
 
 2.With Backtick (On English keyboard, the key on the left of key 1) 
-> ` int a = 1 `
+
+```
+ ` int a = 1 `
+```
 
 3.With three back-ticks to specify the programming language 
->```
 
 >```javascript
->var s = "JavaScript syntax highlighting";
->alert(s);
-> ```
+
 
 
 ## Further reading
