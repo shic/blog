@@ -30,22 +30,22 @@ Quoting text  `>`
 
 ### Blocks code 
 
-1.With TAB or Four Space
+1. With TAB or Four Space
 
-2.With Backtick (On English keyboard, the key on the left of key 1) 
+2. With Backtick (On English keyboard, the key on the left of key 1) 
 
 ```
  ` int a = 1 `
 ```
 
-3.With three back-ticks to specify the programming language 
+3. With three back-ticks to specify the programming language 
 
 >```javascript
 
 
-
 ## Further reading
+
+[Cheet sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 [Github tips](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
 
-[Cheet sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
