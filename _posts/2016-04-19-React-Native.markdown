@@ -45,10 +45,9 @@ The state belongs to the component
 5. npm i
 
 ## babel
-
 1. Add dependency In package.json
 
-```javascript
+```java
     "babel-eslint": "4.1.6",
     "eslint": "1.10.3",
     "eslint-config-airbnb": "2.1.1",
@@ -56,7 +55,6 @@ The state belongs to the component
     "react-native-swipeout": "2.0.12",
     "redux": "^3.3.1"
 ```
-
 2. Add .eslintrc
 
 ## Props, state and store
@@ -77,10 +75,31 @@ The state belongs to the component
 
 ### TouchableHighlight
 
+```java
+class Touch extends Component {
+  handlePress(){
+    console.log('press');
+  }
+  handleLongPress(){
+    console.log('longPress');
+  }
+  render() {
+    return (
+      <TouchableHighlight
+        onPress={this.handlePress}
+        onLongPress={this.handleLongPress}>
+        <View>
+          <Text>Press me!</Text>
+        </View>
+      </TouchableHighlight>
+    );
+  }
+}
+```
 
 ### TextInput
 
-```javascript
+```java
 class Test extends Component {
   //...
   //handle events
@@ -101,7 +120,7 @@ class Test extends Component {
 
 ### [Gesture Responder System](https://unbug.gitbooks.io/react-native-training/content/24_events.html)
 
-```javascript
+```java
  render() {
     return (
       <View 
@@ -125,7 +144,7 @@ class Test extends Component {
 
 #### Flexbox
 
-```javascript
+```java
 flexDirection:'row'|'column'
 
 justifyContent:'flex-start'|'flex-end'|'center'|'space-between'|'space-around'
@@ -140,7 +159,7 @@ flexWrap:'wrap'|'nowrap'
 
 #### absolute
 
-```javascript
+```java
   box1: {
     position: 'absolute',
     top: 40,
@@ -156,7 +175,7 @@ flexWrap:'wrap'|'nowrap'
 
 #### Base Style
 
-```javascript
+```java
 
 // BaseStyles.js
 import { StyleSheet,Dimensions } from 'react-native';
@@ -190,7 +209,7 @@ const styles = StyleSheet.create({
 
 #### absolute
 
-```javascript
+```java
 
 ```
 
