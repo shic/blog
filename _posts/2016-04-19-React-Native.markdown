@@ -61,6 +61,75 @@ The state belongs to the component
 
 ![Props, state and store](https://unbug.gitbooks.io/react-native-training/content/QQ20160702-0.png)
 
+### Props
+
+- consider props immutable
+- Use props to for event handlers to communicate with child components.
+
+### State
+
+- Use state for storing simple view state like wether or not drop-down options are visible.
+- Never modify this.state directly, use this.setstate instead.
+
+## Components
+
+### TouchableHighlight
+
+```javascript
+class Touch extends Component {
+  handlePress(){
+    console.log('press');
+  }
+  handleLongPress(){
+    console.log('longPress');
+  }
+  render() {
+    return (
+      <TouchableHighlight
+        onPress={this.handlePress}
+        onLongPress={this.handleLongPress}>
+        <View>
+          <Text>Press me!</Text>
+        </View>
+      </TouchableHighlight>
+    );
+  }
+}
+
+```
+
+### TextInput
+
+```javascript
+class Test extends Component {
+  //...
+  //handle events
+  //...
+  render() {
+    return (
+      <TextInput 
+        onBlur={...}
+        onChange={...}
+        onEndEditing={...}
+        onSelectionChange={...}
+        onSubmitEditing={...}
+      </TextInput>
+    );
+  }
+}
+```
+
+### <TouchableHighlight/>
+
+```javascript
+
+```
+
+```javascript
+
+```
+
+
 ## 数据流的处理
 
 ### MobX
