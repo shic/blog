@@ -57,10 +57,38 @@ The state belongs to the component
 ```
 2. Add .eslintrc
 
+## 数据流的处理
+
+### MobX
+
+https://github.com/mobxjs/mobx
+
+[Medium blog](https://medium.com/@dabit3/react-native-with-mobx-getting-started-ba7e18d8ff44#.elp9693qk)
+
+### Baobab 
+
+github https://github.com/Yomguithereal/baobab
+
+http://www.christianalfoni.com/articles/2015_02_06_Plant-a-Baobab-tree-in-your-flux-application
+
+http://www.christianalfoni.com/articles/2015_04_26_Handling-complex-state-with-Baobab
+
+http://www.jianshu.com/p/6d4cce9d914f 
+
 # Tools
 
 # Debug
+
+## iOS debug
+
+## Android debug
+
+### Simulator debug menu:
+
+Cmd + M
+
 ## Simulator system log (when app crash)
+
 Cmd+/
 
 ## bug 
@@ -86,23 +114,6 @@ In chrome developer tool, sources-right most trangle button- active pause button
 - Emulator: Show inspector
 
 
-## 数据流的处理
-
-### MobX
-
-https://github.com/mobxjs/mobx
-
-[Medium blog](https://medium.com/@dabit3/react-native-with-mobx-getting-started-ba7e18d8ff44#.elp9693qk)
-
-### Baobab 
-
-github https://github.com/Yomguithereal/baobab
-
-http://www.christianalfoni.com/articles/2015_02_06_Plant-a-Baobab-tree-in-your-flux-application
-
-http://www.christianalfoni.com/articles/2015_04_26_Handling-complex-state-with-Baobab
-
-http://www.jianshu.com/p/6d4cce9d914f 
 
 ## Comment
 
