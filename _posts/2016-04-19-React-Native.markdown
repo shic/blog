@@ -45,6 +45,7 @@ The state belongs to the component
 5. npm i
 
 ## babel
+
 1. Add dependency In package.json
 
 ```javascript
@@ -55,6 +56,7 @@ The state belongs to the component
     "react-native-swipeout": "2.0.12",
     "redux": "^3.3.1"
 ```
+
 2. Add .eslintrc
 
 ## Props, state and store
