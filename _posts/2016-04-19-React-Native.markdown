@@ -75,27 +75,6 @@ The state belongs to the component
 
 ### TouchableHighlight
 
-```javascript
-class Touch extends Component {
-  handlePress(){
-    console.log('press');
-  }
-  handleLongPress(){
-    console.log('longPress');
-  }
-  render() {
-    return (
-      <TouchableHighlight
-        onPress={this.handlePress}
-        onLongPress={this.handleLongPress}>
-        <View>
-          <Text>Press me!</Text>
-        </View>
-      </TouchableHighlight>
-    );
-  }
-}
-```
 
 ### TextInput
 
