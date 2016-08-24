@@ -57,6 +57,10 @@ The state belongs to the component
 ```
 2. Add .eslintrc
 
+## Props, state and store
+
+![Props, state and store](https://unbug.gitbooks.io/react-native-training/content/QQ20160702-0.png)
+
 ## 数据流的处理
 
 ### MobX
