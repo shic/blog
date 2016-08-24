@@ -130,8 +130,9 @@ In chrome developer tool, sources-right most trangle button- active pause button
 
 bitrise https://www.bitrise.io/
 
-## Gitbook
-E-book [https://unbug.gitbooks.io/react-native-training/content/](https://unbug.gitbooks.io/react-native-training/content/)
+## E-book
+
+Gitbook [https://unbug.gitbooks.io/react-native-training/content/](https://unbug.gitbooks.io/react-native-training/content/)
 
 Video [http://bbs.reactnative.cn/topic/759](http://bbs.reactnative.cn/topic/759/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99react-native%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B-%E6%9B%B4%E6%96%B0%E5%88%B050%E9%9B%86%E5%95%A6/124)
 
@@ -158,9 +159,6 @@ React Native 高质量学习资料汇总 http://www.jianshu.com/p/454f2e6f28e9
 掘金list http://gold.xitu.io/tag/React%20Native
 
 构建 F8 2016 App: http://f8-app.liaohuqiu.net/tutorials/building-the-f8-app/data/
-
-## E-books
-https://github.com/apoterenko/javascript-ebooks
 
 ## Projects
 
