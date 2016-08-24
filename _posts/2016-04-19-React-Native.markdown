@@ -176,6 +176,7 @@ flexWrap:'wrap'|'nowrap'
 #### Base Style
 
 ```javascript
+
 // BaseStyles.js
 import { StyleSheet,Dimensions } from 'react-native';
 let winSize = Dimensions.get('window');
@@ -214,6 +215,9 @@ const styles = StyleSheet.create({
 
 
 ## 数据流的处理
+
+### Redux
+
 
 ### MobX
 
