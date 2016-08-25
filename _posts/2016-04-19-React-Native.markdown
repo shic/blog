@@ -178,7 +178,7 @@ flexWrap:'wrap'|'nowrap'
 ```java
 
 // BaseStyles.js
-import { StyleSheet,Dimensions } from 'react-native';
+import {  StyleSheet,Dimensions } from 'react-native';
 let winSize = Dimensions.get('window');
 const BaseStyles = StyleSheet.create({
   text: {
