@@ -224,8 +224,304 @@ function reducer(state, action) //state: old state; action: sort of event, it ma
   //calculate newState, here we mutate state into new state
   return newState;
 }
-redux.createStore(reducer);
+redux.createStore(reducer);//create a store which gets used by react components
 
+```
+
+#### Create a Redux store
+
+```java
+//todoStore.js
+import { createStore } from 'redux';
+
+const defaultTodos = [
+    {
+        task: 'Initial todo in store',
+        state: 'pending',
+    },
+];
+
+const defaultState = {
+    todos: defaultTodos,
+    filter: 'pending',
+    filteredTodos: defaultTodos,
+};
+
+function getFilteredTodos(allTodos, filter) {
+    return allTodos.filter(todo => todo.state === filter);
+}
+
+function todoStore(state = defaultState, action) {
+    switch (action.type) {//switch the type attribute
+    case 'ADD_TODO':
+        //state.todos: takes the old todos
+        const allTodos = state.todos.concat([{
+            task: action.task,
+            state: 'pending',
+        }]);
+        
+        //Use Object.assign to mutate the old state
+        return Object.assign({}, state, {
+            todos: allTodos,
+            //filteredTodos: getFilteredTodos(allTodos, state.filter),
+        });
+
+    case 'DONE_TODO':
+        const doneTodo = Object.assign({}, action.todo, {
+            state: 'done',
+        });
+
+        const allTodosContainingDone = state.todos
+            .map((todo) => {
+                return todo === action.todo ? doneTodo : todo;
+            });
+
+        return Object.assign({}, state, {
+            todos: allTodosContainingDone,
+            filteredTodos: getFilteredTodos(allTodosContainingDone, state.filter),
+        });
+    case 'TOGGLE_STATE':
+        const filter = state.filter === 'pending' ? 'done' : 'pending';
+        return Object.assign({}, state, {
+            filter,
+            filteredTodos: getFilteredTodos(state.todos, filter),
+        });
+    default:
+        return state;
+    }
+}
+
+export default createStore(todoStore); // Use createStore that we got from redux
+
+```
+#### Sync PluralTodo component’s state with Redux state
+
+```java
+// PluralTodo.js
+const React = require('react-native');
+const {
+    Component,
+    Navigator,
+} = React;
+import TaskList from './TaskList';
+import TaskForm from './TaskForm';
+import store from './todoStore';
+
+class PluralTodo extends Component {
+    constructor(props, context) {
+        super(props, context);
+        this.state = store.getState();
+
+        //State is mutated in the store, so we have to subscribe state mutated, so we can get the update 
+        store.subscribe(() => {
+            this.setState(store.getState()); // eslint-disable-line react/no-set-state
+        });
+    }
+
+    onAddStarted() {
+        this.nav.push({
+            name: 'taskform',
+        });
+    }
+
+    onCancel() {
+        console.log('cancelled!');
+        this.nav.pop();
+    }
+
+    onAdd(task) {
+        console.log('a task was added: ', task);
+        // this.state.todos.push({ task });
+        // this.setState({ todos: this.state.todos });
+        store.dispatch({ //dispatch: fire an action on the store 
+            type: 'ADD_TODO',
+            task,
+        });
+        this.nav.pop();
+    }
+
+    onDone(todo) {
+        console.log('todo was completed: ', todo.task);
+        store.dispatch({
+            type: 'DONE_TODO',
+            todo,
+        });
+    }
+
+    onToggle() {
+        store.dispatch({
+            type: 'TOGGLE_STATE',
+        });
+    }
+
+    renderScene(route, nav) {
+        switch (route.name) {
+        case 'taskform':
+            return (
+                <TaskForm
+                    onAdd={this.onAdd.bind(this)}
+                    onCancel={this.onCancel.bind(this)}
+                />
+            );
+        default:
+            return (
+                <TaskList
+                    filter={this.state.filter}
+                    filteredTodos={this.state.filteredTodos}
+                    onAddStarted={this.onAddStarted.bind(this)}
+                    onDone={this.onDone.bind(this)}
+                    onToggle={this.onToggle.bind(this)}
+                />
+            );
+        }
+    }
+
+    configureScene() {
+        return Navigator.SceneConfigs.FloatFromBottom;
+    }
+
+    render() {
+        return (
+            <Navigator
+                configureScene={this.configureScene}
+                initialRoute={{ name: 'tasklist', index: 0 }}
+                ref={((nav) => {
+                    this.nav = nav;
+                })}
+                renderScene={this.renderScene.bind(this)}
+            />
+        );
+    }
+}
+
+export default PluralTodo;
+
+```
+
+```java
+//TaskList.js
+import React from 'react-native';
+
+const {
+    View,
+    ListView,
+    TouchableHighlight,
+    Text,
+    Switch,
+} = React;
+
+import TaskRow from './TaskRow/Component';
+
+const styles = React.StyleSheet.create({
+    container: {
+        paddingTop: 40,
+        backgroundColor: '#F7F7F7',
+        flex: 1,
+        justifyContent: 'flex-start',
+    },
+    button: {
+        height: 60,
+        borderColor: '#05A5D1',
+        borderWidth: 2,
+        backgroundColor: '#333',
+        margin: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    buttonText: {
+        color: '#FAFAFA',
+        fontSize: 20,
+        fontWeight: '600',
+    },
+});
+
+class TaskList extends React.Component {
+    constructor(props, context) {
+        super(props, context);
+
+        const ds = new ListView.DataSource({
+            rowHasChanged: (r1, r2) => r1 !== r2,
+        });
+
+        this.state = {
+            dataSource: ds.cloneWithRows(props.filteredTodos),
+        };
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const dataSource = this
+            .state
+            .dataSource
+            .cloneWithRows(nextProps.filteredTodos);
+
+        this.setState({ dataSource });
+    }
+
+    renderRow(todo) {
+        return (
+            <TaskRow
+                onDone={this.props.onDone}
+                todo={todo}
+            />
+        );
+    }
+
+    render() {
+        return (
+            <View style={styles.container}>
+            <View
+                style={{
+                    flexDirection: 'row',
+                    padding: 10,
+                }}
+            >
+                <Switch
+                    onValueChange={this.props.onToggle}
+                    style={{
+                        marginBottom: 10,
+                    }}
+                    value={this.props.filter !== 'pending'}
+                />
+                <Text style={{
+                    fontSize: 20,
+                    paddingLeft: 10,
+                    paddingTop: 3,
+                }}
+                >
+                Showing {this.props.filteredTodos.length} {this.props.filter} todo(s)
+                </Text>
+            </View>
+
+                <ListView
+                    dataSource={this.state.dataSource}
+                    renderRow={this.renderRow.bind(this)}
+                />
+
+                <TouchableHighlight
+                    onPress={this.props.onAddStarted}
+                    style={styles.button}
+                >
+                    <Text
+                        style={styles.buttonText}
+                    >
+                        Add one
+                    </Text>
+                </TouchableHighlight>
+            </View>
+        );
+    }
+}
+
+TaskList.propTypes = {
+    filter: React.PropTypes.string.isRequired,
+    filteredTodos: React.PropTypes
+        .arrayOf(React.PropTypes.object).isRequired,
+    onAddStarted: React.PropTypes.func.isRequired,
+    onDone: React.PropTypes.func.isRequired,
+    onToggle: React.PropTypes.func.isRequired,
+};
+
+export default TaskList;
 ```
 
 ### MobX
