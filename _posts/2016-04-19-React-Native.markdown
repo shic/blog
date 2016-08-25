@@ -99,7 +99,7 @@ class Touch extends Component {
 
 ### TextInput
 
-```java
+```javascript
 class Test extends Component {
   //...
   //handle events
@@ -218,6 +218,15 @@ const styles = StyleSheet.create({
 
 ### Redux
 
+```java
+function reducer(state, action) //state: old state; action: sort of event, it may contains description or some data
+{
+  //calculate newState, here we mutate state into new state
+  return newState;
+}
+redux.createStore(reducer);
+
+```
 
 ### MobX
 
