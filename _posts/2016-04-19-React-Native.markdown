@@ -175,7 +175,7 @@ flexWrap:'wrap'|'nowrap'
 
 #### Base Style
 
-```java
+```html
 
 // BaseStyles.js
 import {  StyleSheet,Dimensions } from 'react-native';
