@@ -234,7 +234,7 @@ console.log(o.a); // 25
 			
 # ES6
 
-ES6 compatibility table: http://kangax.github.io/compat-table/es6/
+[ES6 compatibility table](http://kangax.github.io/compat-table/es6/)
 
 ## let, var, const
 
@@ -295,6 +295,7 @@ console.log(high); //Output: 75000
 
 
 ## Arrow functions
+
 ```javascript
 (param1, param2, …, paramN) => { statements }
 (param1, param2, …, paramN) => expression // equivalent to:  => { return expression; }
@@ -320,7 +321,7 @@ showCategories(123, 'search', 'advertising');
 
 ## Module
 
-traceur-compiler https://github.com/google/traceur-compiler
+[traceur-compiler](https://github.com/google/traceur-compiler)
 
 ```javascript
 File base.js:
@@ -392,6 +393,7 @@ console.log(Project.getDefaultId());//Output: 99
 ```
 
 ### new.target
+
 #### Point to the original function that called
 ```javascript
 class Project {
