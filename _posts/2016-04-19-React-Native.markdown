@@ -543,13 +543,18 @@ http://www.jianshu.com/p/6d4cce9d914f
 
 # Debug
 
-## iOS debug
+## Simulator debug menu:
+
+On the iOS/Android simulator click `Cmd + M`
+
 
 ## Android debug
 
-### Simulator debug menu:
+## iOS debug
 
-On the iOS simulator click `Cmd + M`
+Simulator home button: ` Cmd + Shift + h` for navigate to HomeScreen
+
+
 
 ## Simulator system log (when app crash)
 
