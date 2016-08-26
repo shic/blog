@@ -28,7 +28,6 @@ header-img: "img/post-bg-01.jpg"
 
 ## UPDATED
 - componentDidUpdate
-- 
 
 ## State 
 The state belongs to the component
@@ -550,7 +549,7 @@ http://www.jianshu.com/p/6d4cce9d914f
 
 ### Simulator debug menu:
 
-Cmd + M
+On the iOS simulator click `Cmd + M`
 
 ## Simulator system log (when app crash)
 
