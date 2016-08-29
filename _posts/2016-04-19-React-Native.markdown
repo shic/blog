@@ -304,16 +304,16 @@ const {
 } = React;
 import TaskList from './TaskList';
 import TaskForm from './TaskForm';
-import store from './todoStore';
+import todoStore from './todoStore';
 
 class PluralTodo extends Component {
     constructor(props, context) {
         super(props, context);
-        this.state = store.getState();
+        this.state = todoStore.getState();
 
         //State is mutated in the store, so we have to subscribe state mutated, so we can get the update 
-        store.subscribe(() => {
-            this.setState(store.getState()); // eslint-disable-line react/no-set-state
+        todoStore.subscribe(() => {
+            this.setState(todoStore.getState()); // eslint-disable-line react/no-set-state
         });
     }
 
@@ -332,7 +332,7 @@ class PluralTodo extends Component {
         console.log('a task was added: ', task);
         // this.state.todos.push({ task });
         // this.setState({ todos: this.state.todos });
-        store.dispatch({ //dispatch: fire an action on the store 
+        todoStore.dispatch({ //dispatch: fire an action on the store 
             type: 'ADD_TODO',
             task,
         });
@@ -341,14 +341,14 @@ class PluralTodo extends Component {
 
     onDone(todo) {
         console.log('todo was completed: ', todo.task);
-        store.dispatch({
+        todoStore.dispatch({
             type: 'DONE_TODO',
             todo,
         });
     }
 
     onToggle() {
-        store.dispatch({
+        todoStore.dispatch({
             type: 'TOGGLE_STATE',
         });
     }
