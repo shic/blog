@@ -74,7 +74,7 @@ The state belongs to the component
 
 ### TouchableHighlight
 
-```java
+```javascript
 class Touch extends Component {
   handlePress(){
     console.log('press');
@@ -545,7 +545,9 @@ http://www.jianshu.com/p/6d4cce9d914f
 
 ## Simulator debug menu:
 
-On the iOS/Android simulator click `Cmd + M`
+On the iOS Simulator click `Cmd + D`
+
+On the Android Simulator click `Cmd + M`
 
 
 ## Android debug
