@@ -74,7 +74,7 @@ The state belongs to the component
 
 ### TouchableHighlight
 
-```javascript
+```java
 class Touch extends Component {
   handlePress(){
     console.log('press');
@@ -98,7 +98,7 @@ class Touch extends Component {
 
 ### TextInput
 
-```javascript
+```java
 class Test extends Component {
   //...
   //handle events
@@ -213,18 +213,23 @@ const styles = StyleSheet.create({
 ```
 
 
-## 数据流的处理
+## State management (Data management)
 
 ### Redux
 
 ```java
-function reducer(state, action) //state: old state; action: sort of event, it may contains description or some data
+function todoStore(state, action) //state: old state; action: sort of event, it may contains description or some data
 {
   //calculate newState, here we mutate state into new state
   return newState;
 }
-redux.createStore(reducer);//create a store which gets used by react components
 
+Redux.createStore(todoStore);//create a store which gets used by react components
+
+todoStore.dispatch({ //dispatch: fire an action on the store 
+  type: 'ADD_TODO',
+  task,
+});
 ```
 
 #### Create a Redux store
