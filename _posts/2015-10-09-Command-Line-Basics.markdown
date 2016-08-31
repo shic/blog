@@ -18,9 +18,9 @@ pwd
 2. source ~/.bash_profile
 3. echo $PATH 
 
-## 
+## Search files
 
-
+find ~/ -name "ImageMagick"
 
 ## 
 
