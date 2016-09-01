@@ -1,0 +1,25 @@
+---
+layout:     post
+title:      "OSX Tips"
+subtitle:   "Some useful application and tips for OSX"
+date:       2015-10-07 12:00:00
+author:     "Shi"
+---
+
+# Applications
+
+## ImageMagick
+
+### Resize Image
+
+convert tutorial_1.png -resize 768x1280 tutorial_1.png 
+
+
+
+# Tips
+
+## Change default editor
+
+Just right (or control) click a file of the type you want to change and:
+
+"Get Info" -> "Open with:" -> (Select TextMate) -> "Change All"
