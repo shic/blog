@@ -614,10 +614,13 @@ Video [http://bbs.reactnative.cn/topic/759](http://bbs.reactnative.cn/topic/759/
 
 ## React Native Skeleton
 
+[Snowflake React-Native Android iOS Starter App/ BoilerPlate](https://github.com/bartonhammond/snowflake)
+
 [pluralsight-redux-starter](https://github.com/coryhouse/pluralsight-redux-starter)
 
 react-slingshot: https://github.com/coryhouse/react-slingshot
 
+[Udemy React with Redux Course](https://github.com/StephenGrider/ReduxSimpleStarter)
 ## Tutorial
 
 [React Native Tips](https://github.com/JackPu/react-native-tips)
