@@ -9,3 +9,7 @@ author:     "Shi"
 # Conference
 
 [ArchSummit全球架构师峰会](http://daxue.qq.com/content/special/id/35)
+
+# Talk
+
+[腾大有客|《浪潮之巅》作者吴军分享我与大数据的“亲密接触”](http://daxue.qq.com/content/content/id/2746)
