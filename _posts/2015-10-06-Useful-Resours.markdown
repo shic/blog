@@ -12,7 +12,7 @@ author:     "Shi"
 
 # Talk
 
-[腾大有客|《浪潮之巅》作者吴军分享我与大数据的“亲密接触”](http://daxue.qq.com/content/content/id/2746)
+[腾大有客《浪潮之巅》作者吴军分享我与大数据的“亲密接触”](http://daxue.qq.com/content/content/id/2746)
 
 [InfoQ 冯大辉](http://www.infoq.com/cn/author/%E5%86%AF%E5%A4%A7%E8%BE%89)
 
