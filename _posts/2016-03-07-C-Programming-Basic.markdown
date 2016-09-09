@@ -14,12 +14,12 @@ Always compile with
     gcc -Wall -Wextra -O2 Bootstrap.c lista.c -o boot
     
 ## Eclipse 
-How to use math.h in Eclipse with gcc
+
+### How to use math.h in Eclipse with gcc
+
  you should add the -lm option to GCC C Linker, NOT TO GCC C Compiler. To do that, you should go to:Project -> Properties -> C/C++ Build -> Settings -> Tool Settings (tab) -> GCC C Linker and in the "Command" text field type: "gcc -lm" (by default there is only "gcc").
+ 
 Add it to the linker options, Libraries-> add it in as a new library "m", > this will automatically add on the -l to the option.
-
-
-
 
 Debug 
 gcc -g try.c -o try
@@ -28,6 +28,120 @@ gdb try
 break 10
 run [args]
 p [variabile] // Print
+
+# C 运算符优先级
+
+1. . ->
+2. ++ -- & *
+
+## Example
+
+*p.f === *(p.f) === p=>f
+
+# Pass array to a function
+
+## C语言中，数组名作为参数传递给函数时，退化为指针；需要数组大小时，需要一个参数传数组名，另一个传数组大小。
+
+```java
+struct thread_data td[MAX_THREAD_NUM];
+
+create_threads(td,MAX_THREAD_NUM);
+
+void create_threads(struct thread_data *td, int MAX_THREAD_NUM){
+	int i;
+	for(i=0; i<MAX_THREAD_NUM; ++i){
+		td[i].tid
+	}
+	
+}
+
+```
+# Error handler
+
+```java
+# define abort_on_error ( cond , msg ) do { \
+	if ( cond ) { \
+		int _e = errno ; \
+		fprintf ( stderr , "%s ", msg ) ; \
+		fprintf ( stderr , "(%d)\n", _e ) ; \
+		exit ( EXIT_FAILURE ) ; \
+	} \
+} while (0)
+
+```
+
+# Library
+
+## pthread
+
+### pthread_create
+
+```java
+int pthread_create(
+	pthread_t *thread, 
+	const pthread_attr_t *attr,
+    void *(*start_routine) (void *), 
+    void *arg);
+    
+On success, pthread_create() returns 0; on error, it returns an error number
+      
+//Usage
+int ret = pthread_create(&thread_id_2, NULL, &thread2, NULL);
+
+if (ret != 0) {
+	printf("Unable to create thread2");
+	exit(EXIT_FAILURE);
+}
+```
+
+### 
+
+```java
+
+```
+
+### 
+
+```java
+
+```
+
+### 
+
+```java
+
+```
+
+### 
+
+```java
+
+```
+
+### 
+
+```java
+
+```
+
+### 
+
+```java
+
+```
+
+### 
+
+```java
+
+```
+
+### 
+
+```java
+
+```
+
 
 Function
 
