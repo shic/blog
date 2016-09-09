@@ -58,7 +58,7 @@ void create_threads(struct thread_data *td, int MAX_THREAD_NUM){
 ```
 # Error handler
 
-```java
+```c
 # define abort_on_error ( cond , msg ) do { \
 	if ( cond ) { \
 		int _e = errno ; \
