@@ -56,9 +56,10 @@ void create_threads(struct thread_data *td, int MAX_THREAD_NUM){
 }
 
 ```
+
 # Error handler
 
-```c
+```java
 # define abort_on_error ( cond , msg ) do { \
 	if ( cond ) { \
 		int _e = errno ; \
@@ -71,6 +72,44 @@ void create_threads(struct thread_data *td, int MAX_THREAD_NUM){
 ```
 
 # Library
+
+## Pipe
+
+### pipe() creates a pipe, a unidirectional data channel that can be used for interprocess communication. 
+
+```java
+int pipe(int pipefd[2]);
+
+//The array pipefd is used to return two file descriptors referring to the ends of the pipe.  
+pipefd[0] refers to the read end of the pipe.  
+pipefd[1] refers to the write end of the pipe.  
+
+RETURN VALUE	
+       On success, zero is returned.  On error, -1 is returned, and errno is set appropriately.
+
+```
+
+## read
+
+```java
+ssize_t read(int fd, void *buf, size_t count);
+
+RETURN VALUE
+       On success, the number of bytes read is returned (zero indicates end of file), On error, -1 is returned
+
+
+```
+
+## Write
+
+```java
+ssize_t write(int fd, const void *buf, size_t count);
+
+RETURN VALUE
+       On success, the number of bytes written is returned (zero indicates nothing was written).  On error, -1 is returned, and errno is set appropriately.
+
+
+```
 
 ## pthread
 
