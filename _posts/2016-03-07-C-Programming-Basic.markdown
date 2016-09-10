@@ -111,6 +111,32 @@ RETURN VALUE
 
 ```
 
+## sigaction
+
+### examine and change a signal action
+
+```java
+int sigaction(
+	int signum, 
+	const struct sigaction *act,
+	struct sigaction *oldact);
+
+RETURN VALUE
+	sigaction() returns 0 on success; on error, -1 is returned
+       
+```
+
+## alarm
+
+alarm() arranges for a SIGALRM signal to be delivered to the calling process in seconds seconds.
+
+```java
+unsigned int alarm(unsigned int seconds);
+
+RETURN VALUE
+       alarm() returns the number of seconds remaining until any previously scheduled alarm was due to be delivered, or zero if there was no previously scheduled alarm.
+
+
 ## pthread
 
 ### pthread_create
