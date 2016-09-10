@@ -111,9 +111,28 @@ RETURN VALUE
 
 ```
 
-## sigaction
+## memcpy
 
-### examine and change a signal action
+```java
+void *memcpy(void *dest, const void *src, size_t n);
+
+DESCRIPTION
+       The memcpy() function copies n bytes from memory area src to memory area dest.  The memory areas must not overlap.  Use memmove(3) if the memory areas do overlap.
+
+RETURN VALUE
+       The memcpy() function returns a pointer to dest.
+
+```
+
+## Signal
+
+### EINTR (Error interupt)
+
+A signal primitive fail throw the error code for this kind of failure
+
+### sigaction
+
+examine and change a signal action
 
 ```java
 int sigaction(
@@ -136,6 +155,7 @@ unsigned int alarm(unsigned int seconds);
 RETURN VALUE
        alarm() returns the number of seconds remaining until any previously scheduled alarm was due to be delivered, or zero if there was no previously scheduled alarm.
 
+```
 
 ## pthread
 
