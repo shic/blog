@@ -73,6 +73,29 @@ void create_threads(struct thread_data *td, int MAX_THREAD_NUM){
 
 # Library
 
+## strtol
+
+```java
+long int strtol(const char *str, char **endptr, int base)
+
+str -- This is the string containing the representation of an integral number.
+
+endptr -- This is the reference to an object of type char*, whose value is set by the function to the next character in str after the numerical value.
+
+base -- This is the base, which must be between 2 and 36 inclusive, or be the special value 0.
+
+Return Value
+This function returns the converted integral number as a long int value, else zero value is returned.
+```
+## malloc
+
+```java
+void *malloc(size_t size);
+
+Return Value
+The malloc() and calloc() functions return a pointer to  the  allocated memory,  which  is  suitably  aligned for any built-in type.  On error, these functions return NULL.
+```
+
 ## Pipe
 
 ### pipe() creates a pipe, a unidirectional data channel that can be used for interprocess communication. 
