@@ -84,16 +84,17 @@ endptr -- This is the reference to an object of type char*, whose value is set b
 
 base -- This is the base, which must be between 2 and 36 inclusive, or be the special value 0.
 
-Return Value
-This function returns the converted integral number as a long int value, else zero value is returned.
+RETURN VALUE	
+	This function returns the converted integral number as a long int value, else zero value is returned.
 ```
+
 ## malloc
 
 ```java
 void *malloc(size_t size);
 
-Return Value
-The malloc() and calloc() functions return a pointer to  the  allocated memory,  which  is  suitably  aligned for any built-in type.  On error, these functions return NULL.
+RETURN VALUE	
+	The malloc() and calloc() functions return a pointer to  the  allocated memory,  which  is  suitably  aligned for any built-in type.  On error, these functions return NULL.
 ```
 
 ## Pipe
@@ -118,10 +119,22 @@ RETURN VALUE
 ssize_t read(int fd, void *buf, size_t count);
 
 RETURN VALUE
-       On success, the number of bytes read is returned (zero indicates end of file), On error, -1 is returned
+    On success, the number of bytes read is returned (zero indicates end of file), On error, -1 is returned
 
 
 ```
+
+## fscanf
+
+```java
+int fscanf(FILE *stream, const char *format, ...)
+
+RETURN VALUE
+    This function returns the number of input items successfully matched and assigned, which can be fewer than provided for, or even zero in the event of an early matching failure.
+
+```
+
+
 
 ## Write
 
@@ -478,6 +491,8 @@ Pthread
 The pthread_join() function waits for the thread specified by thread to terminate.
 
 ### MUTEX
+
+```java
     int pthread_mutex_init(pthread_mutex_t *restrict mutex,const pthread_mutexattr_t *restrict attr);
 DESCRIPTION
      The pthread_mutex_init() function creates a new mutex, with attributes
@@ -486,7 +501,11 @@ DESCRIPTION
 RETURN VALUES
      If successful, pthread_mutex_init() will return zero and put the new
      mutex id into mutex.
+```
 
+### pthread_cond_init
+
+```java
 int pthread_cond_init(pthread_cond_t *restrict cond, const pthread_condattr_t *restrict attr);
 
 DESCRIPTION
@@ -498,6 +517,7 @@ RETURN VALUES
      If successful, the pthread_cond_init() function will return zero and put
      the new condition variable id into cond.  Otherwise, an error number will
      be returned to indicate the error.
+```
 
 int pthread_cond_wait(pthread_cond_t *restrict cond,pthread_mutex_t *restrict mutex);
 
