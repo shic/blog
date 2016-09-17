@@ -15,9 +15,11 @@ Always compile with
     
 ## Eclipse 
 
-### How to use math.h in Eclipse with gcc
+### How to use math.h or pthread.h in Eclipse with gcc
 
- you should add the -lm option to GCC C Linker, NOT TO GCC C Compiler. To do that, you should go to:Project -> Properties -> C/C++ Build -> Settings -> Tool Settings (tab) -> GCC C Linker and in the "Command" text field type: "gcc -lm" (by default there is only "gcc").
+You should add the -lm option to GCC C Linker, NOT TO GCC C Compiler:
+
+Project -> Properties -> C/C++ Build -> Settings -> Tool Settings (tab) -> GCC C Linker -> in the "Command" text field type: "gcc -lm" (by default there is only "gcc").
  
 Add it to the linker options, Libraries-> add it in as a new library "m", > this will automatically add on the -l to the option.
 
@@ -37,6 +39,10 @@ p [variabile] // Print
 ## Example
 
 *p.f === *(p.f) === p=>f
+
+# Pass string to a function
+
+
 
 # Pass array to a function
 
@@ -72,6 +78,16 @@ void create_threads(struct thread_data *td, int MAX_THREAD_NUM){
 ```
 
 # Library
+
+## fopen
+
+```java
+FILE *fopen(const char *filename, const char *mode)
+
+Return Value
+
+This function returns a FILE pointer. Otherwise, NULL is returned and the global variable errno is set to indicate the error.
+```
 
 ## strtol
 
@@ -134,8 +150,22 @@ RETURN VALUE
 
 ```
 
+## fscanf
+
+Reads a line from the specified stream and stores it into the string pointed to by str
+ 
+```java
+char *fgets(char *str, int n, FILE *stream)
+
+RETURN VALUE
+
+	On success, the function returns str. 
+	If the End-of-File is encountered and no characters have been read, the contents of str remain unchanged and a null pointer is returned.
+
+	If an error occurs, a null pointer is returned.
 
 
+```
 ## Write
 
 ```java
@@ -215,10 +245,15 @@ if (ret != 0) {
 }
 ```
 
-### 
+### fork
+
+fork(): This function creates a new process. 
 
 ```java
+fork()
 
+RETURN VALUE
+	The return value is the 0 in the child and the process-id number of the child in the parent, or -1 upon error. 
 ```
 
 ### 
