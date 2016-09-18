@@ -355,7 +355,7 @@ pipefd[1]: un canale aperto in scrittura
 
 int buf;
 
-	    if( fscanf(f, "%d", &buf) != 1){
+	if( fscanf(f, "%d", &buf) != 1){
 	   	 fprintf(stderr, "error while reading dim matrix \n");
 	   	 exit(EXIT_FAILURE);
 	    }
@@ -431,7 +431,7 @@ Read only the specific things：
 	
 ## Using barriers in pthreads
 
-```javascript
+```java
 
 	#include <stdio.h> 
 	#include <pthread.h> 
@@ -521,6 +521,7 @@ Read only the specific things：
 		return EXIT_SUCCESS;
 	
 ```
+
 Pthread
    	int pthread_join ( pthread_t thread, void **retval);
 The pthread_join() function waits for the thread specified by thread to terminate.
@@ -605,91 +606,3 @@ RETURN VALUES
 
 
 mutex_init cond_init(empty) cond_init(full)
-
-
-
-
-thread1
-thread2
-thread3
-m_lock
-
-
-m_lock(b1)
-m_unlock
-m_lock
-
-
-
-
-m_unlock
-(1 empty) cond_wait
-
-
-c_signal(empty)
-
-
-c_signal(empty)
-
-
-
-
-
-
-
-
-m_lock(1)
-
-
-
-
-
-m_lock(2)
-m_lock
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
