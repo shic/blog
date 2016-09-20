@@ -13,7 +13,7 @@ header-img: "img/post-bg-01.jpg"
 - getInitialState
 - componentWillMount
   - Register listener
-  - 
+  - ​
 - render
 
 ## MOUNTED
@@ -296,9 +296,12 @@ function todoStore(state = defaultState, action) {
 }
 
 export default createStore(todoStore); // Use createStore that we got from redux
-
 ```
+
+
 #### Sync PluralTodo component’s state with Redux state
+
+
 
 ```java
 // PluralTodo.js
@@ -554,18 +557,22 @@ On the iOS Simulator click `Cmd + D`
 
 On the Android Simulator click `Cmd + M`
 
-
 ## Android debug
+
+ ### launch emulator
+
+1. emulator -list-avds (emulator located in folder: ${ANDROID_SDK}/tools/emulator )
+2. emulator @Nexus_4_Android_4_4_API_19
 
 ## iOS debug
 
-Simulator home button: ` Cmd + Shift + h` for navigate to HomeScreen
+Navigate to HomeScreen: ` Cmd + Shift + h`
 
 
 
 ## Simulator system log (when app crash)
 
-Cmd+/
+`Cmd+/`
 
 ## bug 
 
@@ -576,7 +583,7 @@ Cmd+/
 3. watchman watch-del-all
 
 Select "Debug JS Remotely" from the Developer Menu
- 
+
 Redux logger: https://github.com/evgenyrodionov/redux-logger#usage
 
 Url: http://localhost:8081/debugger-ui
@@ -594,13 +601,13 @@ In chrome developer tool, sources-right most trangle button- active pause button
 ## Comment
 
   {/*Comment*/}
-  
-  
+
+
 # Note
 
 ## Webstorm env setup
 1. install ESLint:  `npm install -g eslint`
-2. 
+2. ​
 
 ## Online build service
 
@@ -630,7 +637,7 @@ react-slingshot: https://github.com/coryhouse/react-slingshot
 [Lcode blog](http://www.lcode.org/)
 
 React-Native学习指南 https://github.com/reactnativecn/react-native-guide
- 
+
 [React Native之React速学教程(上)](https://github.com/crazycodeboy/RNStudyNotes/blob/master/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B%20(%E4%B8%8A).md)
 
 React Native 高质量学习资料汇总 http://www.jianshu.com/p/454f2e6f28e9

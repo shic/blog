@@ -14,7 +14,9 @@ author:     "Shi"
 
 convert tutorial_1.png -resize 768x1280 tutorial_1.png 
 
+## Markdown editor
 
+Typora
 
 # Tips
 
