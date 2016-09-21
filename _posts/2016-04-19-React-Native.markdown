@@ -531,6 +531,10 @@ TaskList.propTypes = {
 export default TaskList;
 ```
 
+### Redux-react 
+
+[Redux react official tutorial](http://redux.js.org/docs/basics/UsageWithReact.html)
+
 ### MobX
 
 https://github.com/mobxjs/mobx
