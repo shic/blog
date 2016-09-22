@@ -8,15 +8,46 @@ header-img: "img/post-bg-01.jpg"
 
 # Lifecyle
 
+1. optional `static` methods
+
+2. `constructor`
+
+3. `getChildContext`
+
+4. `componentWillMount`
+
+   1. Register listener
+
+5. `componentDidMount`
+
+6. `componentWillReceiveProps`
+
+7. `shouldComponentUpdate`
+
+8. `componentWillUpdate`
+
+9. `componentDidUpdate`
+
+10. `componentWillUnmount`
+
+11. *clickHandlers or eventHandlers* like `onClickSubmit()` or `onChangeDescription()`
+
+12. *getter methods for render* like `getSelectReason()` or `getFooterContent()`
+
+13. *Optional render methods* like `renderNavigation()` or `renderProfilePicture()`
+
+14. `render`
+
+    ​
+
+    ​		
+
+- 
+
 ## MOUNT
-- getDefaultProps
-- getInitialState
-- componentWillMount
-  - Register listener
-  - ​
-- render
 
 ## MOUNTED
+
 - componentDidMount
 
 ## RECEIVING PROPS
@@ -62,8 +93,8 @@ The state belongs to the component
 
 ### Props
 
-- consider props immutable
-- Use props to for event handlers to communicate with child components.
+- Consider props **immutable**
+- Use props for event handlers to communicate with child components.
 
 ### State
 
@@ -533,6 +564,60 @@ export default TaskList;
 
 ### Redux-react 
 
+1. ```javascript
+   npm install --save react-redux
+   ```
+
+#### Container
+
+**VisibleTodoList** filters the todos according to the current visibility filter and renders a`TodoList`
+
+#### `containers/VisibleTodoList.js`
+
+```react
+import { connect } from 'react-redux'
+import { toggleTodo } from '../actions'
+import TodoList from '../components/TodoList'
+
+const getVisibleTodos = (todos, filter) => {
+  switch (filter) {
+    case 'SHOW_ALL':
+      return todos
+    case 'SHOW_COMPLETED':
+      return todos.filter(t => t.completed)
+    case 'SHOW_ACTIVE':
+      return todos.filter(t => !t.completed)
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    todos: getVisibleTodos(state.todos, state.visibilityFilter)
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTodoClick: (id) => {
+      dispatch(toggleTodo(id))
+    }
+  }
+}
+
+const VisibleTodoList = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList)
+
+export default VisibleTodoList
+```
+
+Async action with Redux use the [Redux Thunk middleware](https://github.com/gaearon/redux-thunk). 
+
+ [Immutable](https://facebook.github.io/immutable-js/)
+
+state is never to be modified. When changing state, create new objects instead. The spread (…) operator helps significantly
+
 [Redux react official tutorial](http://redux.js.org/docs/basics/UsageWithReact.html)
 
 ### MobX
@@ -606,8 +691,9 @@ In chrome developer tool, sources-right most trangle button- active pause button
 
   {/*Comment*/}
 
-
 # Note
+
+[Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
 
 ## Webstorm env setup
 1. install ESLint:  `npm install -g eslint`

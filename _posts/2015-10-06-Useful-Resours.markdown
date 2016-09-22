@@ -26,3 +26,9 @@ author:     "Shi"
 # Podcast
 
 [和『掘金』创始人阴明聊聊创业和技术](http://teahour.fm/2016/08/08/xitu-yinm.html)
+
+
+
+# Wechat inapp 
+
+[OsChina Tutorial ](https://my.oschina.net/wwnick/blog/750055?from=groupmessage&isappinstalled=0)

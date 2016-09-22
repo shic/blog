@@ -75,5 +75,6 @@ export default {
 
 ## React Skeleton
 
-pluralsight-redux-starter: https://github.com/coryhouse/pluralsight-redux-starter
-react-slingshot: https://github.com/coryhouse/react-slingshot
+[Pluralsight-redux-starter](https://github.com/coryhouse/pluralsight-redux-starter)
+[React-slingshot](https://github.com/coryhouse/react-slingshot)
+
