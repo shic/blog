@@ -38,11 +38,11 @@ header-img: "img/post-bg-01.jpg"
 
 14. `render`
 
-    ​
+   ​
 
-    ​		
+   ​		
 
-- 
+- ​
 
 ## MOUNT
 
@@ -697,7 +697,12 @@ In chrome developer tool, sources-right most trangle button- active pause button
 
 ## Webstorm env setup
 1. install ESLint:  `npm install -g eslint`
-2. ​
+
+
+
+### Collapse by default
+
+Settings/Preferences dialog -> Editor | General | Code Folding 
 
 ## Online build service
 

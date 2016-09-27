@@ -78,3 +78,5 @@ export default {
 [Pluralsight-redux-starter](https://github.com/coryhouse/pluralsight-redux-starter)
 [React-slingshot](https://github.com/coryhouse/react-slingshot)
 
+[React boilerplate by Facebook](https://github.com/facebookincubator/create-react-app)
+
