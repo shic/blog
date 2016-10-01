@@ -23,14 +23,14 @@ author:     "Shi"
 
 # Podcast
 
-[](https://itunes.apple.com/us/genre/podcasts-education-language/id1469?mt=2)
+[iTunes Podcast List](https://itunes.apple.com/us/genre/podcasts-education-language/id1469?mt=2)
 
-[](http://www.mosalingua.com/en/the-best-podcasts-for-learning-italian/)
+[Podcast List](http://www.mosalingua.com/en/the-best-podcasts-for-learning-italian/)
 
-[](https://www.newsinslowitalian.com/)
+[Slow Italian](https://www.newsinslowitalian.com/)
 
-[](http://www.learnitalianpod.com/category/beginner/)
+[No 1 Podcast](http://www.learnitalianpod.com/category/beginner/)
 
 # App 
 
-[](https://itunes.apple.com/sn/app/news-in-slow-italian/id771123949?mt=8)
+[Slow Italian](https://itunes.apple.com/sn/app/news-in-slow-italian/id771123949?mt=8)
