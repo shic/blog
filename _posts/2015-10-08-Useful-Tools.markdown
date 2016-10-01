@@ -49,10 +49,9 @@ mogrify -path fullpathto/temp2 -resize 60x60% -quality 60 -format jpg *.png
 mogrify -format jpg *.png
 
 
-## 
 
+##SSL
 
-
-## 
+[Free, open source SSL](https://letsencrypt.org/) 
 
 

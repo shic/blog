@@ -1,7 +1,6 @@
 ---
 layout:     post
-title:      "Useful Resours"
-subtitle:   "Some useful resours"
+title:      "Useful Resources"
 date:       2015-10-06 12:00:00
 author:     "Shi"
 ---
