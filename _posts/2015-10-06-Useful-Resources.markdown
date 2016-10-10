@@ -19,7 +19,16 @@ author:     "Shi"
 
 [垂直互联网站点的技术改造-丁香园CTO冯大辉【Qcon】](http://v.qq.com/x/page/o0011ldfpbl.html)
 
-[]()
+[InfoQ直播大讲堂](https://link.zhihu.com/?target=http%3A//www.panda.tv/397309)    
+
+[InfoQ直播大讲堂 覃超](http://www.z3z4.com/a/4li86xw)
+
+
+
+# Growth Hack
+
+[Growth hack list](http://www.jianshu.com/p/cd7ce2f1c3aa)
+
 
 
 # Podcast
