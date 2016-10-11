@@ -9,11 +9,21 @@ author:     "Shi"
 
 ## Retention Rate 
 
-Before hire a growth hacker or do GH, check your Retention Rate. If you have a retention rate 
+Before hire a growth hacker or do GH, check your Retention Rate. If you have a low retention rate like the red line in the following graph,  go for  product market fit.
 
-![bla](https://github.com/shic/blog/blob/gh-pages/img/RetentionRate.png)
+Idea 
 
-![retention](img/RetentionRate.png)
+product
+
+team
+
+execution
+
+If you do not have a good product, no need to go for GH, because it will not growth.
+
+![bla](https://raw.githubusercontent.com/shic/blog/gh-pages/img/RetentionRate.png)
+
+
 
 
 
