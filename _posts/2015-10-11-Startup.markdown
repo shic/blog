@@ -13,7 +13,7 @@ Before hire a growth hacker or do GH, check your Retention Rate. If you have a r
 
 ![bla](https://github.com/shic/blog/blob/gh-pages/img/RetentionRate.png)
 
-![retention](blog/img/RetentionRate.png)
+![retention](/img/RetentionRate.png)
 
 
 
