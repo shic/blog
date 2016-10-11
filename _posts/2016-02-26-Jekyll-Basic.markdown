@@ -32,3 +32,20 @@ CSS classes
 
 post_sep(seprator)
 post_author
+
+
+
+## Github images
+
+To get github image url add `?raw=true` at the end of image URL
+
+Image URL
+
+https://github.com/shic/blog/blob/gh-pages/img/about-bg.jpg
+
+will turns to:
+
+https://raw.githubusercontent.com/shic/blog/gh-pages/img/RetentionRate.png
+
+https://raw.githubusercontent.com/shic/blog/gh-pages/img/SomePicture.png
+
