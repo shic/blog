@@ -19,7 +19,13 @@ team
 
 execution
 
-If you do not have a good product, no need to go for GH, because it will not growth.
+If you do not have a great product, no need to execute GH, because it will not growth.
+
+The biggest problem of a startup is: they do not have actually product market fit.
+
+Do not ask what is a good retention rate, because you should figure it out by yourself.
+
+
 
 ![bla](https://raw.githubusercontent.com/shic/blog/gh-pages/img/RetentionRate.png)
 
@@ -27,7 +33,13 @@ If you do not have a good product, no need to go for GH, because it will not gro
 
 
 
+## Acquisition-Activation-Retention-Referral-Revenue
 
+# North star Metric
+
+Get one metric for your business. Facebook use daily active user, Airbnb use weekly active user.
+
+*Aha moment* first teaste of your product value proposition 
 
 # Talk
 
