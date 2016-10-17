@@ -59,4 +59,7 @@ mogrify -format jpg *.png
 [Octotree](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc)
 
 
+## Build cross platform desktop apps
+
+[Electron](http://electron.atom.io/)
 
