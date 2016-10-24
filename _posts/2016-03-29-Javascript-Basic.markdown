@@ -367,7 +367,7 @@ cat.speak()
 
 ```javascript
 class Project {
-	constructor() {
+    constructor() {
 		console.log('constructing Project');
 	}
 }
