@@ -32,6 +32,30 @@ Presistence
 
 
 
+Fixture (Response mapper)
+
+Response
+
+DTO
+
+Domain
+
+
+
+DTO
+
+Service
+
+Application
+
+Persistence
+
+Domain
+
+
+
+
+
 ## Add a new ES Index
 
 We try to store a global config data in the persistence 
@@ -103,7 +127,12 @@ public class ConfigHandler extends ObjectHandler<Config> implements PersistenceH
 
 ### Mapping (Presistence)
 
-Here we decide how to store data in ES
+Here we decide how to store data in ES.
+
+Do not need to add the value in this file, If you do not want to :
+
+- Search for the value
+- Index this value
 
 ```java
 /*from server/administration/src/main/resources/es/config_mapping.json*/
