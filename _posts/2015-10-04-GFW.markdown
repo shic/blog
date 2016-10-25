@@ -3,6 +3,7 @@ layout:     post
 title:      "GFW"
 date:       2015-10-04 12:00:00
 author:     "Shi"
+permalink:  gfw
 ---
 
 # Shadowsocks （SS）
@@ -53,7 +54,7 @@ Login to the server：
 
 ##### Setup
 
-Insert the IP, Port and Password
+Insert the YOUR_SERVER_IP, Port number (8388) and YOUR_SERVER_IP
 
 #### Linux 
 

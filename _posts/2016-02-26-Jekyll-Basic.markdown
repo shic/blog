@@ -19,6 +19,7 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 categories: Jekyll Basic
 image:      post-bg-01.jpg
+permalink: some-link
 
 
 To show excerpt (short piece of artical) of the post: 
