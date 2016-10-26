@@ -12,10 +12,10 @@ author:     "Shi"
 1. App eco is full App生态已经相对饱和
 2. Marketing cost too much (You can not even let user see you) 推广成本高。App store 已经有八年历史了。基本上所有的需求已经被满足了。而且扫码关注的成本要远低于App
 3. Development cost too much 开发成本高
-   1. 要适配不同机型。
-   2. 要在不同的App Store 上线 (40 个平台)
-   3. Android 和iOS要做不同的设计
-4. Not lean 不符合精益创业原则
+4. 要适配不同机型。
+5. 要在不同的App Store 上线 (40 个平台)
+6. Android 和iOS要做不同的设计
+7. Not lean 不符合精益创业原则
 
 # 服务号
 
@@ -52,15 +52,18 @@ author:     "Shi"
 
 ## 机会
 
-1. 搬过来。App store 有的搬过来。越简单的就是越要运营能力
+1. 搬过来。App store 有的搬过来。越简单的就对运营能力要求越高，是对渠道能力和资源的比拼。
 2. 补缺口
 3. To B tools 
+4. 各种号一起做营销
 
 ## Not to do 
 
 内容性产品 （小程序不让share）
 
-体验，交互很高
+体验，交互要求很高
+
+叫车产品。要先输入手机号注册。
 
 ## 开发
 
