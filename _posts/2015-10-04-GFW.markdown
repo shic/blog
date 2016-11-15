@@ -78,41 +78,41 @@ Please visit the [App Store](https://itunes.apple.com/us/app/shadowsocks/id6657
 找到4.1. listen-address这一节，确认监听的端口号。
 
 ```
-  Example:
-
-      Suppose you are running Privoxy on a machine which has the
-      address 192.168.0.1 on your local private network
-      (192.168.0.0) and has another outside connection with a
-      different address. You want it to serve requests from inside
-      only:
-      
+#  Example:
+#
+#      Suppose you are running Privoxy on a machine which has the
+#      address 192.168.0.1 on your local private network
+#      (192.168.0.0) and has another outside connection with a
+#      different address. You want it to serve requests from inside
+#      only:
+#      
         listen-address  192.168.0.1:8388
-        
 ```
 
 找到5.2. forward-socks4, forward-socks4a, forward-socks5 and forward-socks5t这一节，加上如下配置，注意最后的点号。
 
 ```
-  Examples:
-  
-      From the company example.com, direct connections are made to
-      all "internal" domains, but everything outbound goes through
-      their ISP's proxy by way of example.com's corporate SOCKS 4A
-      gateway to the Internet.
-  
-        forward-socks4a   /              socks-gw.example.com:1080  www-cache.isp.example.net:8080
-        forward           .example.com   .
-      
-      A rule that uses a SOCKS 4 gateway for all destinations but no
-      HTTP parent looks like this:
-
-        forward-socks4   /               socks-gw.example.com:1080  .
-      
-      To chain Privoxy and Tor, both running on the same system, you
-      would use something like:
-
+#  Examples:
+#  
+#      From the company example.com, direct connections are made to
+#      all "internal" domains, but everything outbound goes through
+#      their ISP's proxy by way of example.com's corporate SOCKS 4A
+#      gateway to the Internet.
+#  
+#        forward-socks4a   /              socks-gw.example.com:1080  www-cache.isp.example.net:8080
+#        forward           .example.com   .
+#      
+#      A rule that uses a SOCKS 4 gateway for all destinations but no
+#      HTTP parent looks like this:
+#
+#        forward-socks4   /               socks-gw.example.com:1080  .
+#      
+#      To chain Privoxy and Tor, both running on the same system, you
+#      would use something like:
+#
          forward-socks5   /               127.0.0.1:1080 .
-```      
+
+```
 
 有关Privoxy的配置就结束了，重启一下Privoxy。
 
