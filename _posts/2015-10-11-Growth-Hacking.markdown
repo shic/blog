@@ -2,7 +2,7 @@
 layout:     post
 title:      "Growth Hacking"
 subtitle:   "Growth Hacking"
-date:       2015-10-12 12:00:00
+date:       2015-10-11 12:00:00
 author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 categories: startup
