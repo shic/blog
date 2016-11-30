@@ -1,7 +1,9 @@
 ---
 layout:     post
 title:      "Startup Experience"
+date:       2015-10-14 12:00:00
 author:     "Shi"
+permalink:  startup-experience
 ---
 
 ## 自我介绍
