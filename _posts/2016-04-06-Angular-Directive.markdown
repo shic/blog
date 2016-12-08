@@ -212,7 +212,9 @@ angular.module('app').controller('scheduleCtrl',function($scope) {
 ```
 
 ## Sample directive 3 (Real case usage)
-```javascript
+
+```java
+
 var app = angular.module('app', []);
 
 app.value('scFollowedInstructors', []);
@@ -261,7 +263,9 @@ angular.module('app').controller('scheduleCtrl',function($scope) {
   ]
 });
 ```
+
 ### instructors
+
 ```html
 <div class="well sidebar-nav">
   <h3>Instructors ({{scFollowedInstructors.length}} followed)</h3>
@@ -271,6 +275,7 @@ angular.module('app').controller('scheduleCtrl',function($scope) {
   </div>
 </div>
 ```
+
 scFollowInstructor.html
 
 ```html

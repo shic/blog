@@ -5,6 +5,21 @@ date:       2016-03-31 12:00:00
 author:     "Shi"
 ---
 
+# Develop environment
+
+sudo npm install -g bower gulp karma-cli nodemon
+
+1. bower: Package manager to load things like Angular
+2. gulp: Test automation system
+3. karma-cli: test 
+4. nodemon: restart node everytime change file
+
+## Sample Code
+
+[Sample John Papa](https://github.com/johnpapa/ng-demos)
+
+
+
 # Add a New API Call
 
 ## Service
