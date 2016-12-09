@@ -3,7 +3,6 @@ layout:     post
 title:      "Startup"
 date:       2015-10-12 12:00:00
 author:     "Shi"
-permalink:  startup
 ---
 
 # 开发新产品的几个错误
