@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "WeChat Development Fondamental"
+title:      "WeChat Mini Program Fondamental"
 date:       2016-10-26 12:00:00
 author:     "Shi"
 ---
