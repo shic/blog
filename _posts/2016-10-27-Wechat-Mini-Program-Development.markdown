@@ -155,5 +155,10 @@ url:"../logs/logs?id=1"
 
 # 总结
 
-100万用户之前，可以不考虑独立App
+https://github.com/justjavac/awesome-wechat-weapp
 
+
+
+http://www.wxapp-union.com/article-964-1.html
+
+http://blog.jobbole.com/106098/
