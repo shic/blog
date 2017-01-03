@@ -80,3 +80,16 @@ export default {
 
 [React boilerplate by Facebook](https://github.com/facebookincubator/create-react-app)
 
+## Starter tutorial
+
+http://chenglou.github.io/react/docs/reusable-components.html#mixins
+
+https://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html
+
+https://www.sitepoint.com/how-to-build-a-todo-app-using-react-redux-and-immutable-js/
+
+great redux course: https://egghead.io/courses/getting-started-with-redux
+
+https://www.fullstackreact.com/articles/react-tutorial-cloning-yelp/
+
+test case on angular
