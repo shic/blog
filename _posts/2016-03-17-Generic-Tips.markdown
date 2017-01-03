@@ -31,3 +31,13 @@ Full Calendar
 
 
 
+# Linux
+
+Chrome/Chromium profile load error:
+
+Solution:
+
+1.  cd  ~/.config/chromium
+2.  sudo chown shi:shi Local\ State 
+3.  sudo chown shi:shi Default/Preferences 
+
