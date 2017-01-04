@@ -67,4 +67,9 @@ sudo npm install -g bower gulp karma-cli nodemon
 
 
 
+# Notes
 
+https://github.com/mariusbanea?utf8=%E2%9C%93&tab=repositories&q=angular&type=&language=
+
+openerp 7
+https://www.odoo.com
