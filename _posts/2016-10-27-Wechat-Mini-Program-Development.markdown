@@ -151,6 +151,182 @@ url:"../logs/logs?id=1"
 
 
 
+### Input
+
+```
+ type：text, number, idcard, digit
+ 
+ userNameInput : function (event){
+    this.setData({userName:event.detail.value})
+  },
+            
+  <view><input bindinput="userNameInput" /></view>
+
+```
+
+### picker
+
+**mode = selector**
+
+**mode = time**
+
+**mode = date**
+
+### form
+
+表单，将组件内的用户输入提交。
+
+```
+<switch/> <input/> <checkbox/> <slider/> <radio/> <picker/>
+
+```
+
+
+
+###  button
+
+```
+  size: default, mini
+  type: primary, default, warn
+  form-type：submit, reset
+  <button class="login-btn" bindtap="loginBtnClick">登录</button>
+  
+  loginBtnClick:function (){
+    // 用户名和密码验证的过程
+    app.globalData.userInfo = {userName:this.data.userName,password:this.data.password}
+    wx.redirectTo({url:"../home/home"})
+  },
+
+```
+
+### swiper
+
+```
+indicator-dots="true"
+autoplay="true"
+interval="3000" //显示时间
+duration="1000" //滑动时间
+
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+```
+
+### scroll-view
+
+```java
+scroll-y="true" 
+upper-threshold="50"//distance to call the event
+scroll-top="{{scrollTop}}" // goto some position
+
+使用竖向滚动时，需要给<scroll-view/>一个固定高度，通过 WXSS 设置 height。
+
+<scroll-view scroll-y="true" style="height: 200px;" bindscrolltoupper="scrolltoupper" bindscrolltolower="scrolltolower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view id="green" class="scroll-view-item bc_green"></view>
+    <view id="red"  class="scroll-view-item bc_red"></view>
+    <view id="yellow" class="scroll-view-item bc_yellow"></view>
+    <view id="blue" class="scroll-view-item bc_blue"></view>
+</scroll-view>
+
+Page({
+  data: {
+    toView: 'red',
+    scrollTop: 100
+  },
+  scrolltoupper: function(e) {
+    console.log(e)
+  },
+  scrolltolower: function(e) {
+    console.log(e)
+  },
+  scroll: function(e) {
+    console.log(e)
+  },
+  tap: function(e) {
+    for (var i = 0; i < order.length; ++i) {
+      if (order[i] === this.data.toView) {
+        this.setData({
+          toView: order[i + 1]
+        })
+        break
+      }
+    }
+  },
+  tapMove: function(e) {
+    this.setData({
+      scrollTop: this.data.scrollTop + 10
+    })
+  }
+})
+```
+
+### icon
+
+```
+    iconType: [
+      'success', 'info', 'warn', 'waiting', 'safe_success', 'safe_warn',
+      'success_circle', 'success_no_circle', 'waiting_circle', 'circle', 'download',
+      'info_circle', 'cancel', 'search', 'clear'
+    ]
+    
+<icon type="success" size="{{item}}" color:"green"/>
+
+```
+
+### progress
+
+```
+<progress percent="20" show-info active/>
+```
+
+### view
+
+#### flex
+
+##### container
+
+```java
+display: flex;
+flex-direction:row;
+flex-wrap:wrap; //nowrap: wrap-reverse
+flex-flow:row wrap //equals to : flex-direction:row; && flex-wrap:wrap; 
+justify-content: center //main direction: flex-start (default); flex-end; space-around; space-between
+align-items: center //corss direction: flex-start (default); flex-end; stretch; baseline: 以元素所含第一行文字底线对其
+```
+
+##### element
+
+```java
+flex-grow: 0; //% of increase of the element when there are extra space, the other element should also have this property default:0
+flex-shrink:1; // when space not enough, % of decrese. default 1. 0 means this element not shrink, 10 means shrink 10 times respect others.
+flex-basis: 200rpx; //bug 200px works. space that the element occupy 
+flex: 2 0 200rpx;
+  
+order: 3 //position of this element in the container
+align-self: flex-end;
+```
+
+相对定位 (相对于自己来定位)
+
+```
+position: relative;
+left: 150rpx;
+top: 50rpx
+```
+
+绝对定位（相对于最近一个已经定位的父级元素来定位）
+
+```
+position: absolute;
+left: 150rpx;
+top: 50rpx
+```
+
 
 
 # 总结
