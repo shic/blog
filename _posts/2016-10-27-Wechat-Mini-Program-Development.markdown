@@ -329,6 +329,10 @@ top: 50rpx
 
 
 
+all iPhone screens are 750 rpx
+
+
+
 # 总结
 
 https://github.com/justjavac/awesome-wechat-weapp

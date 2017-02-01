@@ -710,9 +710,9 @@ bitrise https://www.bitrise.io/
 
 ## E-book
 
-Gitbook [https://unbug.gitbooks.io/react-native-training/content/](https://unbug.gitbooks.io/react-native-training/content/)
+[Gitbook](https://unbug.gitbooks.io/react-native-training/content/)
 
-Video [http://bbs.reactnative.cn/topic/759](http://bbs.reactnative.cn/topic/759/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99react-native%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B-%E6%9B%B4%E6%96%B0%E5%88%B050%E9%9B%86%E5%95%A6/124)
+[Video](http://bbs.reactnative.cn/topic/759/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99react-native%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B-%E6%9B%B4%E6%96%B0%E5%88%B050%E9%9B%86%E5%95%A6/124)
 
 ## React Native Skeleton
 
@@ -720,9 +720,18 @@ Video [http://bbs.reactnative.cn/topic/759](http://bbs.reactnative.cn/topic/759/
 
 [pluralsight-redux-starter](https://github.com/coryhouse/pluralsight-redux-starter)
 
-react-slingshot: https://github.com/coryhouse/react-slingshot
+[react-slingshot](https://github.com/coryhouse/react-slingshot)
 
 [Udemy React with Redux Course](https://github.com/StephenGrider/ReduxSimpleStarter)
+
+## UI Library
+
+[Avocode nachos ui](https://avocode.com/nachos-ui/docs)
+
+## Libraries
+
+[React native web](https://github.com/necolas/react-native-web#why)
+
 ## Tutorial
 
 [React Native Tips](https://github.com/JackPu/react-native-tips)
