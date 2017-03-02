@@ -548,5 +548,10 @@ author:     "Shi"
 ## 参考书
 
 创业者手册：教你如何构建伟大的企业
+The Startup Owner's Manual: The Step-by-Step Guide for Building a Great Company
+Startupper: Guida alla creazione di imprese innovative
+
+Running Lean: Iterate from Plan A to a Plan That Works (Lean (O'Reilly)) 2nd Edition by Ash Maurya 
 
 
+Lean Analytics: Use Data to Build a Better Startup Faster
