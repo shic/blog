@@ -6,43 +6,38 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
-# Lifecyle
+# Lifecycle
 
-1. optional `static` methods
+### The Component Lifecycle
 
-2. `constructor`
+Each component has several "lifecycle methods" that you can override to run code at particular times in the process. Methods prefixed with **will** are called right before something happens, and methods prefixed with **did** are called right after something happens.
 
-3. `getChildContext`
+#### Mounting
 
-4. `componentWillMount`
+These methods are called when an instance of a component is being created and inserted into the DOM:
 
-   1. Register listener
+- [`constructor()`](https://facebook.github.io/react/docs/react-component.html#constructor)
+- [`componentWillMount()`](https://facebook.github.io/react/docs/react-component.html#componentwillmount)
+- [`render()`](https://facebook.github.io/react/docs/react-component.html#render)
+- [`componentDidMount()`](https://facebook.github.io/react/docs/react-component.html#componentdidmount)
 
-5. `componentDidMount`
+#### Updating
 
-6. `componentWillReceiveProps`
+An update can be caused by changes to props or state. These methods are called when a component is being re-rendered:
 
-7. `shouldComponentUpdate`
+- [`componentWillReceiveProps()`](https://facebook.github.io/react/docs/react-component.html#componentwillreceiveprops)
+- [`shouldComponentUpdate()`](https://facebook.github.io/react/docs/react-component.html#shouldcomponentupdate)
+- [`componentWillUpdate()`](https://facebook.github.io/react/docs/react-component.html#componentwillupdate)
+- [`render()`](https://facebook.github.io/react/docs/react-component.html#render)
+- [`componentDidUpdate()`](https://facebook.github.io/react/docs/react-component.html#componentdidupdate)
 
-8. `componentWillUpdate`
+#### Unmounting
 
-9. `componentDidUpdate`
+This method is called when a component is being removed from the DOM:
 
-10. `componentWillUnmount`
+- [`componentWillUnmount()`](https://facebook.github.io/react/docs/react-component.html#componentwillunmount)
 
-11. *clickHandlers or eventHandlers* like `onClickSubmit()` or `onChangeDescription()`
-
-12. *getter methods for render* like `getSelectReason()` or `getFooterContent()`
-
-13. *Optional render methods* like `renderNavigation()` or `renderProfilePicture()`
-
-14. `render`
-
-   ​
-
-   ​		
-
-- ​
+  ​​
 
 ## MOUNT
 
@@ -100,6 +95,7 @@ The state belongs to the component
 
 - Use state for storing simple view state like wether or not drop-down options are visible.
 - Never modify this.state directly, use this.setstate instead.
+- State is the component that changed in this 
 
 ## Components
 
@@ -732,7 +728,19 @@ bitrise https://www.bitrise.io/
 
 [React native web](https://github.com/necolas/react-native-web#why)
 
+
+
+# Problem Resolving
+
+- ### ENOENT: no such file or directory, uv_chdir
+
+react-native upgrade
+
+
+
 ## Tutorial
+
+
 
 [React Native Tips](https://github.com/JackPu/react-native-tips)
 
