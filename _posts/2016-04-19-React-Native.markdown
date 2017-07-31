@@ -37,7 +37,7 @@ This method is called when a component is being removed from the DOM:
 
 - [`componentWillUnmount()`](https://facebook.github.io/react/docs/react-component.html#componentwillunmount)
 
-  ​​
+  ​
 
 ## MOUNT
 
@@ -243,6 +243,12 @@ const styles = StyleSheet.create({
 ## State management (Data management)
 
 ### Redux
+
+
+
+#### Reducer
+
+Reducer is the function that 
 
 ```java
 function todoStore(state, action) //state: old state; action: sort of event, it may contains description or some data
