@@ -6,7 +6,21 @@ author:     "Shi"
 permalink:  mac
 ---
 
-# Mac Install OS 
+# Useful tips
+
+## Dictionary
+
+### 自动取词
+
+鼠标指向要取词的对象，同时按住 Control + Command + D
+
+### 字典排序
+
+拖拽字典来进行排序
+
+
+
+# Install MacOS 
 
 ## Setup steps：
 
@@ -20,6 +34,7 @@ Login to the server：
    sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/Capitan --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app --nointeraction
 
    sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Sierra --applicationpath /Applications/Install\ macOS\ Sierra.app --nointeraction
+   ```
 
 
    ```
