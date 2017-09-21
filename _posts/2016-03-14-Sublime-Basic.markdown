@@ -11,8 +11,9 @@ header-img: "img/post-bg-01.jpg"
 
 ## Multiple cursors: 
 
+Method 1: Ctrl+Cmd+G
+Method 2: 
 1.Ctrl+Click (press Esc to reset) to add a cursor to where you clicked.
-
 2.Find the string (Ctrl+F), then click "Find all"(Alt+Enter)
 
 
