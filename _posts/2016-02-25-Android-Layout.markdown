@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "Android"
+title:      "Android Layout"
 subtitle:   "Android study path"
-date:       2016-2-26 12:00:00
+date:       2016-2-25 12:00:00
 author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
