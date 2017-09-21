@@ -23,8 +23,39 @@ header-img: "img/post-bg-01.jpg"
 
 [Woopra](https://www.woopra.com/blog/2016/09/27/woopra-vs-google-analytics/)
 
-Log
+# Debug
+
+## Log
 
 Log.d() DEBUG, Log.i() INFO, Log.w() WARN, Log.e() ERROR
     private String LOG_TAG = BookingListFragment.class.getSimpleName();
-Log.v(TAG, "index=" + i);
+    Log.v(TAG, "index=" + i);
+
+
+
+
+# Live Template
+
+for - for loop
+
+```
+for ($INDEX$) {
+    $END$
+}
+```
+
+foreach - Create a for each loop
+
+```
+for ($INDEX$:$COPY_INDEX$) {
+    $END$
+}
+```
+
+fvi - findViewById with cast
+
+```
+($cast$) view.findViewById(R.id.$resId$);
+$END$
+```
+
