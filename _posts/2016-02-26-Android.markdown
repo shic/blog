@@ -26,3 +26,4 @@ header-img: "img/post-bg-01.jpg"
 Log
 
 Log.d() DEBUG, Log.i() INFO, Log.w() WARN, Log.e() ERROR
+    private String LOG_TAG = BookingListFragment.class.getSimpleName();
