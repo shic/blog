@@ -23,3 +23,6 @@ header-img: "img/post-bg-01.jpg"
 
 [Woopra](https://www.woopra.com/blog/2016/09/27/woopra-vs-google-analytics/)
 
+Log
+
+Log.d() DEBUG, Log.i() INFO, Log.w() WARN, Log.e() ERROR
