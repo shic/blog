@@ -67,4 +67,9 @@ tab to expand the selection to the right or
 shift-tab to expand the selection to the left. 
 Option-enter pastes the current match.
 
+### Instant Replay
+
+Cmd+Opt+B
+
+
 
