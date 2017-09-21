@@ -19,7 +19,18 @@ header-img: "img/post-bg-01.jpg"
 
 
 
-## Analytics tools
+## Layout Properties
 
-[Woopra](https://www.woopra.com/blog/2016/09/27/woopra-vs-google-analytics/)
+       android:id="@+id/edit_text_name_input"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@color/colorAccent"
+       android:hint="Enter your name"
+       android:padding="4dp"
+       android:textSize="24sp"
 
+       android:layout_gravity="center"
+       android:layout_marginTop="8dp"
+       android:text="Your name appears here"
+       
+       
