@@ -54,6 +54,17 @@ find ~/ -name "ImageMagick"
 
 
 
-## 
+# Mac
+
+## iTerm2
+
+### Search
+
+`Cmd+F`
+
+Use the Find feature to begin searching for text.  
+tab to expand the selection to the right or 
+shift-tab to expand the selection to the left. 
+Option-enter pastes the current match.
 
 
