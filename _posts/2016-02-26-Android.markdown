@@ -7,7 +7,24 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
+
+
+# Activity
+
+# Service
+
+# Broadcast Receiver
+
+# Content Provider
+
+
+
 ## Analytics tools
 
 [Woopra](https://www.woopra.com/blog/2016/09/27/woopra-vs-google-analytics/)
 
+Log
+
+Log.d() DEBUG, Log.i() INFO, Log.w() WARN, Log.e() ERROR
+    private String LOG_TAG = BookingListFragment.class.getSimpleName();
+Log.v(TAG, "index=" + i);

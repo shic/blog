@@ -6,43 +6,38 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
-# Lifecyle
+# Lifecycle
 
-1. optional `static` methods
+### The Component Lifecycle
 
-2. `constructor`
+Each component has several "lifecycle methods" that you can override to run code at particular times in the process. Methods prefixed with **will** are called right before something happens, and methods prefixed with **did** are called right after something happens.
 
-3. `getChildContext`
+#### Mounting
 
-4. `componentWillMount`
+These methods are called when an instance of a component is being created and inserted into the DOM:
 
-   1. Register listener
+- [`constructor()`](https://facebook.github.io/react/docs/react-component.html#constructor)
+- [`componentWillMount()`](https://facebook.github.io/react/docs/react-component.html#componentwillmount)
+- [`render()`](https://facebook.github.io/react/docs/react-component.html#render)
+- [`componentDidMount()`](https://facebook.github.io/react/docs/react-component.html#componentdidmount)
 
-5. `componentDidMount`
+#### Updating
 
-6. `componentWillReceiveProps`
+An update can be caused by changes to props or state. These methods are called when a component is being re-rendered:
 
-7. `shouldComponentUpdate`
+- [`componentWillReceiveProps()`](https://facebook.github.io/react/docs/react-component.html#componentwillreceiveprops)
+- [`shouldComponentUpdate()`](https://facebook.github.io/react/docs/react-component.html#shouldcomponentupdate)
+- [`componentWillUpdate()`](https://facebook.github.io/react/docs/react-component.html#componentwillupdate)
+- [`render()`](https://facebook.github.io/react/docs/react-component.html#render)
+- [`componentDidUpdate()`](https://facebook.github.io/react/docs/react-component.html#componentdidupdate)
 
-8. `componentWillUpdate`
+#### Unmounting
 
-9. `componentDidUpdate`
+This method is called when a component is being removed from the DOM:
 
-10. `componentWillUnmount`
+- [`componentWillUnmount()`](https://facebook.github.io/react/docs/react-component.html#componentwillunmount)
 
-11. *clickHandlers or eventHandlers* like `onClickSubmit()` or `onChangeDescription()`
-
-12. *getter methods for render* like `getSelectReason()` or `getFooterContent()`
-
-13. *Optional render methods* like `renderNavigation()` or `renderProfilePicture()`
-
-14. `render`
-
-   ​
-
-   ​		
-
-- ​
+  ​
 
 ## MOUNT
 
@@ -70,8 +65,8 @@ The state belongs to the component
 
 1. react-native init AwesomeProject // Suggest: use upper case for the project name 
 2. cd AwesomeProject
-3. react-native run-ios
-4. react-native start
+3. npm start
+4. react-native run-ios
 5. npm i
 
 ## babel
@@ -100,162 +95,44 @@ The state belongs to the component
 
 - Use state for storing simple view state like wether or not drop-down options are visible.
 - Never modify this.state directly, use this.setstate instead.
-
-## Components
-
-### TouchableHighlight
-
-```java
-class Touch extends Component {
-  handlePress(){
-    console.log('press');
-  }
-  handleLongPress(){
-    console.log('longPress');
-  }
-  render() {
-    return (
-      <TouchableHighlight
-        onPress={this.handlePress}
-        onLongPress={this.handleLongPress}>
-        <View>
-          <Text>Press me!</Text>
-        </View>
-      </TouchableHighlight>
-    );
-  }
-}
-```
-
-### TextInput
-
-```java
-class Test extends Component {
-  //...
-  //handle events
-  //...
-  render() {
-    return (
-      <TextInput 
-        onBlur={...}
-        onChange={...}
-        onEndEditing={...}
-        onSelectionChange={...}
-        onSubmitEditing={...}
-      </TextInput>
-    );
-  }
-}
-```
-
-### [Gesture Responder System](https://unbug.gitbooks.io/react-native-training/content/24_events.html)
-
-```java
- render() {
-    return (
-      <View 
-        onStartShouldSetResponderCapture={this.handleStartShouldSetResponderCapture}
-        onMoveShouldSetResponderCapture={this.handleMoveShouldSetResponderCapture}
-        onStartShouldSetResponder={this.handleStartShouldSetResponder}
-        onMoveShouldSetResponder={this.handleMoveShouldSetResponder}
-        onResponderGrant={this.handleResponderGrant} 
-        onResponderReject={this.handleResponderReject}
-        onResponderMove={this.handleResponderMove}
-        onResponderRelease={this.handleResponderRelease}
-        onResponderTerminationRequest={this.handleResponderTerminationRequest}
-        onResponderTerminate={this.handleResponderTerminate}>
-          <Text>Press me!</Text>
-      </View>
-    );
-  }
-```
-
-### Style
-
-#### Flexbox
-
-```java
-flexDirection:'row'|'column'
-
-justifyContent:'flex-start'|'flex-end'|'center'|'space-between'|'space-around'
-
-alignItems:'flex-start'|'flex-end'|'center'|'stretch'
-
-alignSelf:'auto'|'flex-start'|'flex-end'|'center'|'stretch'
-
-flexWrap:'wrap'|'nowrap'
-
-```
-
-#### absolute
-
-```java
-  box1: {
-    position: 'absolute',
-    top: 40,
-    left: 40,
-    width: 100,
-    height: 100,
-    backgroundColor: 'red'
-    transform: [{'translate': [0,0, 1]}]
-    borderRadius: 20,
-
-  }
-```
-
-#### Base Style
-
-```html
-
-// BaseStyles.js
-import {  StyleSheet,Dimensions } from 'react-native';
-let winSize = Dimensions.get('window');
-const BaseStyles = StyleSheet.create({
-  text: {
-    fontSize: 40/winSize.scale
-  }
-});
-export default BaseStyles;
-
-// Component
-import BaseStyles from './BaseStyles';
-
-class InheritanceStyle extends Component {
-  render() {
-    return (
-      <View style={this.props.parentColor}>
-        <Text style={[BaseStyles.text, styles.text]}> this is a long text </Text>
-      </View>
-    );
-  }
-}
-const styles = StyleSheet.create({
-  text:{
-    color: '#ffffff'
-  }
-});
-```
+- State is the component that changed in this 
 
 
-#### absolute
 
-```java
-
-```
 
 
 ## State management (Data management)
 
-### Redux
+**Object.assign()** method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.
 
 ```java
-function todoStore(state, action) //state: old state; action: sort of event, it may contains description or some data
+Object.assign({},todo,{
+    completed: !todo.completed; //toggle the todo, change state
+  }   
+)
+  
+//3 arg of todo: 
+{}: target
+todo: source
+{completed...}: overwrited data of source
+```
+
+
+
+### Redux
+
+#### Reducer
+
+Reducer is the function that trace the previous state, the action to be dispatched and the next state of the app. The function must to be pure.
+
+```java
+function todoStoreReducer(state, action) //state: old state; action: sort of event, it may contains description or some data
 {
   //calculate newState, here we mutate state into new state
   return newState;
 }
 
-Redux.createStore(todoStore);//create a store which gets used by react components
+todoStore = Redux.createStore(todoStoreReducer);//create a store which gets used by react components
 
 todoStore.dispatch({ //dispatch: fire an action on the store 
   type: 'ADD_TODO',
@@ -264,6 +141,8 @@ todoStore.dispatch({ //dispatch: fire an action on the store
 ```
 
 #### Create a Redux store
+
+Store hold the current state, pass the reducer with `const store = createStore(todoStore)`, here todoStoreReducer is a reducer
 
 ```java
 //todoStore.js
@@ -286,7 +165,7 @@ function getFilteredTodos(allTodos, filter) {
     return allTodos.filter(todo => todo.state === filter);
 }
 
-function todoStore(state = defaultState, action) {
+function todoStoreReducer(state = defaultState, action) {
     switch (action.type) {//switch the type attribute
     case 'ADD_TODO':
         //state.todos: takes the old todos
@@ -326,13 +205,11 @@ function todoStore(state = defaultState, action) {
     }
 }
 
-export default createStore(todoStore); // Use createStore that we got from redux
+export default createStore(todoStoreReducer); // Use createStore that we got from redux
 ```
 
 
 #### Sync PluralTodo component’s state with Redux state
-
-
 
 ```java
 // PluralTodo.js
@@ -433,7 +310,6 @@ class PluralTodo extends Component {
 }
 
 export default PluralTodo;
-
 ```
 
 ```java
@@ -618,7 +494,15 @@ Async action with Redux use the [Redux Thunk middleware](https://github.com/gae
 
 state is never to be modified. When changing state, create new objects instead. The spread (…) operator helps significantly
 
+
+
+### Exp2
+
 [Redux react official tutorial](http://redux.js.org/docs/basics/UsageWithReact.html)
+
+
+
+
 
 ### MobX
 
@@ -732,7 +616,19 @@ bitrise https://www.bitrise.io/
 
 [React native web](https://github.com/necolas/react-native-web#why)
 
+
+
+# Problem Resolving
+
+- ### ENOENT: no such file or directory, uv_chdir
+
+react-native upgrade
+
+
+
 ## Tutorial
+
+
 
 [React Native Tips](https://github.com/JackPu/react-native-tips)
 
