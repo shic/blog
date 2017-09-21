@@ -72,12 +72,11 @@ void create_threads(struct thread_data *td, int MAX_THREAD_NUM){
 		exit ( EXIT_FAILURE ) ; \
 	} \
 } while (0)
-
 ```
 
 # Library
 
-## fopen
+### fopen
 
 ```java
 FILE *fopen(const char *filename, const char *mode)
@@ -90,6 +89,20 @@ mode:
 Return Value
 This function returns a FILE pointer. Otherwise, NULL is returned and the global variable errno is set to indicate the error.
 ```
+
+### open
+
+```
+       int open(const char *pathname, int flags);
+       int open(const char *pathname, int flags, mode_t mode);
+
+flags must include one of the following access modes: O_RDONLY, O_WRONLY, or O_RDWR. These request opening the file read-only, write-only, or read/write, respectively.
+
+mode specifies the permissions to use in case a new file is created. This argument must be supplied when O_CREAT is specified in flags; if O_CREAT is not specified, then mode is ignored. The effective permissions are modified by the process's umask in the usual way: The permissions of the created file are (mode & ~umask). Note that this mode only applies to future accesses of the newly created file; the open() call that creates a read-only file may well return a read/write file descriptor.
+
+```
+
+
 
 ### fileno
 
