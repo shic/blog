@@ -58,4 +58,9 @@ fvi - findViewById with cast
 ($cast$) view.findViewById(R.id.$resId$);
 $END$
 ```
+# Android studio
 
+## Shortcut
+
+Autocomplete
+Alt+Enter
