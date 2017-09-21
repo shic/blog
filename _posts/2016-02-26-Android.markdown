@@ -66,3 +66,151 @@ Autocomplete
 Alt+Enter
 
 
+Android Studio HotKey
+
+
+
+To go back and forth through the 
+Last Edit Point
+ ( Ctrl+Alt+Left or Ctrl+Alt+Right)
+
+
+
+Ctrl+P 显示选中方法的参数
+
+
+Return to the last edit point (Command+Shift+Delete)
+
+
+Rename (Shift+F6)
+
+
+Recently opened ﬁles (Ctrl+e); Recently edited ﬁles (Ctrl+Shift+e)
+
+
+Surround with try/if ( Alt+Command+T)(Ctrl+Alt+T)
+
+
+GetterSetter Constractor (Ctrl+Enter)
+
+
+Copy one line (Command+C at the beginning of the line)
+
+
+Focus to the editor (Esc)
+
+
+Expect type (Ctrl+Shift+Space)
+
+
+Refactor  Ctrl+Alt+V 
+
+Show docs for selected API Ctrl+Q (Win) F1 (Mac)
+
+
+Use Ctrl+Shift+F7 (Edit | Find | Highlight Usages in File) to quickly highlight usages of some variable in the current ﬁle.
+
+
+Use F3 and Shift+F3 keys to navigate through highlighted usages.
+
+
+Press Escape to remove highlighting.
+
+
+Press Alt+Q (View | Context Info) to see the declaration of the current method without the need to scroll to it.
+
+
+Ctrl+E (View | Recent Files) brings a popup list of the recently visited ﬁles. Choose the desired ﬁle and press Enter to open it.
+
+
+Use Ctrl+Alt+Up/Ctrl+Alt+Down shortcuts to jump between compiler error messages or search operation results.
+
+
+Use Ctrl+J to complete any valid Live Template abbreviation if you don't remember it. For example, type it and press Ctrl+J to see what happens.
+
+
+Ctrl+Shift+N Search by ﬁle name
+
+
+Double pressing the Shift key. Search globle
+
+
+Ctrl+Shift+E Recently edited ﬁle
+
+
+rouiT runOnUiThread
+
+
+fbc ($cast$) ﬁndViewById(R.id.$resId$);
+
+
+Android/rgS
+
+
+Ctrl+J Insert a live template.
+
+
+Collapse all: Ctrl+Shift+NumPad +
+
+
+Expand all: Ctrl+Shift+NumPad -
+
+
+Format code: Ctrl+Alt+L
+
+
+Show project: Alt+1
+
+
+Show logcat: Alt+6
+
+
+Generate Alt+ Insert
+
+
+To quickly evaluate the value of any expression while debugging the program, hold Alt and click this expression to see its value and calculate it, call a method, etc.
+
+
+Create strings: On any string Alt+Enter
+
+
+Ctrl+B on class name, go to that class
+
+
+(Ctrl+Space) within HTML, CSS and other ﬁles, for completing image ﬁle names.
+
+
+quickly view the image referenced at caret by using the Quick Deﬁnition (Ctrl+Shift+I).
+
+
+Extract parameter(make the variable in the function to be pass as parameter) Windows/Linux: Ctrl+Alt+P
+
+
+Show parameters for selected method Ctrl+P
+
+
+Delete line Ctrl+Y (Win) Cmd+Backspace (Mac)
+
+
+Paste from history Ctrl+Shift+V
+
+
+Select one word Ctrl+Shift+Left/Right; One Line: Shift+Up/Down; One Section MAC Alt+up/down WIN?LINUX Ctrl+w / Ctrl+Shift+w;
+
+
+Close a current tab    Cmd+w(Windows / Linux： trl+Shift+a)
+
+Open a class    Cmd+o (Windows/Linux   Ctrl+n)
+
+
+Move between tabs    Cmd+Shift+[ ] (Windows / Linux  ： Alt+← →)
+Close a current tab    Cmd+w (Windows / Linux： Ctrl+Shift+a)
+
+Format your code    Cmd+option+l (Windows / Linux ： Ctrl+Alt+l)
+
+Show Intention Actions (Show quick ﬁx); Alt+ENTER
+
+
+Build and run    control+r (Windows/Linux    shif： F10)
+
+
