@@ -13,10 +13,81 @@ header-img: "img/post-bg-01.jpg"
 
 # Service
 
+Components meant for running background tasks that do not need a visual component. 
+
+## Start a service
+
+1. Start directly
+
+startService() from content passing an intent as param
+
+### Lifecycle
+
+onCreate()
+
+onStartCommand()
+
+Service Running 
+
+stopSelf()
+
+onDestory()
+
+IntentService
+
+
+2. Schedule
+
+JobScheduler
+
+3. Bind
+
+bindService()
+
+Can cummunicate with activity back and forth
+
+i.e. Play music and update the view to show where you are
+
+
 # Broadcast Receiver
 
 # Content Provider
 
+Share data between apps
+
+# Lifecycle
+
+Active
+|
+| onResume/onPause (i.e. Show ask for permission dialog)
+|
+Visible
+|
+| onStart/onStop (i.e. Switch app)
+|
+Background
+|
+| onDestroy
+|
+Dead
+
+# Background Task
+
+## AsyncTaskLoader
+
+AsyncTaskLoader is tied to the activity lifecycle, is used to communicate with activity.
+
+We use it to prevent zombie threads that caused by routate screen or switch apps. (We launch the thread in onstart() method, so when we recall onStart(), a new thread will be create. 
+
+1. Create a loader ID
+2. Fill-in loader callbacks
+3. Init loader with LoaderManager
+
+Ref:
+
+[Udacity Code](https://github.com/udacity/ud851-Exercises/tree/student/Lesson05b-Smarter-GitHub-Repo-Search/T05b.02-Solution-AddAsyncTaskLoader)
+
+[Udacity Video](https://classroom.udacity.com/courses/ud851/lessons/ed13cc93-2861-43bf-b7ed-395a166ab975/concepts/29dfb358-58ec-4364-8f1d-74488de38424)
 
 
 ## Analytics tools
@@ -30,6 +101,34 @@ header-img: "img/post-bg-01.jpg"
 Log.d() DEBUG, Log.i() INFO, Log.w() WARN, Log.e() ERROR
     private String LOG_TAG = BookingListFragment.class.getSimpleName();
     Log.v(TAG, "index=" + i);
+
+# Checklist to anderstand a project
+
+Internet request 
+
+Persistance
+
+Multi Activity/Fragemnt
+
+Permission handler for Android 6
+
+Notification handler
+
+Multi controller
+
+Min SDK
+
+Native SharedPreferences is used?
+
+Model structure
+
+Communication between Fragments
+
+Internationalization
+
+Async call is used?
+
+
 
 
 
