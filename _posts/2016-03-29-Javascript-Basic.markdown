@@ -111,7 +111,7 @@ Every function has a prototype
 ```javascript
 var myFunc = function(){}
 display(myFunc.prototype) // Output: {}
-```    
+```
 Object does not hava a prototype but has proto
 
 ```javascript
@@ -209,7 +209,6 @@ display(fluffy) //Output: {voice:Meow name:Fluffy color:White}
 
 display(Object.keys(fluffy.__proto__.__proto__)) //Using class syntex, Members of classed are not enumerable. So this speak function is not an enumrable property of the animal class
 display(fluffy.__proto__.__proto__.hasOwnProperty('speak')) // Output: true
-
 ```
 
 ## Defining getters and setters
@@ -231,7 +230,7 @@ o.c = 50;
 console.log(o.a); // 25
 
 ```
-			
+
 # ES6
 
 [ES6 compatibility table](http://kangax.github.io/compat-table/es6/)
@@ -341,7 +340,6 @@ File module1.js:
 let projectName ='BuildIt';
 export let projectId = 99;
 export default projectName;
-
 ```
 
 ## ES6 class 
@@ -465,7 +463,7 @@ s.startsWith('world', 6) // true
 s.endsWith('Hello', 5) // true
 s.includes('Hello', 6) // false
 
-let wave = '\u{1f30a}';
+let wave = '\u{1f30a}'; //Unicode Character suppported
 console.log(wave.repeat(10)); //Output: 🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊
 ```
 
