@@ -1,0 +1,407 @@
+---
+layout:     post
+title:      "Redux"
+date:       2016-04-17 12:00:00
+author:     "Shi"
+header-img: "img/post-bg-01.jpg"
+---
+
+# Basic
+
+## Props, state and store
+
+![Props, state and store](https://unbug.gitbooks.io/react-native-training/content/QQ20160702-0.png)
+
+### Props
+
+- Consider props **immutable**
+- Use props for event handlers to communicate with child components.
+
+### State
+
+- Use state for storing simple view state like wether or not drop-down options are visible.
+- Never modify this.state directly, use this.setstate instead.
+- State is the component that changed in this 
+
+
+
+
+# Redux
+
+## Example in React.js
+
+
+
+#### Reducer
+
+Reducer is the function that trace the previous state, the action to be dispatched and the next state of the app. The function must to be pure.
+
+```java
+function todoStoreReducer(state, action) //state: old state; action: sort of event, it may contains description or some data
+{
+  //calculate newState, here we mutate state into new state
+  return newState;
+}
+
+todoStore = Redux.createStore(todoStoreReducer);//create a store which gets used by react components
+
+todoStore.dispatch({ //dispatch: fire an action on the store 
+  type: 'ADD_TODO',
+  task,
+});
+```
+
+#### Create a Redux store
+
+Store hold the current state, pass the reducer with `const store = createStore(todoStore)`, here todoStoreReducer is a reducer
+
+```java
+//todoStore.js
+import { createStore } from 'redux';
+
+const defaultTodos = [
+    {
+        task: 'Initial todo in store',
+        state: 'pending',
+    },
+];
+
+const defaultState = {
+    todos: defaultTodos,
+    filter: 'pending',
+    filteredTodos: defaultTodos,
+};
+
+function getFilteredTodos(allTodos, filter) {
+    return allTodos.filter(todo => todo.state === filter);
+}
+
+function todoStoreReducer(state = defaultState, action) {
+    switch (action.type) {//switch the type attribute
+    case 'ADD_TODO':
+        //state.todos: takes the old todos
+        const allTodos = state.todos.concat([{
+            task: action.task,
+            state: 'pending',
+        }]);
+        
+        //Use Object.assign to mutate the old state
+        return Object.assign({}, state, {
+            todos: allTodos,
+            //filteredTodos: getFilteredTodos(allTodos, state.filter),
+        });
+
+    case 'DONE_TODO':
+        const doneTodo = Object.assign({}, action.todo, {
+            state: 'done',
+        });
+
+        const allTodosContainingDone = state.todos
+            .map((todo) => {
+                return todo === action.todo ? doneTodo : todo;
+            });
+
+        return Object.assign({}, state, {
+            todos: allTodosContainingDone,
+            filteredTodos: getFilteredTodos(allTodosContainingDone, state.filter),
+        });
+    case 'TOGGLE_STATE':
+        const filter = state.filter === 'pending' ? 'done' : 'pending';
+        return Object.assign({}, state, {
+            filter,
+            filteredTodos: getFilteredTodos(state.todos, filter),
+        });
+    default:
+        return state;
+    }
+}
+
+export default createStore(todoStoreReducer); // Use createStore that we got from redux
+```
+
+
+#### Sync PluralTodo component’s state with Redux state
+
+```java
+// PluralTodo.js
+const React = require('react-native');
+const {
+    Component,
+    Navigator,
+} = React;
+import TaskList from './TaskList';
+import TaskForm from './TaskForm';
+import todoStore from './todoStore';
+
+class PluralTodo extends Component {
+    constructor(props, context) {
+        super(props, context);
+        this.state = todoStore.getState();
+
+        //State is mutated in the store, so we have to subscribe state mutated, so we can get the update 
+        todoStore.subscribe(() => {
+            this.setState(todoStore.getState()); // eslint-disable-line react/no-set-state
+        });
+    }
+
+    onAddStarted() {
+        this.nav.push({
+            name: 'taskform',
+        });
+    }
+
+    onCancel() {
+        console.log('cancelled!');
+        this.nav.pop();
+    }
+
+    onAdd(task) {
+        console.log('a task was added: ', task);
+        // this.state.todos.push({ task });
+        // this.setState({ todos: this.state.todos });
+        todoStore.dispatch({ //dispatch: fire an action on the store 
+            type: 'ADD_TODO',
+            task,
+        });
+        this.nav.pop();
+    }
+
+    onDone(todo) {
+        console.log('todo was completed: ', todo.task);
+        todoStore.dispatch({
+            type: 'DONE_TODO',
+            todo,
+        });
+    }
+
+    onToggle() {
+        todoStore.dispatch({
+            type: 'TOGGLE_STATE',
+        });
+    }
+
+    renderScene(route, nav) {
+        switch (route.name) {
+        case 'taskform':
+            return (
+                <TaskForm
+                    onAdd={this.onAdd.bind(this)}
+                    onCancel={this.onCancel.bind(this)}
+                />
+            );
+        default:
+            return (
+                <TaskList
+                    filter={this.state.filter}
+                    filteredTodos={this.state.filteredTodos}
+                    onAddStarted={this.onAddStarted.bind(this)}
+                    onDone={this.onDone.bind(this)}
+                    onToggle={this.onToggle.bind(this)}
+                />
+            );
+        }
+    }
+
+    configureScene() {
+        return Navigator.SceneConfigs.FloatFromBottom;
+    }
+
+    render() {
+        return (
+            <Navigator
+                configureScene={this.configureScene}
+                initialRoute={{ name: 'tasklist', index: 0 }}
+                ref={((nav) => {
+                    this.nav = nav;
+                })}
+                renderScene={this.renderScene.bind(this)}
+            />
+        );
+    }
+}
+
+export default PluralTodo;
+```
+
+```java
+//TaskList.js
+import React from 'react-native';
+
+const {
+    View,
+    ListView,
+    TouchableHighlight,
+    Text,
+    Switch,
+} = React;
+
+import TaskRow from './TaskRow/Component';
+
+const styles = React.StyleSheet.create({
+    container: {
+        paddingTop: 40,
+        backgroundColor: '#F7F7F7',
+        flex: 1,
+        justifyContent: 'flex-start',
+    },
+    button: {
+        height: 60,
+        borderColor: '#05A5D1',
+        borderWidth: 2,
+        backgroundColor: '#333',
+        margin: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    buttonText: {
+        color: '#FAFAFA',
+        fontSize: 20,
+        fontWeight: '600',
+    },
+});
+
+class TaskList extends React.Component {
+    constructor(props, context) {
+        super(props, context);
+
+        const ds = new ListView.DataSource({
+            rowHasChanged: (r1, r2) => r1 !== r2,
+        });
+
+        this.state = {
+            dataSource: ds.cloneWithRows(props.filteredTodos),
+        };
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const dataSource = this
+            .state
+            .dataSource
+            .cloneWithRows(nextProps.filteredTodos);
+
+        this.setState({ dataSource });
+    }
+
+    renderRow(todo) {
+        return (
+            <TaskRow
+                onDone={this.props.onDone}
+                todo={todo}
+            />
+        );
+    }
+
+    render() {
+        return (
+            <View style={styles.container}>
+            <View
+                style={{
+                    flexDirection: 'row',
+                    padding: 10,
+                }}
+            >
+                <Switch
+                    onValueChange={this.props.onToggle}
+                    style={{
+                        marginBottom: 10,
+                    }}
+                    value={this.props.filter !== 'pending'}
+                />
+                <Text style={{
+                    fontSize: 20,
+                    paddingLeft: 10,
+                    paddingTop: 3,
+                }}
+                >
+                Showing {this.props.filteredTodos.length} {this.props.filter} todo(s)
+                </Text>
+            </View>
+
+                <ListView
+                    dataSource={this.state.dataSource}
+                    renderRow={this.renderRow.bind(this)}
+                />
+
+                <TouchableHighlight
+                    onPress={this.props.onAddStarted}
+                    style={styles.button}
+                >
+                    <Text
+                        style={styles.buttonText}
+                    >
+                        Add one
+                    </Text>
+                </TouchableHighlight>
+            </View>
+        );
+    }
+}
+
+TaskList.propTypes = {
+    filter: React.PropTypes.string.isRequired,
+    filteredTodos: React.PropTypes
+        .arrayOf(React.PropTypes.object).isRequired,
+    onAddStarted: React.PropTypes.func.isRequired,
+    onDone: React.PropTypes.func.isRequired,
+    onToggle: React.PropTypes.func.isRequired,
+};
+
+export default TaskList;
+```
+
+### Redux-react 
+
+1. ```javascript
+   npm install --save react-redux
+   ```
+
+#### Container
+
+**VisibleTodoList** filters the todos according to the current visibility filter and renders a`TodoList`
+
+#### `containers/VisibleTodoList.js`
+
+```react
+import { connect } from 'react-redux'
+import { toggleTodo } from '../actions'
+import TodoList from '../components/TodoList'
+
+const getVisibleTodos = (todos, filter) => {
+  switch (filter) {
+    case 'SHOW_ALL':
+      return todos
+    case 'SHOW_COMPLETED':
+      return todos.filter(t => t.completed)
+    case 'SHOW_ACTIVE':
+      return todos.filter(t => !t.completed)
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    todos: getVisibleTodos(state.todos, state.visibilityFilter)
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTodoClick: (id) => {
+      dispatch(toggleTodo(id))
+    }
+  }
+}
+
+const VisibleTodoList = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList)
+
+export default VisibleTodoList
+```
+
+Async action with Redux use the [Redux Thunk middleware](https://github.com/gaearon/redux-thunk). 
+
+ [Immutable](https://facebook.github.io/immutable-js/)
+
+state is never to be modified. When changing state, create new objects instead. The spread (…) operator helps significantly
+
