@@ -234,6 +234,39 @@ In chrome developer tool, sources-right most trangle button- active pause button
 
   {/*Comment*/}
 
+
+
+# Build And Realease
+
+## Android
+
+### Debug
+
+Bundle debug build:
+
+```
+react-native bundle --dev false --platform android --entry-file index.android.js --bundle-output ./android/app/build/intermediates/assets/debug/index.android.bundle --assets-dest ./android/app/build/intermediates/res/merged/debug
+```
+
+Create debug build:
+
+```
+cd android
+./gradlew assembleDebug
+```
+
+Generated `apk` will be located at 
+
+`android/app/build/outputs/apk`
+
+## iOS
+
+```
+react-native bundle --dev false --platform ios --entry-file index.ios.js --bundle-output ios/main.bundle 
+```
+
+
+
 # Note
 
 [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
@@ -246,6 +279,8 @@ In chrome developer tool, sources-right most trangle button- active pause button
 ### Collapse by default
 
 Settings/Preferences dialog -> Editor | General | Code Folding 
+
+
 
 ## Online build service
 
