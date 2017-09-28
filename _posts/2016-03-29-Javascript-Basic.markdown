@@ -255,7 +255,7 @@ for (let productId = 0; productId < 10; productId++)
 }
 ```
 
-## For ... of loop
+## Iteration
 ```javascript
 
 var categories = ['hardware', 'software', 'vaporware'];
@@ -293,7 +293,7 @@ console.log(high); //Output: 75000
 ```
 
 
-## Arrow functions
+## Arrow functions (Lambda Functions)
 
 ```javascript
 (param1, param2, …, paramN) => { statements }
@@ -306,16 +306,56 @@ singleParam => { statements }
 // A function with no parameters requires parentheses:
 () => { statements }
 
-function(s){ return s.length } 
+function(s){ 
+  return s.length 
+} 
+EQUALS
 s => s.length
+
+i.e.
+var foo = (x)=>10+x 
+console.log(foo(10)) 
 ```
 
 ## Rest and Spread Operators
+
+The values passed must all be of the same type. In other words, rest parameters act as placeholders for multiple arguments of the same type.
+
 ```javascript
+i.e.
 var showCategories = function (productId, ...categories) {
-	console.log(categories); //Output: ['search', 'advertising']
+	console.log(categories); 
 };
-showCategories(123, 'search', 'advertising');
+showCategories(123, 'search', 'advertising'); //Output: ['search', 'advertising']
+
+i.e.
+function fun1(...params) { 
+   console.log(params.length); 
+}  
+fun1();  //Output: 0
+fun1(5); //Output: 1
+fun1(5, 6, 7); //Output: 3
+```
+
+## The Function Constructor
+
+```
+var variablename = new Function(Arg1, Arg2..., "Function Body"); 
+
+```
+
+The Function() constructor expects any number of string arguments. The last argument is the body of the function – it can contain arbitrary JavaScript statements, separated from each other by semicolons.
+
+**Example − Function Constructor**
+
+```
+var func = new Function("x", "y", "return x*y;"); 
+function product() { 
+   var result; 
+   result = func(10,20); 
+   console.log("The product : "+result)
+} 
+product() //Output: 200
 ```
 
 ## Module
@@ -571,6 +611,52 @@ console.log(it.next());//{done:true, value:undefined}
 
 ## Promise 
 
+The **Promise** object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
+
+ ```javascript
+new Promise( /* executor */ function(resolve, reject) { ... } );
+ ```
+
+### Basic usage 
+
+i.e.
+
+```javascript
+let myFirstPromise = new Promise((resolve, reject) => {
+  // We call resolve(...) when what we were doing asynchronously was successful, and reject(...) when it failed.
+  // In this example, we use setTimeout(...) to simulate async code. 
+  // In reality, you will probably be using something like XHR or an HTML5 API.
+  setTimeout(function(){
+    resolve("Success!"); // Yay! Everything went well!
+  }, 250);
+});
+
+myFirstPromise.then((successMessage) => {
+  // successMessage is whatever we passed in the resolve(...) function above.
+  // It doesn't have to be a string, but if it is only a succeed message, it probably will be.
+  console.log("Yay! " + successMessage);
+});
+```
+
+### Call order
+
+```
+getProcessedData(50);
+
+//Output: 
+1start async  50
+2finish async  50
+3finish async in func 
+4process data  90
+
+```
+
+
+
+
+
+
+
 ### For async request
 
 ```javascript
@@ -602,7 +688,6 @@ function () {
 .catch(function (reason) {
 	console.log('Error: ' + reason);
 });
-
 
 ```
 
@@ -759,7 +844,6 @@ for (let [key, value] of map) {
 }
 // first is hello
 // second is world
-
 ```
 
 ### Set
