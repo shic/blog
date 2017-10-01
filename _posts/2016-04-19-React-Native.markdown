@@ -776,7 +776,7 @@ import AlbumDetail from './AlbumDetail';
 
 ## Tutorial
 
-
+[Github repo](https://github.com/StephenGrider/ReactNativeReduxCasts) for the  [The Complete React Native and Redux Course](https://www.udemy.com/the-complete-react-native-and-redux-course/)
 
 [React Native Tips][25]
 
