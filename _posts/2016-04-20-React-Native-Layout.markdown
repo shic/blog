@@ -8,19 +8,56 @@ header-img: "img/post-bg-01.jpg"
 
 # Style
 
+## Usage
+
+```javascript
+  <View style={styles.viewStyle}>
+  	<Text style={styles.textStyle}>Some text</Text>
+  </View>
+
+
+
+//To not duplicate the styles var, we can do the following
+constant {textStyle,viewStyle} = styles;
+
+return(
+  <View style={viewStyle}>
+  	<Text style={textStyle}>Some text</Text>
+  </View>
+
+
+)
+
+const styles={
+  textStyle:{
+    fontSize:20
+  }
+  viewStyle:{
+    backgroundColor:20
+  }
+}
+```
+
+
+
 #### Flexbox
 
+How to position child element in parent (defined in the parent component )
+
 ```java
+//default is top left 
+  
 flexDirection:'row'|'column'
 
-justifyContent:'flex-start'|'flex-end'|'center'|'space-between'|'space-around'
-
+//horizontal direction (left-right)
 alignItems:'flex-start'|'flex-end'|'center'|'stretch'
+
+//vertical direction
+justifyContent:'flex-start'|'flex-end'|'center'|'space-between'|'space-around' 
 
 alignSelf:'auto'|'flex-start'|'flex-end'|'center'|'stretch'
 
 flexWrap:'wrap'|'nowrap'
-
 ```
 
 #### absolute
@@ -80,6 +117,28 @@ const styles = StyleSheet.create({
 ```
 
 ## Components
+
+## View
+
+```java
+alignItems: 'center',
+justifyContent: 'center',
+shadowColor: '#000',
+shadowOffset: {width:0, height:2} //width:0 means no shadow on the left,right side, height:2 means vertical 2 pixel
+shadowOpacity: 0.2 //how heavy is the shadow
+elevation: 2,
+position: 'relative'
+```
+
+
+
+## Text
+
+```
+fontSize:20
+```
+
+
 
 ### TouchableHighlight
 

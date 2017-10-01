@@ -6,62 +6,90 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
-# Lifecycle
+# Component Lifecycle
 
-### The Component Lifecycle
+Each component has several "lifecycle methods" that you can override to run code at particular times in the process. 
 
-Each component has several "lifecycle methods" that you can override to run code at particular times in the process. Methods prefixed with **will** are called right before something happens, and methods prefixed with **did** are called right after something happens.
+Methods prefixed with **will** are called right before something happens, and 
 
-#### Mounting
+methods prefixed with **did** are called right after something happens.
 
-These methods are called when an instance of a component is being created and inserted into the DOM:
 
-- [`constructor()`](https://facebook.github.io/react/docs/react-component.html#constructor)
-- [`componentWillMount()`](https://facebook.github.io/react/docs/react-component.html#componentwillmount)
-- [`render()`](https://facebook.github.io/react/docs/react-component.html#render)
-- [`componentDidMount()`](https://facebook.github.io/react/docs/react-component.html#componentdidmount)
+
+Everytime we change the state of component, it will rerender itself
 
 #### Updating
 
 An update can be caused by changes to props or state. These methods are called when a component is being re-rendered:
 
-- [`componentWillReceiveProps()`](https://facebook.github.io/react/docs/react-component.html#componentwillreceiveprops)
-- [`shouldComponentUpdate()`](https://facebook.github.io/react/docs/react-component.html#shouldcomponentupdate)
-- [`componentWillUpdate()`](https://facebook.github.io/react/docs/react-component.html#componentwillupdate)
-- [`render()`](https://facebook.github.io/react/docs/react-component.html#render)
-- [`componentDidUpdate()`](https://facebook.github.io/react/docs/react-component.html#componentdidupdate)
+- [`componentWillReceiveProps()`][5]
+- [`shouldComponentUpdate()`][6]
+- [`componentWillUpdate()`][7]
+- [`render()`][8]
+- [`componentDidUpdate()`][9]
 
 #### Unmounting
 
 This method is called when a component is being removed from the DOM:
 
-- [`componentWillUnmount()`](https://facebook.github.io/react/docs/react-component.html#componentwillunmount)
+- [`componentWillUnmount()`][10]
 
-  ​
+     ​
 
-## MOUNT
+## MOUNTING
+
+These methods are called when an instance of a component is being created and inserted into the DOM:
+
+-   [`constructor()`][1]
+
+-   #### [`componentWillMount()`][2]
+
+-   [`render()`][3]
 
 ## MOUNTED
 
-- componentDidMount
+- [`componentDidMount()`][4]
 
 ## RECEIVING PROPS
 - componentWillReceiveProps
-  - update data here
+
+  update data here
+
 - componentWillMount
-- componentWillUnmount
-  - Unregister listener
+
+- [`componentWillUnmount()`](https://reactjs.org/docs/react-component.html#componentwillunmount)
+
+  Unregister listener
+
+  ### 
+
+- ​
+  Unregister listener
+
+### 
+
+### 
 
 ## UPDATED
 - componentDidUpdate
 
-## State 
-The state belongs to the component
+
+
+
+
 
 
 
 
 # Setup
+
+## Tools
+
+```
+
+```
+
+## Project init
 
 1. react-native init AwesomeProject // Suggest: use upper case for the project name 
 2. cd AwesomeProject
@@ -82,27 +110,196 @@ The state belongs to the component
 ```
 2. Add .eslintrc
 
+
+
+# React and RN
+
+React
+
+- How a component behave
+- Take a bunch of components work together
+
+
+
+RN
+
+- How to take the output from a component and place it on the screen
+- Provide default core components (image, text)
+
+
+
+# Project structure
+
+## Component
+
+View
+
+### Create a component
+
+#### Functional component 
+
+-   Used for static data, for presentational use
+-   Easy to write
+
+```javascript
+const SomeComponent = () => {
+    return (
+      <Text>Some text</Text>
+    );
+}
+
+//Make component available to other part of the app
+export default SomeComponent;
+```
+
+Note: this is a JSX. JSX is JS, also the XML will be converted to JS. Example can be found [here][11].
+
+#### Class Component 
+
+-   Can add some functions
+-   Based on ES6 class
+
+```javascript
+import React, {Component} from 'react'
+class SomeComponent extends Component {
+    render(){
+      return (
+      	<Text>Some text</Text>
+      );
+    }
+}
+```
+
+and the following code have the same result
+
+```javascript
+import React, {Component} from 'react'
+class SomeComponent extends Component {
+    render = ()=>{
+      return (
+      	<Text>Some text</Text>
+      );
+    }
+}
+```
+
+
+
+### 
+
+### Use Component
+
+```jsx
+import SomeComponent from './src/component/SomeComponent' 
+
+<SomeComponent></SomeComponent>
+
+```
+
+### Return a Component 
+
+We can only return one component! 
+
+```
+// This is not allowed
+const App = () =>{
+    return (
+        <Header headerText={'Albums'}/>
+        <AlbumList/>
+    )
+}
+//It's like you try to return two elements
+const App = () =>{
+    return (        <Header headerText={'Albums'}/>    )
+    return (        <AlbumList/> )
+}
+//And it will not work
+
+```
+
+
+
+## Render
+
+Render a component to screen means take the view and place it on mobile device.
+
+```javascript
+ReactNative.AppRegistry.registerComponent('albums', () => SomeComponent)
+
+//Only the 'root' compoennt uses 'AppRegistry'
+//'albums' is the name of the application.
+//' () => SomeComponent' is the function that returns the first component to run for our application
+```
+
+
+
+ 
+
+## Import
+
+The **import** statement is used to import bindings which are exported by another module.
+
+ES6 feature, outside code out of file should be imported.
+
+#### Use {} or not.
+
+```java
+// if the binding is exported using 'export default myDefaultExport;' you should not use {} to import the binding
+import myDefaultExport from '/modules/my-module.js';
+
+// otherwith use
+import {myExport} from '/modules/my-module.js';
+
+```
+
+
+
+# Storage
+
 ## Props, state and store
 
-![Props, state and store](https://unbug.gitbooks.io/react-native-training/content/QQ20160702-0.png)
+![Props, state and store][image-1]
 
-### Props
+## Props
+
+Short for porperties
+
+Passing data from parent component to child component 
 
 - Consider props **immutable**
 - Use props for event handlers to communicate with child components.
 
-### State
+```javascript
+//Parent provide the prop that the child is expecting
+<ChildComponent childText={'I am a child'}/>
 
-- Use state for storing simple view state like wether or not drop-down options are visible.
-- Never modify this.state directly, use this.setstate instead.
-- State is the component that changed in this 
+//Child
+const ChildComponent = (props)=>{
+    return(
+    	<Text>{props.childText}</Text>
+    )
+}
+```
+
+
+
+## State
+
+The state belongs to the component.
+
+-   Use state for **storing simple view state** like wether or not drop-down options are visible.
+-   **Never modify this.state directly**, use this.setstate instead.
+-   State is the component that changed in this 
+
+
+
 
 
 # Navigation
 
-## React Native Router Flux 
+## React Native Router Flux
 
-### scene 
+### scene
 
 type
 
@@ -191,7 +388,7 @@ list.concat(element)
 
 ### Exp2
 
-[Redux react official tutorial](http://redux.js.org/docs/basics/UsageWithReact.html)
+[Redux react official tutorial][12]
 
 
 
@@ -201,17 +398,32 @@ list.concat(element)
 
 https://github.com/mobxjs/mobx
 
-[Medium blog](https://medium.com/@dabit3/react-native-with-mobx-getting-started-ba7e18d8ff44#.elp9693qk)
+[Medium blog][13]
 
-### Baobab 
+### Baobab
 
 github https://github.com/Yomguithereal/baobab
 
-http://www.christianalfoni.com/articles/2015_02_06_Plant-a-Baobab-tree-in-your-flux-application
+http://www.christianalfoni.com/articles/2015\_02\_06\_Plant-a-Baobab-tree-in-your-flux-application
 
-http://www.christianalfoni.com/articles/2015_04_26_Handling-complex-state-with-Baobab
+http://www.christianalfoni.com/articles/2015\_04\_26\_Handling-complex-state-with-Baobab
 
 http://www.jianshu.com/p/6d4cce9d914f 
+
+# Logo
+
+#### In Android:
+
+the app icon is picked up from <your project>\android\app\src\main\res\mipmap-xxxx\ directories.
+
+
+
+#### In IOS:
+
+- you should set `AppIcon` in `Images.xcassets`.
+- you should upload 9 different size icons `29pt` `29pt*2` `29pt*3` `40pt*2` `40pt*3`57pt\`\` `57pt*2` `60pt*2` `60pt*3`.”
+
+
 
 # Tools
 
@@ -225,14 +437,29 @@ On the Android Simulator click `Cmd + M`
 
 ## Android debug
 
- ### launch emulator
+ \#\#\# Launch emulator
 
-1. emulator -list-avds (emulator located in folder: ${ANDROID_SDK}/tools/emulator )
-2. emulator @Nexus_4_Android_4_4_API_19
+1. emulator -list-avds (emulator located in folder: ${ANDROID\_SDK}/tools/emulator )
+2. emulator @Nexus\_4\_Android\_4\_4\_API\_19
+
+
+
+### Running On Device
+
+1. react-native run-android
+2. Make sure your laptop and your phone are on the **same** Wi-Fi network.
+3. find the computer IP address in **System Preferences** → **Network**.
+4. Open the in-app [Developer menu][14].
+5. Go to **Dev Settings** → **Debug server host for device**.
+6. Type in your machine's IP address and the port of the local dev server (e.g. 192.168.1.11**:8081**).
 
 ## iOS debug
 
-Navigate to HomeScreen: ` Cmd + Shift + h`
+Navigate to HomeScreen: `Cmd + Shift + h`
+
+
+
+https://facebook.github.io/react-native/docs/running-on-device.html
 
 
 
@@ -240,12 +467,12 @@ Navigate to HomeScreen: ` Cmd + Shift + h`
 
 `Cmd+/`
 
-## bug 
+## bug
 
-### [NPM modules get required from /Users/node_modules/ instead of the project directory](https://github.com/facebook/react-native/issues/4968)
+### [NPM modules get required from /Users/node\_modules/ instead of the project directory][15]
 
-1. rm -fr node_modules && npm i
-2. node_modules/react-native/packager/packager.sh --reset-cache
+1. rm -fr node\_modules && npm i
+2. node\_modules/react-native/packager/packager.sh --reset-cache
 3. watchman watch-del-all
 
 Select "Debug JS Remotely" from the Developer Menu
@@ -259,7 +486,7 @@ Url: http://localhost:8081/debugger-ui
 In chrome developer tool, sources-right most trangle button- active pause button
 
 ## Inspect
-- Nuclide: cmd-shift-p -> inspector show 
+- Nuclide: cmd-shift-p -\> inspector show 
 - Emulator: Show inspector
 
 
@@ -274,7 +501,7 @@ In chrome developer tool, sources-right most trangle button- active pause button
 
 ## Android
 
-### Debug
+### Debug Build
 
 Bundle debug build:
 
@@ -293,6 +520,17 @@ Generated `apk` will be located at
 
 `android/app/build/outputs/apk`
 
+```
+open app/build/outputs/apk && cd ..
+```
+
+```
+react-native bundle --dev false --platform android --entry-file index.android.js --bundle-output ./android/app/build/intermediates/assets/debug/index.android.bundle --assets-dest ./android/app/build/intermediates/res/merged/debug && cd android && ./gradlew assembleDebug && open app/build/outputs/apk && cd ..
+
+```
+
+
+
 ## iOS
 
 ```
@@ -303,7 +541,7 @@ react-native bundle --dev false --platform ios --entry-file index.ios.js --bundl
 
 # Note
 
-[Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
+[Airbnb React/JSX Style Guide][16]
 
 ## Eslint rules
 
@@ -316,7 +554,7 @@ https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
 
 ### Collapse by default
 
-Settings/Preferences dialog -> Editor | General | Code Folding 
+Settings/Preferences dialog -\> Editor | General | Code Folding 
 
 
 
@@ -326,35 +564,54 @@ bitrise https://www.bitrise.io/
 
 ## E-book
 
-[Gitbook](https://unbug.gitbooks.io/react-native-training/content/)
+[Gitbook][17]
 
-[Video](http://bbs.reactnative.cn/topic/759/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99react-native%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B-%E6%9B%B4%E6%96%B0%E5%88%B050%E9%9B%86%E5%95%A6/124)
+[Video][18]
 
 ## React Native Skeleton
 
-[Snowflake React-Native Android iOS Starter App/ BoilerPlate](https://github.com/bartonhammond/snowflake)
+[Snowflake React-Native Android iOS Starter App/ BoilerPlate][19]
 
-[pluralsight-redux-starter](https://github.com/coryhouse/pluralsight-redux-starter)
+[pluralsight-redux-starter][20]
 
-[react-slingshot](https://github.com/coryhouse/react-slingshot)
+[react-slingshot][21]
 
-[Udemy React with Redux Course](https://github.com/StephenGrider/ReduxSimpleStarter)
+[Udemy React with Redux Course][22]
 
 ## UI Library
 
-[Avocode nachos ui](https://avocode.com/nachos-ui/docs)
+[Avocode nachos ui][23]
 
 ## Libraries
 
-[React native web](https://github.com/necolas/react-native-web#why)
+[React native web][24]
+
+### Barcode/QR code scanner
+
+react-native-camera
+
+```
+npm install --save react-native-camera
+react-native link react-native-camera
+```
 
 
 
-# Problem Resolving
+http://manojsinghnegi.com/blog/2017/08/18/Implementing-Barcode-scanner-in-react-native/
 
-- ### ENOENT: no such file or directory, uv_chdir
+# Trouble Shooting
+
+### - ENOENT: no such file or directory, uv\_chdir
 
 react-native upgrade
+
+### No bundle URL present, make sure you are running a package server
+
+rm -r ./ios/build/
+
+react-native run-ios
+
+
 
 
 
@@ -362,15 +619,15 @@ react-native upgrade
 
 
 
-[React Native Tips](https://github.com/JackPu/react-native-tips)
+[React Native Tips][25]
 
-[Snowflake code comments](http://bartonhammond.github.io/snowflake/containers/Main.js.html)
+[Snowflake code comments][26]
 
-[Lcode blog](http://www.lcode.org/)
+[Lcode blog][27]
 
 React-Native学习指南 https://github.com/reactnativecn/react-native-guide
 
-[React Native之React速学教程(上)](https://github.com/crazycodeboy/RNStudyNotes/blob/master/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B%20(%E4%B8%8A).md)
+[React Native之React速学教程(上)][28]
 
 React Native 高质量学习资料汇总 http://www.jianshu.com/p/454f2e6f28e9
 
@@ -383,4 +640,35 @@ React Native 高质量学习资料汇总 http://www.jianshu.com/p/454f2e6f28e9
 Project list http://www.lcode.org/category/react-native-zong/react-native-source-code/
 
 嘎嘎商城客户端 http://www.lcode.org/react-native-source-gagamall/
+
+[1]:	https://facebook.github.io/react/docs/react-component.html#constructor
+[2]:	https://facebook.github.io/react/docs/react-component.html#componentwillmount
+[3]:	https://facebook.github.io/react/docs/react-component.html#render
+[4]:	https://facebook.github.io/react/docs/react-component.html#componentdidmount
+[5]:	https://facebook.github.io/react/docs/react-component.html#componentwillreceiveprops
+[6]:	https://facebook.github.io/react/docs/react-component.html#shouldcomponentupdate
+[7]:	https://facebook.github.io/react/docs/react-component.html#componentwillupdate
+[8]:	https://facebook.github.io/react/docs/react-component.html#render
+[9]:	https://facebook.github.io/react/docs/react-component.html#componentdidupdate
+[10]:	https://facebook.github.io/react/docs/react-component.html#componentwillunmount
+[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;browsers=&amp;amp;build=&amp;amp;builtIns=false&amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;debug=false&amp;amp;circleciRepo=&amp;amp;evaluate=false&amp;amp;lineWrap=true&amp;amp;presets=es2015,react,stage-2&amp;amp;pre
+[12]:	http://redux.js.org/docs/basics/UsageWithReact.html
+[13]:	https://medium.com/@dabit3/react-native-with-mobx-getting-started-ba7e18d8ff44#.elp9693qk
+[14]:	https://facebook.github.io/react-native/docs/debugging.html#accessing-the-in-app-developer-menu
+[15]:	https://github.com/facebook/react-native/issues/4968
+[16]:	https://github.com/airbnb/javascript/tree/master/react
+[17]:	https://unbug.gitbooks.io/react-native-training/content/
+[18]:	http://bbs.reactnative.cn/topic/759/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99react-native%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B-%E6%9B%B4%E6%96%B0%E5%88%B050%E9%9B%86%E5%95%A6/124
+[19]:	https://github.com/bartonhammond/snowflake
+[20]:	https://github.com/coryhouse/pluralsight-redux-starter
+[21]:	https://github.com/coryhouse/react-slingshot
+[22]:	https://github.com/StephenGrider/ReduxSimpleStarter
+[23]:	https://avocode.com/nachos-ui/docs
+[24]:	https://github.com/necolas/react-native-web#why
+[25]:	https://github.com/JackPu/react-native-tips
+[26]:	http://bartonhammond.github.io/snowflake/containers/Main.js.html
+[27]:	http://www.lcode.org/
+[28]:	https://github.com/crazycodeboy/RNStudyNotes/blob/master/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B%20(%E4%B8%8A).md
+
+[image-1]:	https://unbug.gitbooks.io/react-native-training/content/QQ20160702-0.png
 
