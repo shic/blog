@@ -44,6 +44,8 @@ These methods are called when an instance of a component is being created and in
 
 -   #### [`componentWillMount()`][2]
 
+    Someone do network request here	
+
 -   [`render()`][3]
 
 ## MOUNTED
@@ -108,7 +110,7 @@ These methods are called when an instance of a component is being created and in
     "react-native-swipeout": "2.0.12",
     "redux": "^3.3.1"
 ```
-2. Add .eslintrc
+2. Add .eslintrc 
 
 
 
@@ -267,16 +269,101 @@ Short for porperties
 Passing data from parent component to child component 
 
 - Consider props **immutable**
-- Use props for event handlers to communicate with child components.
+- Use props for event handlers to communicate with child components. (parent, child communication)
 
 ```javascript
 //Parent provide the prop that the child is expecting
-<ChildComponent childText={'I am a child'}/>
+<ChildComponent contentPassToChild={'I am a child'}/>
 
 //Child
 const ChildComponent = (props)=>{
     return(
-    	<Text>{props.childText}</Text>
+    	<Text>{props.contentPassToChild}</Text>
+    )
+}
+```
+
+Note that `contentPassToChild` can be text, function ecc.
+
+ 
+
+#### props.children
+
+Father can pass any views to the child, and the child receive with `props.children`
+
+```
+//Father
+const AlbumDetail =(props)=>{
+    return(
+        <Card>
+            <Text>{props.album.title}</Text>
+        </Card>
+    )
+}
+
+//Child
+const Card =(props)=>{
+    return(
+        <View>
+            {props.children}
+        </View>
+    )
+}
+```
+
+#### Destructure the props
+
+```
+const AlbumDetail = (props) => {
+    const {thumbnailStyle,headerContentStyle}=styles;
+
+    return (
+        <Card>
+            <CardSection>
+                <View>
+                    <Image
+                        style={thumbnailStyle}
+                        source={{uri: props.album.thumbnail_image}}
+                    />
+                </View>
+                <View style={headerContentStyle}>
+                    <Text>{props.album.title}</Text>
+                    <Text>{props.album.artist}</Text>
+                </View>
+
+            </CardSection>
+        </Card>
+    )
+}
+```
+
+
+
+the code above can be writen in this way 
+
+##### attention to the  ({album}) instead of  (album) 
+
+```
+const AlbumDetail = ({album}) => {
+    const {title,artist,thumbnail_image} = album;
+    const {thumbnailStyle,headerContentStyle}=styles;
+
+    return (
+        <Card>
+            <CardSection>
+                <View>
+                    <Image
+                        style={thumbnailStyle}
+                        source={{uri: thumbnail_image}}
+                    />
+                </View>
+                <View style={headerContentStyle}>
+                    <Text>{title}</Text>
+                    <Text>{artist}</Text>
+                </View>
+
+            </CardSection>
+        </Card>
     )
 }
 ```
@@ -285,11 +372,14 @@ const ChildComponent = (props)=>{
 
 ## State
 
-The state belongs to the component.
+The state belongs to the component. 
+
+-   It is used for component internal record keeping, so we use it to update data.
+
 
 -   Use state for **storing simple view state** like wether or not drop-down options are visible.
 -   **Never modify this.state directly**, use this.setstate instead.
--   State is the component that changed in this 
+-   State is the component that changed in this.
 
 
 
@@ -425,6 +515,15 @@ the app icon is picked up from <your project>\android\app\src\main\res\mipmap-xx
 
 
 
+
+# APIs
+
+### [Linking](https://facebook.github.io/react-native/docs/linking.html)
+
+Open webpage  [Linking.openURL(url)](https://facebook.github.io/react-native/docs/linking.html#openurl)
+
+
+
 # Tools
 
 # Debug
@@ -539,9 +638,38 @@ react-native bundle --dev false --platform ios --entry-file index.ios.js --bundl
 
 
 
+## Rename the project
+
+1.  Rename the app name in app.json file
+
+    ```
+    {
+      "name": "Album",
+      "displayName": "Album"
+    }
+    ```
+
+    ​
+
+2.  Rename the app name in app.json file 
+
+3.  Rename the app name in index.android.js and index.ios.js
+
+4.  Rename the app name in package.json
+
+5.  Delete android and ios folder
+
+6.  Run ` react-native eject`
+
+7.  Run `react-native run-ios`
+
 # Note
 
-[Airbnb React/JSX Style Guide][16]
+## Attention!
+
+-   All the network request must be https
+
+## [Airbnb React/JSX Style Guide][16]
 
 ## Eslint rules
 
@@ -607,9 +735,40 @@ react-native upgrade
 
 ### No bundle URL present, make sure you are running a package server
 
+#### Solution 1
+
+Kill app on iOS device and relaunch it
+
+#### Solution 2
+
 rm -r ./ios/build/
 
 react-native run-ios
+
+
+
+### Warning: Each child in an array or iterator should have a unique "key" prop.
+
+This is for render efficiency ; just add a unique key for each elements in the iterator like this
+
+```java
+    renderAlbums(){
+        return this.state.albums.map(album=>
+            <Text key={album.id}>{album.title}</Text>
+        )
+    }
+```
+
+### Directory /src/components/AlbumDetail doesn't exist
+
+```java
+//The following is not work, because the directory name should contain ./
+import AlbumDetail from '/src/components/AlbumDetail';
+//like this
+import AlbumDetail from '/src/components/AlbumDetail';
+//but if you are not in the root folder, use
+import AlbumDetail from './AlbumDetail';
+```
 
 
 
@@ -651,7 +810,7 @@ Project list http://www.lcode.org/category/react-native-zong/react-native-source
 [8]:	https://facebook.github.io/react/docs/react-component.html#render
 [9]:	https://facebook.github.io/react/docs/react-component.html#componentdidupdate
 [10]:	https://facebook.github.io/react/docs/react-component.html#componentwillunmount
-[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;browsers=&amp;amp;build=&amp;amp;builtIns=false&amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;debug=false&amp;amp;circleciRepo=&amp;amp;evaluate=false&amp;amp;lineWrap=true&amp;amp;presets=es2015,react,stage-2&amp;amp;pre
+[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;amp;browsers=&amp;amp;amp;build=&amp;amp;amp;builtIns=false&amp;amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;amp;debug=false&amp;amp;amp;circleciRepo=&amp;amp;amp;evaluate=false&amp;amp;amp;lineWrap=true&amp;amp;amp;presets=es2015,react,stage-2&amp;amp;amp;pre
 [12]:	http://redux.js.org/docs/basics/UsageWithReact.html
 [13]:	https://medium.com/@dabit3/react-native-with-mobx-getting-started-ba7e18d8ff44#.elp9693qk
 [14]:	https://facebook.github.io/react-native/docs/debugging.html#accessing-the-in-app-developer-menu

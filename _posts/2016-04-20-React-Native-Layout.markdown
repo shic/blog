@@ -40,21 +40,28 @@ const styles={
 
 
 
-#### Flexbox
+## Flexbox
 
 How to position child element in parent (defined in the parent component )
 
 ```java
-//default is top left 
-  
-flexDirection:'row'|'column'
+//default the element is placed at top left 
+//flexDirection default rule is 'column',  justifyContent is used more often
 
+flexDirection:'column'
+//vertical direction
+justifyContent:'flex-start'|'flex-end'|'center'|'space-between'|'space-around' 
 //horizontal direction (left-right)
 alignItems:'flex-start'|'flex-end'|'center'|'stretch'
 
-//vertical direction
+flexDirection:'row'
+//horizontal direction (left-right)
 justifyContent:'flex-start'|'flex-end'|'center'|'space-between'|'space-around' 
+//vertical direction
+alignItems:'flex-start'|'flex-end'|'center'|'stretch'
 
+
+//aligns itself in parent
 alignSelf:'auto'|'flex-start'|'flex-end'|'center'|'stretch'
 
 flexWrap:'wrap'|'nowrap'
@@ -118,16 +125,50 @@ const styles = StyleSheet.create({
 
 ## Components
 
-## View
+### Common properties
 
-```java
-alignItems: 'center',
-justifyContent: 'center',
+```
+width: 100,
+height: 100,
+
+marginLeft:5,
+marginRight:5,
+marginTop:10,
+marginBottom:1,
+padding:2,
+
+backgroundColor: 'red'
+
+//The item will occupy all the parent space
+flex:1,
+alignSelf:'stretch' //alignSelf aligns itself, alignItems aligns the children.
+
+```
+
+
+
+### View
+
+```
+flexDirection:'column'
+justifyContent: 'space-around',
+
 shadowColor: '#000',
 shadowOffset: {width:0, height:2} //width:0 means no shadow on the left,right side, height:2 means vertical 2 pixel
-shadowOpacity: 0.2 //how heavy is the shadow
+shadowOpacity: 0.2 //how heavy is the shadow from 0--1
+shadowRadius: 2, //shadowRadius should have the save value of borderRadius, otherwith the shadow will be out of border
 elevation: 2,
-position: 'relative'
+position: 'relative',
+
+borderWidth:1,
+borderRadius:2,
+borderColor:'#ddd',
+borderBottomWidth:0,
+
+flexDirection: 'row',
+borderColor: '#ddd',
+position: 'relative',
+
 ```
 
 
@@ -135,7 +176,8 @@ position: 'relative'
 ## Text
 
 ```
-fontSize:20
+fontSize: 16
+fontWeight: '600'
 ```
 
 
@@ -205,5 +247,26 @@ class Test extends Component {
       </View>
     );
   }
+```
+
+## Image
+
+```
+    //The following code defines the fix height and match parent width
+    imageStyle:{
+        flex:1,
+        width:null,
+        height:300,
+    },
+```
+
+### TouchableOpacity
+
+```
+    <TouchableOpacity onPress={this._onPressButton}>
+      <Image
+        source={require('./myButton.png')}
+      />
+    </TouchableOpacity>
 ```
 
