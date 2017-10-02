@@ -82,8 +82,14 @@ These methods are called when an instance of a component is being created and in
 
 
 
-
 # Setup
+
+Mac dev env setup
+
+1.  Update Xcode
+2.  Homebrew https://brew.sh/ 
+3.  Node `brew install node`
+4.  ​
 
 ## Tools
 
@@ -500,6 +506,38 @@ http://www.christianalfoni.com/articles/2015\_04\_26\_Handling-complex-state-wit
 
 http://www.jianshu.com/p/6d4cce9d914f 
 
+# File organization
+
+We can create a `index.js` file in folder `src/components/common` that contains all the exports in this folder.
+
+it can be imported from other files because it will be recognized automatically . 
+
+```
+//index.js
+
+import Alerts from './Alerts';
+import Button from './Button';
+import Card from './Card';
+
+export {
+  Alerts,
+  Button,
+  Card
+};
+
+//Use it in other file 
+import {Alerts} from './components/common';
+//instead of
+import {Alerts} from './components/common/Alerts';
+
+
+
+```
+
+
+
+
+
 # Logo
 
 #### In Android:
@@ -810,7 +848,7 @@ Project list http://www.lcode.org/category/react-native-zong/react-native-source
 [8]:	https://facebook.github.io/react/docs/react-component.html#render
 [9]:	https://facebook.github.io/react/docs/react-component.html#componentdidupdate
 [10]:	https://facebook.github.io/react/docs/react-component.html#componentwillunmount
-[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;amp;browsers=&amp;amp;amp;build=&amp;amp;amp;builtIns=false&amp;amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;amp;debug=false&amp;amp;amp;circleciRepo=&amp;amp;amp;evaluate=false&amp;amp;amp;lineWrap=true&amp;amp;amp;presets=es2015,react,stage-2&amp;amp;amp;pre
+[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;amp;amp;browsers=&amp;amp;amp;amp;build=&amp;amp;amp;amp;builtIns=false&amp;amp;amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;amp;amp;debug=false&amp;amp;amp;amp;circleciRepo=&amp;amp;amp;amp;evaluate=false&amp;amp;amp;amp;lineWrap=true&amp;amp;amp;amp;presets=es2015,react,stage-2&amp;amp;amp;amp;pre
 [12]:	http://redux.js.org/docs/basics/UsageWithReact.html
 [13]:	https://medium.com/@dabit3/react-native-with-mobx-getting-started-ba7e18d8ff44#.elp9693qk
 [14]:	https://facebook.github.io/react-native/docs/debugging.html#accessing-the-in-app-developer-menu
