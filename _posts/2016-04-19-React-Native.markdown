@@ -92,9 +92,9 @@ Mac dev env setup
 
 3.  Node `brew install node`
 
-4.  brew install watchman
+4.  `brew install watchman`
 
-5.  npm install -g react-native-cli
+5.  `npm install -g react-native-cli`
 
     if not permitted to install globally `sudo chown -R $USER /usr/local`
 
