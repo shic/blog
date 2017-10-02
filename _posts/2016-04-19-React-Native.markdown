@@ -87,9 +87,19 @@ These methods are called when an instance of a component is being created and in
 Mac dev env setup
 
 1.  Update Xcode
+
 2.  Homebrew https://brew.sh/ 
+
 3.  Node `brew install node`
-4.  ​
+
+4.  brew install watchman
+
+5.  npm install -g react-native-cli
+
+    if not permitted to install globally `sudo chown -R $USER /usr/local`
+
+6.  U
+
 
 ## Tools
 
@@ -814,7 +824,7 @@ import AlbumDetail from './AlbumDetail';
 
 ## Tutorial
 
-
+[Github repo](https://github.com/StephenGrider/ReactNativeReduxCasts) for the  [The Complete React Native and Redux Course](https://www.udemy.com/the-complete-react-native-and-redux-course/)
 
 [React Native Tips][25]
 
@@ -848,7 +858,7 @@ Project list http://www.lcode.org/category/react-native-zong/react-native-source
 [8]:	https://facebook.github.io/react/docs/react-component.html#render
 [9]:	https://facebook.github.io/react/docs/react-component.html#componentdidupdate
 [10]:	https://facebook.github.io/react/docs/react-component.html#componentwillunmount
-[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;amp;amp;browsers=&amp;amp;amp;amp;build=&amp;amp;amp;amp;builtIns=false&amp;amp;amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;amp;amp;debug=false&amp;amp;amp;amp;circleciRepo=&amp;amp;amp;amp;evaluate=false&amp;amp;amp;amp;lineWrap=true&amp;amp;amp;amp;presets=es2015,react,stage-2&amp;amp;amp;amp;pre
+[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;amp;amp;amp;amp;browsers=&amp;amp;amp;amp;amp;amp;build=&amp;amp;amp;amp;amp;amp;builtIns=false&amp;amp;amp;amp;amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;amp;amp;amp;amp;debug=false&amp;amp;amp;amp;amp;amp;circleciRepo=&amp;amp;amp;amp;amp;amp;evaluate=false&amp;amp;amp;amp;amp;amp;lineWrap=true&amp;amp;amp;amp;amp;amp;presets=es2015,react,stage-2&amp;amp;amp;amp;amp;amp;pre
 [12]:	http://redux.js.org/docs/basics/UsageWithReact.html
 [13]:	https://medium.com/@dabit3/react-native-with-mobx-getting-started-ba7e18d8ff44#.elp9693qk
 [14]:	https://facebook.github.io/react-native/docs/debugging.html#accessing-the-in-app-developer-menu
