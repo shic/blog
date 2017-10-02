@@ -65,6 +65,8 @@ alignItems:'flex-start'|'flex-end'|'center'|'stretch'
 alignSelf:'auto'|'flex-start'|'flex-end'|'center'|'stretch'
 
 flexWrap:'wrap'|'nowrap'
+  
+
 ```
 
 #### absolute
@@ -178,6 +180,58 @@ position: 'relative',
 ```
 fontSize: 16
 fontWeight: '600'
+```
+
+
+
+## TextInput
+
+By default it has no width and height
+
+```
+width:100
+height:10
+
+
+```
+
+
+
+```javascript
+state = {email:''};
+render(){
+    return(
+    	<TextInput
+      		autoCorrect={false}
+     		placeholder='example@gmail.com'
+          	secureTextEntry={true} //if the value is true, we can just pass 'secureTextEntry'
+      		value={this.state.email}
+      		onChangeText = {text=>this.setState({email:text})}
+		   style = {{width:100, height:20}}
+           
+        />
+    )
+}
+
+//Make a Input component
+
+const input=({lable,placeholder,value,onChangeText,secureTextEntry})=>{
+  return(
+    <View>
+      <Text>{lable}</Text>
+      <TextInput
+      		autoCorrect={false}
+    		secureTextEntry={secureTextEntry} 
+     		placeholder={placeholderText}
+      		value={value}
+      		onChangeText = {onChangeText}
+		   style = {{width:100, height:20}}
+           
+      />
+    </View>
+  )
+    
+}
 ```
 
 
