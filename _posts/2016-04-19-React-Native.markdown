@@ -97,8 +97,10 @@ Mac dev env setup
 5.  `npm install -g react-native-cli`
 
     if not permitted to install globally `sudo chown -R $USER /usr/local`
+    
+    (Enable the root user)[https://support.apple.com/en-us/HT204012]
 
-6.  U
+6.  `mpn i`
 
 
 ## Tools
