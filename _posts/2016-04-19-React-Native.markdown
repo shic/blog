@@ -85,6 +85,20 @@ These methods are called when an instance of a component is being created and in
 
 # Setup
 
+
+
+
+
+
+
+brew install watchman
+ 
+npm install -g react-native-cli
+
+if not permitted to install globally `sudo chown -R $USER /usr/local`
+
+
+
 ## Tools
 
 ```
