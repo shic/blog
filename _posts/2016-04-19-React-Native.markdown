@@ -713,6 +713,15 @@ react-native bundle --dev false --platform ios --entry-file index.ios.js --bundl
 
 7.  Run `react-native run-ios`
 
+8.  Android SDK location 
+
+    `sudo nano ~/.bashrc`
+
+    Add `export ANDROID_HOME=/Users/ufirstuser/Library/Android/sdk`
+
+9.  Android Studio download 'android-23' and 'Build Tools revision 23.0.1/25.0.2/26.0.1'
+
+
 # Note
 
 ## Attention!
