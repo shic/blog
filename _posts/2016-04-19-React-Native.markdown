@@ -46,6 +46,8 @@ These methods are called when an instance of a component is being created and in
 
     Someone do network request here	
 
+    Create FlatList here
+
 -   [`render()`][3]
 
 ## MOUNTED
@@ -97,7 +99,7 @@ Mac dev env setup
 5.  `npm install -g react-native-cli`
 
     if not permitted to install globally `sudo chown -R $USER /usr/local`
-    
+
     (Enable the root user)[https://support.apple.com/en-us/HT204012]
 
 6.  `mpn i`
@@ -869,7 +871,7 @@ Project list http://www.lcode.org/category/react-native-zong/react-native-source
 [8]:	https://facebook.github.io/react/docs/react-component.html#render
 [9]:	https://facebook.github.io/react/docs/react-component.html#componentdidupdate
 [10]:	https://facebook.github.io/react/docs/react-component.html#componentwillunmount
-[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;amp;amp;amp;amp;browsers=&amp;amp;amp;amp;amp;amp;build=&amp;amp;amp;amp;amp;amp;builtIns=false&amp;amp;amp;amp;amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;amp;amp;amp;amp;debug=false&amp;amp;amp;amp;amp;amp;circleciRepo=&amp;amp;amp;amp;amp;amp;evaluate=false&amp;amp;amp;amp;amp;amp;lineWrap=true&amp;amp;amp;amp;amp;amp;presets=es2015,react,stage-2&amp;amp;amp;amp;amp;amp;pre
+[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;amp;amp;amp;amp;amp;browsers=&amp;amp;amp;amp;amp;amp;amp;build=&amp;amp;amp;amp;amp;amp;amp;builtIns=false&amp;amp;amp;amp;amp;amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;amp;amp;amp;amp;amp;debug=false&amp;amp;amp;amp;amp;amp;amp;circleciRepo=&amp;amp;amp;amp;amp;amp;amp;evaluate=false&amp;amp;amp;amp;amp;amp;amp;lineWrap=true&amp;amp;amp;amp;amp;amp;amp;presets=es2015,react,stage-2&amp;amp;amp;amp;amp;amp;amp;pre
 [12]:	http://redux.js.org/docs/basics/UsageWithReact.html
 [13]:	https://medium.com/@dabit3/react-native-with-mobx-getting-started-ba7e18d8ff44#.elp9693qk
 [14]:	https://facebook.github.io/react-native/docs/debugging.html#accessing-the-in-app-developer-menu

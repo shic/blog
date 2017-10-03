@@ -36,6 +36,8 @@ header-img: "img/post-bg-01.jpg"
 
 Reducer is the function that trace the previous state, the action to be dispatched and the next state of the app. The function must to be pure.
 
+Reducer must have the initial state, it can not return the state that is undefined
+
 ```java
 function todoStoreReducer(state, action) //state: old state; action: sort of event, it may contains description or some data
 {
@@ -405,3 +407,89 @@ Async action with Redux use the [Redux Thunk middleware](https://github.com/gae
 
 state is never to be modified. When changing state, create new objects instead. The spread (…) operator helps significantly
 
+
+
+# Redux React
+
+npm install --save react-redux
+
+npm install --save redux
+
+
+
+## Step by step :
+
+1.  When app bootsup, redux create a new store with  `const store = createStore(reducers);`  with reducers, runs all the registered reducers, we got initial states.
+2.  After we create store, we pass it to the provider, it will be persist for the rest of the application
+3.  Provider is a component that aids to comminication between React and Redux.
+4.  Connect function reach back to the provider and says 'please give me the access to the current state',
+5.  The provider gives back the state that contains in the store ,
+6.  When the connect helper first boots up, see the LibraryList is about to render, the helper goes up to the provider, to get access to the state, the provider response with yes.
+7.  The helper calls  mapStateToProps, get application state returned, pass it to the props of the component
+
+
+
+```javascript
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
+class LibraryList extends Component{
+    render() {
+        //To show that the state is mapped in props
+   	    console.log(this.props)
+        return;
+    }
+}
+
+//Takes the global state and map it to props, the arg 'state' here contains the global state
+const mapStateToProps = state =>{
+    console.log(state);
+    //with this return, we can find libraries in props.
+	return {
+      dataToshow: state.libraries
+	}
+} 
+
+//connect() is a helper, it returns a function and is called immediately passing 'LibraryList' as arg.
+export default connect(mapStateToProps)(LibraryList);
+```
+
+
+
+## Provider
+
+<Provider> can have only one child
+
+```
+const App =  ()=>{
+
+    //This is the store we create with redux's createStore method
+    const store = createStore(reducers);
+
+    // Provider is given the store as a prop
+    return(
+        <Provider store={store}>
+            <View>
+                <Header headerText='Tech Stack'/>
+                <LibraryList/>
+            </View>
+        </Provider>
+
+    )
+}
+
+export default App;
+```
+
+
+
+## Useful functions
+
+### combineReducers
+
+```
+export default combineReducers({
+  libraries: LibraryReducer,
+  selectedLibraryId: SelectionReducer
+});
+```

@@ -324,3 +324,11 @@ class Test extends Component {
     </TouchableOpacity>
 ```
 
+
+
+## FlatList
+
+In parent view add `flex:1` to make the list fill the screen
+
+
+
