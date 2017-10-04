@@ -121,8 +121,47 @@ function todoStoreReducer(state = defaultState, action) {
 export default createStore(todoStoreReducer); // Use createStore that we got from redux
 ```
 
+## Action creator
 
-#### Sync PluralTodo component’s state with Redux state
+JS funcitons that returns an action that has type and payload (data to pass to an action, it can be for example the library selected, and it is not necessary )
+
+```
+export const selectLibrary = ()=>{
+    return{
+        type:'select_library'
+        payload:libraryId
+    }
+}
+```
+
+
+
+This is an action creator
+
+```
+ ()=>{
+    return{
+        type:'select_library'       
+        payload:libraryId
+    }
+}
+```
+
+
+
+When we call the action creator, the returned action will be automatically dispatched for us and send to different reducers. 
+
+
+
+### How to call action creater
+
+Import action to the file where we call the action from.
+
+
+
+
+
+## Sync PluralTodo component’s state with Redux state
 
 ```java
 // PluralTodo.js
@@ -450,11 +489,33 @@ const mapStateToProps = state =>{
 	}
 } 
 
-//connect() is a helper, it returns a function and is called immediately passing 'LibraryList' as arg.
+//connect() is a helper, it returns a function and is called immediately passing 'LibraryList' as arg. The second param is to bind to the component 
 export default connect(mapStateToProps)(LibraryList);
 ```
 
 
+
+## Connect
+
+Is the window to the whole world of redux. 
+
+We can use it to get application states and call action creator
+
+Everytime we use redux, we should use connect()
+
+```
+export default connect(null,actions)(LibraryList);
+//the first arg is mapStateToProps, pass null if you do not have one 
+//the second arg is to bind action creators to the component
+```
+
+#### Step by step use of connect helper for action
+
+actions contains some action creators, whenever the action calls, 
+
+the action is passed to the right place  
+
+the action is passed to the component as args
 
 ## Provider
 
