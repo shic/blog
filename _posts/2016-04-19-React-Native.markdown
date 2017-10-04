@@ -23,9 +23,15 @@ Everytime we change the state of component, it will rerender itself
 An update can be caused by changes to props or state. These methods are called when a component is being re-rendered:
 
 - [`componentWillReceiveProps()`][5]
+
 - [`shouldComponentUpdate()`][6]
+
 - [`componentWillUpdate()`][7]
+
+  Component rerender. Put the layout animation here
+
 - [`render()`][8]
+
 - [`componentDidUpdate()`][9]
 
 #### Unmounting

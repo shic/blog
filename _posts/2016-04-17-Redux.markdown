@@ -28,6 +28,14 @@ header-img: "img/post-bg-01.jpg"
 
 # Redux
 
+Steps:
+
+1.  Provider
+2.  Create reducers that has initial state, has switch function to switch different action type pass to the reducer, and return new state
+3.  Combine reducers toghether 
+4.  Create the action that has type property (command to the reducer)
+5.  Create mapStateToProps function 
+
 ## Example in React.js
 
 
@@ -501,10 +509,17 @@ Is the window to the whole world of redux.
 
 We can use it to get application states and call action creator
 
-Everytime we use redux, we should use connect()
+Everytime we want to consume some state, we should use mapStateToProps
 
 ```
-export default connect(null,actions)(LibraryList);
+const mapStateToProps = state=>{
+    return {
+        selectedLibraryId:state.selectedLibraryId 
+    }
+}
+
+export default connect(mapStateToProps, actions)(ListItem);
+
 //the first arg is mapStateToProps, pass null if you do not have one 
 //the second arg is to bind action creators to the component
 ```
@@ -516,6 +531,14 @@ actions contains some action creators, whenever the action calls,
 the action is passed to the right place  
 
 the action is passed to the component as args
+
+#### mapStateToProps
+
+mapStateToProps can receive the component's own props as the second param.
+
+Every time the state changes, mapStateToProps function will rerun passing new state to the props, which cause the component to rerender 
+
+
 
 ## Provider
 
@@ -554,3 +577,4 @@ export default combineReducers({
   selectedLibraryId: SelectionReducer
 });
 ```
+Here declear the state name of all reducers. We we return a state from the reducer, it will be save with this name.
