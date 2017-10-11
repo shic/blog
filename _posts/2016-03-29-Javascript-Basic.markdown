@@ -292,6 +292,14 @@ console.log(high); //Output: 75000
 
 ```
 
+## Key interpelation
+
+```
+[payload.prop]:payload.value
+//key will be determained at runtime 
+```
+
+
 
 ## Arrow functions (Lambda Functions)
 

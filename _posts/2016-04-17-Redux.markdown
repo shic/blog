@@ -6,7 +6,7 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
-# Basic
+# Redux Basic
 
 ## Props, state and store
 
@@ -19,7 +19,7 @@ header-img: "img/post-bg-01.jpg"
 
 ### State
 
-- Use state for storing simple view state like wether or not drop-down options are visible.
+- Use state for **storing simple view state** like wether or not drop-down options are visible.
 - Never modify this.state directly, use this.setstate instead.
 - State is the component that changed in this 
 
@@ -31,10 +31,55 @@ header-img: "img/post-bg-01.jpg"
 Steps:
 
 1.  Provider
+
+    ```
+
+    ```
+
+    ​
+
 2.  Create reducers that has initial state, has switch function to switch different action type pass to the reducer, and return new state
+
 3.  Combine reducers toghether 
+
 4.  Create the action that has type property (command to the reducer)
+
 5.  Create mapStateToProps function 
+
+6.  Create an action creator 
+
+    ```
+    export const emailChanged = (text) =>{
+        return{
+            type:'email_changed',
+            payload:text
+        }
+    }
+    ```
+
+    Import connect helper in component:
+
+    ```
+    import {connect} from 'react-redux'
+    ```
+
+    Hook component to connect helper
+
+    ​
+
+    Import action to the file where we call the action from.
+
+    ```
+    import * as actions from '../actions'
+    ```
+
+    Create a reducer:
+
+    ​
+
+    Combine reducers toghether 
+
+7.  ​
 
 ## Example in React.js
 
@@ -45,6 +90,28 @@ Steps:
 Reducer is the function that trace the previous state, the action to be dispatched and the next state of the app. The function must to be pure.
 
 Reducer must have the initial state, it can not return the state that is undefined
+
+Reducer must return new state that is really changed. 
+
+```
+case EMAIL_CHANGED:
+	state.email = action.payload;
+	return state;
+```
+
+will not work, because the returned state changed the content, but when redux compare states with `newstate=oldstate` , the result is true, means the states not changed, the conponents will not render.
+
+return new state in this way
+
+```
+return {...state,email:action.payload};
+```
+
+
+
+
+
+
 
 ```java
 function todoStoreReducer(state, action) //state: old state; action: sort of event, it may contains description or some data
@@ -159,13 +226,25 @@ This is an action creator
 
 When we call the action creator, the returned action will be automatically dispatched for us and send to different reducers. 
 
+Call action creator also means dispatch an action.
 
 
-### How to call action creater
 
-Import action to the file where we call the action from.
+### Action creater Workflow:
 
+User type something
 
+Call Action Creater with new text
+
+Action Creater returns an action
+
+Action sent to all reducers
+
+Reducer calculates new app state
+
+State sent to all components
+
+Conponents render with new state
 
 
 
@@ -545,7 +624,7 @@ Every time the state changes, mapStateToProps function will rerun passing new st
 <Provider> can have only one child
 
 ```
-const App =  ()=>{
+const App = ()=>{
 
     //This is the store we create with redux's createStore method
     const store = createStore(reducers);
@@ -578,3 +657,27 @@ export default combineReducers({
 });
 ```
 Here declear the state name of all reducers. We we return a state from the reducer, it will be save with this name.
+
+
+
+# Redux-Thunk
+
+`npm install --save redux-thunk`
+
+To handle async action creators. 
+
+
+
+Action Creator must **return a function** instead of action, this function will be called automatically with 'dispatch'. 
+
+
+
+step by step
+
+1.  Action creator called 
+2.  Action creator returns a function
+3.  Redux thunk sees that we returned  a funcion and calls it with dispatch 
+4.  Wait for the async request to complete
+5.  Request conpleted,  .then function of the async request runs. 
+6.  Redux thunk now dispatch our action
+

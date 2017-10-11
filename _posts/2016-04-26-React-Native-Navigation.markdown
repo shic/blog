@@ -8,9 +8,39 @@ header-img: "img/post-bg-01.jpg"
 
 # React Native Router Flux
 
-### scene
+        <Router>
+            <Stack key="root">
+                <Scene
+                    key='login'
+                    component={LoginForm}
+                    title='Login'
+                />
+    
+                <Scene
+                    initial
+                    key='employeeList'
+                    component={EmployeeList}
+                    title='Employees'
+                />
+            </Stack>
+        </Router>
+# Router
 
-type
+
+
+# Scene
+
+How we organize the page. Router flux has a nav bar
+
+key
+
+component 
+
+title
+
+initial
+
+## type
 
 Default is 'push'. 
 
@@ -37,4 +67,25 @@ component could be dismissed by using Actions.dismiss() transitionToTop will res
 https://github.com/aksonov/react-native-router-flux/blob/master/docs/API.md
 
 https://github.com/aksonov/react-native-router-flux/blob/master/README2.md
+
+
+
+### Scene nesting
+
+We you go between them, you will get automatically back button
+
+```
+<Scene key='main'>
+	<Scene key='employeeLis' component={EmployeeList} />
+	<Scene component={EmployeeDetail}/>
+</Scene>
+```
+
+We can not goto the nested scene directly by call `Action.employeeList()`, we can only goes to parent scene calling  `Action.main()`,
+
+
+
+### NavBar
+
+Add `onRight and rightTitle` property to the Scene to show the right button on header
 

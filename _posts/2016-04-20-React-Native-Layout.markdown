@@ -332,3 +332,12 @@ In parent view add `flex:1` to make the list fill the screen
 
 
 
+## Picker
+
+```
+<Picker
+	style = {{flex:1}}
+/>
+//Picker has with and height 0. So add a style to show the picker 
+```
+
