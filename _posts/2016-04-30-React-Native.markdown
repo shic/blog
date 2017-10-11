@@ -770,6 +770,10 @@ http://manojsinghnegi.com/blog/2017/08/18/Implementing-Barcode-scanner-in-react-
 
 react-native upgrade
 
+### SDK location not found. Define location with sdk.dir in the local.properties file or with an ANDROID_HOME environment variable.
+
+Add local.properties file in android folder with the sdk location `sdk.dir=/Users/shi/Library/Android/sdk`
+
 ### No bundle URL present, make sure you are running a package server
 
 #### Solution 1
