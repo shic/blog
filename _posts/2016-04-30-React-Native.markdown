@@ -564,21 +564,32 @@ On the Android Simulator click `Cmd + M`
 
 ## Android debug
 
- \#\#\# Launch emulator
+### Launch emulator
 
 1. emulator -list-avds (emulator located in folder: ${ANDROID\_SDK}/tools/emulator )
 2. emulator @Nexus\_4\_Android\_4\_4\_API\_19
 
 
 
-### Running On Device
+### Android debug
 
-1. react-native run-android
-2. Make sure your laptop and your phone are on the **same** Wi-Fi network.
-3. find the computer IP address in **System Preferences** → **Network**.
-4. Open the in-app [Developer menu][14].
-5. Go to **Dev Settings** → **Debug server host for device**.
-6. Type in your machine's IP address and the port of the local dev server (e.g. 192.168.1.11**:8081**).
+1. Check if your device is connected.
+
+   Run `adb devices` from the`android_sdk/platform-tools/` directory. If connected, you'll see the device name listed as a "device." i.e. `ce041604d44c0e1603 device`
+
+   On mac adb path is `/Users/shi/Library/Android/sdk/platform-tools/adb`
+
+2. react-native run-android
+
+3. Make sure your laptop and your phone are on the **same** Wi-Fi network.
+
+4. find the computer IP address in **System Preferences** → **Network**.
+
+5. Open the in-app [Developer menu][14].
+
+6. Go to **Dev Settings** → **Debug server host for device**.
+
+7. Type in your machine's IP address and the port of the local dev server (e.g. 192.168.1.11**:8081**).
 
 ## iOS debug
 
@@ -851,7 +862,7 @@ Project list http://www.lcode.org/category/react-native-zong/react-native-source
 [8]:	https://facebook.github.io/react/docs/react-component.html#render
 [9]:	https://facebook.github.io/react/docs/react-component.html#componentdidupdate
 [10]:	https://facebook.github.io/react/docs/react-component.html#componentwillunmount
-[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;amp;amp;amp;amp;amp;amp;browsers=&amp;amp;amp;amp;amp;amp;amp;amp;build=&amp;amp;amp;amp;amp;amp;amp;amp;builtIns=false&amp;amp;amp;amp;amp;amp;amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;amp;amp;amp;amp;amp;amp;debug=false&amp;amp;amp;amp;amp;amp;amp;amp;circleciRepo=&amp;amp;amp;amp;amp;amp;amp;amp;evaluate=false&amp;amp;amp;amp;amp;amp;amp;amp;lineWrap=true&amp;amp;amp;amp;amp;amp;amp;amp;presets=es2015,react,stage-2&amp;amp;amp;amp;amp;amp;amp;amp;pre
+[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;browsers=&amp;amp;amp;amp;amp;amp;amp;amp;amp;build=&amp;amp;amp;amp;amp;amp;amp;amp;amp;builtIns=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;amp;amp;amp;amp;amp;amp;amp;debug=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;circleciRepo=&amp;amp;amp;amp;amp;amp;amp;amp;amp;evaluate=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;lineWrap=true&amp;amp;amp;amp;amp;amp;amp;amp;amp;presets=es2015,react,stage-2&amp;amp;amp;amp;amp;amp;amp;amp;amp;pre
 [12]:	http://redux.js.org/docs/basics/UsageWithReact.html
 [13]:	https://medium.com/@dabit3/react-native-with-mobx-getting-started-ba7e18d8ff44#.elp9693qk
 [14]:	https://facebook.github.io/react-native/docs/debugging.html#accessing-the-in-app-developer-menu
