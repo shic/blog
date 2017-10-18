@@ -47,6 +47,10 @@ author:     "Shi"
 
 ![bla](https://raw.githubusercontent.com/shic/blog/gh-pages/img/bmcAni.jpg)
 
+[Business Model Canvas Explained](https://www.youtube.com/watch?v=QoAOzMTLP5s)
+
+
+
 ## 关键项分析
 
 ### 1 Value Proposition
@@ -557,5 +561,9 @@ Startupper: Guida alla creazione di imprese innovative
 
 Running Lean: Iterate from Plan A to a Plan That Works (Lean (O'Reilly)) 2nd Edition by Ash Maurya 
 
-
 Lean Analytics: Use Data to Build a Better Startup Faster
+
+
+
+[Validation Board](https://www.youtube.com/watch?v=HhoducyStMw) 
+

@@ -26,6 +26,14 @@ header-img: "img/post-bg-01.jpg"
 
 
 
+**[Takeaway](https://medium.freecodecamp.org/where-do-i-belong-a-guide-to-saving-react-component-data-in-state-store-static-and-this-c49b335e2a00)**:
+
+keep UI state and transitory data (such as form inputs) in local **state**.
+
+keep data that you intend to share across components in **store**.
+
+use **this** to store things that shouldn’t trigger a re-render.
+
 # Redux
 
 Steps:

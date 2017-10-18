@@ -6,7 +6,7 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
-# Component Lifecycle
+# [Component Lifecycle](https://reactjs.org/docs/react-component.html)
 
 Each component has several "lifecycle methods" that you can override to run code at particular times in the process. 
 
@@ -711,6 +711,20 @@ react-native bundle --dev false --platform ios --entry-file index.ios.js --bundl
 9.  Android Studio download 'android-23' and 'Build Tools revision 23.0.1/25.0.2/26.0.1'
 
 
+
+
+# [AppState](https://facebook.github.io/react-native/docs/appstate.html)
+
+`AppState` can tell you if the app is in the foreground or background, and notify you when the state changes.
+
+
+
+# [NetInfo](https://facebook.github.io/react-native/docs/netinfo.html)
+
+NetInfo exposes info about online/offline status
+
+
+
 # Note
 
 ## Attention!
@@ -864,7 +878,7 @@ Project list http://www.lcode.org/category/react-native-zong/react-native-source
 [8]:	https://facebook.github.io/react/docs/react-component.html#render
 [9]:	https://facebook.github.io/react/docs/react-component.html#componentdidupdate
 [10]:	https://facebook.github.io/react/docs/react-component.html#componentwillunmount
-[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;browsers=&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;build=&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;builtIns=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;debug=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;circleciRepo=&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;evaluate=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lineWrap=true&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;presets=es2015,react,stage-2&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;pre
+[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;browsers=&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;build=&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;builtIns=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;debug=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;circleciRepo=&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;evaluate=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lineWrap=true&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;presets=es2015,react,stage-2&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;pre
 [12]:	http://redux.js.org/docs/basics/UsageWithReact.html
 [13]:	https://medium.com/@dabit3/react-native-with-mobx-getting-started-ba7e18d8ff44#.elp9693qk
 [14]:	https://facebook.github.io/react-native/docs/debugging.html#accessing-the-in-app-developer-menu
