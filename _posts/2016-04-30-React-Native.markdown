@@ -121,6 +121,10 @@ npm start --reset-cache
 
 ## Tools
 
+(Crashlytics)[https://streetsmartdev.com/react-native-analytics-fabric/]
+
+
+
 ```
 
 ```
@@ -604,6 +608,12 @@ https://facebook.github.io/react-native/docs/running-on-device.html
 ## Simulator system log (when app crash)
 
 `Cmd+/`
+
+
+
+[Bug report system www.bugsnag.com](https://www.bugsnag.com/platforms/react-native-error-reporting/)
+
+
 
 ## bug
 
