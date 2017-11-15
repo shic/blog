@@ -625,6 +625,16 @@ The **Promise** object represents the eventual completion (or failure) of an asy
 new Promise( /* executor */ function(resolve, reject) { ... } );
  ```
 
+How do I access the data in a promise? I use `.then(function)`
+
+How do I catch the errors from a promise chain? I use `.catch(function)`
+
+
+
+async functions don’t magically wait for themselves. You must *await*, or you’ll get a promise instead of the value you expect.
+
+
+
 ### Basic usage 
 
 i.e.
@@ -643,6 +653,8 @@ myFirstPromise.then((successMessage) => {
   // successMessage is whatever we passed in the resolve(...) function above.
   // It doesn't have to be a string, but if it is only a succeed message, it probably will be.
   console.log("Yay! " + successMessage);
+}).catch((err) =>{
+  console.log("Err! " + err);
 });
 ```
 
@@ -701,6 +713,26 @@ function () {
 
 ### Multiple promises
 
+Promise.all will take an *array* of promises, and compose them all into a *single* promise, which resolves **only when every child promise in the array has resolved itself**.
+
+```
+let foo = await getFoo();
+let bar = await getBar();
+//Equals to 
+let [foo, bar] = await Promise.all([getFoo(), getBar()]);
+
+```
+
+```
+
+```
+
+```
+
+```
+
+
+
 ```javascript
 let p1 = new Promise(...);
 let p2 = new Promise(...);
@@ -727,6 +759,14 @@ Promise.race([p1, p2]).then(
 // Output: (3 second delay) Nope
 
 ```
+
+## Async/Await
+
+**every async function you write will return a promise, and every single thing you await will ordinarily be a promise.**
+
+https://davidwalsh.name/async-await
+
+
 
 ## Array
 

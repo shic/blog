@@ -635,6 +635,10 @@ In chrome developer tool, sources-right most trangle button- active pause button
 
 
 
+# Crash Reporting
+
+
+
 # Build And Realease
 
 ## Android
@@ -688,15 +692,13 @@ react-native bundle --dev false --platform ios --entry-file index.ios.js --bundl
     }
     ```
 
-    ​
+2.  Rename the app name in index.android.js and index.ios.js
 
-2.  Rename the app name in app.json file 
+3.  Rename the app name in package.json
 
-3.  Rename the app name in index.android.js and index.ios.js
+4.  Delete android and ios folder
 
-4.  Rename the app name in package.json
-
-5.  Delete android and ios folder
+5.  Run `react-native link`
 
 6.  Run ` react-native eject`
 
@@ -878,7 +880,7 @@ Project list http://www.lcode.org/category/react-native-zong/react-native-source
 [8]:	https://facebook.github.io/react/docs/react-component.html#render
 [9]:	https://facebook.github.io/react/docs/react-component.html#componentdidupdate
 [10]:	https://facebook.github.io/react/docs/react-component.html#componentwillunmount
-[11]:	http://babeljs.io/repl/#?babili=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;browsers=&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;build=&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;builtIns=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;code_lz=DwFQpgHgLgfAzgewLZgARUlYB6c0ZA&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;debug=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;circleciRepo=&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;evaluate=false&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lineWrap=true&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;presets=es2015,react,stage-2&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;pre
+[11]:	http://babeljs.io/
 [12]:	http://redux.js.org/docs/basics/UsageWithReact.html
 [13]:	https://medium.com/@dabit3/react-native-with-mobx-getting-started-ba7e18d8ff44#.elp9693qk
 [14]:	https://facebook.github.io/react-native/docs/debugging.html#accessing-the-in-app-developer-menu
