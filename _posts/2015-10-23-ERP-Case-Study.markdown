@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "ERP Case Study"
-date:       2015-10-33 12:00:00
+date:       2015-10-23 12:00:00
 author:     "Shi"
 ---
 
