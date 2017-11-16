@@ -75,6 +75,12 @@ export default {
 
 ## React Skeleton
 
+[react-boilerplate](https://github.com/react-boilerplate/react-boilerplate)
+
+[react-starter-kit](https://github.com/kriasoft/react-starter-kit)
+
+[Official Tutorial](https://reactjs.org/tutorial/tutorial.html)
+
 [Pluralsight-redux-starter](https://github.com/coryhouse/pluralsight-redux-starter)
 [React-slingshot](https://github.com/coryhouse/react-slingshot)
 

@@ -575,7 +575,7 @@ On the Android Simulator click `Cmd + M`
 
 
 
-### Android debug
+### Debug on device
 
 1. Check if your device is connected.
 
@@ -596,6 +596,32 @@ On the Android Simulator click `Cmd + M`
 7. Type in your machine's IP address and the port of the local dev server (e.g. 192.168.1.11**:8081**).
 
 ## iOS debug
+
+### Http on iOS simulator
+
+Modify plist which located in `ios/Uper/info.plist`
+
+```
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>uupper.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+
+```
+
+
 
 Navigate to HomeScreen: `Cmd + Shift + h`
 
@@ -738,6 +764,14 @@ NetInfo exposes info about online/offline status
 
 
 # Note
+
+## Step to copy a project
+
+1. Add local.properties file in android folder with the sdk location `sdk.dir=/Users/shi/Library/Android/sdk`
+2. Change iOS plist to allow http
+3. Install npm
+4. Run `react-native link`
+5. Run `react-native run-ios`
 
 ## Attention!
 
