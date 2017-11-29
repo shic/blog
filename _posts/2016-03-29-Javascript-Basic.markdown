@@ -23,7 +23,28 @@ things[2]();
 ```
 
 ## Array shift() Method
+
 Remove the first item of an array
+
+## Array slice() Method
+
+The `**slice()**` method returns a shallow copy of a portion of an array into a new array 
+
+```
+arr.slice(begin, end)
+```
+
+If `begin` is undefined, `slice` begins from index `0`.
+
+If `end` is undefined, `slice` extracts through the end of the sequence (`arr.length`).
+
+
+
+```
+arr.slice() //is used to return a new array that is same as the original one
+```
+
+
 
 ## Bracket notation
 
