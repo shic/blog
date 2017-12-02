@@ -387,31 +387,43 @@ function product() {
 product() //Output: 200
 ```
 
-## Module
+# Module
 
-[traceur-compiler](https://github.com/google/traceur-compiler)
+Import and export functions, names etc
+
+Traceur is a JavaScript.next-to-JavaScript-of-today compiler. [traceur-compiler](https://github.com/google/traceur-compiler) also [babel](https://babeljs.io/) works
+
+Imported variable is read-only 
+
+When I import another module, the module will be executed first.
 
 ```javascript
-File base.js:
-import { projectId as id, projectName } from 'module1.js';
-console.log(`${projectName} has id: ${id}`);
-
 File module1.js:
 export let projectId = 99;
 export let projectName ='BuildIt';
 
-
 File base.js:
-import someValue from 'module1.js';
-console.log(someValue);
+import { projectId as id, projectName } from 'module1.js';
+console.log(`${projectName} has id: ${id}`);
+
+//Output: BuildIt has id: 99
 
 File module1.js:
 let projectName ='BuildIt';
 export let projectId = 99;
 export default projectName;
+//Equals=== export {projectName as default, projectId}
+
+File base.js:
+import someValue from 'module1.js';
+console.log(someValue);
+
+//Output: BuildIt
+
 ```
 
-## ES6 class 
+# Class 
+
 ```javascript
 class Cat {
   constructor(name, color) {
@@ -430,7 +442,7 @@ display(cat)
 cat.speak()
 ```
 
-### Constructor
+## Constructor
 
 ```javascript
 class Project {
@@ -459,7 +471,7 @@ class Project {
 console.log(Project.getDefaultId());//Output: 99
 ```
 
-### new.target
+### New.target
 
 #### Point to the original function that called
 ```javascript
@@ -577,9 +589,11 @@ for (let v of idMaker)
 console.log(v);// 8000 8001 8002
 ```
 
-## Generators
+# Generators
 
-### similar to iterator
+Similar to iterator
+
+`*` indicate that the function is a generator function
 
 ```javascript
 function *process() {
@@ -605,6 +619,16 @@ console.log(id);
 ```
 
 ## Yielding in Generators
+
+yield is a keyword in generator functions.
+
+Yield is often proceeded by a function call that returns a promise
+
+Redux-Saga forms a wrapper around generators that  simplify manageing promises
+
+
+
+
 
 ```javascript
 function *process() {
