@@ -35,3 +35,6 @@ defaults:
     values:
       layout: "page"
       author: Shi
+      
+plugins:
+  - jekyll-seo-tag
