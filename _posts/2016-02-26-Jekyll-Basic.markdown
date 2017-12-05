@@ -9,7 +9,7 @@ categories: Jekyll Basic
 ---
 
 
-##Post header properties:
+#Post header properties:
 
 layout:     post
 title:      "Jekyll Basic"
@@ -36,7 +36,7 @@ post_author
 
 
 
-## Github images
+# Github images
 
 To get github image url add `?raw=true` at the end of image URL
 
@@ -50,3 +50,12 @@ https://raw.githubusercontent.com/shic/blog/gh-pages/img/RetentionRate.png
 
 https://raw.githubusercontent.com/shic/blog/gh-pages/img/SomePicture.png
 
+
+
+# Search
+
+https://github.com/jekylltools/jekyll-tipue-search/tree/gh-pages
+
+https://github.com/algolia/algoliasearch-jekyll/
+
+https://www.algolia.com/doc/tutorials/
