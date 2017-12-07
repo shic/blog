@@ -30,7 +30,7 @@ As the name suggests, this folder contains development and production server con
 
 # Lib
 
-## styled-components
+# styled-components
 
 ```
 npm install --save styled-components
@@ -165,9 +165,13 @@ render(
 
 https://www.youtube.com/watch?time_continue=805&v=bIK2NwoK9xk
 
-## Reselect
+# Reselect
 
-Reselect is a library used for slicing your redux state and providing only the relevant sub-tree to a react component. It has three key features:
+Reselect is a library used for slicing your redux state and providing only the relevant sub-tree to a react component. 
+
+Selectors can compute derived data, allowing Redux to store the minimal possible state.
+
+It has three key features:
 
 1. Computational power
 
@@ -179,11 +183,19 @@ Reselect is a library used for slicing your redux state and providing only the r
 
 3. Composability
 
-   You can combine multiple selectors. For example, one selector can filter usernames according to a search key and another selector can filter the already filtered array according to gender. 
+   You can combine multiple selectors. 
+
+   For example, one selector can filter usernames according to a search key and another selector can filter the already filtered array according to gender. 
 
 
 
-## **Middleware**
+
+
+
+
+
+
+# **Middleware**
 
 Middlewares are third party libraries which intercept each redux action dispatched to the redux store and then... do stuff. 
 
@@ -201,7 +213,7 @@ Background process that handles multiple actions simultaneously, communicates wi
 
 
 
-## Redux Saga
+# Redux Saga
 
 
 
@@ -230,3 +242,16 @@ export function* getFlight() {
  Notice how there is a **yield** before every step, it essentially means:
 
  the middleware stops/suspends the saga from moving on to the next step until the current step is done.
+
+
+
+
+
+
+
+
+
+# Notes
+
+https://app.pluralsight.com/library/courses/react-boilerplate-building-scalable-apps
+
