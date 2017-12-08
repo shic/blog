@@ -25,6 +25,10 @@ header-img: "img/post-bg-01.jpg"
 
 # Tools
 
+### [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+
+
+
 ## Yarn
 
 npm install -g yarn

@@ -8,23 +8,43 @@ header-img: "img/post-bg-01.jpg"
 
 # React-boilerplate
 
-## Setting
+# Setting up
 
 1. npm i
 2. npm start 
 3. You can then open [http://localhost:3000](http://localhost:3000/) to access the server and see your app.
 
-## Learning 
+# Learning Path 
 
 [Introduction](https://github.com/react-boilerplate/react-boilerplate/blob/master/docs/general/introduction.md)
+
+[Redux saga](https://app.pluralsight.com/library/courses/redux-saga)
+
+## Structure
 
 ### `app/`
 
 We use the [container/component architecture](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.4rmjqneiw). `containers/` contains React components which are connected to the redux store. `components/` contains dumb React components which depend on containers for data. **Container components care about how things work, while components care about how things look.**
 
+#### `components/`
+
+Presentation components, it receives props and provides updated JSX. It is ignorant of the redux world.
+
+If you want to handle click action, pass handler as a param.   
+
+#### `containsers/`
+
+Have access to the redux world (redux state and actions), so they will pass **state** to the presentation components throught **props**,  and they make actions available to the presentation components. These components can then trigger actions and render properly. The presentation components are totally unaware of the redux world. 
+
+
+
 ### `server/`
 
 As the name suggests, this folder contains development and production server configuration.
+
+### 
+
+
 
 
 
@@ -195,6 +215,10 @@ It has three key features:
 
 
 
+
+
+
+
 # **Middleware**
 
 Middlewares are third party libraries which intercept each redux action dispatched to the redux store and then... do stuff. 
@@ -214,6 +238,8 @@ Background process that handles multiple actions simultaneously, communicates wi
 
 
 # Redux Saga
+
+It got access to all the actions that being dispatched, and it can intercept it to execute logic.
 
 
 
@@ -247,6 +273,24 @@ export function* getFlight() {
 
 
 
+# Immutable
+
+Make a new copy every time you do a change. It returns a whole new copy of state. 
+
+
+
+# CSS Modules
+
+It ensure that CSS is properly namespaced. 
+
+```
+<Img className = {styles.logo}
+```
+
+It will go and create a unique string for you automatically, so you can worry a bit less about clashes in CSS
+
+# PostCSS
+
 
 
 
@@ -254,4 +298,8 @@ export function* getFlight() {
 # Notes
 
 https://app.pluralsight.com/library/courses/react-boilerplate-building-scalable-apps
+
+
+
+[PluralSight boilerplate repo](https://github.com/hendrikswan/react-boilerplate)
 
