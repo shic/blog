@@ -8,6 +8,38 @@ header-img: "img/post-bg-01.jpg"
 
 
 
+# Properties
+
+## PropTypes
+
+Json
+
+```
+static propTypes = {
+  link: React.PropTypes.shape({
+    description: React.PropTypes.string.isRequired,
+    url: React.PropTypes.string.isRequired,
+    id: React.PropTypes.string.isRequired,
+  }),
+};
+```
+
+
+
+Array
+
+```
+static propTypes = {
+  links: React.PropTypes.arrayOf(React.PropTypes.shape({
+    description: React.PropTypes.string.isRequired,
+    url: React.PropTypes.string.isRequired,
+    id: React.PropTypes.string.isRequired,
+  })),
+};
+```
+
+
+
 # Debug
 
 ## Webstorm debug setting 
