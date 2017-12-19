@@ -7,6 +7,38 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
+# Shortcuts
+
+## Selection
+
+Multiselection: 
+
+`Ctrl + Cmd + G`
+
+## Move
+
+Popup list of the recently visited files. Choose the desired file and press Enter to open it:
+
+ `Ctrl + E  `
+
+Last cursor position:
+
+ `Ctrl + Alt + Left-Arrow (or Cmd + Alt + Left-Arrow on Mac) `
+
+Last Edit Location:
+
+`Ctrl + Shift + Bakcspace (or Cmd + Alt + Backspace on Mac)`
+
+List recently viewed files:
+
+`Ctrl + E`
+
+List recently edited files:
+
+`Ctrl + Shift + E`
+
+
+
 # Auto complete
 
 Instead of write

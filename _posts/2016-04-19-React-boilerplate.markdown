@@ -52,9 +52,20 @@ As the name suggests, this folder contains development and production server con
 
 # styled-components
 
+
 ```
 npm install --save styled-components
 ```
+
+ds
+
+## Style properties
+
+```
+overflow-y: auto; // Scroll inner list item
+max-height: 30em;
+```
+
 
 ### styled.
 

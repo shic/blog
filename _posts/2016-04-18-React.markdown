@@ -40,6 +40,38 @@ static propTypes = {
 
 
 
+
+
+# Handle Click
+
+```
+onDoorListRowClick(cell, row, rowIndex) {
+  console.log('clicked', cell, row, rowIndex);
+}
+
+// OR
+
+onDoorListRowClick=(cell, row, rowIndex) => {
+  console.log('clicked', cell, row, rowIndex);
+}
+
+
+renderButton() {
+  const { onLoginEmail } = this.props;
+
+  return (
+    <label htmlFor="LoginButton">
+      <Button
+        onClick={()=>this.onDoorListRowClick(1,2,3)}
+      >
+        Login button
+      </Button>
+    </label>
+  );
+}
+
+```
+
 # Debug
 
 ## Webstorm debug setting 
@@ -52,12 +84,204 @@ static propTypes = {
 4. Create Run Configuration (Run > Edit Configurations) : Add new `JavaScript Debug`
    1. URL:   `http://localhost:3000`
    2. Map your `root` directory (`Remote URLs of local files`) with `webpack://.` 
-5. ​
+5. ​Right click JetBrain plugin icon, click "Inspect In WebStorm"
+
+
+
+
+# **react-bootstrap-table**
+
+Search 
+
+```
+const options = {
+  clearSearch: true
+};
+
+export default class SearchClearTable extends React.Component {
+  render() {
+    return (
+      <BootstrapTable data={ products } search={ true } options={ options }>
+          <TableHeaderColumn dataField='id' isKey>Product ID</TableHeaderColumn>
+          <TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
+          <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
+      </BootstrapTable>
+    );
+  }
+}
+```
+
+
+
+Action
+
+http://allenfang.github.io/react-bootstrap-table/example.html#manipulation
+
+
+
+```
+class ExportCSVTable extends React.Component {
+  render() {
+    return (
+      <BootstrapTable data={ products } exportCSV={ true }>
+          <TableHeaderColumn dataField='id' isKey hidden export>Product ID</TableHeaderColumn>
+          <TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
+          <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
+          <TableHeaderColumn dataField='action' export={ false }>Action</TableHeaderColumn>
+      </BootstrapTable>
+    );
+  }
+}
+```
+
+
+
+Export
+
+https://github.com/AllenFang/react-bootstrap-table/blob/3ce59bf44b50aecd49fc27a2b73d4b7b23e5157c/examples/js/custom/csv-button/custom-csv-or-tsv-button.js
+
+
+
+```
+class ExportCSVTable extends React.Component {
+  render() {
+    return (
+      <BootstrapTable data={ products } exportCSV={ true }>
+          <TableHeaderColumn dataField='id' isKey hidden export>Product ID</TableHeaderColumn>
+          <TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
+          <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
+          <TableHeaderColumn dataField='action' export={ false }>Action</TableHeaderColumn>
+      </BootstrapTable>
+    );
+  }
+}
+```
+
+### Hover, Striped, Condensed Table
+
+```
+class HoverStripedTable extends React.Component {
+  render() {
+    return (
+      <BootstrapTable data={ products } striped hover condensed>
+          <TableHeaderColumn dataField='id' isKey>Product ID</TableHeaderColumn>
+          <TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
+          <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
+      </BootstrapTable>
+    );
+  }
+}
+```
+
+### Large Table
+
+```
+class LargeColumnTable extends React.Component {
+  render() {
+    return (
+      <BootstrapTable data={ products }>
+          <TableHeaderColumn width='150' dataField='id' isKey>ProductID</TableHeaderColumn>
+          <TableHeaderColumn width='150' dataField='name'>ProductName</TableHeaderColumn>
+          <TableHeaderColumn width='150' dataField='price'>ProductPrice</TableHeaderColumn>
+          <TableHeaderColumn width='150' dataField='name'>ProductName</TableHeaderColumn>
+          <TableHeaderColumn width='150' dataField='price'>ProductPrice</TableHeaderColumn>
+          <TableHeaderColumn width='150' dataField='name'>ProductName</TableHeaderColumn>
+          <TableHeaderColumn width='150' dataField='price'>ProductPrice</TableHeaderColumn>
+          <TableHeaderColumn width='150' dataField='name'>ProductName</TableHeaderColumn>
+          <TableHeaderColumn width='150' dataField='price'>ProductPrice</TableHeaderColumn>
+          <TableHeaderColumn width='150' dataField='name'>ProductName</TableHeaderColumn>
+          <TableHeaderColumn width='150' dataField='price'>ProductPrice</TableHeaderColumn>
+          <TableHeaderColumn width='150' dataField='name'>ProductName</TableHeaderColumn>
+      </BootstrapTable>
+    );
+  }
+}
+```
+
+### Scroll Table
+
+```
+class ScrollTable extends React.Component {
+  render() {
+    return (
+      <BootstrapTable data={ products } height='120' scrollTop={ 'Bottom' }> <!-- Available value is Top, Bottom or any number value -->
+          <TableHeaderColumn dataField='id' isKey>Product ID</TableHeaderColumn>
+          <TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
+          <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
+      </BootstrapTable>
+    );
+  }
+}
+```
+
+Sort
+
+```
+class DefaultSortTable extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.options = {
+      defaultSortName: 'name',  // default sort column name
+      defaultSortOrder: 'desc'  // default sort order
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <BootstrapTable data={ products } options={ this.options } multiColumnSort={ 2 }>
+          <TableHeaderColumn dataField='id' isKey dataSort>Product ID</TableHeaderColumn>
+          <TableHeaderColumn dataField='name' dataSort>Product Name</TableHeaderColumn>
+          <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
+        </BootstrapTable>
+      </div>
+    );
+  }
+}
+```
+
+
+
+# react-router-dom
+
+https://css-tricks.com/react-router-4/
+
+react-router API
+
+https://reacttraining.com/react-router/web/api
+
+Auth
+
+https://themeteorchef.com/tutorials/getting-started-with-react-router-v4
+
+
+
+
+
+ `<BrowserRouter>` should be used when you have a server that will handle dynamic requests (knows how to respond to any possible URI).
+
+ `<HashRouter>` should be used for static websites (can only respond to requests for files that it knows about).
+
+##  `<Route>` 
+
+`<Route>` component is the main building block of React Router. Anywhere that you want to only render something if it matches the location’s pathname, you should create a `<Route>` element.
+
+`<Route>`  expects a `path` prop string that describes the type of pathname that the route matches — for example, `<Route path='/roster'/>` should match a pathname that begins with `/roster`
+
+
+
+we strategically place the routes for`/users/add` before `/users` to ensure the correct matching. Since the path `/users/add` would match for `/users` and `/users/add`, putting the `/users/add` first is best.
+
+
+
 
 
 # Tools
 
 ### [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+
+Check installed NPM package version `npm list --depth=0`
 
 
 
