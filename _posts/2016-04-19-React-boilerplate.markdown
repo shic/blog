@@ -62,8 +62,26 @@ ds
 ## Style properties
 
 ```
-overflow-y: auto; // Scroll inner list item
+  width: 10em;
+
 max-height: 30em;
+
+justify-content: space-between;
+  
+text-align: center;
+
+overflow-y: auto; // Scroll inner list item
+
+padding: 3em 0;
+
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  
+  font-size: 18px;
 ```
 
 
