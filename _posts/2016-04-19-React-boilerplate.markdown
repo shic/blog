@@ -288,7 +288,11 @@ export function* getFlight() {
 
 Make a new copy every time you do a change. It returns a whole new copy of state. 
 
+Problem 1: TypeError: someState.toJS is not a function
 
+Solution: your state is not ImmutableJS object.
+
+https://redux.js.org/docs/recipes/UsingImmutableJS.html
 
 # CSS Modules
 
