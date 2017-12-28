@@ -270,6 +270,34 @@ we strategically place the routes for`/users/add` before `/users` to ensure the 
 
 `<NavLink>` works the same as `<Link>` but gives you some extra styling abilities depending on if the `<NavLink>` matches the browser's URL.
 
+# Image uploader
+
+https://codepen.io/hartzis/pen/VvNGZP
+
+https://github.com/baaraak/react-images-upload
+
+https://gist.github.com/hartzis/0b77920380736f98e4f9
+
+https://github.com/FineUploader/react-fine-uploader
+
+https://css-tricks.com/image-upload-manipulation-react/
+
+http://www.hartzis.me/react-image-upload/
+
+https://medium.com/ecmastack/uploading-files-with-react-js-and-node-js-e7e6b707f4ef
+
+https://juejin.im/entry/57b923225bbb50005b794943
+
+http://jafeney.com/2016/08/11/2016-08-11-upload/
+
+https://github.com/Jafeney/Royal
+
+https://www.jianshu.com/p/e9ce78270860
+
+http://react-component.github.io/upload/
+
+
+
 # Tools
 
 ### [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
