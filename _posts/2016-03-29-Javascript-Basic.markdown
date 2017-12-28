@@ -7,6 +7,42 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
+
+
+## Closure
+
+https://stackoverflow.com/questions/111102/how-do-javascript-closures-work?rq=1
+
+## Sleep function in network request 
+
+```
+function* sleep() {
+  yield new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(5);
+    }, 1000);
+  });
+}
+ 
+yield sleep().next().value.then((n) => console.log(n));
+```
+
+
+
+## Assign
+
+```
+const authTemp = Object.assign({}, result, {
+  auth: {
+    ...result.auth,
+    token: password,
+  },
+});
+const auth = { ...authTemp.auth };
+```
+
+
+
 # Array
 
 ```javascript

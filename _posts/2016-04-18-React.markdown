@@ -72,21 +72,6 @@ renderButton() {
 
 ```
 
-# Debug
-
-## Webstorm debug setting 
-
-### For ['React-boilerplate'](https://github.com/react-boilerplate/react-boilerplate/blob/master/docs/general/debugging.md#debugging-with-webStorm)
-
-1. [Install JetBrain Chrome Extension](https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji)
-2. Change WebPack devtool config to `source-map` [(This line)](https://github.com/react-boilerplate/react-boilerplate/blob/56eb5a0ec4aa691169ef427f3a0122fde5a5aa24/internals/webpack/webpack.dev.babel.js#L65)
-3. Run web server (`npm run start`)
-4. Create Run Configuration (Run > Edit Configurations) : Add new `JavaScript Debug`
-   1. URL:   `http://localhost:3000`
-   2. Map your `root` directory (`Remote URLs of local files`) with `webpack://.` 
-5. ​Right click JetBrain plugin icon, click "Inspect In WebStorm"
-
-
 
 
 # **react-bootstrap-table**
@@ -243,7 +228,7 @@ class DefaultSortTable extends React.Component {
 
 
 
-# react-router-dom
+# react-router
 
 https://css-tricks.com/react-router-4/
 
@@ -275,7 +260,15 @@ we strategically place the routes for`/users/add` before `/users` to ensure the 
 
 
 
+#### **match.path** vs **match.url**
 
+`match.url` would be `"/users/5"`. **Useful for building nested <Link>s**
+
+ `match.path` would be `"/users/:userId"`. **Useful for building nested <Route>s**
+
+
+
+`<NavLink>` works the same as `<Link>` but gives you some extra styling abilities depending on if the `<NavLink>` matches the browser's URL.
 
 # Tools
 
@@ -352,6 +345,20 @@ export default {
 };
 ```
 
+# Debug
+
+## Webstorm debug setting
+
+### For ['React-boilerplate'](https://github.com/react-boilerplate/react-boilerplate/blob/master/docs/general/debugging.md#debugging-with-webStorm)
+
+1. [Install JetBrain Chrome Extension](https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji)
+2. Change WebPack devtool config to `source-map` [(This line)](https://github.com/react-boilerplate/react-boilerplate/blob/56eb5a0ec4aa691169ef427f3a0122fde5a5aa24/internals/webpack/webpack.dev.babel.js#L65)
+3. Run web server (`npm run start`)
+4. Create Run Configuration (Run > Edit Configurations) : Add new `JavaScript Debug`
+   1. URL:   `http://localhost:3000`
+   2. Map your `root` directory (`Remote URLs of local files`) with `webpack://.` 
+5. ​Right click JetBrain plugin icon, click "Inspect In WebStorm"
+
 
 
 # Error Handling
@@ -361,11 +368,11 @@ export default {
 If React can not find the action or selectors, it will give you some useless information to confuse you. Like this:
 
     uncaught at githubData 
-    
+
      at takeLatestHelper 
-    
+
      at getSupportDataSaga 
-    
+
      TypeError: Object(...) is not a function
     at getSupportDataSaga$ (http://localhost:3000/2.4e77eae8f36a2ed5cbf2.hot-update.js:145:139)
     at tryCatch (webpack:///./node_modules/regenerator-runtime/runtime.js?:65:40)
@@ -379,23 +386,17 @@ If React can not find the action or selectors, it will give you some useless inf
     at proc (webpack:///./node_modules/redux-saga/es/internal/proc.js?:270:3)
 # Lib
 
-material-ui
-
-https://github.com/mui-org/material-ui
+material-ui https://github.com/mui-org/material-ui
 
 [Redux-saga 中文文档](https://github.com/superRaytin/redux-saga-in-chinese)
 
-Text input local state example
-
-https://openclassrooms.com/courses/build-web-apps-with-reactjs/handle-user-input
+Text input local state example https://openclassrooms.com/courses/build-web-apps-with-reactjs/handle-user-input
 
 https://codepen.io/gaearon/pen/wgedvV?editors=0010
 
 
 
-**react-widgets**
-
-https://github.com/jquense/react-widgets
+**react-widgets**https://github.com/jquense/react-widgets
 
 
 
