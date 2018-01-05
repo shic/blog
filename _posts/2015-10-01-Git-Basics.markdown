@@ -52,3 +52,58 @@ author:     "Shi"
 
 3. Remove the temporary local repository you created 
 
+
+
+
+
+
+# Git log
+
+```
+git reflog
+```
+
+
+
+# Bug detect
+
+## Git checkout
+
+```
+git checkout {commit}
+git chekout master //remember to checkout to master before any commit!!!
+```
+
+
+
+## Git bisect
+
+```
+git bisect start
+git bisect bad # to indicate current commit is broken
+git bisect good {commit} # to indicate the last good commit
+git bisect bad|good # you'll run this command over and over while Git changes commits to find which commit introduced the bug
+git bisect reset # to bail out of everything and move back to original HEAD (i.e. the latest broken commit)
+```
+
+You can also filter what commits are included in a bisect like so:
+
+```
+git bisect start -- ./sub_directory
+```
+
+This will mean only commits that affected files inside of `./sub_directory` are considered.
+
+> Note: you can also specify a range of commits to skip: `git bisect skip 0dae5f ff049ab ...`
+
+[](https://gist.github.com/shic)
+
+
+
+# [Create a branch from unstaged/uncommitted changes](https://stackoverflow.com/questions/2569459/git-create-a-branch-from-unstaged-uncommitted-changes-on-master)
+
+```
+git checkout -b new_branch_name
+git add .
+git commit -m "<Brief description of this commit>"
+```

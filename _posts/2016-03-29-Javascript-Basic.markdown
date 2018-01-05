@@ -58,6 +58,14 @@ var things = [
 things[2]();
 ```
 
+## Copy 
+
+```
+arr.slice() //is used to return a new array that is same as the original one
+```
+
+
+
 ## Array shift() Method
 
 Remove the first item of an array
