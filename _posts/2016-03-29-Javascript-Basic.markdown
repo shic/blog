@@ -62,6 +62,58 @@ things[2]();
 
 Remove the first item of an array
 
+## Array splice() Method
+
+To  delete elements in an array, you pass two arguments to the `splice()` method as follows:
+
+```
+Array.splice(position,num);
+```
+
+The `position` argument specifies the position of the first item to delete and the `num` argument determines the number of element to delete.
+
+```
+var scores = [1, 2, 3, 4, 5];
+var deletedScores = scores.splice(0, 3);
+console.log(deletedScores); // [1, 2, 3]
+console.log(scores); //  [4, 5]
+```
+
+## Insert elements in certain position
+
+```
+Array.splice(position,0,new_element_1,new_element_2,...);
+```
+
+- The `position` argument specifies the starting position in the array that the new elements will be inserted.
+- The second argument is zero (0) that instructs the `splice()` method to not delete any elements.
+- The third argument, fourth argument, and so on are the new elements that are inserted into the array.
+
+
+
+```
+var colors = ['red', 'green', 'blue'];
+colors.splice(2, 0, 'purple');
+console.log(colors); // ["red", "green", "purple", "blue"]
+```
+
+## Replace element
+
+```
+var languages = ['C', 'C++', 'Java', 'JavaScript'];
+
+// Replace one element
+languages.splice(1, 1, 'Python');
+console.log(languages); // ["C", "Python", "Java", "JavaScript"]
+
+// Replace one element by multiple elements
+languages.splice(2,1,'C#','Swift','Go');
+console.log(languages); // ["C", "Python", "C#", "Swift", "Go", "JavaScript"]
+
+```
+
+
+
 ## Array slice() Method
 
 The `**slice()**` method returns a shallow copy of a portion of an array into a new array 
@@ -1036,54 +1088,6 @@ class Restaurant {
 let r = Reflect.construct(Restaurant, ["Zoey's", "Goleta"]);//similar to let r= new Restaurant("Zoey's", "Goleta");
 console.log(r instanceof Restaurant);//true
 
-
-```
-
-### 
-
-```javascript
-
-```
-
-### 
-
-```javascript
-
-```
-
-### 
-
-```javascript
-
-```
-
-### 
-
-```javascript
-
-```
-
-### 
-
-```javascript
-
-```
-
-### 
-
-```javascript
-
-```
-
-### 
-
-```javascript
-
-```
-
-### 
-
-```javascript
 
 ```
 

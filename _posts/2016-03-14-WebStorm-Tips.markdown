@@ -55,3 +55,19 @@ And with `md-content.content` you can get
 
     <md-content class="content"></md-content>
 
+
+
+
+## Webstorm debug setting
+
+### For ['React-boilerplate'](https://github.com/react-boilerplate/react-boilerplate/blob/master/docs/general/debugging.md#debugging-with-webStorm)
+
+1. [Install JetBrain Chrome Extension](https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji)
+2. Change WebPack devtool config to `source-map` [(This line)](https://github.com/react-boilerplate/react-boilerplate/blob/56eb5a0ec4aa691169ef427f3a0122fde5a5aa24/internals/webpack/webpack.dev.babel.js#L65)
+3. Run web server (`npm run start`)
+4. Create Run Configuration (Run > Edit Configurations) : Add new `JavaScript Debug`
+   1. URL:   `http://localhost:3000`
+   2. Map your `root` directory (`Remote URLs of local files`) with `webpack://.` 
+5. ​Right click JetBrain plugin icon, click "Inspect In WebStorm"
+
+# 
