@@ -33,6 +33,29 @@ author:     "Shi"
 
 
 
+# Merge
+
+### [Merge a git branch into master](https://stackoverflow.com/questions/5601931/best-and-safest-way-to-merge-a-git-branch-into-master)
+
+```
+git checkout master
+git pull origin master
+git merge name_of_branch_to_merge
+```
+
+### Make a branch as master branch
+
+```
+git checkout master
+git checkout -b name_of_copy_of_master_branch //make a copy of master branch
+git checkout master
+git reset --hard b8c3(form which commit created the branch)
+git merge name_of_branch_to_merge
+git branch -d name_of_branch_to_merge
+```
+
+### 
+
 # Duplicating a repository
 
 1. Create a bare clone of the repository.
