@@ -144,6 +144,12 @@ class ExportCSVTable extends React.Component {
 
 ### Hover, Striped, Condensed Table
 
+`striped` class adds zebra-stripes to a table
+
+`hover` class adds a hover effect (grey background color) on table rows
+
+`condensed` class makes a table more compact by cutting cell padding in half
+
 ```
 class HoverStripedTable extends React.Component {
   render() {

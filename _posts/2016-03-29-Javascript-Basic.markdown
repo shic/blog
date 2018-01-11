@@ -58,19 +58,13 @@ var things = [
 things[2]();
 ```
 
-## Copy 
+## 1. Copy
 
 ```
 arr.slice() //is used to return a new array that is same as the original one
 ```
 
-
-
-## Array shift() Method
-
-Remove the first item of an array
-
-## Array splice() Method
+## 2. Delete elements
 
 To  delete elements in an array, you pass two arguments to the `splice()` method as follows:
 
@@ -81,11 +75,21 @@ Array.splice(position,num);
 The `position` argument specifies the position of the first item to delete and the `num` argument determines the number of element to delete.
 
 ```
-var scores = [1, 2, 3, 4, 5];
-var deletedScores = scores.splice(0, 3);
-console.log(deletedScores); // [1, 2, 3]
-console.log(scores); //  [4, 5]
+let scores = [1, 2, 3, 4, 5];
+let deletedScores = scores.splice(1, 2);
+console.log(deletedScores); // [2, 3]
+console.log(scores); //  [1, 4, 5]
+
+
 ```
+
+## 
+
+## Array shift() Method
+
+Remove the first item of an array
+
+## Array splice() Method
 
 ## Insert elements in certain position
 

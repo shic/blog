@@ -57,12 +57,12 @@ As the name suggests, this folder contains development and production server con
 npm install --save styled-components
 ```
 
-ds
+
 
 ## Style properties
 
 ```
-  width: 10em;
+width: 10em;
 
 max-height: 30em;
 
@@ -209,6 +209,14 @@ render(
 );
 
 ```
+
+
+
+### Colors List
+
+https://github.com/styled-components/polished/blob/master/src/internalHelpers/_nameToHex.js
+
+
 
 
 
