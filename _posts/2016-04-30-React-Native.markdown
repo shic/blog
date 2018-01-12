@@ -570,8 +570,13 @@ On the Android Simulator click `Cmd + M`
 
 ### Launch emulator
 
-1. emulator -list-avds (emulator located in folder: ${ANDROID\_SDK}/tools/emulator )
-2. emulator @Nexus\_4\_Android\_4\_4\_API\_19
+1. `emulator -list-avds`
+
+    emulator located in folder: `${ANDROID\_SDK}/tools/emulator ` which on Mac located at  `~/Library/Android/sdk/tools/emulator `
+
+   Cmd is `~/Library/Android/sdk/tools/emulator -list-avds`
+
+2. `emulator @Nexus\_4\_Android\_4\_4\_API\_19`
 
 
 

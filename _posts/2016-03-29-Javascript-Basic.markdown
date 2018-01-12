@@ -53,7 +53,6 @@ var things = [
         alert('Hello');
     }
 ]
-
 //Call function in array
 things[2]();
 ```
@@ -66,38 +65,34 @@ arr.slice() //is used to return a new array that is same as the original one
 
 ## 2. Delete elements
 
-To  delete elements in an array, you pass two arguments to the `splice()` method as follows:
+1. Remove the first item of an array
+
+   ````
+   arr.shift()
+   ````
+
+2. To  delete elements in an array, you pass two arguments to the `splice()` method as follows:
 
 ```
 Array.splice(position,num);
 ```
 
-The `position` argument specifies the position of the first item to delete and the `num` argument determines the number of element to delete.
+ `position` argument specifies the position of the first item to delete 
+
+ `num` argument determines the number of element to delete.
+
+Returns deleted elements.
 
 ```
 let scores = [1, 2, 3, 4, 5];
 let deletedScores = scores.splice(1, 2);
 console.log(deletedScores); // [2, 3]
 console.log(scores); //  [1, 4, 5]
-
-
-```
-
-## 3. Find
-
-```
-const ticket = ticketList.find((ticketTemp) => ticketTemp.id.id === ticketId);
 ```
 
 
 
-## Array shift() Method
-
-Remove the first item of an array
-
-## Array splice() Method
-
-## Insert elements in certain position
+##  3. Insert elements in certain position
 
 ```
 Array.splice(position,0,new_element_1,new_element_2,...);
@@ -107,15 +102,13 @@ Array.splice(position,0,new_element_1,new_element_2,...);
 - The second argument is zero (0) that instructs the `splice()` method to not delete any elements.
 - The third argument, fourth argument, and so on are the new elements that are inserted into the array.
 
-
-
 ```
 var colors = ['red', 'green', 'blue'];
 colors.splice(2, 0, 'purple');
 console.log(colors); // ["red", "green", "purple", "blue"]
 ```
 
-## Replace element
+## 4. Replace element
 
 ```
 var languages = ['C', 'C++', 'Java', 'JavaScript'];
@@ -132,9 +125,17 @@ console.log(languages); // ["C", "Python", "C#", "Swift", "Go", "JavaScript"]
 
 
 
-## Array slice() Method
+##  5. Find
 
-The `**slice()**` method returns a shallow copy of a portion of an array into a new array 
+```
+const ticket = ticketList.find((ticketTemp) => ticketTemp.id.id === ticketId);
+```
+
+
+
+## 6. Sub array
+
+The `slice()` method returns a shallow copy of a portion of an array into a new array 
 
 ```
 arr.slice(begin, end)
@@ -146,13 +147,33 @@ If `end` is undefined, `slice` extracts through the end of the sequence (`arr.le
 
 
 
+## For loop
+
+```javascript
+let productId = 42;
+for (let productId = 0; productId < 10; productId++)
+{
+
+}
 ```
-arr.slice() //is used to return a new array that is same as the original one
+
+
+
+```javascript
+    const slotConfigIdsTemp = [];
+    if (slotConfigIds.length > 0) {
+      slotConfigIds.forEach((value) => {
+        slotConfigIdsTemp.push(value.id);
+      });
+    }
+
 ```
 
 
 
-## Bracket notation
+
+
+# Bracket notation
 
 ```javascript
 var cat = {
@@ -358,9 +379,7 @@ console.log(o.a); // 25
 
 ```
 
-# ES6
 
-[ES6 compatibility table](http://kangax.github.io/compat-table/es6/)
 
 ## let, var, const
 
@@ -371,15 +390,6 @@ const PI = 3.1415;
 PI = 3; // TypeError: Assignment to constant variable.
 
 const foo = Object.freeze({}); //Const for an object
-```
-
-## For loop
-```javascript
-let productId = 42;
-for (let productId = 0; productId < 10; productId++)
-{
-
-}
 ```
 
 ## Iteration
@@ -734,8 +744,6 @@ Redux-Saga forms a wrapper around generators that  simplify manageing promises
 
 
 
-
-
 ```javascript
 function *process() {
 	yield 42;
@@ -819,12 +827,7 @@ getProcessedData(50);
 2finish async  50
 3finish async in func 
 4process data  90
-
 ```
-
-
-
-
 
 
 
@@ -1109,11 +1112,8 @@ console.log(r instanceof Restaurant);//true
 
 ```
 
-### 
 
-```javascript
 
-```
 # Note
 
 ## Books
