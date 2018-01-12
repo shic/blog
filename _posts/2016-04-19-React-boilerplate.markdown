@@ -98,7 +98,7 @@ min-height: 100%;
 
 #### Border
 
-```
+```Css
 border-top: 0;
 border-left: 0;
 border-right: 0;
@@ -111,7 +111,7 @@ border-bottom-style: solid;
 
 ## Style insied component
 
-```jsx
+```java
 import styled from 'styled-components';
 
 const AppWrapper = styled.div`
