@@ -83,7 +83,13 @@ console.log(scores); //  [1, 4, 5]
 
 ```
 
-## 
+## 3. Find
+
+```
+const ticket = ticketList.find((ticketTemp) => ticketTemp.id.id === ticketId);
+```
+
+
 
 ## Array shift() Method
 

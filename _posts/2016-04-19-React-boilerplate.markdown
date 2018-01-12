@@ -62,27 +62,101 @@ npm install --save styled-components
 ## Style properties
 
 ```
-width: 10em;
 
-max-height: 30em;
 
-justify-content: space-between;
-  
+justify-content: space-between; // space-around
+
+// To use flex direction, you must specify 'display: flex'
+display: flex;
+flex-direction: row; //column
+
+align-items: center;
+
 text-align: center;
 
 overflow-y: auto; // Scroll inner list item
 
+background: papayawhip;
+
 padding: 3em 0;
 
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  
+
   font-size: 18px;
 ```
+
+
+
+#### Width/Height
+
+```
+width: 10em; // 100%; 50px;
+max-width: calc(1280px + 16px * 2);
+height: 30em;
+max-height: 30em;
+min-height: 100%;
+```
+
+#### Border
+
+```
+border-top: 0;
+border-left: 0;
+border-right: 0;
+border-bottom-color: rgba(0, 0, 0, 0.2);
+border-bottom-width: 1px;
+border-bottom-style: solid;
+```
+
+
+
+## Style insied component
+
+```jsx
+import styled from 'styled-components';
+
+const AppWrapper = styled.div`
+  max-width: calc(1280px + 16px * 2);
+  margin: 0 auto;
+  display: flex;
+  min-height: 100%;
+  padding: 0 16px;
+  flex-direction: column;
+`;
+
+export class SlotPage extends React.PureComponent { 
+	
+  render() {
+    return (
+    	<AppWrapper>
+        </AppWrapper>
+  );
+  
+}
+```
+
+
+
+## Child to be vertical
+
+```
+// To use flex direction, you must specify 'display: flex'
+display: flex;
+flex-direction: column;
+```
+
+
+
+## Dinamic 
+
+```
+color: ${props => props.primary ? 'white' : 'palevioletred'};
+width: ${(props) => props.size ? props.size : '10em'};
+
+// If vertical then add 'flex-direction: column;' property
+${(props) => props.vertical && 'flex-direction: column;'}
+
+```
+
 
 
 ### styled.
