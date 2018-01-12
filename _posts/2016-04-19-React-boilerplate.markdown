@@ -102,12 +102,112 @@ min-height: 100%;
 border-top: 0;
 border-left: 0;
 border-right: 0;
+border-radius: 3px;
 border-bottom-color: rgba(0, 0, 0, 0.2);
 border-bottom-width: 1px;
-border-bottom-style: solid;
+border-bottom-style: solid; // dotted; double;
+
+// Together
+border: 2px solid #41ADDD;
+
+```
+
+#### Padding/Margin
+
+```Css
+padding: 0.25em 2em;
+margin: 1em;
+
+```
+
+#### Text
+
+```css
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-weight: bold;
+font-size: 16px;
+text-decoration: none;
+color: #41ADDD;
+
+```
+
+## Styling any components
+
+```
+// This could be react-router's Link for example
+const Link = ({ className, children }) => (
+  <a className={className}>
+    {children}
+  </a>
+)
+
+const StyledLink = styled(Link)`
+  color: palevioletred;
+  font-weight: bold;
+`;
+
+render(
+  <div>
+    <Link>Unstyled, boring Link</Link>
+    <br />
+    <StyledLink>Styled, exciting Link</StyledLink>
+  </div>
+);
+
+```
+
+## Extending Styles 
+
+```
+// The Button from the last section without the interpolations
+const Button = styled.button`
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
+
+// We're extending Button with some extra styles
+const TomatoButton = Button.extend`
+  color: tomato;
+  border-color: tomato;
+`;
 ```
 
 
+
+## Replace the <button> tag with an <a> tag, but reuse all the same styles
+
+```
+const Button = styled.button`
+  display: inline-block;
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
+
+// We're replacing the <button> tag with an <a> tag, but reuse all the same styles
+const Link = Button.withComponent('a')
+
+// Use .withComponent together with .extend to both change the tag and use additional styles
+const TomatoLink = Link.extend`
+  color: tomato;
+  border-color: tomato;
+`;
+
+render(
+  <div>
+    <Button>Normal Button</Button>
+    <Link>Normal Link</Link>
+    <TomatoLink>Tomato Link</TomatoLink>
+  </div>
+);
+```
 
 ## Style insied component
 
@@ -146,10 +246,10 @@ flex-direction: column;
 
 
 
-## Dinamic 
+## Attaching additional props  
 
 ```
-color: ${props => props.primary ? 'white' : 'palevioletred'};
+color: ${(props) => props.primary ? 'white' : 'palevioletred'};
 width: ${(props) => props.size ? props.size : '10em'};
 
 // If vertical then add 'flex-direction: column;' property
