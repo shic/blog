@@ -14,6 +14,23 @@ header-img: "img/post-bg-01.jpg"
 2. npm start 
 3. You can then open [http://localhost:3000](http://localhost:3000/) to access the server and see your app.
 
+
+
+Note:
+
+To usa Moment-timezone. You should modify moment-timezone lib:
+
+Add the following code to 
+
+`node_modules/moment-timezone/moment-timezone.js` line 26
+
+```
+// Resolves es6 module loading issue
+if (moment.version === undefined) {
+  moment = moment.default;
+}
+```
+
 # Learning Path 
 
 [Introduction](https://github.com/react-boilerplate/react-boilerplate/blob/master/docs/general/introduction.md)

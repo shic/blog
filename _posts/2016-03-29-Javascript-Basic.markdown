@@ -57,6 +57,14 @@ var things = [
 things[2]();
 ```
 
+## Size
+
+```
+arr.length
+```
+
+
+
 ## 1. Copy
 
 ```
@@ -147,7 +155,7 @@ If `end` is undefined, `slice` extracts through the end of the sequence (`arr.le
 
 
 
-## For loop
+## 7. Loop
 
 ```javascript
 let productId = 42;

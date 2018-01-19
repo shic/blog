@@ -1,0 +1,23 @@
+---
+layout:     post
+title:      "Electron"
+date:       2016-04-08 12:00:00
+author:     "Shi"
+header-img: "img/post-bg-01.jpg"
+---
+
+
+
+# electron
+
+https://electronjs.org/
+
+# electron-builder
+
+https://www.electron.build/
+
+# Boilerplate
+
+https://github.com/chentsulin/electron-react-boilerplate
+
+https://github.com/Liftitapp/electron-react-sagas-starter
