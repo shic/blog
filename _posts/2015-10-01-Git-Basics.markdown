@@ -80,6 +80,33 @@ git branch -d name_of_branch_to_merge
 
 
 
+# Search Commit
+
+## Method 1:
+
+1. https://github.com/search
+2. Insert user/repo and content to look for `user:shic repo:react-boilerplate-2017 table`
+
+
+
+## Method 2:
+
+```
+git log -g -i --grep='Table'
+```
+
+
+
+```
+git log --all --oneline | grep -i "Table"
+```
+
+-i: ignore case
+
+' ' or " " both works
+
+
+
 # Git log
 
 ```
