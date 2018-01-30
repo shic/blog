@@ -8,6 +8,13 @@ header-img: "img/post-bg-01.jpg"
 
 # React-boilerplate
 
+## System environment setting
+
+1. Install node and npm https://nodejs.org/en/
+2. ​
+
+
+
 # Setting up
 
 1. npm i
@@ -18,7 +25,7 @@ header-img: "img/post-bg-01.jpg"
 
 Note:
 
-To usa Moment-timezone. You should modify moment-timezone lib:
+To use Moment-timezone. You should modify moment-timezone lib:
 
 Add the following code to 
 
@@ -30,6 +37,23 @@ if (moment.version === undefined) {
   moment = moment.default;
 }
 ```
+
+
+
+Table wrap
+
+`/node_modules/react-bootstrap-table/css/react-bootstrap-table.css` line 21 
+
+```
+.react-bs-table table td,
+.react-bs-table table th {
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+}
+```
+
+
 
 # Learning Path 
 
