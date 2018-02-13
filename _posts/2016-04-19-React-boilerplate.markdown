@@ -10,8 +10,9 @@ header-img: "img/post-bg-01.jpg"
 
 ## System environment setting
 
-1. Install node and npm https://nodejs.org/en/
-2. ​
+Install node and npm.
+Download Node installation file from https://nodejs.org/en/
+
 
 
 

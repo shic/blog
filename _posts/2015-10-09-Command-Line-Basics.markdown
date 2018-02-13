@@ -9,7 +9,7 @@ author:     "Shi"
 
 # Terminal 
 
-## Command history
+## Search for Command history
 
 ### Ctrl+R
 
@@ -19,7 +19,7 @@ This will search the history for the most recent command beginning with 'text'.
 
 ### history
 
-`$ history`
+`history`
 Will print a list of commands along with a numeric index
 `!1`
 You can then execute any of these commands using their numeric index by prefacing the index with a single !
@@ -31,6 +31,39 @@ then you can type
 `!num`
 
 # Linux
+
+## Mesure exe time
+
+### [gnomon](https://github.com/paypal/gnomon)
+
+```
+npm install -g gnomon
+```
+
+### Total time
+
+```
+java -jar ~/Downloads/transformer.jar ~/Downloads/BASE  | gnomon -t elapsed-total
+```
+
+### Each process time
+
+```
+java -jar ~/Downloads/transformer.jar ~/Downloads/BASE  | gnomon -t elapsed-line
+```
+
+#### Options
+
+```
+-t <elapsed-line|elapsed-total|absolute>
+
+elapsed-line: Number of seconds that displayed line was the last line.
+elapsed-total: Number of seconds since the start of the process.
+```
+
+
+
+
 
 ## Print working directory
 
