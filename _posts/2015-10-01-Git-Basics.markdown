@@ -8,17 +8,28 @@ author:     "Shi"
 
 
 
-# Personal access tokens
+# Authentication (2FA)
 
-1.  [Generate new token](https://github.com/settings/tokens/new) and copy new personal access token
-2.  Insert access token as password
+## Command line
+
+1. [Generate new token](https://github.com/settings/tokens/new) select permissions **repo**
+
+2. Use generated token as password to authenticate login
+
+   ```
+   Username: your_username
+   Password: your_token
+   ```
+
+
 
 # Git commit 
 
 1. `git add .` to add your changes to git 
+
 2. `git commit -m "commit msg"`
 
-
+   ​
 
 
 
@@ -79,8 +90,6 @@ git branch -d name_of_branch_to_merge
 
 
 
-
-
 # Search Commit
 
 ## Method 1:
@@ -113,6 +122,13 @@ git log --all --oneline | grep -i "Table"
 ```
 git reflog
 ```
+
+
+
+# Delete github remote commit
+
+1. git reset --hard 894c60974b
+2. git push -f
 
 
 
