@@ -8,9 +8,10 @@ author:     "Shi"
 
 
 
-## Personal access tokens
+# Personal access tokens
 
-[Generate new token](https://github.com/settings/tokens/new)
+1.  [Generate new token](https://github.com/settings/tokens/new) and copy new personal access token
+2.  Insert access token as password
 
 # Git commit 
 
@@ -157,3 +158,19 @@ git checkout -b new_branch_name
 git add .
 git commit -m "<Brief description of this commit>"
 ```
+
+
+
+# Git Large File Storage
+
+## Install LFS
+
+1.  xcode-select --install
+2.  brew install git-lfs
+3.  git lfs install
+
+## Moving a file in your repository to Git Large File Storage
+
+1.  `git lfs migrate info` //Check large files
+2.  `git lfs track "*.sketch"`
+3.  `git add .gitattributes`
