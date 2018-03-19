@@ -174,3 +174,54 @@ git checkout -b new_branch_name
 git add .
 git commit -m "<Brief description of this commit>"
 ```
+
+
+
+
+# Keep your fork synced
+
+1. Fetch the branches and their respective commits from the upstream repository. 
+
+   Commits to `master` will be stored in a local branch, `upstream/master`.
+
+   ```
+   git fetch upstream
+   ```
+
+2. Merge the changes from `upstream/master` into your local `master` branch. 
+
+   ```
+   git checkout master // Switched to branch 'master'
+   git merge upstream/master
+   ```
+
+
+
+## Add remote upstream （If not added）
+
+1. Get remote URL:
+
+   ```
+   git remote -v
+   origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
+   origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+   ```
+
+2. Add remote upstream
+
+   ```
+   git remote add upstream https://github.com/octocat/Spoon-Knife.git
+   ```
+
+   and verify if new upstream added 
+
+   ```
+   git remote -v
+   origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
+   origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+   upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)
+   upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
+   ```
+
+   ​
+
