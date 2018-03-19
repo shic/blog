@@ -56,14 +56,9 @@ align-self: center;
 ```
 
 
+`align-self and align-items` align for items inside the flexible container. So the parent should be flex and the child alignment is the same as the parent.  
 
-#### align-self
-
-
-
-
-
-center the text in the parent
+center the text in the parent (vertical or horizontal depends on the parent)
 
 	text-align: center 
 
@@ -118,22 +113,6 @@ Default background is repeat
 Display image at a scale size
 
 	background-size: cover;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
