@@ -52,9 +52,46 @@ flex-direction: row | row-reverse | column | column-reverse;
 ```
 align-items: center; // align child items vertically
 justify-content: center; // align child items horizontal
-align-self: center;
 ```
 
+```
+parent {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+child {
+	align-self: center;
+	width: 10px;
+	height: 10px;
+}
+
+// This shows the child at 'center top' 
+
+```
+
+### To center an element
+
+1. 
+
+```
+ {
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em
+}
+```
+
+2.
+
+```
+child {
+	align-self: center;
+}
+
+// In this way the parent should be flex
+```
 
 `align-self and align-items` align for items inside the flexible container. So the parent should be flex and the child alignment is the same as the parent.  
 
