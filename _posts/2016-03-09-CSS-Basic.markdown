@@ -27,8 +27,41 @@ The browser has default style "User Agent Stylesheet"
 <a id="bookmark"> <a>
 ```
 
-
 # Property
+
+## Direction
+
+Flex
+
+
+[https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) 
+
+[http://caniuse.com/#search=flexbox](http://caniuse.com/#search=flexbox) 
+
+```
+display: flex; /* or inline-flex */
+flex-direction: row | row-reverse | column | column-reverse;
+```
+
+
+
+## Align
+
+### Parent Properties
+
+```
+align-items: center; // align child items vertically
+justify-content: center; // align child items horizontal
+align-self: center;
+```
+
+
+
+#### align-self
+
+
+
+
 
 center the text in the parent
 
@@ -57,15 +90,16 @@ Display horizontal
 goto the next line as a block, trate elements as block ( Often used )
 
 	display: inline-block
-
-
+	
+	
 	display: table
 	display: table-cell
-
+	
 	vertical-align: middle;
-
+	
 	boarder-radius: 5px;
 	float:left;
+	
 
 
 
@@ -77,33 +111,34 @@ Default background is repeat
 
 	background-repeat: repeat-x;
 	background-repeat: repeat-y;
-
+	
 	background-position: center top;
 	background-position: 20% 50%;
 
 Display image at a scale size
 
 	background-size: cover;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
@@ -112,15 +147,16 @@ Display image at a scale size
 	img{
 	  max-width: 100%;
 	  margin-bottom:20px;
-
+	
 	}
-
+	
 	.container{
 	  
 	  background-repeat: no-repeat;
 	  background-position: center;
 	  background-size: cover;
 	}
+	
 
 
 
@@ -137,23 +173,23 @@ Footer height is 60 px
       Content!
           
     </div>
-
+    
     <footer class="site-footer">
       I'm the Sticky Footer.
     </footer>
-
-
-	.page-wrap{
-	  min-height: calc(100vh - 60px);
-	}  
-	  
+    
+    
+    .page-wrap{
+      min-height: calc(100vh - 60px);
+    }  
+      
     .site-footer, .page-wrap:after {
       height: 142px; 
     }
     .site-footer {
       background: orange;
     }
-	  
+
 >vh means "Viewport relative unit". it stands for Viewport Height.
 
 
@@ -165,50 +201,40 @@ Footer height is 60 px
     /* ================================= 
       Media Queries
     ==================================== */
-
+    
     @media (min-width: 768px) {
-
+    
         .wrap {
             min-height: calc(100vh - 89px);
         }
-
+    
         .container {
             width: 80%;
             max-width: 1150px;
             margin: 0 auto;
         }
-
+    
     }
-
-
-
+    
+    
+    
      @media only screen and (min-width: 768px),
-	            only screen and (min-with: 700px) and (orientation: landscape) {
-
+                only screen and (min-with: 700px) and (orientation: landscape) {
+    
       .wrapper {
         width: 1026px;
         margin: 0 auto;
       }
-
+    
       .title {
         font-size: 2em;
       }
-
+    
       nav a {
         padding: 25px 1%;
       }
       
     }
-
-
-Flex
-
-[https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) 
-
-[http://caniuse.com/#search=flexbox](http://caniuse.com/#search=flexbox) 
-
-	display: flex; /* or inline-flex */
-  	flex-direction: row | row-reverse | column | column-reverse;
 
 
 
