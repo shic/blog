@@ -482,8 +482,6 @@ list.concat(element)
 
 
 
-
-
 ### MobX
 
 https://github.com/mobxjs/mobx
@@ -556,17 +554,11 @@ Open webpage  [Linking.openURL(url)](https://facebook.github.io/react-native/doc
 
 
 
-# Tools
-
 # Debug
 
-## Simulator debug menu:
-
-On the iOS Simulator click `Cmd + D`
-
-On the Android Simulator click `Cmd + M`
-
 ## Android debug
+
+Simulator debug menu on the Android Simulator click `Cmd + M`
 
 ### Launch emulator
 
@@ -602,51 +594,19 @@ On the Android Simulator click `Cmd + M`
 
 ## iOS debug
 
-### Http on iOS simulator
+Simulator debug menu on the iOS Simulator: `Cmd + D`
 
-Modify plist which located in `ios/Uper/info.plist`
-
-```
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>localhost</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
-			<key>uupper.com</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
-		</dict>
-	</dict>
-
-```
-
-
+Show log:  `Cmd + D` -> `Remote JS Debugging`
 
 Navigate to HomeScreen: `Cmd + Shift + h`
 
-
-
 https://facebook.github.io/react-native/docs/running-on-device.html
 
-
-
-## Simulator system log (when app crash)
-
-`Cmd+/`
+Show simulator system log (when app crash): `Cmd+/`
 
 
 
-[Bug report system www.bugsnag.com](https://www.bugsnag.com/platforms/react-native-error-reporting/)
-
-
-
-## bug
+# Bugs
 
 ### [NPM modules get required from /Users/node\_modules/ instead of the project directory][15]
 
@@ -677,6 +637,8 @@ In chrome developer tool, sources-right most trangle button- active pause button
 
 
 # Crash Reporting
+
+[Bug report system www.bugsnag.com](https://www.bugsnag.com/platforms/react-native-error-reporting/)
 
 
 
@@ -765,6 +727,32 @@ react-native bundle --dev false --platform ios --entry-file index.ios.js --bundl
 # [NetInfo](https://facebook.github.io/react-native/docs/netinfo.html)
 
 NetInfo exposes info about online/offline status
+
+
+
+# Http (not Https) on iOS simulator
+
+Modify plist which located in `ios/Uper/info.plist`
+
+```
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>uupper.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+
+```
 
 
 
