@@ -1124,6 +1124,10 @@ console.log(r instanceof Restaurant);//true
 
 # Note
 
+##  JavaScript Style
+
+Airbnb JavaScript Style Guide: http://airbnb.io/javascript/
+
 ## Books
 
 ECMAScript 6 入门: http://es6.ruanyifeng.com/#docs/intro

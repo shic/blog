@@ -177,7 +177,7 @@ git commit -m "<Brief description of this commit>"
 
 
 
-# Keep your fork synced
+# Keep your fork repo synced
 
 1. Fetch the branches and their respective commits from the upstream repository. 
 
