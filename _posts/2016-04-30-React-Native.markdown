@@ -10,15 +10,53 @@ header-img: "img/post-bg-01.jpg"
 
 Each component has several "lifecycle methods" that you can override to run code at particular times in the process. 
 
-Methods prefixed with **will** are called right before something happens, and 
+Methods prefixed with **will** are called right before something happens 
 
-methods prefixed with **did** are called right after something happens.
-
-
+Methods prefixed with **did** are called right after something happens.
 
 Everytime we change the state of component, it will rerender itself
 
-#### Updating
+
+
+## MOUNTING
+
+These methods are called when an instance of a component is being created and inserted into the DOM:
+
+- [`constructor()`][1]
+
+    Set default state using a constructor.
+
+    ```
+    this.state = {
+          loading: false,
+          error: null,
+          stockProduct,
+    };
+    ```
+
+    ​
+
+- #### [`componentWillMount()`][2]
+
+    Do nothing here	
+
+- [`render()`][3]
+
+## MOUNTED
+
+- [`componentDidMount()`][4]
+
+  This is the point when you should initiate AJAX requests
+
+## RECEIVING PROPS
+- [componentWillReceiveProps](https://reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops)
+
+  Do nothing here
+
+  ​
+
+
+### Updating
 
 An update can be caused by changes to props or state. These methods are called when a component is being re-rendered:
 
@@ -30,6 +68,8 @@ An update can be caused by changes to props or state. These methods are called w
 
   Component rerender. Put the layout animation here
 
+  Do nothing here
+
 - [`render()`][8]
 
 - [`componentDidUpdate()`][9]
@@ -40,45 +80,9 @@ This method is called when a component is being removed from the DOM:
 
 - [`componentWillUnmount()`][10]
 
-     ​
-
-## MOUNTING
-
-These methods are called when an instance of a component is being created and inserted into the DOM:
-
--   [`constructor()`][1]
-
--   #### [`componentWillMount()`][2]
-
-    Someone do network request here	
-
-    Create FlatList here
-
--   [`render()`][3]
-
-## MOUNTED
-
-- [`componentDidMount()`][4]
-
-## RECEIVING PROPS
-- componentWillReceiveProps
-
-  update data here
-
-- componentWillMount
-
-- [`componentWillUnmount()`](https://reactjs.org/docs/react-component.html#componentwillunmount)
-
   Unregister listener
 
-  ### 
 
-- ​
-  Unregister listener
-
-### 
-
-### 
 
 ## UPDATED
 - componentDidUpdate

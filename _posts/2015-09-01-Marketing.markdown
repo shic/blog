@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Git Basics"
-subtitle:   "Some useful command lines"
+title:      "Marketing"
+subtitle:   "Marketing"
 date:       2015-09-01 12:00:00
 author:     "Shi"
 ---
