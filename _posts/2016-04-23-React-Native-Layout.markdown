@@ -6,6 +6,30 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
+
+
+# Tips:
+
+## 1. Make child match parent
+
+Parent should have : alignItems: stretch
+
+children must not have a fixed dimension along the secondary axis.
+
+Try it here: https://facebook.github.io/react-native/docs/flexbox.html
+
+```
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'stretch',
+      }}>
+        <View style={{ height: 50, backgroundColor: 'powderblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+      </View>
+```
 # Style
 
 ## Usage
@@ -15,8 +39,6 @@ header-img: "img/post-bg-01.jpg"
   	<Text style={styles.textStyle}>Some text</Text>
   </View>
 
-
-
 //To not duplicate the styles var, we can do the following
 constant {textStyle,viewStyle} = styles;
 
@@ -24,8 +46,6 @@ return(
   <View style={viewStyle}>
   	<Text style={textStyle}>Some text</Text>
   </View>
-
-
 )
 
 const styles={
@@ -125,7 +145,7 @@ const styles = StyleSheet.create({
 
 ```
 
-## Components
+# Components
 
 ### Common properties
 
@@ -147,9 +167,13 @@ alignSelf:'stretch' //alignSelf aligns itself, alignItems aligns the children.
 
 ```
 
+## Modal
 
+http://www.runoob.com/bootstrap/bootstrap-modal-plugin.html
 
-### View
+http://wiki.jikexueyuan.com/project/bootstrap4/components/modal/
+
+## View
 
 ```
 flexDirection:'column'
@@ -188,15 +212,6 @@ fontWeight: '600'
 
 By default it has no width and height
 
-```
-width:100
-height:10
-
-
-```
-
-
-
 ```javascript
 state = {email:''};
 render(){
@@ -207,7 +222,7 @@ render(){
           	secureTextEntry={true} //if the value is true, we can just pass 'secureTextEntry'
       		value={this.state.email}
       		onChangeText = {text=>this.setState({email:text})}
-		   style = {{width:100, height:20}}
+		    style = {{width:100, height:20}}
            
         />
     )
@@ -225,12 +240,32 @@ const input=({lable,placeholder,value,onChangeText,secureTextEntry})=>{
      		placeholder={placeholderText}
       		value={value}
       		onChangeText = {onChangeText}
-		   style = {{width:100, height:20}}
-           
+		    style = {{width:100, height:20}}
       />
     </View>
   )
     
+}
+```
+
+### 
+
+```java
+class Test extends Component {
+  //...
+  //handle events
+  //...
+  render() {
+    return (
+      <TextInput 
+        onBlur={...}
+        onChange={...}
+        onEndEditing={...}
+        onSelectionChange={...}
+        onSubmitEditing={...}
+      </TextInput>
+    );
+  }
 }
 ```
 
@@ -260,26 +295,7 @@ class Touch extends Component {
 }
 ```
 
-### TextInput
 
-```java
-class Test extends Component {
-  //...
-  //handle events
-  //...
-  render() {
-    return (
-      <TextInput 
-        onBlur={...}
-        onChange={...}
-        onEndEditing={...}
-        onSelectionChange={...}
-        onSubmitEditing={...}
-      </TextInput>
-    );
-  }
-}
-```
 
 ### [Gesture Responder System](https://unbug.gitbooks.io/react-native-training/content/24_events.html)
 

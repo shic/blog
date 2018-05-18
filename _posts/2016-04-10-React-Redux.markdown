@@ -626,6 +626,7 @@ Every time the state changes, mapStateToProps function will rerun passing new st
 
 <Provider> can have only one child
 
+
 ```
 const App = ()=>{
 

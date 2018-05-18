@@ -98,7 +98,7 @@ dispatch({type:'SET_STATE', value:42}); //Output: Got state
 
 
 ```
-    const { id }  = yield take(GET_CURRENT_USER_INFO);
+const { id }  = yield take(GET_CURRENT_USER_INFO);
 ```
 
 
@@ -166,8 +166,6 @@ When the same action is dispatched , it cancels the previous call and fork a new
 
 
 
-
-
 ## select
 
 When you yield to the select effect, it returns a copy of the application state. 
@@ -204,8 +202,6 @@ yield effects.fork(fn);
 yield items.map(items=>fork(loadItemDetails, item))
 
 ```
-
-
 
 
 
@@ -256,7 +252,19 @@ Combines numerous take statements into one.
 Resumes when all actions have been dispatched.
 
 ```
+  yield all([
+    takeLatest(UPDATE_DOOR, updateDoorFromServerSaga),
+    takeLatest(UPLOAD_MEDIAS, uploadMediasSaga),
+  ]);
+```
 
+also the following works
+
+```
+  yield [
+    takeLatest(UPDATE_DOOR, updateDoorFromServerSaga),
+    takeLatest(UPLOAD_MEDIAS, uploadMediasSaga),
+  ];
 ```
 
 
@@ -283,13 +291,7 @@ const response = yield call(fetch,`http://localhost:8081/user/${id}`);
 
 
 
-
-
-
-
 It creates a promise that resolves after some time.
-
-
 
 If you put delay after yield keyword yield will pause the execution of the function for some time.
 
