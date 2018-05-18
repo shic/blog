@@ -357,3 +357,26 @@ In parent view add `flex:1` to make the list fill the screen
 //Picker has with and height 0. So add a style to show the picker 
 ```
 
+
+
+# Lib
+
+## react-native-vector-icons
+
+https://github.com/oblador/react-native-vector-icons
+
+## icons list
+
+https://oblador.github.io/react-native-vector-icons/
+
+
+
+## Usage
+
+
+
+```
+import Icon from 'react-native-vector-icons/MaterialIcons';
+<Icon name="cancel" style={{ fontSize: 20, color: 'red' }} />
+```
+
