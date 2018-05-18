@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "React Native Layout"
-date:       2016-04-20 12:00:00
+date:       2016-04-23 12:00:00
 author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---

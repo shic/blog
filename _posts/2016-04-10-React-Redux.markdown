@@ -1,12 +1,12 @@
 ---
-layout:     post
-title:      "Redux"
+flayout:     post
+title:      "React Redux"
 date:       2016-04-10 12:00:00
 author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
-# Redux Basic
+# *Redux Basic*
 
 ## Props, state and store
 
@@ -485,7 +485,7 @@ TaskList.propTypes = {
 export default TaskList;
 ```
 
-### Redux-react 
+### React-Redux 
 
 1. ```javascript
    npm install --save react-redux
@@ -667,25 +667,4 @@ export default combineReducers({
 Here declear the state name of all reducers. We we return a state from the reducer, it will be save with this name.
 
 
-
-# Redux-Thunk
-
-`npm install --save redux-thunk`
-
-To handle async action creators. 
-
-
-
-Action Creator must **return a function** instead of action, this function will be called automatically with 'dispatch'. 
-
-
-
-step by step
-
-1.  Action creator called 
-2.  Action creator returns a function
-3.  Redux thunk sees that we returned  a funcion and calls it with dispatch 
-4.  Wait for the async request to complete
-5.  Request conpleted,  .then function of the async request runs. 
-6.  Redux thunk now dispatch our action
 

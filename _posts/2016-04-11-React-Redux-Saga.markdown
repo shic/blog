@@ -1,12 +1,14 @@
 ---
 layout:     post
-title:      "Redux Saga"
+title:      "React Redux Saga"
 date:       2016-04-11 12:00:00
 author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
-# Install
+# *Redux Saga*
+
+## Install
 
 ```
 npm install --save redux-saga

@@ -402,11 +402,11 @@ export default {
 If React can not find the action or selectors, it will give you some useless information to confuse you. Like this:
 
     uncaught at githubData 
-
+    
      at takeLatestHelper 
-
+    
      at getSupportDataSaga 
-
+    
      TypeError: Object(...) is not a function
     at getSupportDataSaga$ (http://localhost:3000/2.4e77eae8f36a2ed5cbf2.hot-update.js:145:139)
     at tryCatch (webpack:///./node_modules/regenerator-runtime/runtime.js?:65:40)
