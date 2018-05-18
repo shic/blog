@@ -6,7 +6,9 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
-# *Redux Basic*
+# *React Redux*
+
+# Redux Basics
 
 ## Props, state and store
 

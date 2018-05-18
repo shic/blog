@@ -6,7 +6,7 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
-# ***React-Layout***
+# *React-Layout*
 
 # [styled-components](https://github.com/styled-components/styled-components)
 

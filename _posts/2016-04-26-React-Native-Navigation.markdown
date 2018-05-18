@@ -1,10 +1,12 @@
 ---
 layout:     post
-title:      "Redux"
+title:      "React Native Navigation"
 date:       2016-04-26 12:00:00
 author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
+
+# *React Native Navigation*
 
 # React Native Router Flux
 
