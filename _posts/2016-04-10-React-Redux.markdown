@@ -36,7 +36,7 @@ keep data that you intend to share across components in **store**.
 
 use **this** to store things that shouldn’t trigger a re-render.
 
-# Redux
+
 
 Steps:
 
@@ -487,12 +487,11 @@ TaskList.propTypes = {
 export default TaskList;
 ```
 
-### React-Redux 
+# React-Redux 
 
-1. ```javascript
-   npm install --save react-redux
-   ```
-
+```javascript
+npm install --save react-redux
+```
 #### Container
 
 **VisibleTodoList** filters the todos according to the current visibility filter and renders a`TodoList`
@@ -544,12 +543,6 @@ Async action with Redux use the [Redux Thunk middleware](https://github.com/gae
 state is never to be modified. When changing state, create new objects instead. The spread (…) operator helps significantly
 
 
-
-# Redux React
-
-npm install --save react-redux
-
-npm install --save redux
 
 
 
