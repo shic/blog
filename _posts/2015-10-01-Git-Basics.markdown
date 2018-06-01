@@ -22,15 +22,11 @@ author:     "Shi"
    ```
 
 
-
 # Git commit 
 
 1. `git add .` to add your changes to git 
 
 2. `git commit -m "commit msg"`
-
-   ​
-
 
 
 # Fetch and Rebase remote version 
@@ -41,8 +37,6 @@ author:     "Shi"
 4. Resolve conflict if there are
 5. `git add . `
 6. `git rebase --continue`
-
-
 
 
 # Merge
@@ -66,7 +60,13 @@ git merge name_of_branch_to_merge
 git branch -d name_of_branch_to_merge
 ```
 
-### 
+#  Ignore committed folder
+
+1. `nano .gitignore`
+2. add `Pods/` in .gitignore 
+3. git rm -r --cached Pods/
+4. git commit -m "remove pods"
+5. git push
 
 # Duplicating a repository
 
@@ -167,7 +167,9 @@ This will mean only commits that affected files inside of `./sub_directory` are 
 
 
 
-# [Create a branch from unstaged/uncommitted changes](https://stackoverflow.com/questions/2569459/git-create-a-branch-from-unstaged-uncommitted-changes-on-master)
+# Create a branch from uncommitted changes 
+
+(https://stackoverflow.com/questions/2569459/git-create-a-branch-from-unstaged-uncommitted-changes-on-master)
 
 ```
 git checkout -b new_branch_name
