@@ -64,9 +64,9 @@ git branch -d name_of_branch_to_merge
 
 1. `nano .gitignore`
 2. add `Pods/` in .gitignore 
-3. git rm -r --cached Pods/
-4. git commit -m "remove pods"
-5. git push
+3. `git rm -r --cached Pods/`
+4. `git commit -m "remove pods"`
+5. `git push`
 
 # Duplicating a repository
 
