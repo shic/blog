@@ -1,0 +1,20 @@
+---
+layout:     post
+title:      "Node.js"
+date:       2018-06-27 12:00:00
+author:     "Shi"
+
+
+---
+
+
+
+# Start with debugger
+
+1. Start terminal at the server root dir
+2. `node --inspect ./bin/www ` With express: `DEBUG=express:* node --inspect ./bin/www`
+3. Chrome: `chrome://inspect`
+4. Click: "Open dedicated DevTools for Node"
+5. Goto `console` tab to see log
+6. Goto Sources->Node->file://->fileWhichYouWantToSetBreakpoint to set breakpoint
+
