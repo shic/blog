@@ -45,7 +45,7 @@ goto page2 call onHide
 
 back from page2 call page1 onShow and page2 onUnload
 
-## Page switch
+# Page switch
 
 ### Ways
 
@@ -107,13 +107,21 @@ url:"../logs/logs?id=1"
  }
 ```
 
+# 
 
+all iPhone screens width are 750 rpx
+
+
+
+# Components
 
 ## Click event
 
 - bindtap
 
-  会触发底层 click event
+  会触发底层(下面几层) click event
+
+  
 
   ```
   <view bindtap="viewClick2">
@@ -121,13 +129,17 @@ url:"../logs/logs?id=1"
 
 - catchtap
 
-  不会触发底层 click event
+  不会触发底层(下面几层) click event
 
   ```
   <view catchtap="viewClick2">
   ```
 
-  ​
+  
+
+- longPress
+
+  
 
 ### event 包含了 currentTarget （绑定了事件的组件） 和 target（触发的组件）
 
@@ -199,7 +211,9 @@ url:"../logs/logs?id=1"
 
 ```
 
-### swiper
+## swiper
+
+This is an image slider
 
 ```
 indicator-dots="true"
@@ -217,7 +231,56 @@ duration="1000" //滑动时间
 </swiper>
 ```
 
-### scroll-view
+# view
+
+hover-class
+
+
+
+#### flex
+
+##### container
+
+```java
+display: flex;
+flex-direction:row;
+flex-wrap:wrap; //nowrap: wrap-reverse
+flex-flow:row wrap //equals to : flex-direction:row; && flex-wrap:wrap; 
+justify-content: center //main direction: flex-start (default); flex-end; space-around; space-between
+align-items: center //corss direction: flex-start (default); flex-end; stretch; baseline: 以元素所含第一行文字底线对其
+```
+
+##### element
+
+```java
+flex-grow: 0; //% of increase of the element when there are extra space, the other element should also have this property default:0
+flex-shrink:1; // when space not enough, % of decrese. default 1. 0 means this element not shrink, 10 means shrink 10 times respect others.
+flex-basis: 200rpx; //bug 200px works. space that the element occupy 
+flex: 2 0 200rpx;
+  
+order: 3 //position of this element in the container
+align-self: flex-end;
+```
+
+相对定位 (相对于自己来定位)
+
+```
+position: relative;
+left: 150rpx;
+top: 50rpx
+```
+
+绝对定位（相对于最近一个已经定位的父级元素来定位）
+
+```
+position: absolute;
+left: 150rpx;
+top: 50rpx
+```
+
+
+
+# scroll-view
 
 ```java
 scroll-y="true" 
@@ -284,52 +347,7 @@ Page({
 <progress percent="20" show-info active/>
 ```
 
-### view
 
-#### flex
-
-##### container
-
-```java
-display: flex;
-flex-direction:row;
-flex-wrap:wrap; //nowrap: wrap-reverse
-flex-flow:row wrap //equals to : flex-direction:row; && flex-wrap:wrap; 
-justify-content: center //main direction: flex-start (default); flex-end; space-around; space-between
-align-items: center //corss direction: flex-start (default); flex-end; stretch; baseline: 以元素所含第一行文字底线对其
-```
-
-##### element
-
-```java
-flex-grow: 0; //% of increase of the element when there are extra space, the other element should also have this property default:0
-flex-shrink:1; // when space not enough, % of decrese. default 1. 0 means this element not shrink, 10 means shrink 10 times respect others.
-flex-basis: 200rpx; //bug 200px works. space that the element occupy 
-flex: 2 0 200rpx;
-  
-order: 3 //position of this element in the container
-align-self: flex-end;
-```
-
-相对定位 (相对于自己来定位)
-
-```
-position: relative;
-left: 150rpx;
-top: 50rpx
-```
-
-绝对定位（相对于最近一个已经定位的父级元素来定位）
-
-```
-position: absolute;
-left: 150rpx;
-top: 50rpx
-```
-
-
-
-all iPhone screens are 750 rpx
 
 
 
