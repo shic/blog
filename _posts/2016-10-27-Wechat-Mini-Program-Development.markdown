@@ -111,7 +111,11 @@ url:"../logs/logs?id=1"
 
 all iPhone screens width are 750 rpx
 
+# Tips：
 
+## prevent page scroll
+
+add `"disableScroll": true` to pages->pageName.json
 
 # Components
 
