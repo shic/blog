@@ -9,6 +9,12 @@ author:     "Shi"
 
 # Official Guide
 
+## Dimentions
+
+Screens width: 750rpx
+
+# 
+
 ## Docs
 
 

@@ -45,6 +45,8 @@ goto page2 call onHide
 
 back from page2 call page1 onShow and page2 onUnload
 
+
+
 # Page switch
 
 ### Ways
@@ -107,15 +109,43 @@ url:"../logs/logs?id=1"
  }
 ```
 
-# 
 
-all iPhone screens width are 750 rpx
+
+#Login 
+
+https://developers.weixin.qq.com/miniprogram/dev/api/api-login.html
+
+
+
+# Share
+
+https://developers.weixin.qq.com/miniprogram/dev/api/qrcode.html
+
+
+
+# Framework
+
+
+
+https://github.com/Meituan-Dianping/mpvue
+
+
 
 # Tips：
 
 ## prevent page scroll
 
-add `"disableScroll": true` to pages->pageName.json
+add `"disableScroll": true` to: pages->pageName.json
+
+
+
+# [组件化编程](https://link.juejin.im/?target=https%3A%2F%2Fdevelopers.weixin.qq.com%2Fminiprogram%2Fdev%2Fframework%2Fcustom-component%2F)
+
+从小程序基础库版本 [1.6.3](https://developers.weixin.qq.com/miniprogram/dev/framework/compatibility.html) 开始，小程序支持简洁的组件化编程。
+
+https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/
+
+
 
 # Components
 
