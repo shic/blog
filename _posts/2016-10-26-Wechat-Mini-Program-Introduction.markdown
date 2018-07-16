@@ -5,8 +5,6 @@ date:       2016-10-26 12:00:00
 author:     "Shi"
 ---
 
-
-
 # Problem of Apps
 
 1. App eco is full App生态已经相对饱和

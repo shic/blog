@@ -13,7 +13,9 @@ author:     "Shi"
 
 Screens width: 750rpx
 
-# 
+# WeUI
+
+https://github.com/Tencent/weui-wxss/
 
 ## Docs
 
