@@ -122,13 +122,6 @@ url:"../logs/logs?id=1"
 ```
 
 
-
-#Login 
-
-https://developers.weixin.qq.com/miniprogram/dev/api/api-login.html
-
-
-
 # Share
 
 https://developers.weixin.qq.com/miniprogram/dev/api/qrcode.html

@@ -1,0 +1,130 @@
+---
+layout:     post
+title:      "WeChat Mini Program Login"
+date:       2016-10-28 13:00:00
+author:     "Shi"
+---
+
+# Login 
+
+Weixin app api can return user's nickname and avatar, but not its openid
+
+### **wx.getUserInfo**
+
+https://developers.weixin.qq.com/miniprogram/dev/api/open.html#wxgetuserinfoobject
+
+**注意：此接口有调整，使用该接口将不再出现授权弹窗，请使用 **`<button open-type="getUserInfo"></button> `**引导用户主动进行授权操作**
+
+ getUserInfo return :
+
+```
+{
+    userInfo,
+    rawData,
+    signature,
+    encryptedData,
+    iv
+}
+```
+
+userInfo contains:
+
+```
+{
+  "nickName": "Band",
+  "encryptedData": 1,
+  "language": "zh_CN",
+  "city": "Guangzhou",
+  "province": "Guangdong",
+  "country": "CN",
+  "avatarUrl": "http://wx.qlogo.cn/mmopen/vi_32/1vZvI39NWFQ9XM4LtQpFrQJ1xlgZxx3w7bQxKARol6503Iuswjjn6nIGBiaycAjAtpujxyzYsrztuuICqIM5ibXQ/0"
+}
+```
+
+
+
+We should use  `session_key` , `iv` to decrypt `encryptedData`
+
+```
+{
+    "openId": "OPENID",
+    "nickName": "NICKNAME",
+    "gender": GENDER,
+    "city": "CITY",
+    "province": "PROVINCE",
+    "country": "COUNTRY",
+    "avatarUrl": "AVATARURL",
+    "unionId": "UNIONID",
+    "watermark": {
+      "appid":"APPID",
+      "timestamp":TIMESTAMP
+    }
+}
+```
+
+ 
+
+https://developers.weixin.qq.com/miniprogram/dev/api/api-login.html
+
+### **session_key**
+
+1. session_key is the key to decode user's data
+2. Everytime wx.login() called, session_key will be updated
+3. wx.checkSession() to check if session is valid
+
+## Steps:
+
+1. Client: `wx.login()` to get `temporaryCode` (is called `code` in weixin's api, and it can be used onece only)
+
+2. Client: Send  `temporaryCode`  to server
+
+3. Server: Send appid+appsecret+temporaryCode to Weixin's server, Weixin's server returns **session_key** (salt of `temporaryCode`) and **openid** (openid is the unique Weixin user id)
+
+   ```
+   https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code
+   ```
+
+4. Server: return `3rd_session (token; selfDefinedLoginStatus)` (maybe can be the same as `openid` ) that generated according to `session_key` and `openid` to client. 
+
+   
+
+5. Client: Store  `3rd_session (token)` in persistence 
+
+6. Client: Do request with   `3rd_session(token)` 
+
+7. Server: 
+
+
+
+Note:  Weixin nickName code format is ISO-8859-1, you can convert it with:
+
+```
+String nickNameDecode = new String(nickName.getBytes("ISO-8859-1"),"utf-8");
+```
+
+
+
+ 
+
+## Java Backend
+
+juejin version: https://juejin.im/post/5ac9b72cf265da23906c486a
+
+Jianshu version: https://www.jianshu.com/p/19c5b3931b0e
+
+Simple version：https://my.oschina.net/ZhenyuanLiu/blog/1838069
+
+Full version： https://my.oschina.net/magicalSam/blog/832895#comment-list
+
+https://blog.csdn.net/qq_37848203/article/details/72763837
+
+https://blog.csdn.net/weixin_40099554/article/details/80003058
+
+
+
+# access_token
+
+access_token 是全局唯一接口调用凭据，开发者调用各接口时都需使用 access_token
+
+https://developers.weixin.qq.com/miniprogram/dev/api/token.html#%E8%8E%B7%E5%8F%96-access_token
+
