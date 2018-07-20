@@ -9,6 +9,8 @@ author:     "Shi"
 
 # Lifecycle
 
+## [App](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/app.html)
+
 ### App lifecycle
 
 ```javascript
@@ -26,7 +28,11 @@ author:     "Shi"
 
 In app.js define globalData and global functions that can be used in every pages.
 
+## [Page](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html)
+
 ### Page lifecycle
+
+Page
 
 ```javascript
   onLoad: function(){},
@@ -44,6 +50,12 @@ In app.js define globalData and global functions that can be used in every pages
 goto page2 call onHide
 
 back from page2 call page1 onShow and page2 onUnload
+
+
+
+# Lib
+
+## 
 
 
 
@@ -128,6 +140,12 @@ https://developers.weixin.qq.com/miniprogram/dev/api/qrcode.html
 
 
 https://github.com/Meituan-Dianping/mpvue
+
+
+
+# WXS
+
+https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/
 
 
 
