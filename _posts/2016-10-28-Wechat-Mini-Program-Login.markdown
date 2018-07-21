@@ -128,3 +128,75 @@ access_token 是全局唯一接口调用凭据，开发者调用各接口时都�
 
 https://developers.weixin.qq.com/miniprogram/dev/api/token.html#%E8%8E%B7%E5%8F%96-access_token
 
+https://developers.weixin.qq.com/miniprogram/dev/api/signature.html#wxchecksessionobject
+
+## Example
+
+https://www.cnblogs.com/nosqlcoco/p/6105749.html
+
+### App decode request
+
+```
+//httpclient.req(url, data, method, success, fail)
+httpclient.req(
+'http://localhost:8090/wxappservice/api/v1/wx/decodeUserInfo',
+  {
+    apiName: 'WX_DECODE_USERINFO',
+    encryptedData: this.data.encryptedData,
+    iv: this.data.iv,
+    sessionId: wx.getStorageSync('thirdSessionId')
+  },
+  'GET',
+  function(result){
+  //解密后的数据
+    console.log(result.data)
+  },
+  function(result){
+    console.log(result)
+  }
+);
+```
+
+### Server side
+
+
+
+```
+/**
+ * 解密用户敏感数据
+ * @param encryptedData 明文
+ * @param iv            加密算法的初始向量
+ * @param sessionId     会话ID
+ * @return
+ */
+@Api(name = ApiConstant.WX_DECODE_USERINFO)
+@RequestMapping(value = "/api/v1/wx/decodeUserInfo", method = RequestMethod.GET, produces = "application/json")
+public Map<String,Object> decodeUserInfo(@RequestParam(required = true,value = "encryptedData")String encryptedData,
+        @RequestParam(required = true,value = "iv")String iv,
+        @RequestParam(required = true,value = "sessionId")String sessionId){
+
+    //从缓存中获取session_key
+    Object wxSessionObj = redisUtil.get(sessionId);
+    if(null == wxSessionObj){
+        return rtnParam(40008, null);
+    }
+    String wxSessionStr = (String)wxSessionObj;
+    String sessionKey = wxSessionStr.split("#")[0];
+
+    try {
+        AES aes = new AES();
+        byte[] resultByte = aes.decrypt(Base64.decodeBase64(encryptedData), Base64.decodeBase64(sessionKey), Base64.decodeBase64(iv));
+        if(null != resultByte && resultByte.length > 0){
+            String userInfo = new String(resultByte, "UTF-8");
+            return rtnParam(0, userInfo);
+        }
+    } catch (InvalidAlgorithmParameterException e) {
+        e.printStackTrace();
+    } catch (UnsupportedEncodingException e) {
+        e.printStackTrace();
+    }
+    return rtnParam(50021, null);
+}
+```
+
+https://developers.weixin.qq.com/miniprogram/dev/demo/aes-sample.zip
