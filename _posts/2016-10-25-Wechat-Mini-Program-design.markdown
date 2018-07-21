@@ -7,7 +7,9 @@ author:     "Shi"
 
 
 
-# Official Guide
+# WeChat Mini Program Design
+
+## Official Guide
 
 ## Dimentions
 

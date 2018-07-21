@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "WeChat Mini Program WePY"
-date:       2016-10-24 13:00:00
+date:       2016-10-01 13:00:00
 author:     "Shi"
 ---
 
