@@ -15,6 +15,24 @@ author:     "Shi"
 
 Screens width: 750rpx
 
+分享长宽比
+
+1.25
+
+分享
+
+600x480
+
+
+
+slider长宽比
+
+1.78
+
+slider
+
+750x420（1000x560）100-200KB 
+
 # view
 
 hover-class

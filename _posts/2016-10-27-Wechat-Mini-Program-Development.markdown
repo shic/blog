@@ -147,6 +147,12 @@ https://developers.weixin.qq.com/miniprogram/dev/api/qrcode.html
 
 https://developers.weixin.qq.com/miniprogram/dev/api/share.html
 
+# 二维码
+
+https://developers.weixin.qq.com/miniprogram/dev/api/qrcode.html
+
+
+
 # onPullDownRefresh
 
 https://developers.weixin.qq.com/miniprogram/dev/api/pulldown.html
