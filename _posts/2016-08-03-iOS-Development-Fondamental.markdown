@@ -7,6 +7,12 @@ author:     "Shi"
 
 
 
+# Xcode tips
+
+## Suggestion:
+
+Holding `Option Key`, then move mouse to where you want to get help
+
 # Note
 
 [Newsletter](https://iosdevweekly.com/)
