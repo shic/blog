@@ -11,6 +11,8 @@ header-img: "img/post-bg-01.jpg"
 
 https://webdev.dartlang.org/angular/guide/component-styles
 
+https://webdev.dartlang.org/angular/tutorial/toh-pt6
+
 
 
 # **angular_components**
