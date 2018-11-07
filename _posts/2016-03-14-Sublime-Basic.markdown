@@ -10,11 +10,14 @@ header-img: "img/post-bg-01.jpg"
 
 # Add subl command to $PATH
 
+```
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/
+```
 
 # Usage
 
 subl /folder_name
+
 subl file_name
 
 # Tips
