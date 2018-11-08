@@ -239,3 +239,49 @@ git commit -m "<Brief description of this commit>"
 1.  `git lfs migrate info` //Check large files
 2.  `git lfs track "*.sketch"`
 3.  `git add .gitattributes`
+
+
+
+
+
+# Git hook
+
+1. Create `pre-commit` file in `.git/hooks`
+2. Remember to change the access permissions: ` chmod +x pre-commit`
+3. `pre-commit` file:
+
+```bash
+    gofiles=$(git diff --cached --name-only --diff-filter=ACM | grep '.go$')
+    [ -z "$gofiles" ] && exit 0
+    
+    function checkfmt() {
+      unformatted=$(gofmt -l $gofiles)
+      [ -z "$unformatted" ] && return 0
+    
+      echo >&2 "Go files must be formatted with gofmt. Please run:"
+      for fn in $unformatted; do
+        echo >&2 "  gofmt -w $PWD/$fn"
+      done
+    
+      return 1
+    }
+    
+    checkfmt || fail=yes
+    
+    [ -z "$fail" ] || exit 1
+    
+    exit 0
+```
+
+4. You can link script to  `.git/hooks/pre-commit` if you want to commit script. Goto root path and execute:
+
+```
+ln -s ../../pre-commit.sh .git/hooks/pre-commit
+```
+
+## Skip the pre-commit hook sometimes
+
+Be aware of the `--no-verify` option to git commit. This bypasses the pre-commit hook when committing
+
+
+

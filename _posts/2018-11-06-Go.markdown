@@ -46,3 +46,6 @@ ln -s ../../pre-commit.sh .git/hooks/pre-commit
 ## Skip the pre-commit hook sometimes
 
 Be aware of the `--no-verify` option to git commit. This bypasses the pre-commit hook when committing
+
+
+
