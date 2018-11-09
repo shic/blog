@@ -273,13 +273,15 @@ git commit -m "<Brief description of this commit>"
     exit 0
 ```
 
+​	Note:  Bash instruction https://devhints.io/bash
+
 4. You can link script to  `.git/hooks/pre-commit` if you want to commit script. Goto root path and execute:
 
 ```
 ln -s ../../pre-commit.sh .git/hooks/pre-commit
 ```
 
-## Skip the pre-commit hook sometimes
+## Skip the pre-commit hook
 
 Be aware of the `--no-verify` option to git commit. This bypasses the pre-commit hook when committing
 
