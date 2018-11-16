@@ -31,6 +31,10 @@ ngClass: https://webdev.dartlang.org/api/angular/angular/NgClass-class
 
 
 
+# Cheat Sheet
+
+https://webdev.dartlang.org/angular/cheatsheet
+
 
 
 # Debug
