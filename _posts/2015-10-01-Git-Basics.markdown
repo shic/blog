@@ -68,6 +68,10 @@ git branch -d name_of_branch_to_merge
 4. `git commit -m "remove pods"`
 5. `git push`
 
+
+
+# <u>Branch</u>
+
 # Rename branch
 
 **1. Rename your local branch.**
@@ -95,6 +99,18 @@ Switch to the branch and then:
 ```
 `git push origin -u new-name`
 ```
+
+
+
+# Delete branch
+
+```
+git branch | grep -v "master" | xargs git branch -D
+```
+
+grep -v: Fetch all branches exclude the branches that its name contains word "master".
+
+xargs: Kind of for each loop
 
 
 
@@ -303,7 +319,7 @@ git commit -m "<Brief description of this commit>"
     exit 0
 ```
 
-​	Note:  Bash instruction https://devhints.io/bash
+	Note:  Bash instruction https://devhints.io/bash
 
 4. You can link script to  `.git/hooks/pre-commit` if you want to commit script. Goto root path and execute:
 
