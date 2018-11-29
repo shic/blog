@@ -8,7 +8,7 @@ author:     "Shi"
 
 
 
-# Authentication (2FA)
+# <u>Authentication (2FA)</u>
 
 ## Command line
 
@@ -114,27 +114,7 @@ xargs: Kind of for each loop
 
 
 
-# Duplicate a repository
-
-1. Create a bare clone of the repository.
-
-   ```
-   git clone --bare https://github.com/exampleuser/old-repository.git
-   ```
-   Got temporary local repository repo `old-repository.git`
-
-
-
-2. Mirror-push to the new repository.
-   ```
-   cd old-repository.git
-   git push --mirror https://github.com/exampleuser/new-repository.git
-   ```
-
-3. Remove the temporary local repository you created 
-
-
-
+# <u>Commit</u>
 
 # Search Commit
 
@@ -178,7 +158,7 @@ git reflog
 
 
 
-# Bug detect
+# <u>Bug detect</u>
 
 ## Git checkout
 
@@ -222,6 +202,33 @@ git checkout -b new_branch_name
 git add .
 git commit -m "<Brief description of this commit>"
 ```
+
+
+
+
+
+# <u>Repository</u>
+
+# Duplicate a repository
+
+1. Create a bare clone of the repository.
+
+   ```
+   git clone --bare https://github.com/exampleuser/old-repository.git
+   ```
+
+   Got temporary local repository repo `old-repository.git`
+
+
+
+1. Mirror-push to the new repository.
+
+   ```
+   cd old-repository.git
+   git push --mirror https://github.com/exampleuser/new-repository.git
+   ```
+
+2. Remove the temporary local repository you created 
 
 
 
@@ -272,7 +279,7 @@ git commit -m "<Brief description of this commit>"
 
    ​
 
-# Git Large File Storage
+# <u>Git Large File Storage</u>
 
 ## Install LFS
 
@@ -290,7 +297,7 @@ git commit -m "<Brief description of this commit>"
 
 
 
-# Git hook
+# <u>Git hook</u>
 
 1. Create `pre-commit` file in `.git/hooks`
 2. Remember to change the access permissions: ` chmod +x pre-commit`
