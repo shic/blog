@@ -8,6 +8,15 @@ permalink:  mac
 
 # Useful tips
 
+## How to Determine File Type & Encoding from Command Line in Mac OS X
+
+```
+file -I /Users/Downloads/159202-31877 
+Output: /Users/Downloads/159202-31877: audio/mpeg; charset=binary
+```
+
+
+
 ## Dictionary
 
 ### 自动取词

@@ -96,6 +96,12 @@ Ref:
 
 # Debug
 
+## Can not install app
+
+```
+adb uninstall <app package name>
+```
+
 ## Log
 
 Log.d() DEBUG, Log.i() INFO, Log.w() WARN, Log.e() ERROR
