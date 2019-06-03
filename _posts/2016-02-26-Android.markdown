@@ -99,6 +99,7 @@ Ref:
 ## Can not install app
 
 ```
+adb devices
 adb uninstall <app package name>
 ```
 
