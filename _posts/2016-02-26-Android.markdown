@@ -99,8 +99,10 @@ Ref:
 ## Can not install app
 
 ```
-adb devices
-adb uninstall <app package name>
+ cd ~/Library/Android/sdk/platform-tools
+ 
+./adb devices
+./adb uninstall <app package name>
 ```
 
 ## Log
