@@ -1,0 +1,21 @@
+---
+layout:     post
+title:      "Firebase"
+date:       2019-07-24 12:00:00
+author:     "Shi"
+---
+
+# Firebase
+
+
+
+# Database
+
+## Cloud firestore
+
+
+
+## Realtime database
+
+<https://firebase.google.com/docs/database/rtdb-vs-firestore>
+
