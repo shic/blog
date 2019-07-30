@@ -11,6 +11,14 @@ author:     "Shi"
 
 ## Official Guide
 
+https://weui.io/#input
+
+
+
+https://developers.weixin.qq.com/miniprogram/dev/component/form.html
+
+
+
 ## Dimentions
 
 Screens width: 750rpx

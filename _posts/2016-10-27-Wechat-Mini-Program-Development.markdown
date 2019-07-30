@@ -15,6 +15,12 @@ https://developers.weixin.qq.com/ebook?action=get_post_info&token=935589521&volu
 
 
 
+# 云开发
+
+https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html
+
+
+
 # Lifecycle
 
 ## [App](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/app.html)
@@ -98,7 +104,7 @@ https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/list.html
    </navigate>
    ```
 
-   ​
+   
 
 2. redirectTo
 
@@ -116,7 +122,7 @@ https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/list.html
    </navigate>
    ```
 
-   ​
+   
 
 3. navigation bar 
 
@@ -126,9 +132,9 @@ https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/list.html
 
    back will destory the current page by call onUnload
 
-5. ​
+5. 
 
-   ​
+   
 
 ### Pass data 
 
