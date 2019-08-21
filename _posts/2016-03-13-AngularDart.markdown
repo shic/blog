@@ -77,6 +77,24 @@ https://webdev.dartlang.org/guides/debugging
     exit 0
     ```
 
+
+
+# Run with Https
+
+Dev code
+
+```
+cd ~/Documents/workspaceUfirst/QFirst/qfirst_web && webdev serve --auto=refresh --tls-cert-chain /Users/shi/Documents/workspaceUfirst/server.crt --tls-cert-key /Users/shi/Documents/workspaceUfirst/server.key
+```
+
+Release code
+
+```
+cd ~/Documents/workspaceUfirst/QFirst/qfirst_web && webdev serve --auto=refresh --release --tls-cert-chain /Users/shi/Documents/workspaceUfirst/server.crt --tls-cert-key /Users/shi/Documents/workspaceUfirst/server.key
+```
+
+
+
 # Official site
 
 https://webdev.dartlang.org/angular
