@@ -31,6 +31,10 @@ author:     "Shi"
 
 [Electron](http://electron.atom.io/)
 
+# Mail tools
+
+https://www.mailinator.com/
+
 # Image
 
 ## ImageMagick
