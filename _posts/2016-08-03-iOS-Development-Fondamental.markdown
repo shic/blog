@@ -133,11 +133,19 @@ window.rootViewController = navigationController;
 
 ## Delegate creater
 
+Offer a user some methods that can be implement
 
+Use @optional/@required annotation to set if methods are optional or required
+
+Offer delegate property
+
+Run the methods in the right time
 
 ## Delegate user
 
-Set 
+Set `delegate = self` to received delegate methods
+
+Implemente needed delegate methods
 
 
 
@@ -165,6 +173,30 @@ shouldSelectViewController {
 didSelectViewController {
 	//play video
 }
+```
+
+
+
+# UITableView
+
+- UITableView
+    - tableHeaderView
+    - UITableViewCell
+    - tableFooterView
+
+
+
+```
+UITableView tableView
+view.addSubview(tableview)
+```
+
+required methods
+
+```
+numberOfRowsInSection->NSInteger
+
+cellForRowAtIndexPath->UITableViewCell
 ```
 
 
