@@ -201,6 +201,128 @@ cellForRowAtIndexPath->UITableViewCell
 
 
 
+# UIColletionView
+
+## UICollectionViewLayout
+
+- UICollecitonViewFlowLayout
+    - minimumLineSpacing
+    - minimumInteritemSpacing
+    - itemSize (CGSizeMake)
+    - indexPath
+
+
+
+# UIScrollView
+
+用于滚动展示 和图片Zoom
+
+滚动展示：左右滑动展示不同板块
+
+frame: scroll view的大小等属性
+
+contentSize：内容大小
+
+contentOffset：展示哪些内容（frame左上角到contentSize左上角的距离xy ）
+
+常用属性
+
+- UIScrollView
+    - scrollEnabled
+    - pagingEnabled
+    - showHorizontalScrollIndicator
+    - showVerticalScrollIndicator
+
+
+
+常用delegate 方法
+
+scrollViewDidScroll:开始滚动
+
+scrollViewWillBeginDragging：开始拖拽
+
+scrollViewDidEndDragging：结束拖拽
+
+
+
+# UILabel
+
+- UILabel
+    - text
+    - font
+    - textColor
+    - textAlignment
+    - numberOfLines
+    - lineBreakMode
+        - NSLineBreakByClipping 根据宽度暴力截断
+        - NSLineBreakByTruncatingMiddle 中间加...
+        - NSLineBreakByTruncatingTail 最后加...
+        - NSLineBreakByTruncatingHead 前面加...
+    - sizeToFit 可变大小
+
+# UIImage / UIImageView
+
+UIImageView 展示 UIImage
+
+- UIViewContentMode
+    - ToFill 压缩图片到UIImageView的size
+    - AspectFit 图片全展示
+    - AspectFill 根据UIImageView切原始图片
+
+
+
+# WKWebView
+
+configuration: Cookie settings; Preference; Allow play video; JS inject ecc
+
+loadRequest(NSURLRequest)
+
+loadHTMLRequest
+
+## WKNavigationDelegate
+
+decidePolicyForNavigationAction : 是否加载请求
+
+didFinishNavigation: 完成加载
+
+didFailNavigation：加载失败
+
+webViewWebContentProcessDidTerminate： crash回调（自动从新加载）
+
+
+
+
+
+```
+WKWebView webView = initWithFrame(CGRect)
+addSubview(webView)
+webView.loadRequest(NSURLRequest)
+```
+
+
+
+
+
+# Actions and Outlets
+
+## outlet
+
+from code to storyboard  (label)
+
+Outlet is a property
+
+## action
+
+from storyboard to code  (if you want user interface element in your storyboard to cause something to happen in your code like button)
+
+Action is a function
+
+IBAction - stand for Interface Builder Action
+
+# Key word Weak
+
+Weak means we have only the ref of this object, we do not create it, do not control its lifecycle
+
 
 
 # Xcode tips

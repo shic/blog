@@ -7,7 +7,71 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
-<h2 class="section-heading">Services</h2>
+# Services
 
 DOM: document object model
+
+# CSS variable
+
+## Example 1
+
+```html
+<button id="myBtn" value="dark" onClick="buttonClicked(this)">B1</button>
+```
+
+
+
+```javascript
+<script type="text/javascript">
+  function buttonClicked(buttonElement) {
+    // buttonElement.id == myBtn
+  }
+</script>
+```
+
+
+
+## Example 2
+
+
+
+```html
+<button value="dark">calm</button>
+```
+
+
+
+```javascript
+function handleThemeUpdate(e) {
+  switch (e.target.value) {
+    case "dark":
+      root.style.setProperty("--bg", "black");
+      root.style.setProperty("--bg-text", "white");
+      break;
+    case "calm":
+      root.style.setProperty("--bg", "#B3E5FC");
+      root.style.setProperty("--bg-text", "#37474F");
+      break;
+    case "light":
+      root.style.setProperty("--bg", "white");
+      root.style.setProperty("--bg-text", "black");
+      break;
+  }
+}
+```
+
+
+
+```css
+body {
+  background-color: var(--bg, #b3e5fc);
+  color: var(--bg-text, #37474f);
+  font-family: sans-serif;
+  line-height: 1.3;
+}
+```
+
+
+
+
 
