@@ -1,0 +1,22 @@
+---
+layout:     post
+title:      "Flutter"
+date:       2019-09-10 12:00:00
+author:     "Shi"
+
+---
+
+
+
+# Flutter
+
+
+
+## Run app with flavor
+
+```
+flutter run --flavor dev
+```
+
+
+

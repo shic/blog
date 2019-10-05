@@ -191,12 +191,50 @@ UITableView tableView
 view.addSubview(tableview)
 ```
 
-required methods
+## Steps:
 
+1. Put `Table View` in storyboard
+2. Link `dataSource` and `delegate` to viewController
+3. Extends `class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate`
+4. Implement required methods
+
+
+
+## Required methods
+
+### numberOfRowsInSection -> Int
+
+```swift
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return dailyTasks.count
+        case 1:
+            return weeklyTasks.count
+        default:
+            return 0
+        }
+    }
 ```
-numberOfRowsInSection->NSInteger
 
-cellForRowAtIndexPath->UITableViewCell
+### cellForRowAtIndexPath -> UITableViewCell
+
+```swift
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        let rowIndex = indexPath.row
+        let sectionIndex = indexPath.section
+
+        switch indexPath.section {
+        case 0:
+            cell.textLabel?.text = "section \(indexPath.section), row \(rowIndex): \(dailyTasks[rowIndex])"
+        case 1:
+            cell.textLabel?.text = "section \(sectionIndex), row \(rowIndex): \(weeklyTasks[rowIndex])"
+        default:
+            cell.textLabel?.text = "default"
+        }
+        return cell
+    }
 ```
 
 
@@ -319,7 +357,31 @@ Action is a function
 
 IBAction - stand for Interface Builder Action
 
-# Key word Weak
+
+
+# Add a new view controller (scene)
+
+1. Add View Controller in storyboard
+2. Create a new viewController that extends UIViewController
+3. Assign the name of new viewController as identity of the new scene 
+4. Add a segue between two scenes
+5. give the new segue an identifier
+6. Embed the scene in a navigation controller
+    1. Click the first View Controller in the storyboard
+    2. Editer->Embed in -> Navigation controller
+7. 
+
+# Auto Layout
+
+Ctrl + Drag left on element: Center Horizontally in Safe Area
+
+### Stack View
+
+Select multi elements -> Editor -> Embed in -> Stack View
+
+# Key words
+
+## Weak
 
 Weak means we have only the ref of this object, we do not create it, do not control its lifecycle
 
