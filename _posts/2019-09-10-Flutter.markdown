@@ -12,11 +12,73 @@ author:     "Shi"
 
 
 
-## Run app with flavor
+# Run app with flavor
 
 ```
 flutter run --flavor dev
 ```
 
+# Widget，Element 和 RenderObject
 
+Flutter 渲染过程，可以分为这么三步： 
+
+1. 首先，通过 Widget 树生成对应的 Element 树；
+
+2. 然后，创建相应的 RenderObject 并关联到 Element.renderObject属性上
+
+3. 最后，构建成 RenderObject 树，以完成最终的渲染
+
+    
+
+    React：JSX->虚拟DOM->浏览器DOM
+    React Native：JSX->虚拟DOM->Android/iOS原生控件
+    flutter：Widget->Element（类似虚拟DOM，只是一种数据结构）-> RenderObject 交给底层渲染
+
+Widget是一个配置，Element才是最终的对象；
+
+Element是通过遍历Widget树时，调用Widget的方法创建的
+
+
+
+# Life Cycle
+
+## State
+
+### Constructer
+
+### initState
+
+### didChangeDependencies
+
+### build
+
+## Widget
+
+### setState
+
+### didChangeDependencies
+
+### didUpdateWidget
+
+![img](https://static001.geekbang.org/resource/image/aa/bc/aacfcfdb80038874251aa8ad93930abc.png)
+
+
+
+
+
+
+
+
+
+# Note
+
+Mixin就是以非继承的方式实现代码复用的一种机制而已呀
+
+
+
+
+
+# Book
+
+https://book.flutterchina.club/
 
