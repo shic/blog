@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      "Investment"
+title:      "Startup Investment"
 date:       2019-10-14 12:00:00
 author:     "Shi"
 
 ---
 
-# Investment
+# Startup Investment
 
 创业是在资源有限的情况下做
 
