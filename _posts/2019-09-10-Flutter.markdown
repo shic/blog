@@ -40,17 +40,37 @@ Element是通过遍历Widget树时，调用Widget的方法创建的
 
 
 
-# Life Cycle
+# Lifecycle
 
-## State
+## State 生命周期
 
-### Constructer
+### Creation：
 
-### initState
+1. Constructor: 我们可以通过构造方法，来接收父 Widget 传递的初始化 UI 配置数据。这些配置数据，决定了 Widget 最初的呈现效果。
+2. initState: 会在 State 对象被插入视图树的时候调用。这个函数在 State 的生命周期中只会被调用一次，所以我们可以在这里做一些初始化工作，比如为状态变量设定默认值。
+3. didChangeDependencies: 处理 State 对象依赖关系变化，会在 initState() 调用结束后，被 Flutter 调用。
+4. build: 作用是构建视图。经过以上步骤，Framework 认为 State 已经准备好了，于是调用 build。我们需要在这个函数中，根据父 Widget 传递过来的初始化配置数据，以及 State 的当前状态，创建一个 Widget 然后返回。
 
-### didChangeDependencies
+### Update:
 
-### build
+The following situation will update:
+
+- setState: 我们最熟悉的方法之一。当状态数据发生变化时，我们总是通过调用这个方法告诉 Flutter：“我这儿的数据变啦，请使用更新后的数据重建 UI！”
+
+- didChangeDependencies：State 对象的依赖关系发生变化后，Flutter 会回调这个方法，随后触发组件构建。哪些情况下 State 对象的依赖关系会发生变化呢？典型的场景是，系统语言 Locale 或应用主题改变时，系统会通知 State 执行 didChangeDependencies 回调方法。
+
+- didUpdateWidget: 当 Widget 的配置发生变化时，比如，父 Widget 触发重建（即父 Widget 的状态发生变化时），热重载时，系统会调用这个函数。
+
+一旦这三个方法被调用，Flutter 随后就会销毁老 Widget，并调用 build 方法重建 Widget。
+
+### Destruction:
+
+1. deactivate: 这时 State 会被暂时从视图树中移除。值得注意的是，页面切换时，由于 State 对象在视图树中的位置发生了变化，需要先暂时移除后再重新添加，重新触发组件构建，因此这个函数也会被调用。
+2. dispose: 一旦到这个阶段，组件就要被销毁了，所以我们可以在这里进行最终的资源释放、移除监听、清理环境，等等。
+
+
+
+![](https://static001.geekbang.org/resource/image/bb/84/bba88ebb44b7fdd6735f3ddb41106784.png)
 
 ## Widget
 
@@ -64,11 +84,174 @@ Element是通过遍历Widget树时，调用Widget的方法创建的
 
 
 
+# Widgets
+
+## Text
+
+```
+
+Text(
+  '用来显示一段特定样式的字符串，就比如Android里的TextView，或是iOS中的UILabel。',
+  textAlign: TextAlign.center,//居中显示
+  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.red),//20号红色粗体展示
+);
+```
 
 
 
+### 混合展示样式
+
+```
+
+TextStyle blackStyle = TextStyle(fontWeight: FontWeight.normal, fontSize: 20, color: Colors.black); //黑色样式
+
+TextStyle redStyle = TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.red); //红色样式
+
+Text.rich(
+    TextSpan(
+        children: <TextSpan>[
+          TextSpan(text:'文本是视图系统中常见的控件，它用来显示一段特定样式的字符串，类似', style: redStyle), //第1个片段，红色样式 
+          TextSpan(text:'Android', style: blackStyle), //第1个片段，黑色样式 
+          TextSpan(text:'中的', style:redStyle), //第1个片段，红色样式 
+          TextSpan(text:'TextView', style: blackStyle) //第1个片段，黑色样式 
+        ]),
+  textAlign: TextAlign.center,
+);
+```
 
 
+
+## Image
+
+加载本地资源图片，如 Image.asset(‘images/logo.png’)；
+
+加载本地（File 文件）图片，如 Image.file(new File(’/storage/xxx/xxx/test.jpg’))；
+
+加载网络图片，如 Image.network('http://xxx/xxx/test.gif') 。
+
+
+
+填充模式 fit、拉伸模式 centerSlice、重复模式 repeat 等属性
+
+### FadeInImage
+
+FadeInImage 控件提供了图片占位的功能，并且支持在图片加载完成时淡入淡出的视觉效果。此外，由于 Image 支持 gif 格式，我们甚至还可以将一些炫酷的加载动画作为占位图。
+
+```
+FadeInImage.assetNetwork(
+  placeholder: 'assets/loading.gif', //gif占位
+  image: 'https://xxx/xxx/xxx.jpg',
+  fit: BoxFit.cover, //图片拉伸模式
+  width: 200,
+  height: 200,
+)
+```
+
+
+
+### CachedNetworkImage
+
+https://pub.dev/packages/cached_network_image/
+
+
+
+## Button
+
+Flutter 提供了三个基本的按钮控件，即 FloatingActionButton、FlatButton 和 RaisedButton。
+
+```
+FloatingActionButton(onPressed: () => print('FloatingActionButton pressed'),child: Text('Btn'),);
+FlatButton(onPressed: () => print('FlatButton pressed'),child: Text('Btn'),);
+RaisedButton(onPressed: () => print('RaisedButton pressed'),child: Text('Btn'),);
+```
+
+
+
+```
+FlatButton(
+    color: Colors.yellow, //设置背景色为黄色
+    shape:BeveledRectangleBorder(borderRadius: BorderRadius.circular(20.0)), //设置斜角矩形边框
+    colorBrightness: Brightness.light, //确保文字按钮为深色
+    onPressed: () => print('FlatButton pressed'), 
+    child: Row(children: <Widget>[Icon(Icons.add), Text("Add")],)
+)；
+```
+
+
+
+## ListView
+
+### 构造函数 ListView.builder
+
+适用于子 Widget 比较多的场景。这个构造函数有两个关键参数：
+
+- itemBuilder，是列表项的创建方法。当列表滚动到相应位置时，ListView 会调用该方法创建对应的子 Widget
+- itemCount，表示列表项的数量，如果为空，则表示 ListView 为无限列表。
+
+
+
+```
+ListView.builder(
+    itemCount: 100, //元素个数
+    itemExtent: 50.0, //列表项高度
+    itemBuilder: (BuildContext context, int index) => ListTile(title: Text("title $index"), subtitle: Text("body $index"))
+);
+```
+
+itemExtent 并不是一个必填参数。但对于定高的列表项元素，我强烈建议你提前设置好这个参数的值。因为如果这个参数为 null，ListView 会动态地根据子 Widget 创建完成的结果，决定自身的视图高度，以及子 Widget 在 ListView 中的相对位置。在滚动发生变化而列表项又很多时，这样的计算就会非常频繁。
+
+### ListView.separated
+
+与 ListView.builder 抽离出了子 Widget 的构建方法类似，ListView.separated 抽离出了分割线的创建方法 separatorBuilder，以便根据 index 设置不同样式的分割线。
+
+```
+//使用ListView.separated设置分割线
+ListView.separated(
+    itemCount: 100,
+    separatorBuilder: (BuildContext context, int index) => index %2 ==0? Divider(color: Colors.green) : Divider(color: Colors.red),//index为偶数，创建绿色分割线；index为奇数，则创建红色分割线
+    itemBuilder: (BuildContext context, int index) => ListTile(title: Text("title $index"), subtitle: Text("body $index"))//创建子Widget
+)
+```
+
+
+
+## CustomScrollView
+
+用来处理多个需要自定义滚动效果的 Widget。在 CustomScrollView 中，这些彼此独立的、可滚动的 Widget 被统称为 Sliver。
+
+```
+CustomScrollView(
+  slivers: <Widget>[
+    SliverAppBar(//SliverAppBar作为头图控件
+      title: Text('CustomScrollView Demo'),//标题
+      floating: true,//设置悬浮样式
+      flexibleSpace: Image.network("https://xx.jpg",fit:BoxFit.cover),//设置悬浮头图背景
+      expandedHeight: 300,//头图控件高度
+    ),
+    SliverList(//SliverList作为列表控件
+      delegate: SliverChildBuilderDelegate(
+            (context, index) => ListTile(title: Text('Item #$index')),//列表项创建方法
+        childCount: 100,//列表元素个数
+      ),
+    ),
+  ]);
+```
+
+
+
+## ScrollController 与 ScrollNotification
+
+### ScrollController
+
+与 ListView 绑定，进行滚动信息的监听，进行相应的滚动控制
+
+首先，我们在 State 的初始化方法里，创建了 ScrollController，并通过 _controller.addListener 注册了滚动监听方法回调，根据当前视图的滚动位置，判断当前是否需要展示“Top”按钮。随后，在视图构建方法 build 中，我们将 ScrollController 对象与 ListView 进行了关联，并且在 RaisedButton 中注册了对应的回调方法，可以在点击按钮时通过 _controller.animateTo 方法返回列表顶部。最后，在 State 的销毁方法中，我们对 ScrollController 进行了资源释放。
+
+
+
+### ScrollNotification
+
+通过将 ListView 纳入子 Widget，实现滚动事件的获取。
 
 # Note
 

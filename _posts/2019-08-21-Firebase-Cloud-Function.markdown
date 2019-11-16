@@ -11,11 +11,13 @@ author:     "Shi"
 
 # Run cloud function locally
 
+1. start 
+
 ```
 firebase functions:shell
 ```
 
-invoke a function
+2. invoke a function
 
 ```
 toUpperCase('first task')
