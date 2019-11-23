@@ -1,11 +1,29 @@
 ---
 layout:     post
 title:      "Firebase Cloud Function"
-date:       2019-07-24 12:00:00
+date:       2019-08-21 12:00:00
 author:     "Shi"
 ---
 
 # Firebase Cloud Function
+
+
+
+# Deploy
+
+## All functions
+
+```
+firebase deploy --only functions
+```
+
+## A certain function
+
+```
+firebase deploy --only functions:functionNameThatYouWantToDeploy
+```
+
+
 
 
 
