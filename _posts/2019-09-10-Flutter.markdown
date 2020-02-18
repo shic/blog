@@ -253,6 +253,155 @@ CustomScrollView(
 
 通过将 ListView 纳入子 Widget，实现滚动事件的获取。
 
+# 传递数据
+
+对于数据的跨层传递，Flutter 还提供了三种方案：InheritedWidget、Notification 和 EventBus。
+
+## InheritedWidget
+
+InheritedWidget 的数据流动方式是从父 Widget 到子 Widget 逐层传递
+
+对于视图层级比较深的 UI 样式，直接通过属性传值的方式会导致很多中间层增加冗余属性，而使用 InheritedWidget 可以实现子 Widget 跨层共享父 Widget 的属性。需要注意的是，InheritedWidget 中的属性在子 Widget 中只能读，如果有修改的场景，我们需要把它和 StatefulWidget 中的 State 配套使用。
+
+### 使用方法
+
+首先，为了使用 InheritedWidget，我们定义了一个继承自它的新类 CountContainer。
+
+然后，我们将计数器状态 count 属性放到 CountContainer 中，并提供了一个 of 方法方便其子 Widget 在 Widget 树中找到它。
+
+最后，我们重写了 updateShouldNotify 方法，这个方法会在 Flutter 判断 InheritedWidget 是否需要重建，从而通知下层观察者组件更新数据时被调用到。在这里，我们直接判断 count 是否相等即可。
+
+```dart
+class CountContainer extends InheritedWidget {
+  //方便其子Widget在Widget树中找到它
+  static CountContainer of(BuildContext context) => context.inheritFromWidgetOfExactType(CountContainer) as CountContainer;
+  
+  final int count;
+
+  CountContainer({
+    Key key,
+    @required this.count,
+    @required Widget child,
+  }): super(key: key, child: child);
+
+  // 判断是否需要更新
+  @override
+  bool updateShouldNotify(CountContainer oldWidget) => count != oldWidget.count;
+}
+```
+
+我们使用 CountContainer 作为根节点，并用 0 初始化 count。随后在其子 Widget Counter 中，我们通过 InheritedCountContainer.of 方法找到它，获取计数状态 count 并展示：
+
+```dart
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+   //将CountContainer作为根节点，并使用0作为初始化count
+    return CountContainer(
+      count: 0,
+      child: Counter()
+    );
+  }
+}
+
+class Counter extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //获取InheritedWidget节点
+    CountContainer state = CountContainer.of(context);
+    return Scaffold(
+      appBar: AppBar(title: Text("InheritedWidget demo")),
+      body: Text(
+        'You have pushed the button this many times: ${state.count}',
+      ),
+    );
+}
+```
+
+
+
+## Notification
+
+数据流动方式是从子 Widget 向上传递至父 Widget。这样的数据传递机制适用于子 Widget 状态变更，发送通知上报的场景。
+
+Notification，这种由下到上传递数据的跨层共享机制。我们可以使用 NotificationListener，在父 Widget 监听来自子 Widget 的事件。
+
+如果想要实现自定义通知，我们首先需要继承 Notification 类。Notification 类提供了 dispatch 方法，可以让我们沿着 context 对应的 Element 节点树向上逐层发送通知。
+
+### 使用方法
+
+子 Widget 是一个按钮，在点击时会发送通知
+
+```dart
+
+class CustomNotification extends Notification {
+  CustomNotification(this.msg);
+  final String msg;
+}
+
+//抽离出一个子Widget用来发通知
+class CustomChild extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      //按钮点击时分发通知
+      onPressed: () => CustomNotification("Hi").dispatch(context),
+      child: Text("Fire Notification"),
+    );
+  }
+}
+```
+
+父 Widget 中，我们监听了这个通知，一旦收到通知，就会触发界面刷新，展示收到的通知信息：
+
+```dart
+
+class _MyHomePageState extends State<MyHomePage> {
+  String _msg = "通知：";
+  @override
+  Widget build(BuildContext context) {
+    //监听通知
+    return NotificationListener<CustomNotification>(
+        onNotification: (notification) {
+          setState(() {_msg += notification.msg+"  ";});//收到子Widget通知，更新msg
+        },
+        child:Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[Text(_msg),CustomChild()],//将子Widget加入到视图树中
+        )
+    );
+  }
+}
+```
+
+## EventBus
+
+EventBus 是一个第三方插件
+
+无论是 InheritedWidget 还是 Notificaiton，它们的使用场景都需要依靠 Widget 树，也就意味着只能在有父子关系的 Widget 之间进行数据共享。但是，组件间数据传递还有一种常见场景：这些组件间不存在父子关系。这时，事件总线 EventBus 就登场了。
+
+当发布者触发事件时，订阅者和发布者之间可以通过事件进行交互。发布者和订阅者之间无需有父子关系，甚至非 Widget 对象也可以发布 / 订阅。
+
+
+
+# State Management 状态管理
+
+## Provider
+
+Provider 是一个用来提供数据的框架。它是 InheritedWidget 的语法糖，提供了依赖注入的功能，允许在 Widget 树中更加灵活地处理和传递数据。
+
+什么是依赖注入呢？通俗地说，依赖注入是一种可以让我们在需要时提取到所需资源的机制，即：预先将某种“资源”放到程序中某个我们都可以访问的位置，当需要使用这种“资源”时，直接去这个位置拿即可，而无需关心“资源”是谁放进去的。
+
+我们既可以用 Provider 来实现静态的数据读传递，也可以使用 ChangeNotifierProvider 来实现动态的数据读写传递，还可以通过 MultiProvider 来实现多个数据资源的共享。
+
+# 单线程
+
+Dart是单线程的单线程
+
+
+
+
+
 # Note
 
 Mixin就是以非继承的方式实现代码复用的一种机制而已呀

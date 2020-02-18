@@ -205,7 +205,10 @@ git commit -m "<Brief description of this commit>"
 
 
 
+# Change remote url
 
+1. Check remote url `git remote -v`
+2. Change remote url ` git remote set-url origin https://github.com/shic/uper-web.git`
 
 # <u>Repository</u>
 
@@ -277,7 +280,7 @@ git commit -m "<Brief description of this commit>"
    upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
    ```
 
-   ​
+   
 
 # <u>Git Large File Storage</u>
 
