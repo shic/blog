@@ -11,11 +11,49 @@ author:     "Shi"
 
 # Database
 
-## Cloud firestore
+# Cloud firestore
+
+## Backup firestore data
+
+```
+gcloud firestore export gs://eagle-dev-backup
+```
 
 
 
-## Realtime database
+# Realtime database
 
 <https://firebase.google.com/docs/database/rtdb-vs-firestore>
+
+
+
+
+
+# Firebase function
+
+## Local Emulator
+
+### Note
+
+ https://developers.google.com/codelabs/firebase-emulator-get-started#0
+
+## Tutorial
+
+https://github.com/shic/firebase-functions-pluralsight
+
+# Cloud Storage bucket
+
+
+
+## gsutil
+
+Ref: https://cloud.google.com/storage/docs/gsutil/commands/cp
+
+
+
+## Copy to local 
+
+```
+/Users/shi/google-cloud-sdk/bin/gsutil -m cp -r gs://eagle-dev-backup .
+```
 

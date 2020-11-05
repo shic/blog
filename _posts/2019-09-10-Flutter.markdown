@@ -18,6 +18,12 @@ author:     "Shi"
 flutter run --flavor dev
 ```
 
+
+
+# Change App Information Language
+
+https://www.jianshu.com/p/92c21eb71537
+
 # Widget，Element 和 RenderObject
 
 Flutter 渲染过程，可以分为这么三步： 
@@ -133,6 +139,14 @@ Dart是单线程的单线程
 5. iOS
 
 6. run `flutter clean`
+
+# Problem resolve
+
+
+
+## [Flutter: Execution failed for task ':app:compileDebugKotlin'](https://stackoverflow.com/questions/59893018/flutter-execution-failed-for-task-appcompiledebugkotlin)
+
+Solved by deleting android/.gradle then ran the app in debug
 
 # Note
 

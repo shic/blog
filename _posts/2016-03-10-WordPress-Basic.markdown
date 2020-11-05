@@ -7,6 +7,12 @@ author:     "Shi"
 header-img: "img/post-bg-01.jpg"
 ---
 
+# Avada
+
+## Theme multilanguage
+
+https://theme-fusion.com/documentation/avada/translations/translating-fusion-core-plugin/
+
 # Plugins 
 
 ## Customize Posts
