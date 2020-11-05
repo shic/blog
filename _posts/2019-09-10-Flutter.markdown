@@ -140,6 +140,20 @@ Dart是单线程的单线程
 
 6. run `flutter clean`
 
+# State Management
+
+**PublishSubject**
+
+The [**PublishSubject**](https://pub.dartlang.org/documentation/rxdart/latest/rx/PublishSubject-class.html) is a normal **broadcast** *StreamController* with one exception: **stream** returns an [**Observable**](https://pub.dartlang.org/documentation/rxdart/latest/rx/Observable-class.html) rather than a **Stream**.
+
+**BehaviorSubject**
+
+The main difference with a *PublishSubject* is that the *BehaviorSubject* also sends the very last *event* that was emitted to the *listener* that just subscribed.
+
+Ref: https://medium.com/flutter-community/reactive-programming-streams-bloc-6f0d2bd2d248
+
+
+
 # Problem resolve
 
 
