@@ -104,6 +104,25 @@ Provider 是一个用来提供数据的框架。它是 InheritedWidget 的语法
 
 Dart是单线程的单线程
 
+# Permission
+
+## iOS Info.plist permissions
+
+If you do not want to add a certain permission
+
+add the following code to plist
+
+```
+ ## dart: PermissionGroup.bluetooth
+ 'PERMISSION_BLUETOOTH=0'
+```
+
+
+
+https://github.com/Baseflow/flutter-permission-handler/issues/483
+
+
+
 # Rename Project
 
 1. Refactor project name
@@ -151,6 +170,59 @@ The [**PublishSubject**](https://pub.dartlang.org/documentation/rxdart/latest/rx
 The main difference with a *PublishSubject* is that the *BehaviorSubject* also sends the very last *event* that was emitted to the *listener* that just subscribed.
 
 Ref: https://medium.com/flutter-community/reactive-programming-streams-bloc-6f0d2bd2d248
+
+
+
+# i18n / i10n
+
+Guide
+
+https://flutter.dev/docs/development/accessibility-and-localization/internationalization
+
+
+
+
+
+# Build App
+
+## Android Prod
+
+1. ```
+    flutter build apk --debug
+    flutter build apk --profile
+    ```
+
+2. Android Studio -> Build -> Generate Signed APK
+
+3. Sign with both V1 and V2 signature
+
+or
+
+```
+flutter build apk --debug --flavor dev
+flutter build apk --debug --flavor prod
+
+flutter build apk --profile --flavor dev
+flutter build apk --profile --flavor prod
+```
+
+
+
+## iOS prod
+
+1. Open `Runner.xcworkspace` in your app’s `ios` folder.
+
+
+    ```shell script
+    flutter build ios --flavor prod --release
+    
+    flutter build ipa --flavor prod --release
+    
+    ```
+
+2. Open `build/ios/archive/MyApp.xcarchive` in Xcode.
+
+3. Distribute App. 
 
 
 

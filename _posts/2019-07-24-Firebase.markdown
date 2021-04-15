@@ -21,6 +21,8 @@ gcloud firestore export gs://eagle-dev-backup
 
 
 
+
+
 # Realtime database
 
 <https://firebase.google.com/docs/database/rtdb-vs-firestore>
@@ -40,6 +42,14 @@ gcloud firestore export gs://eagle-dev-backup
 ## Tutorial
 
 https://github.com/shic/firebase-functions-pluralsight
+
+
+
+Examples
+
+https://github.com/firebase/functions-samples
+
+
 
 # Cloud Storage bucket
 
