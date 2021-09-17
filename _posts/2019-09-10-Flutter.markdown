@@ -179,9 +179,9 @@ Guide
 
 https://flutter.dev/docs/development/accessibility-and-localization/internationalization
 
+Detail
 
-
-
+https://docs.google.com/document/d/10e0saTfAv32OZLRmONy866vnaw0I2jwL8zukykpgWBc/edit
 
 # Build App
 
@@ -233,6 +233,14 @@ flutter build apk --profile --flavor prod
 ## [Flutter: Execution failed for task ':app:compileDebugKotlin'](https://stackoverflow.com/questions/59893018/flutter-execution-failed-for-task-appcompiledebugkotlin)
 
 Solved by deleting android/.gradle then ran the app in debug
+
+## Xcode - "Not enough free space"
+
+Download Xcode from https://developer.apple.com/download/all/
+
+
+
+
 
 # Note
 
