@@ -220,7 +220,7 @@ flutter build apk --profile --flavor prod
     
     ```
 
-2. Open `build/ios/archive/MyApp.xcarchive` in Xcode.
+2. Open `build/ios/archive/MyApp.xcarchive`  or  `build/ios/archive/Runner.xcarchive` in Xcode.
 
 3. Distribute App. 
 
@@ -253,4 +253,6 @@ Mixin就是以非继承的方式实现代码复用的一种机制而已呀
 # Book
 
 https://book.flutterchina.club/
+
+https://medium.com/flutter-community/deconstructing-dart-constructors-e3b553f583ef
 
