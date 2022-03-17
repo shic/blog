@@ -213,12 +213,13 @@ flutter build apk --profile --flavor prod
 1. Open `Runner.xcworkspace` in your app’s `ios` folder.
 
 
-    ```shell script
-    flutter build ios --flavor prod --release
+```shell script
     
-    flutter build ipa --flavor prod --release
+flutter build ios --flavor prod --release
     
-    ```
+flutter build ipa --flavor prod --release
+    
+```
 
 2. Open `build/ios/archive/MyApp.xcarchive`  or  `build/ios/archive/Runner.xcarchive` in Xcode.
 
@@ -247,6 +248,12 @@ Download Xcode from https://developer.apple.com/download/all/
 Mixin就是以非继承的方式实现代码复用的一种机制而已呀
 
 
+
+
+
+A state-management library 
+
+https://pub.dev/packages/riverpod/versions/2.0.0-dev.3
 
 
 
