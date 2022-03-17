@@ -213,12 +213,10 @@ flutter build apk --profile --flavor prod
 1. Open `Runner.xcworkspace` in your app’s `ios` folder.
 
 
-```shell script
-    
+```shell
 flutter build ios --flavor prod --release
-    
-flutter build ipa --flavor prod --release
-    
+
+flutter build ipa --flavor prod --release    
 ```
 
 2. Open `build/ios/archive/MyApp.xcarchive`  or  `build/ios/archive/Runner.xcarchive` in Xcode.
