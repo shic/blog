@@ -157,7 +157,7 @@ https://github.com/Baseflow/flutter-permission-handler/issues/483
 
 5. iOS
 
-6. run `flutter clean`
+6. run `flutter clean` .
 
 # State Management
 
@@ -225,15 +225,17 @@ flutter build apk --profile --flavor prod
     flutter build ipa --flavor prod --release    
     ```
 
-2. Open `build/ios/archive/MyApp.xcarchive`  or  `build/ios/archive/Runner.xcarchive` in Xcode.
+2. Open `build/ios/archive/Runner.xcarchive` or `build/ios/archive/MyApp.xcarchive` from Xcode to prepare distribution.
 
-3. Distribute App. 
-
-
-
-# Problem resolve
+3. Distribute App from Xcode.
 
 
+
+# Troubleshooting
+
+## Pod install fail on M1 Chip
+
+run `arch -x86_64 pod install`
 
 ## [Flutter: Execution failed for task ':app:compileDebugKotlin'](https://stackoverflow.com/questions/59893018/flutter-execution-failed-for-task-appcompiledebugkotlin)
 
