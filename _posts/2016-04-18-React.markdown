@@ -436,6 +436,12 @@ https://codepen.io/gaearon/pen/wgedvV?editors=0010
 
 # Note
 
+## React Template
+
+https://thefront.maccarianagency.com/
+
+
+
 ## React Skeleton
 
 [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate)

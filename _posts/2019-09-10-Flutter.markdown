@@ -11,6 +11,78 @@ author:     "Shi"
 # Flutter
 
 
+# Build App
+
+## Android Prod
+
+
+### Method 1
+
+1. ```
+    flutter build appbundle --flavor professionalprod
+
+   ```
+2. The release bundle for your app is created at [project]/build/app/outputs/bundle/release/app.aab.
+
+
+
+
+### Method 2
+
+1. ```
+    flutter build apk --debug
+    flutter build apk --profile
+    ```
+
+2. Android Studio -> Build -> Generate Signed APK
+
+3. Sign with both V1 and V2 signature
+
+or
+
+```
+flutter build apk --debug --flavor dev
+flutter build apk --debug --flavor prod
+
+flutter build apk --profile --flavor dev
+flutter build apk --profile --flavor prod
+```
+
+
+
+
+
+
+## iOS prod
+
+
+### Method 1
+
+
+
+1. `flutter build ipa --flavor prod --release`
+   
+2. Drag and drop the "build/ios/ipa/*.ipa" bundle into the Apple Transporter macOS app
+
+
+
+### Method 2
+
+
+1. Build iOS release app
+  
+   Open `Runner.xcworkspace` in your app’s `ios` folder to build release app
+
+   or 
+
+   Build release app via command line `flutter build ios --flavor prod --release`
+
+
+2. Open `build/ios/archive/Runner.xcarchive` or `build/ios/archive/MyApp.xcarchive` from Xcode to prepare distribution.
+
+3. Distribute App from Xcode.
+   
+4. Go https://appstoreconnect.apple.com/ to 
 
 # Run app with flavor
 
@@ -183,51 +255,6 @@ Detail
 
 https://docs.google.com/document/d/10e0saTfAv32OZLRmONy866vnaw0I2jwL8zukykpgWBc/edit
 
-# Build App
-
-## Android Prod
-
-1. ```
-    flutter build apk --debug
-    flutter build apk --profile
-    ```
-
-2. Android Studio -> Build -> Generate Signed APK
-
-3. Sign with both V1 and V2 signature
-
-or
-
-```
-flutter build apk --debug --flavor dev
-flutter build apk --debug --flavor prod
-
-flutter build apk --profile --flavor dev
-flutter build apk --profile --flavor prod
-```
-
-
-
-## iOS prod
-
-1. Build iOS release app
-  
-   Open `Runner.xcworkspace` in your app’s `ios` folder to build release app
-
-   or 
-
-   Build release app via command line
-
-
-    ```shell
-    flutter build ios --flavor prod --release
-
-    flutter build ipa --flavor prod --release    
-    ```
-
-2. Open `build/ios/archive/Runner.xcarchive` or `build/ios/archive/MyApp.xcarchive` from Xcode to prepare distribution.
-
-3. Distribute App from Xcode.
 
 
 
@@ -245,6 +272,8 @@ Solved by deleting android/.gradle then ran the app in debug
 
 Download Xcode from https://developer.apple.com/download/all/
 
+
+## Error (Xcode): DT_TOOLCHAIN_DIR cannot be used to evaluate LIBRARY_SEARCH_PATHS, use TOOLCHAIN_DIR instead
 
 
 
