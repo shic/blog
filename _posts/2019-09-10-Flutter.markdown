@@ -58,12 +58,11 @@ flutter build apk --profile --flavor prod
 
 ### Method 1
 
-
-
-1. `flutter build ipa --flavor prod --release`
-   
-2. Drag and drop the "build/ios/ipa/*.ipa" bundle into the Apple Transporter macOS app
-
+1. Increment app version in pubspec.yaml 
+2. Select the flavor and run ios app in flutter
+3. Open `Runner.xcworkspace` in your app’s `ios` folder to archive release app
+4. Upload archievd app
+ 
 
 
 ### Method 2
@@ -89,6 +88,13 @@ flutter build apk --profile --flavor prod
 ```
 flutter run --flavor dev
 ```
+
+### Method 3
+
+1. `flutter build ipa --flavor prod --release`
+   
+2. Drag and drop the "build/ios/ipa/*.ipa" bundle into the Apple Transporter macOS app
+
 
 
 
@@ -254,6 +260,61 @@ https://flutter.dev/docs/development/accessibility-and-localization/internationa
 Detail
 
 https://docs.google.com/document/d/10e0saTfAv32OZLRmONy866vnaw0I2jwL8zukykpgWBc/edit
+
+
+
+# Animation
+
+https://docs.flutter.dev/ui/widgets/animation
+
+https://codelabs.developers.google.com/codelabs/material-motion-flutter?hl=en#0
+
+Codelabs
+
+https://codelabs.developers.google.com/codelabs/flutter-flame-game?hl=en#0
+
+https://codelabs.developers.google.com/?text=flutter
+
+https://api.flutter.dev/flutter/widgets/PositionedTransition-class.html
+
+https://codelabs.developers.google.com/codelabs/flutter-next-gen-uis?hl=en#7
+
+
+
+# Animation HTML
+
+https://www.17sucai.com/pins/demo-show?id=56948&st=5bxZF2WeqkBpTrbUODFbig&e=1697945553
+
+
+http://www.yunxi10.com/demo/18484
+
+
+https://codepen.io/wakana-k/pen/YzjYzJE
+
+
+# PAG
+
+https://zhuanlan.zhihu.com/p/620979024
+
+https://github.com/libpag/pag-web/tree/main
+
+# MEME
+
+https://www.youtube.com/watch?v=jljv7yNzqJw&ab_channel=SanskarTiwari
+
+https://www.youtube.com/watch?v=z0P9lSUSS3E&ab_channel=SimonGrimm
+
+https://github.com/AKR-2803/MemeAppFlutter/blob/akr-branch/lib/screens/home_page.dart#L162
+
+
+
+# Cross platform
+
+https://codelabs.developers.google.com/codelabs/flutter-boring-to-beautiful?hl=en#0
+
+https://codelabs.developers.google.com/codelabs/flutter-adaptive-app?hl=en#0
+
+https://codelabs.developers.google.com/codelabs/flutter-animated-responsive-layout?hl=en#0
 
 
 
