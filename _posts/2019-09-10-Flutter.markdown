@@ -306,6 +306,15 @@ https://www.youtube.com/watch?v=z0P9lSUSS3E&ab_channel=SimonGrimm
 
 https://github.com/AKR-2803/MemeAppFlutter/blob/akr-branch/lib/screens/home_page.dart#L162
 
+https://github.com/djsmk123/meme_maker
+
+https://www.youtube.com/watch?v=tF2dqZpDfAU&ab_channel=FlutterFundamentals
+
+https://www.youtube.com/watch?v=K2a7E6t3k-E&list=PLOoOwFsn2IJOSO5DU11KYzO_0qw2dvPvs&ab_channel=FlutterFundamentals
+
+https://www.youtube.com/watch?v=vzg6iNziiKw&ab_channel=RivaanRanawat
+
+
 
 
 # Cross platform
