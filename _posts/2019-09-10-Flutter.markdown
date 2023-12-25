@@ -168,6 +168,13 @@ The following situation will update:
 
 
 
+# Navigation
+
+Bottom Navigation Bar combine with NavigationRail
+
+https://codewithandrea.com/articles/flutter-bottom-navigation-bar-nested-routes-gorouter/
+
+
 # State Management 状态管理
 
 ## Provider
