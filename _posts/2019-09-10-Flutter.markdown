@@ -97,6 +97,47 @@ flutter run --flavor dev
 
 
 
+# Useful flutter components/services
+
+## Handle the native app displays a white splash screen
+
+https://pub.dev/packages/flutter_native_splash
+
+## Router
+
+
+### Transaction animation
+
+Set default transition for go_router
+ 
+https://stackoverflow.com/questions/71636397/set-default-transition-for-go-router-in-flutter
+
+https://docs.flutter.dev/cookbook/animation/page-route-animation
+
+https://api.flutter.dev/flutter/widgets/AlignTransition-class.html
+
+RotationTransition
+
+https://api.flutter.dev/flutter/widgets/RotationTransition-class.html
+
+ScaleTransition
+
+https://api.flutter.dev/flutter/widgets/ScaleTransition-class.html
+
+FadeTransition
+
+https://api.flutter.dev/flutter/widgets/FadeTransition-class.html
+
+SlideTransition
+
+https://api.flutter.dev/flutter/widgets/SlideTransition-class.html
+
+# Libs
+
+Animated text
+
+https://pub.dev/packages/animated_text_kit
+
 
 # Change App Information Language
 
