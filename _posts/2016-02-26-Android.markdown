@@ -105,6 +105,16 @@ Ref:
 ./adb uninstall <app package name>
 ```
 
+## Debug wireless
+
+Find your IP address on your phone (System -> Developer option -> Debug wireless)
+
+```bash
+./adb connect 
+
+./adb connect 192.168.1.6:42497
+```
+
 ## Log
 
 Log.d() DEBUG, Log.i() INFO, Log.w() WARN, Log.e() ERROR
